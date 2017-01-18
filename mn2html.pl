@@ -67,7 +67,7 @@ EOF
 	    printf $f "<h%d>%s</h%d>\n", $h, $text, $h;
 	    next;
 	}
-	if(/^\.lp (.*)/){
+	if(/^\.lp ?(.*)/){
 	    my $text = $1;
 	    $text =~ s/\"//g;
 	    putpop($f);
