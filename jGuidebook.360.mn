@@ -206,13 +206,13 @@
 .\"O \fIBarbarians\fP are warriors out of the hinterland, hardened to battle.
 .\"O They begin their quests with naught but uncommon strength, a trusty hauberk,
 .\"O and a great two-handed sword.
-\fI 野蛮人(Barbarian)\fP は奥地からやってきた戦士であり、戦闘のために鍛えられている。
+\fI野蛮人(Barbarian)\fP は奥地からやってきた戦士であり、戦闘のために鍛えられている。
 彼らは類まれな力の強さを持ち、丈夫な鎖かたびらと大きな両手持ちの
 剣のみを持って探求に出発する。
 .pg
 .\"O \fICavemen\fP and \fICavewomen\fP start with exceptional strength but,
 .\"O unfortunately, with neolithic weapons.
-\fI 洞窟人(Caveman と Cavewoman)\fPはとりわけ強い力を持っているが、
+\fI洞窟人(Caveman と Cavewoman)\fPはとりわけ強い力を持っているが、
 新石器時代に使われた武器を持って出発する。
 .pg
 .\"O \fIHealers\fP are wise in medicine and apothecary.  They know the
@@ -220,7 +220,7 @@
 .\"O and neutralize poisons; and with their instruments, they can divine a
 .\"O being's state of health or sickness.  Their medical practice earns them
 .\"O quite reasonable amounts of money, with which they enter the dungeon.
-\fI医者(Healer)\fPは医術や薬物について精通している。
+\fI薬師(Healer)\fPは医術や薬物について精通している。
 生気を回復させたり、苦痛を和らげたり、麻酔をかけたり、
 毒を中和させたりする香草や薬草について詳しい。
 そして器具を使って生物の健康状態を見抜くことができる。
@@ -235,7 +235,7 @@
 .\"O \fIMonks\fP are ascetics, who by rigorous practice of physical and mental
 .\"O disciplines have become capable of fighting as effectively without weapons
 .\"O as with.  They wear no armor but make up for it with increased mobility.
-\fI モンク(Monk) \fP は修道者であり、厳格な肉体的習慣と精神的訓練によって、
+\fIモンク(Monk) \fP は修道者であり、厳格な肉体的習慣と精神的訓練によって、
 武器なしでも武器を使うのと同じように戦うことが出来る。
 モンクは防具をつけないが、機動性を向上させることで埋め合わせている。
 .pg
@@ -251,41 +251,41 @@
 .\"O \fIRangers\fP are most at home in the woods, and some say slightly out
 .\"O of place in a dungeon.  They are, however, experts in archery as well
 .\"O as tracking and stealthy movement.
-\fI レンジャー(Ranger)\fP はほとんど森を住みかとし、洞窟は少々場違いかもしれない。
+\fIレンジャー(Ranger)\fP はほとんど森を住みかとし、洞窟は少々場違いかもしれない。
 しかし、彼らは追跡術や隠密行動と共に、弓術の達人である。
 .pg
 .\"O \fIRogues\fP are agile and stealthy thieves, with knowledge of locks,
 .\"O traps, and poisons.  Their advantage lies in surprise, which they employ
 .\"O to great advantage.
-\fI 盗賊(Rogue)\fP は敏捷で身を隠す業に長けた泥棒であり、
+\fI盗賊(Rogue)\fP は敏捷で身を隠す業に長けた泥棒であり、
 錠や罠や毒に詳しい。
 彼らの長所は奇襲であり、これは非常な長所となる。
 .pg
 .\"O \fISamurai\fP are the elite warriors of feudal Nippon.  They are lightly
 .\"O armored and quick, and wear the \fIdai-sho\fP, two swords of the deadliest
 .\"O keenness.
-\fI 侍(Samurai)\fP は封建時代の日本の精鋭の武人である。
+\fI侍(Samurai)\fP は封建時代の日本の精鋭の武人である。
 防具は軽装で身のこなし
 に秀でており、この上なく研ぎ澄まされた \fI 大小 \fP 2本の刀を帯びている。
 .pg
 .\"O \fITourists\fP start out with lots of gold (suitable for shopping with),
 .\"O a credit card, lots of food, some maps, and an expensive camera.  Most
 .\"O monsters don't like being photographed.
-\fI 観光客(Tourist)\fP は多額の金(買物に最適である)とクレジットカード、大量の食料、
+\fI観光客(Tourist)\fP は多額の金(買物に最適である)とクレジットカード、大量の食料、
 地図、そして高価なカメラを持って出発する。
 ほとんどの怪物は写真に撮られるのを嫌うものである。
 .pg
 .\"O \fIValkyries\fP are hardy warrior women.  Their upbringing in the harsh
 .\"O Northlands makes them strong, inures them to extremes of cold, and instills
 .\"O in them stealth and cunning.
-\fI ワルキューレ(Valkyrie)\fP は勇敢な女戦士である。
+\fIワルキューレ(Valkyrie)\fP は勇敢な女戦士である。
 過酷なスカンジナビアの国々で育った彼女らは頑強で、厳しい寒さにも耐え、
 身を隠す業と巧妙さを身につけている。
 .pg
 .\"O \fIWizards\fP start out with a knowledge of magic, a selection of magical
 .\"O items, and a particular affinity for dweomercraft.  Although seemingly weak
 .\"O and easy to overcome at first sight, an experienced Wizard is a deadly foe.
-\fI 魔法使い(Wizard)\fPは魔術の知識とに選び抜かれた魔法の道具を準備しており、
+\fI魔法使い(Wizard)\fPは魔術の知識とに選び抜かれた魔法の道具を準備しており、
 いにしえの魔法学に対して特に造詣が深い。
 見かけは弱そうで簡単に打ち倒せるように思えるが、
 経験を積んだ魔法使いは恐るべき敵である。
@@ -297,7 +297,7 @@
 .\"O individuals.  Dwarves' most notable trait is their great expertise in mining
 .\"O and metalwork.  Dwarvish armor is said to be second in quality not even to the
 .\"O mithril armor of the Elves.
-\fI ドワーフ(Dwarf) \fP は人間やエルフよりも小さいが、がっしりした体つきで丈夫である。
+\fIドワーフ(Dwarf)\fP は人間やエルフよりも小さいが、がっしりした体つきで丈夫である。
 ドワーフの注目すべき特性は採掘と金属工作の専門的技術である。
 ドワーフの防具はエルフのミスリル防具と同じとまではいかないまでも、
 それに次ぐ品質である。
@@ -305,7 +305,7 @@
 .\"O \fIElves\fP are agile, quick, and perceptive; very little of what goes
 .\"O on will escape an Elf.  The quality of Elven craftsmanship often gives
 .\"O them an advantage in arms and armor.
-\fI エルフ(Elf) \fP は機敏さと迅速さ、そして鋭敏な感覚を持っている。
+\fIエルフ(Elf)\fP は機敏さと迅速さ、そして鋭敏な感覚を持っている。
 周囲で起きるどんな些細なことも彼らの目を逃れることはできない。
 職人気質の彼らの持つ武器と防具は優秀なものである。
 .pg
@@ -313,21 +313,21 @@
 .\"O known to be expert miners, and it is known that a secret underground mine
 .\"O complex built by this race exists within the Mazes of Menace, filled with
 .\"O both riches and danger.
-\fI ノーム(Gnome) \fP はドワーフよりもさらに小さいが、ドワーフと似ている。
+\fIノーム(Gnome)\fP はドワーフよりもさらに小さいが、ドワーフと似ている。
 ノームは熟練した採掘師として知られ、
 富と危険で満ちている秘密の地下坑道を恐怖の迷宮に作っていることで知られる。
 .pg
 .\"O \fIHumans\fP are by far the most common race of the surface world, and
 .\"O are thus the norm to which other races are often compared.  Although
 .\"O they have no special abilities, they can succeed in any role.
-\fI 人間(Human) \fP は地上で最も一般的な種族で、ゆえに他の種族と比較される時の基準となっている。
+\fI人間(Human)\fP は地上で最も一般的な種族で、ゆえに他の種族と比較される時の基準となっている。
 特別な能力は持っていないが、あらゆる職業で成功することができる。
 .pg
 .\"O \fIOrcs\fP are a cruel and barbaric race that hate every living thing
 .\"O (including other orcs).  Above all others, Orcs hate Elves with a passion
 .\"O unequalled, and will go out of their way to kill one at any opportunity.
 .\"O The armor and weapons fashioned by the Orcs are typically of inferior quality.
-\fI オーク(Orc) \fP は残酷で野蛮な種族で、(他のオークを含む)あらゆる生物を嫌っている。
+\fIオーク(Orc)\fP は残酷で野蛮な種族で、(他のオークを含む)あらゆる生物を嫌っている。
 特に、オークはエルフを感性の違いゆえに嫌い、わざわざあらゆる機会を見つけて殺そうとする。
 オークによって作られた防具と武器は一般的に品質が劣る。
 .hn 1
@@ -4264,7 +4264,7 @@ effect on reading an existing save file.
 .\"O This option may be used to select one of the named symbol sets found within
 .\"O ``symbols'' to alter the symbols displayed on the screen.
 このオプションは、画面に表示される文字を変更するために、``symbols'' にある
-名前付きの文字集合の一つを選択するために使われる。
+名前付きシンボル集合の一つを選択するために使われる。
 .lp "time    "
 .\"O Show the elapsed game time in turns on bottom line (default off).  Persistent.
 最下行にゲームで経過した時間をターン数で表示する(標準設定はオフ)。
@@ -4745,8 +4745,8 @@ MSGTYPE=type "pattern"
 .\"O norep - show the message once, but not again if no other message is shown in between.
 show  - 通常通りメッセージを表示する。
 hide  - メッセージを表示しない。
-stop  - ユーザーの more プロンプトを待つ。
-norep - 1 度目はメッセージを表示するが、他のメッセージが来ない場合再びは表示しない。
+stop  - more プロンプトでユーザーを待つ。
+norep - 1 度目はメッセージを表示するが、他のメッセージが来るまで再びは表示しない。
 .ei
 .ed
 .lp ""
@@ -4943,6 +4943,7 @@ drop to or below a threshold of 30%:
 .ei
 .pg
 .\"O You can adjust the display of the following status fields:
+次のステータス項目を調整できる:
 .TS S
 center;
 c c c.

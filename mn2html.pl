@@ -60,8 +60,11 @@ EOF
 	    printf $f "<h1>%s</h1>\n", $text;
 	    next;
 	}
-	if(/^\.hn (\d)/){
+	if(/^\.hn ?(\d)?/){
 	    my $h = $1;
+	    if(!defined $h){
+		$h = 1;
+	    }
 	    my $text = shift @src;
 	    putpop($f);
 	    printf $f "<h%d>%s</h%d>\n", $h, $text, $h;
@@ -134,6 +137,7 @@ EOF
 	s@\\fB@<span class='bold'>@g;
 	s@\\fI@<span class='italic'>@g;
 	s@\\fP@</span>@g;
+	s@\\e@\\@g;
 	print $f $_ . "\n";
     }
     
