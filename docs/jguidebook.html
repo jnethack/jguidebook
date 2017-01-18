@@ -2498,12 +2498,27 @@ NetHack のニュースファイルがあればそれを読む(標準設定は�
 <dl><dt>number_pad</dt><dd>
 移動のために文字のかわりに数字キーを使用する(標準設定は 0 またはオフ)。
 設定可能な値は:
+<dl>
+</dd></dl>
+<dt>\ 0</dt><dd>
 文字で移動する; `yuhjklbn'
+</dd>
+<dt>\ 1</dt><dd>
 数字で移動する; 数字 `5' は `G' 移動の接頭辞として振る舞う
+</dd>
+<dt>\ 2</dt><dd>
 1 と同様だが 数字 `5' は `G' ではなく `g' 移動の接頭辞として振る舞う
+</dd>
+<dt>\ 3</dt><dd>
 電話のキー配置の数字で移動する; 123 は上、789 は下
+</dd>
+<dt>\ 4</dt><dd>
 3 と 2 の組み合わせ; 電話配置と MSDOS 互換
+</dd>
+<dt>-1</dt><dd>
 文字で移動するが `z' で北西に移動し、`y' で杖を振る
+</dd>
+</dl>
 For backward compatibility, omitting a value is the same as specifying 1
 and negating
 <tt>number_pad</tt>is the same as specifying 0.
@@ -2516,7 +2531,6 @@ When moving by numbers, to enter a count prefix for those commands
 which accept one (such as ``12s'' to search twelve times), precede it
 with the letter `n' (``n12s'').
 (TBT)
-</dd></dl>
 <dl><dt>packorder</dt><dd>
 物の種類を表示するときの順番を指定する(標準設定は
 ``")[%?+!=/(*`0_'').
@@ -2527,28 +2541,46 @@ with the letter `n' (``n12s'').
 A space separated list of specific situations where alternate
 prompting is desired.  The default is paranoid_confirmation:pray.
 (TBT)
+<dl>
+</dd></dl>
+<dt>Confirm</dt><dd>
 for any prompts which are set to require "yes" rather than 'y', also
 require "no" to reject instead of accepting any non-yes response as no
 (TBT)
+</dd>
+<dt>quit</dt><dd>
 require "yes" rather than 'y' to confirm quitting
 the game or switching into non-scoring explore mode;
 (TBT)
+</dd>
+<dt>die</dt><dd>
 require "yes" rather than 'y' to confirm dying (not
 useful in normal play; applies to explore mode);
 (TBT)
+</dd>
+<dt>bones</dt><dd>
 デバッグモードで死んだときの骨ファイルの保存確認に 'y' ではなく "yes" が必要;
+</dd>
+<dt>attack</dt><dd>
 友好的な怪物を攻撃するときの確認に 'y' ではなく "yes" が必要;
+</dd>
+<dt>pray</dt><dd>
 祈るときにすぐに祈るのではなく確認で 'y' が必要; 標準設定でオン;
+</dd>
+<dt>wand</dt><dd>
 杖を折るときの確認に 'y' ではなく "yes" が必要;
+</dd>
+<dt>Remove</dt><dd>
 'R' と 'T' コマンドで有効なアイテムを一つしか身につけていないときでも
 持ち物一覧からの選択が必要。
+</dd>
+</dl>
 標準設定では、pray 選択がオン、それ以外はオフになっている。
 To disable it without setting
 any of the other choices, use ``paranoid_confirmation:none''.  To keep
 it enabled while setting any of the others, include it in the list,
 such as ``paranoid_confirmation:attack pray Remove''.
 (TBT)
-</dd></dl>
 <dl><dt>perm_invent</dt><dd>
 もしオンならば、現在の持ち物一覧を常にウィンドウに表示しておく。
 この機能が実装されているウィンドウシステムでのみ有効。
@@ -2651,15 +2683,25 @@ effect on reading an existing save file.
 旅行コマンドやマウスのクリックを使った場合)
 ときにどれくらいの頻度で地図を更新するかを制御する。
 設定可能な値は以下の通り:
+<dl>
+</dd></dl>
+<dt>teleport</dt><dd>
 移動が完了してから地図を更新する。
+</dd>
+<dt>run</dt><dd>
  7 歩ぐらい毎に地図を更新する。
+</dd>
+<dt>walk</dt><dd>
 1 歩毎に地図を更新する。
+</dd>
+<dt>crawl</dt><dd>
 ``walk'' と同様だが、一歩毎にしばらく停止する。
+</dd>
+</dl>
 このオプションは画面表示にのみ影響し、実際の移動結果には影響しない。
 標準設定は `run' である。バージョン 3.4.1 以前は `teleport' のみであった。
 効果が確認できるかどうかは使っている版や端末の種類に依存する。
 永続する。
-</dd></dl>
 <dl><dt>safe_pet</dt><dd>
 ペットを(ペットと知りつつ)攻撃してしまうのを防ぐ(標準設定はオン)。
 永続する。
@@ -2693,11 +2735,19 @@ effect on reading an existing save file.
 制御する。
 永続する。
 可能な値は:
+<dl>
+</dd></dl>
+<dt>full</dt><dd>
 常に一覧をソートする;
+</dd>
+<dt>loot</dt><dd>
 #loot コマンドや広くコマンドのように、持ち物を示す文字を使わないときにだけ
 ソートする。
+</dd>
+<dt>none</dt><dd>
 ソートなしの伝統的な方法で一覧を表示する。
-</dd></dl>
+</dd>
+</dl>
 <dl><dt>sortpack</dt><dd>
 持物の目録を表示するとき種類毎に荷物の内容を並べ替える
 (標準設定はオン)。
@@ -3037,9 +3087,15 @@ patterns.
 <p>
 一般的に、メッセージ型を設定する設定ファイルエントリは次のような物である:
 <li>MSGTYPE=type "pattern"</li>
-どのようにメッセージを表示するか;
-マッチングするパターン。
+<dl>
 </p>
+<dt>type</dt><dd>
+どのようにメッセージを表示するか;
+</dd>
+<dt>pattern</dt><dd>
+マッチングするパターン。
+</dd>
+</dl>
 <dl><dt></dt><dd>
 パターンは正規表現である必要がある。
 </dd></dl>
@@ -3078,12 +3134,20 @@ look like this:
 (TBT)
 </p>
 <dl><dt>MENUCOLOR=pattern=color&attribute</dt><dd>
+<dl>
+</dd></dl>
+<dt>pattern</dt><dd>
 マッチングするパターン;
+</dd>
+<dt>color</dt><dd>
 パターンがマッチングした行に使う色;
+</dd>
+<dt>attribute</dt><dd>
 パターンがマッチングした行に使う属性。
 属性はオプションで、省略するなら、アンド記号も省略しなければならない。
 属性が定義されない場合、属性は使われない。
-</dd></dl>
+</dd>
+</dl>
 <dl><dt></dt><dd>
 パターンは正規表現である必要がある。
 </dd></dl>
@@ -3136,11 +3200,21 @@ displayed with the ``uncursed'' description.
 <dl><dt>SOUND</dt><dd>
 音声ファイルとユーザーが指定するメッセージパターンを関連付ける項目。
 各 SOUND 項目は以下の項目に分解される。
-メッセージウィンドウ指定 (3.6 ではただ一つだけに対応している)
-マッチするパターン
-鳴らす音声ファイル
-音声ファイルを鳴らすときの音量
+<dl>
 </dd></dl>
+<dt>MESG</dt><dd>
+メッセージウィンドウ指定 (3.6 ではただ一つだけに対応している)
+</dd>
+<dt>pattern</dt><dd>
+マッチするパターン
+</dd>
+<dt>sound file</dt><dd>
+鳴らす音声ファイル
+</dd>
+<dt>volume</dt><dd>
+音声ファイルを鳴らすときの音量
+</dd>
+</dl>
 <dl><dt></dt><dd>
 このパターンは POSIX 拡張正規表現で指定する。
 </dd></dl>

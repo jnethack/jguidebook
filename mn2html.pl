@@ -75,6 +75,23 @@ EOF
 	    push @close, '</dd></dl>';
 	    next;
 	}
+	if(/^\.PS/){
+	    print $f "<dl>\n";
+	    next;
+	}
+	if(/^\.PL (.*)/){
+	    my $text = $1;
+	    $text =~ s/\"//g;
+	    putpop($f);
+	    printf $f "<dt>%s</dt><dd>\n", $text;
+	    push @close, '</dd>';
+	    next;
+	}
+	if(/^\.PE/){
+	    putpop($f);
+	    print $f "</dl>\n";
+	    next;
+	}
 	if(/^\.op (.*)/){
 	    my $text = $1;
 	    $text =~ s/\"//g;
