@@ -1087,6 +1087,17 @@ I$ - お金を数える。
 .\"O Put on an accessory (ring, amulet, or blindfold).
 装飾品（指輪、魔除け、目隠し）を身につける。
 .lp ""
+.\"O This command may also be used to wear armor.  The prompt for
+.\"O which inventory item to use will only list accessories, but choosing
+.\"O an unlisted item of armor will attempt to wear it.
+.\"O (See the `W' command below.  It lists armor as the inventory
+.\"O choices but will accept an accessory and attempt to put that on.)
+このコマンドは防具を身につけるのにも使える。
+どれを選ぶかの一覧では装飾品しか表示されないが、一覧に表示されていない
+防具を選択することでそれを身につけようとすることができる。
+(後述する `W' コマンドを参照のこと。
+これは一覧として防具が表示されるが、装飾品も選択できて、それを
+身につけようとする)。
 .lp ^P
 .\"O Repeat previous message.
 1 つ前のメッセージをもう一度表示する。
@@ -1122,6 +1133,16 @@ I$ - お金を数える。
 .\"O Remove a worn accessory (ring, amulet, or blindfold).
 装飾品（指輪、魔除け、目隠し）をはずす。
 .lp ""
+.\"O If you're wearing more than one, you'll be prompted for which one to
+.\"O remove.  When you're only wearing one, then by default it will be removed
+.\"O without asking, but you can set the
+.\"O .op paranoid_confirmation
+.\"O option to require a prompt.
+複数の物を身につけている場合、どれを外すかを指定する。
+一つしか身につけていない場合、標準設定では確認なしにその一つを外すが、
+確認が必要になるように
+.op paranoid_confirmation
+オプションをセットできる。
 .lp ""
 .lp ^R
 .\"O Redraw the screen.
@@ -2637,6 +2658,12 @@ NetHack のメール配達機能はシステムのメールボックスに電子
 .\"O potency of spells, reduce their risk of failure during casting attempts,
 .\"O and improve the accuracy of the estimate for how much longer they will
 .\"O be retained in your memory.
+武器が習熟度の面でグループ分けされているのと同様、呪文もグループ分けされている。
+呪文を唱えるのに成功すると、そのグループを訓練したことになる;
+十分に訓練したスキルを向上させる `#enhance' コマンドはそのグループの全ての
+呪文に影響する。
+スキルが向上すると呪文の性能が向上し、詠唱時の失敗のリスクが減り、
+どれくらい長い間呪文が記憶に残っているかの推定の精度が向上する。
 .\"O Skill slots are shared with weapons skills.  (See also the section on
 .\"O ``Weapon proficiency''.)
 技能スロットは武器スキルと共有する。(``武器の技量''の項も参照のこと)
@@ -3037,6 +3064,10 @@ $ \fBexport NETHACKOPTIONS\fP
 .\"O the character position in the current font to be used in displaying 
 .\"O each entry. Such a sequence can be continued to multiple lines by putting a `\e'
 .\"O at the end of each line to be continued.
+``SYMBOLS='' で始まる行は、違う文法で対応するシンボルを定義するために使われる;
+それぞれのエントリを表示するのに使われる現在のフォントの符号位置を指定する
+10 進数の列です。
+この列は各行の最後に`\e'をつけることによって複数行に渡ることができる。
 .pg
 .\"O Any line starting with ``AUTOPICKUP_EXCEPTION='' is taken
 .\"O as defining an exception to the 
@@ -4279,6 +4310,20 @@ NO_TERMを使用しているPCシステムのカラーパレットをセット�
 .hn 2
 .\"O Modifying NetHack Symbols 
 NetHackのシンボルの変更
+.pg
+.\"O NetHack can load entire symbol sets from the symbol file.
+NetHack は symbol ファイルからシンボル集合全体を読み込むことができる。
+.pg
+.\"O The options that are used to select a particular symbol set from the
+.\"O symbol file are:
+symbol ファイルから特定のシンボル集合を選択するために使われるオプションは:
+.lp symset
+.\"O Set the name of the symbol set that you want to load.
+読み込みたいシンボル集合の名前を設定する。
+.lp roguesymset
+.\"O Set the name of the symbol set that you want to load for display
+.\"O on the rogue level.
+rogue レベルで表示するために読み込みたいシンボル集合の名前を設定する。
 .pg
 .pg
 .hn 2

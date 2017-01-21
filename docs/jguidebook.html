@@ -689,12 +689,12 @@ Figure 2
 装飾品（指輪、魔除け、目隠し）を身につける。
 </dd></dl>
 <dl><dt></dt><dd>
-This command may also be used to wear armor.  The prompt for
-which inventory item to use will only list accessories, but choosing
-an unlisted item of armor will attempt to wear it.
-(See the `W' command below.  It lists armor as the inventory
-choices but will accept an accessory and attempt to put that on.)
-(TBT)
+このコマンドは防具を身につけるのにも使える。
+どれを選ぶかの一覧では装飾品しか表示されないが、一覧に表示されていない
+防具を選択することでそれを身につけようとすることができる。
+(後述する `W' コマンドを参照のこと。
+これは一覧として防具が表示されるが、装飾品も選択できて、それを
+身につけようとする)。
 </dd></dl>
 <dl><dt>^P</dt><dd>
 1 つ前のメッセージをもう一度表示する。
@@ -723,11 +723,10 @@ choices but will accept an accessory and attempt to put that on.)
 装飾品（指輪、魔除け、目隠し）をはずす。
 </dd></dl>
 <dl><dt></dt><dd>
-If you're wearing more than one, you'll be prompted for which one to
-remove.  When you're only wearing one, then by default it will be removed
-without asking, but you can set the
-<tt>paranoid_confirmation</tt>option to require a prompt.
-(TBT)
+複数の物を身につけている場合、どれを外すかを指定する。
+一つしか身につけていない場合、標準設定では確認なしにその一つを外すが、
+確認が必要になるように
+<tt>paranoid_confirmation</tt>オプションをセットできる。
 </dd></dl>
 <dl><dt></dt><dd>
 This command may also be used to take off armor.  The prompt for which
@@ -1907,14 +1906,11 @@ NetHack のメール配達機能はシステムのメールボックスに電子
 </p>
 <p>
 武器が習熟度の面でグループ分けされているのと同様、呪文もグループ分けされている。
-呪文を唱えるのに成功すると、そのグループを訓練したことになる。
-using the
-`#enhance' command to advance a sufficiently exercised skill
-will affect all spells within the group.  Advanced skill may increase the
-potency of spells, reduce their risk of failure during casting attempts,
-and improve the accuracy of the estimate for how much longer they will
-be retained in your memory.
-(TBT)
+呪文を唱えるのに成功すると、そのグループを訓練したことになる;
+十分に訓練したスキルを向上させる `#enhance' コマンドはそのグループの全ての
+呪文に影響する。
+スキルが向上すると呪文の性能が向上し、詠唱時の失敗のリスクが減り、
+どれくらい長い間呪文が記憶に残っているかの推定の精度が向上する。
 技能スロットは武器スキルと共有する。(``武器の技量''の項も参照のこと)
 </p>
 <p>
@@ -2144,14 +2140,10 @@ $ <span class='bold'>export NETHACKOPTIONS</span>
 設定ファイルの中の`#'で始まる行はコメントとして扱われる。
 設定ファイルの中の``OPTION=''で始まる行は環境変数``NETHACKOPTIONS''
 と同じ文法でオプションが記述されているものと見なす。
-Any line starting with ``SYMBOLS=''
-is taken as defining the corresponding symbol
-in a different syntax, a sequence of decimal numbers giving 
-the character position in the current font to be used in displaying 
-each entry. Such a sequence can be continued to multiple lines by putting a `\'
-at the end of each line to be continued.
+``SYMBOLS='' で始まる行は、違う文法で対応するシンボルを定義するために使われる;
+それぞれのエントリを表示するのに使われる現在のフォントの符号位置を指定する
+10 進数の列です。
 この列は各行の最後に`\'をつけることによって複数行に渡ることができる。
-(TBT)
 </p>
 <p>
 ``AUTOPICKUP_EXCEPTION=''で始まる行によって
