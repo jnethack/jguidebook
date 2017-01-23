@@ -3103,27 +3103,22 @@ patterns.
 例である。
 <li>MSGTYPE=stop "You feel hungry."</li>
 <li>MSGTYPE=hide "You displaced *."</li>
-specifies that whenever a message "You feel hungry" is shown,
-the user is prompted with more-prompt, and a message matching
-"You displaced <something>." is not shown at all.
-(TBT)
+このように指定すると、"You feel hungry" というメッセージが現れた時は常に
+more プロンプトが表示され、
+"You displaced (何か)." にマッチングするメッセージは一切表示されない。
 </dd></dl>
 <dl><dt></dt><dd>
-The order of the defined MSGTYPE-lines is important; the last matching
-rule is used. Put the general case first, exceptions below them.
-(TBT)
+MSGTYPE 行の定義順は重要である; 最後にマッチングした規則が使われる。
+一般的な場合を先に書き、例外をその後に書くこと。
 </dd></dl>
 <h2>メニュー色の設定</h2>
 <p>
-Some platforms allow you to define colors used in menu lines when the
-line matches a user-defined pattern. At this time the tty, win32tty and
-win32gui support this.
-(TBT)
+一部のプラットフォームでは、メニュー行がユーザー定義パターンに
+マッチングしたとき、メニュー行に使う色を定義できる。
+現在のところ tty, win32tty, win32gui がこれに対応している。
 </p>
 <p>
-In general, the config file entries to configure the menu color mappings
-look like this:
-(TBT)
+一般的にメニュー色割り当てを設定する設定ファイルエントリは次のような物である:
 </p>
 <dl><dt>MENUCOLOR=pattern=color&attribute</dt><dd>
 <dl>
@@ -3159,21 +3154,17 @@ none, bold, dim, underline, blink, inverse。
 <li>MENUCOLOR="* blessed *"=green</li>
 <li>MENUCOLOR="* cursed *"=red</li>
 <li>MENUCOLOR="* cursed *(being worn)"=red&underline</li>
-specifies that any menu line with " blessed " contained
-in it will be shown in green color, lines with " cursed " will be
-shown in red, and lines with " cursed " followed by "(being worn)"
-on the same line will be shown in red color and underlined.
-You can have multiple MENUCOLOR entries in your config file,
-and the last MENUCOLOR-line in your config file that matches
-a menu line will be used for the line.
-(TBT)
+このように指定すると、 " blessed " が含まれているメニュー行は緑色に、
+" cursed " の行は赤色に、" cursed " に引き続いて同じ行に "(being worn)" が
+ある場合は赤色かつ下線付きで表示する。
+設定ファイル中に複数の MENUCOLOR エントリを書くことができ、メニュー行に
+マッチングした中で設定ファイル中の最後の MENUCOLOR 行がその行に使われる。
 </dd></dl>
 <p>
-Note that if you intend to have one or more color specifications match
-" uncursed ", you will probably want to turn the
-<tt>implicit_uncursed</tt>option off so that all items known to be uncursed are actually
-displayed with the ``uncursed'' description.
-(TBT)
+" uncursed " にマッチングするような色指定を意図しているなら、
+呪われていないことが分かっている全ての持物について ``uncursed'' と
+表示するための
+<tt>implicit_uncursed</tt>オプションをおそらく設定した方がよいことに注意すること。
 </p>
 <h2>音声の設定</h2>
 <p>

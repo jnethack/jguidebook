@@ -4245,9 +4245,149 @@ NO_TERMを使用しているPCシステムのカラーパレットをセット�
 メッセージがユーザー定義パターンにマッチングしたとき、メッセージを
 メッセージエリアに表示する方法を変更できる。
 .pg
+.\"O In general, the config file entries to configure the message types
+.\"O look like this:
+一般的に、メッセージ型を設定する設定ファイルエントリは次のような物である:
+.si
+.\"O MSGTYPE=type "pattern"
+MSGTYPE=type "pattern"
+.ei
+.PS "message type"
+.PL type
+.\"O how the message should be shown;
+どのようにメッセージを表示するか;
+.PL pattern
+.\"O the pattern to match.
+マッチングするパターン。
+.PE
+.lp ""
+.\"O The pattern should be a regular expression.
+パターンは正規表現である必要がある。
+.lp ""
+.\"O Allowed types are:
+指定可能な型は:
+.sd
+.si
+.\"O show  - show message normally.
+.\"O hide  - never show the message.
+.\"O stop  - wait for user with more-prompt.
+.\"O norep - show the message once, but not again if no other message is shown in between.
+show  - 通常通りメッセージを表示する。
+hide  - メッセージを表示しない。
+stop  - more プロンプトでユーザーを待つ。
+norep - 1 度目はメッセージを表示するが、他のメッセージが来るまで再びは表示しない。
+.ei
+.ed
+.lp ""
+.\"O Here's an example of message types using NetHack's internal
+.\"O pattern matching facility:
+次のものは NetHack の内部パターンマッチング機能を使ったメッセージ型の
+例である。
+.sd
+.si
+.\"O MSGTYPE=stop "You feel hungry."
+.\"O MSGTYPE=hide "You displaced *."
+MSGTYPE=stop "You feel hungry."
+MSGTYPE=hide "You displaced *."
+.ei
+.ed
+.\"O specifies that whenever a message "You feel hungry" is shown,
+.\"O the user is prompted with more-prompt, and a message matching
+.\"O "You displaced <something>." is not shown at all.
+このように指定すると、"You feel hungry" というメッセージが現れた時は常に
+more プロンプトが表示され、
+"You displaced (何か)." にマッチングするメッセージは一切表示されない。
+.lp ""
+.\"O The order of the defined MSGTYPE-lines is important; the last matching
+.\"O rule is used. Put the general case first, exceptions below them.
+MSGTYPE 行の定義順は重要である; 最後にマッチングした規則が使われる。
+一般的な場合を先に書き、例外をその後に書くこと。
 .hn 2
 .\"O Configuring Menu Colors
 メニュー色の設定
+.pg
+.\"O Some platforms allow you to define colors used in menu lines when the
+.\"O line matches a user-defined pattern. At this time the tty, win32tty and
+.\"O win32gui support this.
+一部のプラットフォームでは、メニュー行がユーザー定義パターンに
+マッチングしたとき、メニュー行に使う色を定義できる。
+現在のところ tty, win32tty, win32gui がこれに対応している。
+.pg
+.\"O In general, the config file entries to configure the menu color mappings
+.\"O look like this:
+一般的にメニュー色割り当てを設定する設定ファイルエントリは次のような物である:
+.si
+.lp MENUCOLOR="pattern"=color&attribute
+.ei
+.PS "menu color"
+.PL pattern
+.\"O the pattern to match;
+マッチングするパターン;
+.PL color
+.\"O the color to use for lines matching the pattern;
+パターンがマッチングした行に使う色;
+.PL attribute
+.\"O the attribute to use for lines matching the pattern. The attribute is
+.\"O optional, and if left out, you must also leave out the preceding ampersand.
+.\"O If no attribute is defined, no attribute is used.
+パターンがマッチングした行に使う属性。
+属性はオプションで、省略するなら、アンド記号も省略しなければならない。
+属性が定義されない場合、属性は使われない。
+.PE
+.lp ""
+.\"O The pattern should be a regular expression.
+パターンは正規表現である必要がある。
+.lp ""
+.\"O Allowed colors are black, red, green, brown, blue, magenta, cyan, gray,
+.\"O orange, lightgreen, yellow, lightblue, lightmagenta, lightcyan, and white.
+指定できる色は:
+black, red, green, brown, blue, magenta, cyan, gray,
+orange, lightgreen, yellow, lightblue, lightmagenta, lightcyan, white。
+.lp ""
+.\"O Allowed attributes are none, bold, dim, underline, blink, and inverse.
+.\"O Note that the platform used may interpret the attributes any way it
+.\"O wants.
+指定できる属性は:
+none, bold, dim, underline, blink, inverse。
+なお、プラットフォームはこれを好きなように解釈するかも知れない。
+.lp ""
+.\"O Here's an example of menu colors using NetHack's internal
+.\"O pattern matching facility:
+次のものは NetHack の内部パターンマッチング機能を使ったメニュー色の
+例である。
+.sd
+.si
+.\"O MENUCOLOR="* blessed *"=green
+.\"O MENUCOLOR="* cursed *"=red
+.\"O MENUCOLOR="* cursed *(being worn)"=red&underline
+MENUCOLOR="* blessed *"=green
+MENUCOLOR="* cursed *"=red
+MENUCOLOR="* cursed *(being worn)"=red&underline
+.ei
+.ed
+.\"O specifies that any menu line with " blessed " contained
+.\"O in it will be shown in green color, lines with " cursed " will be
+.\"O shown in red, and lines with " cursed " followed by "(being worn)"
+.\"O on the same line will be shown in red color and underlined.
+.\"O You can have multiple MENUCOLOR entries in your config file,
+.\"O and the last MENUCOLOR-line in your config file that matches
+.\"O a menu line will be used for the line.
+このように指定すると、 " blessed " が含まれているメニュー行は緑色に、
+" cursed " の行は赤色に、" cursed " に引き続いて同じ行に "(being worn)" が
+ある場合は赤色かつ下線付きで表示する。
+設定ファイル中に複数の MENUCOLOR エントリを書くことができ、メニュー行に
+マッチングした中で設定ファイル中の最後の MENUCOLOR 行がその行に使われる。
+.pg
+.\"O Note that if you intend to have one or more color specifications match
+.\"O " uncursed ", you will probably want to turn the
+.\"O .op implicit_uncursed
+.\"O option off so that all items known to be uncursed are actually
+.\"O displayed with the ``uncursed'' description.
+" uncursed " にマッチングするような色指定を意図しているなら、
+呪われていないことが分かっている全ての持物について ``uncursed'' と
+表示するための
+.op implicit_uncursed
+オプションをおそらく設定した方がよいことに注意すること。
 .hn 2
 .\"O Configuring User Sounds
 音声の設定

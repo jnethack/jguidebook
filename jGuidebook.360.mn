@@ -4757,16 +4757,14 @@ MSGTYPE=hide "You displaced *."
 .\"O specifies that whenever a message "You feel hungry" is shown,
 .\"O the user is prompted with more-prompt, and a message matching
 .\"O "You displaced <something>." is not shown at all.
-specifies that whenever a message "You feel hungry" is shown,
-the user is prompted with more-prompt, and a message matching
-"You displaced <something>." is not shown at all.
-(TBT)
+このように指定すると、"You feel hungry" というメッセージが現れた時は常に
+more プロンプトが表示され、
+"You displaced (何か)." にマッチングするメッセージは一切表示されない。
 .lp ""
 .\"O The order of the defined MSGTYPE-lines is important; the last matching
 .\"O rule is used. Put the general case first, exceptions below them.
-The order of the defined MSGTYPE-lines is important; the last matching
-rule is used. Put the general case first, exceptions below them.
-(TBT)
+MSGTYPE 行の定義順は重要である; 最後にマッチングした規則が使われる。
+一般的な場合を先に書き、例外をその後に書くこと。
 .hn 2
 .\"O Configuring Menu Colors
 メニュー色の設定
@@ -4774,16 +4772,13 @@ rule is used. Put the general case first, exceptions below them.
 .\"O Some platforms allow you to define colors used in menu lines when the
 .\"O line matches a user-defined pattern. At this time the tty, win32tty and
 .\"O win32gui support this.
-Some platforms allow you to define colors used in menu lines when the
-line matches a user-defined pattern. At this time the tty, win32tty and
-win32gui support this.
-(TBT)
+一部のプラットフォームでは、メニュー行がユーザー定義パターンに
+マッチングしたとき、メニュー行に使う色を定義できる。
+現在のところ tty, win32tty, win32gui がこれに対応している。
 .pg
 .\"O In general, the config file entries to configure the menu color mappings
 .\"O look like this:
-In general, the config file entries to configure the menu color mappings
-look like this:
-(TBT)
+一般的にメニュー色割り当てを設定する設定ファイルエントリは次のような物である:
 .si
 .lp MENUCOLOR="pattern"=color&attribute
 .ei
@@ -4840,26 +4835,22 @@ MENUCOLOR="* cursed *(being worn)"=red&underline
 .\"O You can have multiple MENUCOLOR entries in your config file,
 .\"O and the last MENUCOLOR-line in your config file that matches
 .\"O a menu line will be used for the line.
-specifies that any menu line with " blessed " contained
-in it will be shown in green color, lines with " cursed " will be
-shown in red, and lines with " cursed " followed by "(being worn)"
-on the same line will be shown in red color and underlined.
-You can have multiple MENUCOLOR entries in your config file,
-and the last MENUCOLOR-line in your config file that matches
-a menu line will be used for the line.
-(TBT)
+このように指定すると、 " blessed " が含まれているメニュー行は緑色に、
+" cursed " の行は赤色に、" cursed " に引き続いて同じ行に "(being worn)" が
+ある場合は赤色かつ下線付きで表示する。
+設定ファイル中に複数の MENUCOLOR エントリを書くことができ、メニュー行に
+マッチングした中で設定ファイル中の最後の MENUCOLOR 行がその行に使われる。
 .pg
 .\"O Note that if you intend to have one or more color specifications match
 .\"O " uncursed ", you will probably want to turn the
 .\"O .op implicit_uncursed
 .\"O option off so that all items known to be uncursed are actually
 .\"O displayed with the ``uncursed'' description.
-Note that if you intend to have one or more color specifications match
-" uncursed ", you will probably want to turn the
+" uncursed " にマッチングするような色指定を意図しているなら、
+呪われていないことが分かっている全ての持物について ``uncursed'' と
+表示するための
 .op implicit_uncursed
-option off so that all items known to be uncursed are actually
-displayed with the ``uncursed'' description.
-(TBT)
+オプションをおそらく設定した方がよいことに注意すること。
 .hn 2
 .\"O Configuring User Sounds
 音声の設定
