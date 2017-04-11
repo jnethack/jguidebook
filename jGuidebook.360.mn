@@ -4686,6 +4686,9 @@ patterns.
 .\"O autopickup_exception="<*arrow"
 .\"O autopickup_exception=">*corpse"
 .\"O autopickup_exception=">* cursed*"
+autopickup_exception="<*arrow"
+autopickup_exception=">*corpse"
+autopickup_exception=">* cursed*"
 .ei
 .ed
 .\" (this paragraph would look better unindented but can't use .lp hack...)
