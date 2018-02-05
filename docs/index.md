@@ -1,1 +1,2 @@
-[guidebook](jguidebook.html)
+* [html](jguidebook.html)
+* [pdf](jguidebook.pdf)
