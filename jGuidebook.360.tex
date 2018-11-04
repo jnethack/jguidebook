@@ -1065,7 +1065,7 @@ Figure 2
 いくつかの物を下に置く。\\
 %%.lp ""
 %In answer to the question\\
-以下の質問
+次の質問\\
 %%.lp ""
 %``{\tt What kinds of things do you want to drop? [!\%= BUCXaium]}''\\
 ``{\tt What kinds of things do you want to drop?[!\%= BUCXaium]}''
@@ -1634,13 +1634,11 @@ are displayed.
 %If dungeon overview is chosen during end-of-game disclosure, every visited
 %level will be included regardless of annotations.
 洞窟について発見した情報を表示する。
-Any visited
-level (unless forgotten due to amnesia) with an annotation is included,
-and many things (altars, thrones, fountains, and so on; extra stairs
-leading to another dungeon branch) trigger an automatic annotation.
+(記憶喪失で忘れない限り)全ての訪問済みの階と注釈が含まれ、
+多くのもの(祭壇、玉座、泉など; 他の洞窟へ分岐する追加の階段)があると
+自動的に注釈が追加される。
 ゲーム終了時の情報公開中に洞窟の概要が選ばれた場合、注釈のあるなしに関わらず
 全ての訪れた階層が含まれる。
-(TBT)
 %%.lp
 \item[\tb{\#pray}]
 %Pray to the gods for help.\\
@@ -1656,12 +1654,11 @@ leading to another dungeon branch) trigger an automatic annotation.
 %option to disable it.
 前回の助けの後すぐに祈るのは良くない考えである。
 (ヒント: 洞窟に生きて入るということは助けを受けたものとして扱われる。
-You probably shouldn't start off a new game by praying right away.)
+新しいゲームを始めてすぐに祈るべきではないだろう。)
 このコマンドを間違って使うのは問題を引き起こすので、
 祈る前に意思を確認するようにするオプションがある。
 これは標準設定ではオンになっており、オフにするために
 {\it paranoid\verb+_+confirmation\/} をリセットすることが出来る。
-(TBT)
 %%.lp
 \item[\tb{\#quit}]
 %Quit the program without saving your game.\\
@@ -1770,75 +1767,99 @@ nethack にこれをmeta+キーと組み合わせるために
 %%.lp
 \item[\tb{M-a}]
 %{\tt\#adjust}
+{\tt\#adjust}
 %%.lp
 \item[\tb{M-A}]
 %{\tt\#annotate}
+{\tt\#annotate}
 %%.lp
 \item[\tb{M-c}]
 %{\tt\#chat}
+{\tt\#chat}
 %%.lp
 \item[\tb{M-C}]
 %{\tt\#conduct}
+{\tt\#conduct}
 %%.lp
 \item[\tb{M-d}]
 %{\tt\#dip}
+{\tt\#dip}
 %%.lp
 \item[\tb{M-e}]
 %{\tt\#enhance}
+{\tt\#enhance}
 %%.lp
 \item[\tb{M-f}]
 %{\tt\#force}
+{\tt\#force}
 %%.lp
 \item[\tb{M-i}]
 %{\tt\#invoke}
+{\tt\#invoke}
 %%.lp
 \item[\tb{M-j}]
 %{\tt\#jump}
+{\tt\#jump}
 %%.lp
 \item[\tb{M-l}]
 %{\tt\#loot}
+{\tt\#loot}
 %%.lp
 \item[\tb{M-m}]
 %{\tt\#monster}
+{\tt\#monster}
 %%.lp
 \item[\tb{M-n}]
 %{\tt\#name}
+{\tt\#name}
 %%.lp
 \item[\tb{M-o}]
 %{\tt\#offer}
+{\tt\#offer}
 %%.lp
 \item[\tb{M-O}]
 %{\tt\#overview}
+{\tt\#overview}
 %%.lp
 \item[\tb{M-p}]
 %{\tt\#pray}
+{\tt\#pray}
 %%.lp
 \item[\tb{M-q}]
 %{\tt\#quit}
+{\tt\#quit}
 %%.lp
 \item[\tb{M-r}]
 %{\tt\#rub}
+{\tt\#rub}
 %%.lp
 \item[\tb{M-R}]
 %{\tt\#ride}
+{\tt\#ride}
 %%.lp
 \item[\tb{M-s}]
 %{\tt\#sit}
+{\tt\#sit}
 %%.lp
 \item[\tb{M-t}]
 %{\tt\#turn}
+{\tt\#turn}
 %%.lp
 \item[\tb{M-T}]
 %{\tt\#tip}
+{\tt\#tip}
 %%.lp
 \item[\tb{M-u}]
 %{\tt\#untrap}
+{\tt\#untrap}
 %%.lp
 \item[\tb{M-v}]
 %{\tt\#version}
+{\tt\#version}
 %%.lp
 \item[\tb{M-w}]
 %{\tt\#wipe}
+{\tt\#wipe}
 \elist
 
 %%.pg
@@ -1871,7 +1892,8 @@ nethack にこれをmeta+キーと組み合わせるために
 %Name a monster, an individual object, or a type of object.  Same
 %as ``{\tt \#name}'' (or ``{\tt M-n}'') which is the same as the `{\tt C}'
 %command.
-Name an object or type of object.  Same as ``{\tt \#name}'' or ``{\tt M-n}''.
+物や物の種類に名前を付ける。
+``{\tt \#name}'' や ``{\tt M-n}'' と同じ。
 怪物、個々のオブジェクト、オブジェクトの種類に名前を付ける。
 `{\tt C}'コマンドと同じであるところの「{\tt \#name}」(あるいは「{\tt M-n}」)と同じ。
 (TBT)
@@ -2487,13 +2509,12 @@ half full versus glass half empty'' situation; make of that what you will.
 %{\it implicit\verb+_+uncursed\/}
 %option can be used to control this; toggle it off to have ``uncursed''
 %be displayed even when that can be deduced from other attributes.
-In some cases ``uncursed'' will be omitted as being redundant when
-enough other information is displayed.
-The
+場合によっては、その他の情報が十分に表示されている場合は
+「uncursed(呪われていない)」は省略される。
 {\it implicit\verb+_+uncursed\/}
-option can be used to control this; toggle it off to have ``uncursed''
-be displayed even when that can be deduced from other attributes.
-(TBT)
+オプションはこれを制御するのに使われる;
+これをオフにすると、例えその他の属性から推測される場合でも
+「uncursed(呪われていない)」を表示する。
 
 %%.hn 2
 %\subsection*{Weapons (`{\tt )}')}
@@ -2791,7 +2812,8 @@ swords や bows に対してはそうではない。
 %two weapons at once.  The primary is your wielded weapon and the
 %secondary is just an item in your inventory that's been designated
 %as alternate weapon.)
-Some characters can use two weapons at once.  Setting things up to
+一部のキャラクタは二つの武器を一度に使うことができる。
+Setting things up to
 do so can seem cumbersome but becomes second nature with use.
 To wield two weapons, you need to use the ``{\tt \#twoweapon}'' command.
 But first you need to have a weapon in each hand.
@@ -2833,25 +2855,24 @@ wield the primary.
 %So the sequence `{\tt w}', `{\tt w}' can be used to first wield the weapon you
 %intend to be secondary, and then wield the one you want as primary
 %which will push the first into secondary position.
-The whole process can be simplified via use of the
+処理全体は
 {\it pushweapon\/}
-option.  When it is enabled, then using 'w' to wield something
-causes the currently wielded weapon to become your alternate weapon.
-So the sequence 'w', 'w' can be used to first wield the weapon you
-intend to be secondary, and then wield the one you want as primary
-which will push the first into secondary position.
-(TBT)
+オプションを使うことで単純化できる。
+これを有効にして、何かを装備するのに 'w' を使うと、
+現在装備している武器を予備の武器にする。
+従って 'w', 'w' と続けると、最初に予備にしたい武器を装備し、
+それから優先したい武器を装備すると、最初の武器が予備の武器に押し出される。
 
 %%.pg
 %When in two-weapon combat mode, using the ``{\tt \#twoweapon}'' command
 %toggles back to single-weapon mode.  Throwing or dropping either of the
 %weapons or having one of them be stolen or destroyed will also make you
 %revert to single-weapon combat.
-When in two-weapon combat mode, using the ``{\tt \#twoweapon}'' command
-toggles back to single-weapon mode.  Throwing or dropping either of the
-weapons or having one of them be stolen or destroyed will also make you
-revert to single-weapon combat.
-(TBT)
+二刀流モードのとき、``{\tt \#twoweapon}'' コマンドを使うと、
+単一武器モードに戻る。
+どちらかの武器を投げたり落としたりするか、
+どちらかが盗まれたり壊されたりしても、
+単一武器モードに戻る。
 
 %%.hn 2
 %\subsection*{Armor (`{\tt [}')}
@@ -2876,44 +2897,28 @@ Armor class(AC)(防御値)はこの防御効果の尺度である。
 AD\&D に存在する鎧はいずれも {\it NetHack\/} においても同じ防御効果を示す。
 以下に(不完全ではあるが) 各種の鎧ごとに規定される防御値の一覧を示す。
 
-.TS S
-center;
-a n.
-%dragon scale mail	1
-%plate mail	3
-%crystal plate mail	3
-%bronze plate mail	4
-%splint mail	4
-%banded mail	4
-%dwarvish mithril-coat	4
-%elven mithril-coat	5
-%chain mail	5
-%orcish chain mail	6
-%scale mail	6
-%studded leather armor	7
-%ring mail	7
-%orcish ring mail	8
-%leather armor	8
-%leather jacket	9
-%no armor	10
-dragon scale mail(ドラゴンの鱗鎧)	1
-plate mail(鋼鉄の鎧)	3
-crystal plate mail(水晶の鎧)	3
-bronze plate mail(青銅の鎧)	4
-splint mail(鉄片の鎧)	4
-banded mail(帯金の鎧)	4
-dwarvish mithril-coat(ドワーフのミスリル服)	4
-elven mithril-coat(エルフのミスリル服)	5
-chain mail(鎖かたびら)	5
-orcish chain mail(オークの鎖かたびら)	6
-scale mail(鱗の鎧)	6
-studded leather armor(鋲付き皮鎧)	7
-ring mail(鉄環の鎧)	7
-orcish ring mail(オークの鉄環の鎧)	8
-leather armor(皮鎧)	8
-leather jacket(皮ジャケット)	9
-no armor(鎧なし)	10
-.TE
+\begin{center}
+\begin{tabular}{lllll}
+%dragon scale mail      & 1 & \makebox[20mm]{}  & plate mail            & 3\\
+%crystal plate mail     & 3 &                   & bronze plate mail     & 4\\
+%splint mail            & 4 &                   & banded mail           & 4\\
+%dwarvish mithril-coat  & 4 &                   & elven mithril-coat    & 5\\
+%chain mail             & 5 &                   & orcish chain mail     & 6\\
+%scale mail             & 6 &                   & studded leather armor & 7\\
+%ring mail              & 7 &                   & orcish ring mail      & 8\\
+%leather armor          & 8 &                   & leather jacket        & 9\\
+%no armor               & 10
+dragon scale mail(ドラゴンの鱗鎧) & 1 & & plate mail(鋼鉄の鎧) & 3\\
+crystal plate mail(水晶の鎧) & 3 & & bronze plate mail(青銅の鎧) & 4\\
+splint mail(鉄片の鎧) & 4 & & banded mail(帯金の鎧) & 4\\
+dwarvish mithril-coat(ドワーフのミスリル服) & 4 & & elven mithril-coat(エルフのミスリル服) & 5\\
+chain mail(鎖かたびら) & 5 & & orcish chain mail(オークの鎖かたびら) & 6\\
+scale mail(鱗の鎧) & 6 & & studded leather armor(鋲付き皮鎧) & 7\\
+ring mail(鉄環の鎧) & 7 & & orcish ring mail(オークの鉄環の鎧) & 8\\
+leather armor(皮鎧) & 8 & & leather jacket(皮ジャケット) & 9\\
+no armor(鎧なし) & 10
+\end{tabular}
+\end{center}
 
 %%.pg
 %\nd You can also wear other pieces of armor (ex.\ helmets, boots,
@@ -3925,15 +3930,15 @@ no armor(鎧なし)	10
 {\tt -} --- "確認なしで非表示とする。"
 %%.ei
 %%.ed
+
 %Omitted categories are implicitly added with `{\tt n}' prefix.
 %Specified categories with omitted prefix implicitly use `{\tt +}' prefix.
 %Order of the disclosure categories does not matter, program display for
 %end-of-game disclosure follows a set sequence.
-Omitted categories are implicitly added with `{\tt n}' prefix.
-Specified categories with omitted prefix implicitly use `{\tt +}' prefix.
-Order of the disclosure categories does not matter, program display for
-end-of-game disclosure follows a set sequence.
-(TBT)
+省略されたカテゴリには暗黙に `{\tt n}' 接頭辞が追加される。
+接頭辞が省略されて指定されたカテゴリには暗黙に `{\tt +}' 接頭辞が使われる。
+表示カテゴリの順序は関係なく、プログラムは設定された順序に従って
+ゲーム終了時の表示を行う。
 %%.lp ""
 %(ex.\ ``{\tt disclose:yi na +v -g o}'')
 %The example sets
@@ -4053,12 +4058,11 @@ melons (メロン) は {\it NetHack\/} にはもう存在しているので、�
 %In text windowing, text highlighting or inverse video is often used;
 %with tiles, generally displays a small plus-symbol beside the object
 %on the top of the pile.
-Visually distinguish piles of objects from individual objects (default off).
-The behavior of this option depends on the type of windowing you use.
-In text windowing, text highlighting or inverse video is often used;
-with tiles, generally displays a small plus-symbol beside the object
-on the top of the pile.
-(TBT)
+オブジェクトの山と個々のオブジェクトで表示を変える(標準設定はオフ)。
+このオプションの振る舞いは使用するウィンドウの種類に依存する。
+テキスト表示の場合、ハイライトや反転がしばしば使われる;
+タイルの場合、一般的には山の一番上のオブジェクトの横に小さいプラスマークが
+表示される。
 %%.lp
 \item[\ib{horsename}]
 %Name your starting horse (ex.\ ``{\tt horsename:Trigger}'').
@@ -4311,26 +4315,27 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 %Valid settings are:
 移動のために文字のかわりに数字キーを使用する(標準設定は 0 またはオフ)。
 設定可能な値は:
-.PS -1
-.PL "\ 0"
-%move by letters; `{\tt yuhjklbn}'
-文字で移動する; `{\tt yuhjklbn}'
-.PL "\ 1"
-%move by numbers; digit `{\tt 5}' acts as `{\tt G}' movement prefix
-数字で移動する; 数字 `{\tt 5}' は `{\tt G}' 移動の接頭辞として振る舞う
-.PL "\ 2"
-%like 1 but `{\tt 5}' works as `{\tt g}' prefix instead of as `{\tt G}'
-1 と同様だが 数字 `{\tt 5}' は `{\tt G}' ではなく `{\tt g}' 移動の接頭辞として振る舞う
-.PL "\ 3"
-%by numbers using phone key layout; 123 above, 789 below
-電話のキー配置の数字で移動する; 123 は上、789 は下
-.PL "\ 4"
-%combines 3 with 2; phone layout plus MSDOS compatibility
-3 と 2 の組み合わせ; 電話配置と MSDOS 互換
-.PL "-1"
-%by letters but use `{\tt z}' to go northwest, `{\tt y}' to zap wands
-文字で移動するが `{\tt z}' で北西に移動し、`{\tt y}' で杖を振る
-.PE
+
+%.sd
+%.si
+\newlength{\mwidth}
+\settowidth{\mwidth}{\tt -0}
+\newcommand{\numbox}[1]{\makebox[\mwidth][r]{{\tt #1}}}
+%\numbox{0} --- move by letters; `{\tt yuhjklbn}'\\
+\numbox{0} --- 文字で移動する; `{\tt yuhjklbn}'\\
+%\numbox{1} --- move by numbers; digit `{\tt 5}' acts as `{\tt G}' movement prefix\\
+\numbox{1} --- 数字で移動する; 数字 `{\tt 5}' は `{\tt G}' 移動の接頭辞として振る舞う\\
+%\numbox{2} --- like {\tt 1} but `{\tt 5}' works as `{\tt g}' prefix instead of as `{\tt G}'\\
+\numbox{2} --- {\tt 1} と同様だが数字 `{\tt 5}' は `{\tt G}' ではなく `{\tt g}' 移動の接頭辞として振る舞う\\
+%\numbox{3} --- by numbers using phone key layout; {\tt 123} above, {\tt 789} below\\
+\numbox{3} --- 電話のキー配置の数字で移動する; {\tt 123} は上、{\tt 789} は下\\
+%\numbox{4} --- combines {\tt 3} with {\tt 2}; phone layout plus MSDOS compatibility\\
+\numbox{4} --- {\tt 3} と {\tt 2} の組み合わせ; 電話配置と MSDOS 互換\\
+%\numbox{-1} --- by letters but use `{\tt z}' to go northwest, `{\tt y}' to zap wands
+\numbox{-1} --- 文字で移動するが `{\tt z}' で北西に移動し、`{\tt y}' で杖を振る
+%.ei
+%.ed
+
 %For backward compatibility, omitting a value is the same as specifying {\tt 1}
 %and negating
 %{\it number\verb+_+pad\/}
@@ -4343,10 +4348,8 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 %When moving by numbers, to enter a count prefix for those commands
 %which accept one (such as ``{\tt 12s}'' to search twelve times), precede it
 %with the letter `{\tt n}' (``{\tt n12s}'').
-For backward compatibility, omitting a value is the same as specifying {\tt 1}
-and negating
-{\it number\verb+_+pad\/}
-is the same as specifying {\tt 0}.
+後方互換性のために、値を省略するのは {\tt 1} と同じで、
+否定する {\it number\verb+_+pad\/} と {\tt 0} を指定するのと同じである。
 (Settings {\tt 2} and {\tt 4} are for compatibility with MSDOS or old PC Hack;
 in addition to the different behavior for `{\tt 5}', `{\tt Alt-5}' acts as `{\tt G}'
 and `{\tt Alt-0}' acts as `{\tt I}'.
@@ -4371,7 +4374,8 @@ with the letter `{\tt n}' (``{\tt n12s}'').
 %A space separated list of specific situations where alternate
 %prompting is desired.  The default is ``{\tt paranoid_confirmation:pray}''.
 A space separated list of specific situations where alternate
-prompting is desired.  The default is ``{\tt paranoid_confirmation:pray}''.
+prompting is desired.
+標準設定は ``{\tt paranoid_confirmation:pray}''。
 (TBT)
 \newlength{\pcwidth}
 \settowidth{\pcwidth}{\tt Confirm}
@@ -4423,11 +4427,10 @@ useful in normal play; applies to explore mode);
 %it enabled while setting any of the others, include it in the list,
 %such as ``{\tt paranoid_confirmation:attack pray Remove}''.
 標準設定では、pray 選択がオン、それ以外はオフになっている。
-To disable it without setting
-any of the other choices, use ``{\it paranoid\verb+_+confirmation:none}''.  To keep
-it enabled while setting any of the others, include it in the list,
-such as ``{\tt paranoid_confirmation:attack pray Remove}''.
-(TBT)
+その他の選択を設定することなくこれをオフにするには、
+``{\it paranoid\verb+_+confirmation:none}'' を使う。
+その他を設定しながらこれをオンのままにするには、
+``{\tt paranoid_confirmation:attack pray Remove}'' のように一覧に含める。
 %%.lp
 \item[\ib{perm\verb+_+invent}]
 %If true, always display your current inventory in a window.  This only
@@ -4472,12 +4475,15 @@ such as ``{\tt paranoid_confirmation:attack pray Remove}''.
 %{\it pickup\verb+_+types\/}
 %or
 %match an autopickup exception.  Default is on.  Persistent.
-If this option is on and
+このオプションがオンで
 {\it autopickup\/}
-is also on, try to pick up things that you threw, even if they aren't in
+もオンの場合、
+例え
 {\it pickup\verb+_+types\/}
-or match an autopickup exception.  Default is on.  Persistent.
-(TBT)
+にないか自動拾い例外にマッチングしても、
+自分が投げた物は拾おうとする。
+デフォルトはオン。
+永続する。
 %%.lp
 \item[\ib{pickup\verb+_+types}]
 %Specify the object types to be picked up when
@@ -4488,14 +4494,6 @@ or match an autopickup exception.  Default is on.  Persistent.
 %{\it autopickup\/}
 %behavior.
 %Persistent.
-Specify the object types to be picked up when
-{\it autopickup\/}
-is on.  Default is all types.  You can use 
-{\it autopickup\verb+_+exception\/}
-configuration file lines to further refine
-{\it autopickup\/}
-behavior.  Persistent.
-(TBT)
 {\it autopickup\/}
 オプションが設定されている時に拾う物の種類を指定する(標準設定は全ての種類)。
 {\it autopickup\verb+_+exception\/}
@@ -4546,7 +4544,8 @@ Default is normal play.
 既に武器を持っている時に `{\tt w}' (wield: 武器を持つ) コマンドを使ったとき、
 既に持っていた武器を予備の武器に設定する(標準設定はオフ)。
 Likewise for the `{\tt a}' (apply) command if it causes the applied item to
-become wielded.  Persistent.
+become wielded.  
+永続する。
 (TBT)
 %%.lp
 \item[\ib{race}]
@@ -4558,7 +4557,7 @@ become wielded.  Persistent.
 値に `!' または ``{\tt no}'' を前置すると、ランダムに選択した種族からその種族を
 除外できる。
 `{\tt O}' コマンドで設定することはできない。
-永続する．
+永続する。
 %%.lp
 \item[\ib{rest\verb+_+on\verb+_+space}]
 %Make the space bar a synonym for the `{\tt .}' (rest) command (default off).
@@ -4611,20 +4610,20 @@ effect on reading an existing save file.
 ときにどれくらいの頻度で地図を更新するかを制御する。
 %The possible values are:
 設定可能な値は以下の通り:
-.PS teleport
-.PL teleport
-%update the map after movement has finished;
-移動が完了してから地図を更新する。
-.PL run
-%update the map after every seven or so steps;
- 7 歩ぐらい毎に地図を更新する。
-.PL walk
-%update the map after each step;
-1 歩毎に地図を更新する。
-.PL crawl
-%like walk, but pause briefly after each step.
-``{\tt walk}'' と同様だが、一歩毎にしばらく停止する。
-.PE
+
+%%.sd
+%%.si
+%{\tt teleport} --- update the map after movement has finished;\\
+{\tt teleport} --- 移動が完了してから地図を更新する;\\
+%{\tt run} --- update the map after every seven or so steps;\\
+{\tt run} --- 7 歩ぐらい毎に地図を更新する;\\
+%{\tt walk} --- update the map after each step;\\
+{\tt walk} --- 1 歩毎に地図を更新する;\\
+%{\tt crawl} --- like {\it walk\/}, but pause briefly after each step.
+{\tt crawl} --- {\it walk\/} と同様だが、一歩毎にしばらく停止する。
+%%.ei
+%%.ed
+
 %This option only affects the game's screen display, not the actual
 %results of moving.  The default is `{\tt run}'; versions prior to 3.4.1 
 %used `{\tt teleport}' only.  Whether or not the effect is noticeable will
@@ -4685,6 +4684,7 @@ effect on reading an existing save file.
 
 %The possible values are:
 可能な値は:
+
 %%.sd
 %%.si
 %{\tt full} --- always sort the lists;\\
@@ -5163,12 +5163,11 @@ NO\verb+_+TERMS を使用しているPCシステムのカラーパレットを�
 %there is no regular expression library. While this is not true of any modern
 %platform, if your NetHack was built this way, patterns are instead glob
 %patterns.
-Regular expressions are normally POSIX extended regular expressions. It is
-possible to compile NetHack without regular expression support on a platform where
-there is no regular expression library. While this is not true of any modern
-platform, if your NetHack was built this way, patterns are instead glob
-patterns.
-(TBT)
+正規表現は通常 POSIX 拡張正規表現である。
+正規表現ライブラリがないプラットフォームでは正規表現対応なしで
+NetHack をコンパイルすることも可能である。
+これは最近のプラットフォームでは真ではないが、この方法で NetHack が
+ビルドされると、パターンは代わりにグロブパターンが使われる。
 
 %%.hn 2
 %\subsection*{Configuring Autopickup Exceptions}
@@ -5208,7 +5207,7 @@ patterns.
 %%.si
 %{\tt <} --- always pickup an object that matches rest of pattern;\\
 %{\tt >} --- never pickup an object that matches rest of pattern.
-{\tt <} --- 以下のパターンに一致する物体は常に拾う。
+{\tt <} --- 以下のパターンに一致する物体は常に拾う。\\
 {\tt >} --- 以下のパターンに一致する物体は決して拾わない。
 %%.ei
 %%.ed
@@ -5272,9 +5271,9 @@ patterns.
 %{\tt hide}  --- never show the message.\\
 %{\tt stop}  --- wait for user with more-prompt.\\
 %{\tt norep} --- show the message once, but not again if no other message is shown in between.
-{\tt show}  --- 通常通りメッセージを表示する。
-{\tt hide}  --- メッセージを表示しない。
-{\tt stop}  --- more プロンプトでユーザーを待つ。
+{\tt show}  --- 通常通りメッセージを表示する。\\
+{\tt hide}  --- メッセージを表示しない。\\
+{\tt stop}  --- more プロンプトでユーザーを待つ。\\
 {\tt norep} --- 1 度目はメッセージを表示するが、他のメッセージが来るまで再びは表示しない。
 %%.ei
 %%.ed
@@ -5364,7 +5363,7 @@ MSGTYPE 行の定義順は重要である; 最後にマッチングした規則�
 {\it black}, {\it red}, {\it green}, {\it brown},
 {\it blue}, {\it magenta}, {\it cyan}, {\it gray}, {\it orange},
 {\it lightgreen}, {\it yellow}, {\it lightblue}, {\it lightmagenta},
-{\it lightcyan}, {\it white}
+{\it lightcyan}, {\it white}。
 
 %%.lp ""
 %Allowed attributes are {\it none}, {\it bold}, {\it dim}, {\it underline},
@@ -5373,7 +5372,7 @@ MSGTYPE 行の定義順は重要である; 最後にマッチングした規則�
 %wants.
 指定できる属性は:
 {\it none}, {\it bold}, {\it dim}, {\it underline},
-{\it blink}, {\it inverse}
+{\it blink}, {\it inverse}。
 なお、プラットフォームはこれを好きなように解釈するかも知れない。
 
 %%.lp ""
@@ -5524,7 +5523,7 @@ experience & condition\\
 {\it black}, {\it red}, {\it green}, {\it brown},
 {\it blue}, {\it magenta}, {\it cyan}, {\it gray}, {\it orange},
 {\it lightgreen}, {\it yellow}, {\it lightblue}, {\it lightmagenta},
-{\it lightcyan}, {\it white}
+{\it lightcyan}, {\it white}。
 
 %%.lp ""
 %Allowed attributes are bold, inverse, normal.
@@ -5777,7 +5776,6 @@ Default  & Symbol Name                & Description\\
 %\verb@Y@ & S\verb+_+yeti                    &	(apelike creature)\\
 %\verb@Z@ & S\verb+_+zombie                  &	(zombie)\\
 %\verb@z@ & S\verb+_+zruty                   &	(zruty)
-
 \verb@ @ & S\verb+_+air                     &	(air)\\
 \verb@_@ & S\verb+_+altar                   &	(altar)\\
 \verb@"@ & S\verb+_+amulet                  &	(amulet)\\
@@ -6053,22 +6051,20 @@ Rogue 風コマンドを使うこと。
 %If NetHack is compiled with the SYSCF option, a system administrator
 %should set up a global configuration; this is a file in the 
 %same format as the traditional per-user configuration file (see above).
-If NetHack is compiled with the SYSCF option, a system administrator
-should set up a global configuration; this is a file in the 
-same format as the traditional per-user configuration file (see above).
-(TBT)
+NetHack が SYSCF オプション付きでコンパイルされている場合、システム管理者は
+グローバル設定を設定するべきである; これは(前述した)伝統的なユーザー毎の
+設定ファイルと同じ形式のファイルである。
 
 %This file should be named sysconf and placed in the same directory as
 %the other NetHack support files.
 %The options recognized in this file are listed below. Any option not
 %set uses a compiled-in default (which may not be appropriate for your
 %system).
-This file should be named sysconf and placed in the same directory as
-the other NetHack support files.
-The options recognized in this file are listed below. Any option not
-set uses a compiled-in default (which may not be appropriate for your
-system).
-(TBT)
+このファイルは sysconf という名前で、その他の NetHack 補助ファイルと
+同じディレクトリに置かれる。
+このファイルで認識されるオプションは以下の通りである。
+設定されてなかったオプションは(あなたのシステムでは適切ではないかもしれない)
+コンパイル時のデフォルトが使われる。
 
 %%.pg
 \blist{}
@@ -6248,16 +6244,16 @@ score ファイル上でプレイヤーを認識するのに、0 ではユーザ
 %command-line switch or with the
 %{\it playmode:debug\/}
 %option.
-Debug mode, also known as wizard mode, is undocumented aside from this
-brief description.  It is intended for tracking down problems within the
-program rather than to provide god-like powers to your character, and
-players who attempt debugging are expected to figure out how to use it
-themselves.  It is initiated by starting the game with the
+ウィザードモードとも呼ばれるデバッグモードは、この概説の他には
+文書化されていない。
+これはキャラクターに神のような力を与えるためではなく、プログラムの問題を
+調べることを意図したもので、デバッグを試みるプレイヤーは
+これをどのように使うかが分かることを想定している。
+これは
 {\tt -D}
-command-line switch or with the
+コマンドラインスイッチか
 {\it playmode:debug\/}
-option.
-(TBT)
+オプションでゲームを始めることで開始される。
 
 %%.pg
 %For some systems, the player must be logged in
@@ -6267,14 +6263,15 @@ option.
 %And on any system, the program might have been configured to omit debug
 %mode entirely.  Attempting to start a game in debug mode when not allowed
 %or not available will result in falling back to explore mode instead.
-For some systems, the player must be logged in
-under a particular user name to be allowed to use debug mode; for others,
-the hero must be given a particular character name (but may be any role;
-there's no connection between ``wizard mode'' and the {\it Wizard\/} role).
-And on any system, the program might have been configured to omit debug
-mode entirely.  Attempting to start a game in debug mode when not allowed
-or not available will result in falling back to explore mode instead.
-(TBT)
+システムによっては、プレイヤーは、デバッグモードを使うことを許されている
+特定のユーザー名でログインしなければならない; それ以外では、
+キャラクターは特定のキャラクター名を使わなければならない
+(しかし職業はどれでもよい; ``ウィザード'' という名前と
+職業の {\it Wizard\/} は何の関係もない)。
+また、どのようなシステムでも、プログラムはデバッグモードそのものを
+省略して設定されているかもしれない。
+デバッグモードを許されていなかったり有効でない場合にデバッグモードを
+使おうとすると、代わりに探検モードにフォールバックする。
 
 
 %%.hn
