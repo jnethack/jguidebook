@@ -232,7 +232,7 @@ border: solid 1px #000000; border-collapse: collapse;
 
                 ------
                 |....|    ----------
-                |.<..|####...@...$.|
+                |.&lt;..|####...@...$.|
                 |....-#   |...B....+
                 |....|    |.d......|
                 ------    -------|--
@@ -376,10 +376,10 @@ Figure 1
 通路、鉄の棒、木、あるいは台所の流し台(流し台がインプリメントされているとき)
 または跳ね橋
 </dd>
-<dt>></dt><dd>
+<dt>&gt;</dt><dd>
 上り階段:上の階への通路。
 </dd>
-<dt><</dt><dd>
+<dt>&lt;</dt><dd>
 下り階段:下の階への通路。
 </dd>
 <dt>+</dt><dd>
@@ -521,13 +521,13 @@ Figure 1
 場所でなく名前を指定した場合は、
 常にその名前に対する追加情報が表示される。
 </dd>
-<dt>&</dt><dd>
+<dt>&amp;</dt><dd>
 コマンドの動作を示す。
 </dd>
-<dt><</dt><dd>
+<dt>&lt;</dt><dd>
 上の階へ行く(階段やはしごにいるとき)。
 </dd>
-<dt>></dt><dd>
+<dt>&gt;</dt><dd>
 下の階へ行く(階段やはしごにいるとき)。
 </dd>
 <dt>[yuhjklbn]</dt><dd>
@@ -566,7 +566,7 @@ Figure 2
 <dt>g[yuhjklbn]</dt><dd>
 プレフィックス: 何かが見つかるまで移動する。
 </dd>
-<dt>G[yuhjklbn] or <CONTROL->[yuhjklbn]</dt><dd>
+<dt>G[yuhjklbn] or &lt;CONTROL-&gt;[yuhjklbn]</dt><dd>
 プレフィックス: 'g' と同じ。ただし通路の分岐点では止まらない。
 </dd>
 <dt>_</dt><dd>
@@ -1168,10 +1168,10 @@ nethack にこれをmeta+キーと組み合わせるために
 行き詰まってしまった冒険者のためにいくつかの助け舟が用意されているが、
 これらは運を低下させてしまう。
 </p>
-<h2>階段 (`<', `>')</h2>
+<h2>階段 (`&lt;', `&gt;')</h2>
 <p>
 一般的に洞窟の各階には、前の階への上り階段('&lt;')と、
-次の階への下り階段('>')がひとつずつある。
+次の階への下り階段('&gt;')がひとつずつある。
 しかし、例外もある。
 例えば、洞窟の比較的浅い階であなたは二つの下り階段がある階を発見するだろう。
 ひとつは洞窟の続きであり、
@@ -1197,7 +1197,7 @@ nethack にこれをmeta+キーと組み合わせるために
 こうなった場合、ペットやその他の怪物が階段の上に現れ、
 あなたはそのそばに現れる。
 </p>
-<h2>はしご (`<', `>')</h2>
+<h2>はしご (`&lt;', `&gt;')</h2>
 <p>
 はしごは階段と同じ役目であり、階を繋ぐこの二つの種類は
 ゲーム中ほとんど区別ができない。
@@ -1502,11 +1502,11 @@ crossbow bolt(クロスボウ用の太矢)を発射するためのものであ�
 その他の身につけているものを外すのと同時に現在使っている武器を外すことができる。
 </p>
 <p>
-AD&D をプレイしたことのある読者はお気付きだろうが、AD&D に登場した武器は
+AD&amp;D をプレイしたことのある読者はお気付きだろうが、AD&amp;D に登場した武器は
 <span class='italic'>NetHack</span> においても怪物にだいたい同じダメージを与える。
 あまり良く知られていない武器( %
 <span class='italic'>aklys</span>(アキリス), <span class='italic'>lucern hammer</span>(ルッツェンハンマー),
-<span class='italic'>bec-de-corbin</span>(ベッグ・デ・コルビン) など)のいくつかは AD&D の
+<span class='italic'>bec-de-corbin</span>(ベッグ・デ・コルビン) など)のいくつかは AD&amp;D の
 追加ルールである <span class='italic'>Unearthed Arcana</span> の付録で詳しく説明されている。
 </p>
 <p>
@@ -1653,9 +1653,9 @@ wield the primary.
 そういったものからの攻撃から我が身を守るには防具が必要である。
 防具の中には他の種類の防具よりも防御効果に優れた物がある。
 Armor class(AC)(防御値)はこの防御効果の尺度である。
-防御値 (AC)は AD&D での場合と同じように評価される。
+防御値 (AC)は AD&amp;D での場合と同じように評価される。
 10 が防具なしの状態と等しく、数値が小さいほど優れた防具であることを示す。
-AD&D に存在する鎧はいずれも <span class='italic'>NetHack</span> においても同じ防御効果を示す。
+AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> においても同じ防御効果を示す。
 以下に(不完全ではあるが) 各種の鎧ごとに規定される防御値の一覧を示す。
 </p>
 <div style='align:center'>
@@ -2395,7 +2395,7 @@ Amiga, Gem, tty で実装されている。(標準設定は '|')
 </dd>
 <dt>menu_next_page</dt><dd>
 メニューの次のページへ移動するキー。
-Amiga, Gem, tty で実装されている。(標準設定は '>')
+Amiga, Gem, tty で実装されている。(標準設定は '&gt;')
 </dd>
 <dt>menu_objsyms</dt><dd>
 物の種類の記号がメニューのショートカットキーとして動作する場所では、
@@ -2475,7 +2475,7 @@ with the letter '<span class='tt'>n</span>' (''<span class='tt'>n12s</span>'').
 </dd>
 <dt>packorder</dt><dd>
 物の種類を表示するときの順番を指定する(標準設定は
-''")[%?+!=/(*'0_'').
+''amp;")[%?+!=/(*'0_amp;'').
 このオプションにはいろいろな物の種類を表す文字の列を設定する。
 設定されなかった種類は以前の順序で最後に表示される。
 </dd>
@@ -3005,7 +3005,7 @@ NetHack をコンパイルすることも可能である。
 さらに、パターンの先頭に置いた場合に特別扱いされる文字もある。
 <br/>
 <span class='tt'>&lt;</span> &mdash; 以下のパターンに一致する物体は常に拾う。<br/>
-<span class='tt'>></span> &mdash; 以下のパターンに一致する物体は決して拾わない。
+<span class='tt'>&gt;</span> &mdash; 以下のパターンに一致する物体は決して拾わない。
 <br/>
 「決して拾わない」ルールは「常に拾う」ルールに優先する。
 <br/>
@@ -3016,9 +3016,9 @@ NetHack をコンパイルすることも可能である。
 <p>
 以下は例である:
 <pre>
-    autopickup_exception="<*arrow"
-    autopickup_exception=">*corpse"
-    autopickup_exception=">* cursed*"
+    autopickup_exception="&lt;*arrow"
+    autopickup_exception="&gt;*corpse"
+    autopickup_exception="&gt;* cursed*"
 </pre>
 </p>
 <p>
@@ -3076,7 +3076,7 @@ MSGTYPE 行の定義順は重要である; 最後にマッチングした規則�
 <p>
 一般的にメニュー色割り当てを設定する設定ファイルエントリは次のような物である:
 <pre>
-    MENUCOLOR="pattern"=color&attribute
+    MENUCOLOR="pattern"=color&amp;attribute
 </pre>
 </p>
 <dl>
@@ -3115,7 +3115,7 @@ MSGTYPE 行の定義順は重要である; 最後にマッチングした規則�
 <pre>
     MENUCOLOR="* blessed *"=green
     MENUCOLOR="* cursed *"=red
-    MENUCOLOR="* cursed *(being worn)"=red&underline
+    MENUCOLOR="* cursed *(being worn)"=red&amp;underline
 </pre>
 <p>
 このように指定すると、 " blessed " が含まれているメニュー行は緑色に、
@@ -3272,10 +3272,10 @@ character.
 <tr><td>#</td><td> S_corr                   </td><td>	(corridor)</td></tr>
 <tr><td>-</td><td> S_crwall                 </td><td>	(wall)</td></tr>
 <tr><td>^</td><td> S_dart_trap             </td><td>	(dart trap)</td></tr>
-<tr><td>&</td><td> S_demon                  </td><td>	(major demon)</td></tr>
+<tr><td>&amp;</td><td> S_demon                  </td><td>	(major demon)</td></tr>
 <tr><td>*</td><td> S_digbeam                </td><td>	(dig beam)</td></tr>
-<tr><td>></td><td> S_dnladder               </td><td>	(ladder down)</td></tr>
-<tr><td>></td><td> S_dnstair                </td><td>	(staircase down)</td></tr>
+<tr><td>&gt;</td><td> S_dnladder               </td><td>	(ladder down)</td></tr>
+<tr><td>&gt;</td><td> S_dnstair                </td><td>	(staircase down)</td></tr>
 <tr><td>d</td><td> S_dog                    </td><td>	(dog or other canine)</td></tr>
 <tr><td>D</td><td> S_dragon                 </td><td>	(dragon)</td></tr>
 <tr><td>;</td><td> S_eel                    </td><td>	(sea monster)</td></tr>
@@ -3391,8 +3391,8 @@ character.
 <tr><td>-</td><td> S_tuwall                 </td><td>	(wall)</td></tr>
 <tr><td>U</td><td> S_umber                  </td><td>	(umber hulk)</td></tr>
 <tr><td>u</td><td> S_unicorn                </td><td>	(unicorn or horse)</td></tr>
-<tr><td><</td><td> S_upladder               </td><td>	(ladder up)</td></tr>
-<tr><td><</td><td> S_upstair                </td><td>	(staircase up)</td></tr>
+<tr><td>&lt;</td><td> S_upladder               </td><td>	(ladder up)</td></tr>
+<tr><td>&lt;</td><td> S_upstair                </td><td>	(staircase up)</td></tr>
 <tr><td>V</td><td> S_vampire                </td><td>	(vampire)</td></tr>
 <tr><td>|</td><td> S_vbeam                  </td><td>	(wall)</td></tr>
 <tr><td>#</td><td> S_vcdbridge              </td><td>	(vertical raised drawbridge)</td></tr>

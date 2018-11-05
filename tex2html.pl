@@ -98,6 +98,9 @@ EOF
                 shift @mode;
                 next;
             }
+            s@&@&amp;@g;
+            s@<@&lt;@g;
+            s@>@&gt;@g;
             print $f "$_\n";
             next;
         }
@@ -267,7 +270,9 @@ EOF
             next;
         }
 
+        s@&@&amp;@g;
         s@<@&lt;@g;
+        s@>@&gt;@g;
 
         s@^\\numbox\{([-0-9]+)\}@<span class='tt'>$1</span>@g;
 
@@ -318,6 +323,11 @@ sub putpop {
 
 sub strip {
     $_ = shift;
+
+    s@&@&amp;@g;
+    s@<@&lt;@g;
+    s@>@&gt;@g;
+
     s@\\tb\{([^}]+)\}@$1@g;
     s@\\bb\{([^}]+)\}@$1@g;
     s@\\ib\{([^}]+)\}@$1@g;
