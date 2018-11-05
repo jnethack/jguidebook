@@ -2,9 +2,9 @@ use strict;
 use warnings;
 
 my (@src);
-my $mode = 'init';
 my %ts;
 my @close = ();
+my @mode = ('init', '');
 
 {
     open my $f, '<:encoding(UTF-8)', 'jGuidebook.360.tex';
@@ -44,17 +44,17 @@ EOF
     while($#src >= 0){
         $_ = shift @src;
 
-        if($mode eq 'init'){
+        if($mode[0] eq 'init'){
             if(/^\\begin\{document\}/){
-                $mode = '';
+                shift @mode;
             }
             next;
         }
 
-        if($mode eq 'tabular'){
+        if($mode[0] eq 'tabular'){
             if(/^\\end\{tabular\}/){
                 print $f "</table>\n";
-                $mode = '';
+                shift @mode;
                 next;
             }
             my (@l) = split /&/;
@@ -66,7 +66,7 @@ EOF
             next;
         }
 
-        if($mode eq 'table'){
+        if($mode[0] eq 'table'){
             if(/^\\caption\[\]\{(.+)\}/){
                 my $text = $1;
                 printf $f "<caption>%s</caption>\n", $text;
@@ -74,7 +74,7 @@ EOF
             }
             if(/^\\end\{tabular\}/ || /^\\end\{longtable\}/){
                 print $f "</table>\n";
-                $mode = '';
+                shift @mode;
                 next;
             }
             if(/^\\hline/){
@@ -92,10 +92,10 @@ EOF
             next;
         }
 
-        if($mode eq 'pre'){
+        if($mode[0] eq 'pre'){
             if(/^\\end\{verbatim\}/){
                 print $f "</pre>\n";
-                $mode = '';
+                shift @mode;
                 next;
             }
             print $f "$_\n";
@@ -103,11 +103,11 @@ EOF
         }
 
         if($_ eq ''){
-            if($mode eq 'p'){
+            if($mode[0] eq 'p'){
                 print $f "</p>\n";
-                $mode = '';
+                shift @mode;
             }
-            if($mode eq 'dl'){
+            if($mode[0] eq 'dl'){
                 print $f "<br/>\n";
             }
             next;
@@ -157,7 +157,7 @@ EOF
             $text =~ s/\"//g;
             $text =~ s/\~//g;
             putpop($f);
-            if($mode eq 'itemize'){
+            if($mode[0] eq 'itemize'){
                 print $f "<li>\n";
                 push @close, '</li>';
             } else {
@@ -167,50 +167,51 @@ EOF
             next;
         }
         if(/^\\blist/){
-            $mode = 'dl';
+            unshift @mode, 'dl';
             print $f "<dl>\n";
             @close = ();
             next;
         }
         if(/^\\elist/){
-            $mode = '';
+            shift @mode;
             putpop($f);
             print $f "</dl>\n";
             next;
         }
         if(/^\\begin\{verbatim\}/){
             print $f "<pre>\n";
-            $mode = 'pre';
+            unshift @mode, 'pre';
             next;
         }
         if(/^\\begin\{center\}/){
             print $f "<div style='align:center'>\n";
+            unshift @mode, 'center';
             next;
         }
         if(/^\\end\{center\}/){
             print $f "</div>\n";
+            shift @mode;
             next;
         }
         if(/^\\begin\{tabular\}/){
             print $f "<table>\n";
-            $mode = 'tabular';
+            unshift @mode, 'tabular';
             next;
         }
         if(/^\\begin\{longtable\}/){
             print $f "<table>\n";
-            $mode = 'table';
+            unshift @mode, 'table';
             next;
         }
         if(/^\\begin\{itemize\}/){
             print $f "<ul>\n";
-            $mode = 'itemize';
+            unshift @mode, 'itemize';
             next;
         }
         if(/^\\end\{itemize\}/){
-            $mode = '';
             putpop($f);
             print $f "</ul>\n";
-            $mode = '';
+            shift @mode;
             next;
         }
         if(/^\\special\{html:(.+)\}\}/){
@@ -288,9 +289,9 @@ EOF
 
         s@`@'@g;
 
-if($mode eq ''){
+if($mode[0] eq ''){
         print $f "<p>\n";
-    $mode = 'p';
+    unshift @mode, 'p';
 }
 
 s@\$\\backslash\$@\\@g;

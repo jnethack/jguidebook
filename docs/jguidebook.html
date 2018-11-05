@@ -243,10 +243,8 @@ border: solid 1px #000000; border-collapse: collapse;
         Dlvl:1  $:0  HP:9(12) Pw:3(3) AC:10 Exp:1/19 T:257 Weak
 </pre>
 <div style='align:center'>
-<p>
 Figure 1
 </div>
-</p>
 <h2>ステータス行(画面の下部)</h2>
 <p>
 画面の下 2 行には、あなたの現在の状態を表す暗号のような情報の断片が含まれている。
@@ -549,7 +547,6 @@ Figure 1
 </table>
 </div>
 <div style='align:center'>
-<p>
 Figure 2
 </div>
 </dd>
@@ -1088,6 +1085,7 @@ nethack にこれをmeta+キーと組み合わせるために
 <span class='tt'>#wipe</span>
 </dd>
 </dl>
+</p>
 <p>
 <span class='italic'>number_pad</span>
 オプションがオンのときは、これらに加えいくつかの文字コマンドが有効になる。
@@ -1116,6 +1114,7 @@ nethack にこれをmeta+キーと組み合わせるために
 罠、扉、宝箱などの仕掛けられた罠をはずす。「<span class='tt'>#untrap</span>」や「<span class='tt'>M-u</span>」と同じ。
 </dd>
 </dl>
+</p>
 <h1>部屋と通路</h1>
 <p>
 洞窟内の部屋や通路は明りがついていることもあるし、ついていないこともある。
@@ -2079,13 +2078,11 @@ AD&D に存在する鎧はいずれも <span class='italic'>NetHack</span> に�
 <pre>
     setenv NETHACKOPTIONS "autoquiver,\!autopickup,name:Blue Meanie,fruit:papaya"
 </pre>
-<p>
 <span class='italic'>sh</span> または <span class='italic'>ksh</span> では
 <pre>
     NETHACKOPTIONS="autoquiver,!autopickup,name:Blue Meanie,fruit:papaya"
     export NETHACKOPTIONS
 </pre>
-<p>
 とすればよい。
 </p>
 <h2>設定ファイルを使う</h2>
@@ -2520,7 +2517,6 @@ useful in normal play; applies to explore mode);
 持ち物一覧からの選択が必要。
 </dd>
 </dl>
-<p>
 標準設定では、pray 選択がオン、それ以外はオフになっている。
 その他の選択を設定することなくこれをオフにするには、
 ''<span class='italic'>paranoid_confirmation:none</span>'' を使う。
@@ -2633,14 +2629,12 @@ effect on reading an existing save file.
 旅行コマンドやマウスのクリックを使った場合)
 ときにどれくらいの頻度で地図を更新するかを制御する。
 設定可能な値は以下の通り:
-</p>
-<p>
+<br/>
 <span class='tt'>teleport</span> &mdash; 移動が完了してから地図を更新する;<br/>
 <span class='tt'>run</span> &mdash; 7 歩ぐらい毎に地図を更新する;<br/>
 <span class='tt'>walk</span> &mdash; 1 歩毎に地図を更新する;<br/>
 <span class='tt'>crawl</span> &mdash; <span class='italic'>walk</span> と同様だが、一歩毎にしばらく停止する。
-</p>
-<p>
+<br/>
 このオプションは画面表示にのみ影響し、実際の移動結果には影響しない。
 標準設定は '<span class='tt'>run</span>' である。バージョン 3.4.1 以前は '<span class='tt'>teleport</span>' のみであった。
 効果が確認できるかどうかは使っている版や端末の種類に依存する。
@@ -2678,11 +2672,9 @@ effect on reading an existing save file.
 持ち物一覧や #loot コマンドやその他いくつかの場合でのソートの振る舞いを
 制御する。
 永続する。
-</p>
-<p>
+<br/>
 可能な値は:
-</p>
-<p>
+<br/>
 <span class='tt'>full</span> &mdash; 常に一覧をソートする;<br/>
 <span class='tt'>loot</span> &mdash; #loot コマンドや広くコマンドのように、持ち物を示す文字を
 使わないときにだけソートする;<br/>
@@ -3028,6 +3020,7 @@ NetHack をコンパイルすることも可能である。
     autopickup_exception=">*corpse"
     autopickup_exception=">* cursed*"
 </pre>
+</p>
 <p>
 上記の例の最初のものは、全ての矢を自動的に拾う。
 二番目の例は、死体は自動拾いの例外とする。
@@ -3056,6 +3049,7 @@ NetHack をコンパイルすることも可能である。
 パターンは正規表現である必要がある。
 </dd>
 </dl>
+</p>
 <p>
 次のものは NetHack の内部パターンマッチング機能を使ったメッセージ型の
 例である。
@@ -3084,6 +3078,7 @@ MSGTYPE 行の定義順は重要である; 最後にマッチングした規則�
 <pre>
     MENUCOLOR="pattern"=color&attribute
 </pre>
+</p>
 <dl>
 <dt>pattern</dt><dd>
 マッチングするパターン;
@@ -3179,13 +3174,11 @@ drop to or below a threshold of 30%:
 <pre>
     OPTION=hilite_status: hitpoints/30%/red/normal
 </pre>
-<p>
 もう一つの例として、次の行を設定ファイルに書くと、賢さが低下すると赤で
 表示され、上昇すると緑で表示される。
 <pre>
     OPTION=hilite_status: wisdom/updown/red/green
 </pre>
-<p>
 次のステータス項目を調整できる:
 <div style='align:center'>
 <table>
@@ -3199,6 +3192,7 @@ drop to or below a threshold of 30%:
 <tr><td><pre>experience </pre></td><td><pre> condition</pre></td></tr>
 </table>
 </div>
+</p>
 <p>
 指定できる色は:
 <span class='italic'>black</span>, <span class='italic'>red</span>, <span class='italic'>green</span>, <span class='italic'>brown</span>,
@@ -3537,6 +3531,7 @@ score ファイル上でプレイヤーを認識するのに、0 ではユーザ
 ランダムな石像名に使う score ファイルエントリの最大数 (標準設定は 10)。
 </dd>
 </dl>
+</p>
 <h1>得点</h1>
 <p>
 <span class='italic'>NetHack</span> は設定によって、あなたの機械における高得点の一覧または高得点
@@ -3563,7 +3558,6 @@ score ファイル上でプレイヤーを認識するのに、0 ではユーザ
 <pre>
     nethack -s all
 </pre>
-<p>
 と入力すればよい。
 </p>
 <h1>探検モード</h1>
@@ -3892,5 +3886,6 @@ NetHack コミュニティに成り代わって、
 <tr><td><pre>Erik Andersen </pre></td><td><pre> Kevin Sitze </pre></td><td><pre> Richard Addison</pre></td></tr>
 </table>
 </div>
+</p>
 </body>
 </html>
