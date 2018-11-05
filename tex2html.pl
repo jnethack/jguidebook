@@ -117,7 +117,7 @@ EOF
             my $text = $1;
             $text .= shift @src;
             $text =~ s/\\large//gi;
-            $text =~ s@\{\\it ([^}]+)\\/\}@<i>$1</i>@g;
+            $text =~ s@\{\\it ([^}]+)\\/\}@<span class='italic'>$1</span>@g;
             $text =~ s@\\\\@<br/>@g;
             $text =~ s@\}$@@g;
             printf $f "<h1 style='text-align:center'>%s</h1>\n", $text;
@@ -268,16 +268,15 @@ EOF
 
         s@<@&lt;@g;
 
-        s@^\\numbox\{([-0-9]+)\}@<tt>$1</tt>@g;
+        s@^\\numbox\{([-0-9]+)\}@<span class='tt'>$1</span>@g;
 
         s@\\\"\{(.)\}@&$1uml;@g; #"
         s@---@&mdash;@g;
 
-        s@\{\\it ([^}]+)\\/\}@<i>$1</i>@g;
-
-        s@\{\\it ([^}]+)}@<i>$1</i>@g;
-        s@\{\\tt ?([^}]+)\\/\}@<tt>$1</tt>@g;
-        s@\{\\tt ?([^}]+)\}@<tt>$1</tt>@g;
+        s@\{\\it ([^}]+)\\/\}@<span class='italic'>$1</span>@g;
+        s@\{\\it ([^}]+)}@<span class='italic'>$1</span>@g;
+        s@\{\\tt ?([^}]+)\\/\}@<span class='tt'>$1</span>@g;
+        s@\{\\tt ?([^}]+)\}@<span class='tt'>$1</span>@g;
 
         s@\\\\$@<br/>@g;
 

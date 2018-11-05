@@ -110,10 +110,14 @@ color: #ffffcc;
 
 .italic {
 	font-style: italic;
-	color: #ffffcc;
 }
 
 .bold {
 	font-weight: bold;
+	color: #ffffcc;
+}
+
+.tt {
+	font-family: 'Courier New', Courier, monospace;
 	color: #ffffcc;
 }
