@@ -170,6 +170,10 @@ EOF
             next;
         }
         if(/^\\blist/){
+            if($mode[0] eq 'p'){
+                print $f "</p>\n";
+                shift @mode;
+            }
             unshift @mode, 'dl';
             print $f "<dl>\n";
             @close = ();
@@ -182,11 +186,19 @@ EOF
             next;
         }
         if(/^\\begin\{verbatim\}/){
+            if($mode[0] eq 'p'){
+                print $f "</p>\n";
+                shift @mode;
+            }
             print $f "<pre>\n";
             unshift @mode, 'pre';
             next;
         }
         if(/^\\begin\{center\}/){
+            if($mode[0] eq 'p'){
+                print $f "</p>\n";
+                shift @mode;
+            }
             print $f "<div style='align:center'>\n";
             unshift @mode, 'center';
             next;
