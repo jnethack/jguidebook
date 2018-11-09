@@ -688,7 +688,7 @@ Figure 2
 身につけようとする)。
 </dd>
 <dt>^P</dt><dd>
-1 つ前のメッセージをもう一度表示する。
+1 つ前のメッセージをもう一度表示する。<br/>
 続けて <span class='tt'>^{</span>P} を入力するとさらに前のメッセージが順に表示される。
 この振る舞いは <span class='italic'>msg_windows</span> オプションによって変化する。
 </dd>
@@ -698,7 +698,7 @@ Figure 2
 <dt>Q</dt><dd>
 矢筒、矢筒袋、あるいた単に一般的に準備するものを選択する(同時に指定できるのは
 これらのうち一つのみ)。
-ここで選択したものは'f'コマンドで発射することができる。
+ここで選択したものは'f'コマンドで発射することができる。<br/>
 (バージョン 3.3 以前ではこのコマンドはゲームを放棄するものだったが、
 その機能は'<span class='tt'>#quit</span>'に移動した。)
 </dd>
@@ -731,22 +731,19 @@ Figure 2
 物を投げる。または矢などを発射する。
 </dd>
 <dt>T</dt><dd>
-防具をはずす。
-If you're wearing more than one piece, you'll be prompted for which
-one to take off.  (Note that this treats a cloak covering a suit
-and/or a shirt, or a suit covering a shirt, as if the underlying items
-weren't there.)
-When you're only wearing one, then by default it will
-be taken off without asking, but you can set the
+防具をはずす。<br/>
+複数の物を身につけている場合は、どれを外すかのプロンプトが出る。
+(例え実際に身につけていなくても、クロークは防具やシャツの上に身につけ、
+防具はシャツの上に身につけているものとして扱われる。)
+一つしか身につけている場合は、デフォルトでは質問されることなくそれをはずすが、
 <span class='italic'>paranoid_confirmation</span>
-option to require a prompt.
-(TBT)
-This command may also be used to remove accessories.  The prompt
-for which inventory item to take off only lists worn armor, but a worn
-accessory can be chosen.
-(See the '<span class='tt'>R</span>' command above.  It lists accessories as the inventory
-choices but will accept an item of armor and attempt to take it off.)
-(TBT)
+オプションを設定することでプロンプトを要求できるようにできる。<br/>
+このコマンドはアクセサリをはずすのにも使える。
+どれを外すかを選ぶためのプロンプトには身につけている防具のみが表示されるが、
+身につけているアクセサリも選ぶことができる。
+(上述した '<span class='tt'>R</span>' を参照のこと。
+選択肢としてはアクセサリのみが表示されるが防具も選ぶことができ、それを
+外そうとする。)
 </dd>
 <dt>^T</dt><dd>
 テレポート能力があればテレポートする。
@@ -758,30 +755,33 @@ choices but will accept an item of armor and attempt to take it off.)
 このゲームの履歴を表示する。
 </dd>
 <dt>w</dt><dd>
-武器を持つ。
+武器を持つ。<br/>
 <span class='tt'>w-</span> &mdash; 武器として何も持たず素手になる。<br/>
 一部のキャラクタは二つの武器を同時に持つことが出来る;
 そうするには '<span class='tt'>X</span>' コマンド
 (または ''<span class='tt'>#twoweapon</span>'' 拡張コマンド) を使う。
 </dd>
 <dt>W</dt><dd>
-鎧を装備する。
-This command may also be used to put on an accessory (ring, amulet, or
-blindfold).  The prompt for which inventory item to use will only list
-armor, but choosing an unlisted accessory will attempt to put it on.
-(See the '<span class='tt'>P</span>' command above.  It lists accessories as the inventory
-choices but will accept an item of armor and attempt to wear it.)
-(TBT)
+鎧を装備する。<br/>
+このコマンドはアクセサリ(指輪、魔除け、目隠し)を身につけるのにも
+使われる。
+どれを選ぶかの一覧では防具しか表示されないが、一覧に表示されていない
+アクセサリを選択することでそれを身につけようとすることができる。
+どれを身につけるかを選ぶためのプロンプトには防具のみが表示されるが、
+身につけるためのアクセサリも選ぶことができる。
+(前述した '<span class='tt'>P</span>' コマンドを参照のこと。
+選択肢としてはアクセサリのみが表示されるが防具も選ぶことができ、それを
+身につけようとする。)
 </dd>
 <dt>x</dt><dd>
-装備している武器を予備の武器と交換する。
+装備している武器を予備の武器と交換する。<br/>
 予備の武器は二刀流攻撃で用いられる。
 予備の武器がなくても交換は実行される(今持っているものを予備にして、
 素手になる)ことに注意。
 </dd>
 <dt>X</dt><dd>
 キャラクタが実行可能なら、二刀流モードを切り替える。
-''<span class='tt'>#twoweapon</span>'' 拡張コマンドも利用可能である。
+''<span class='tt'>#twoweapon</span>'' 拡張コマンドも利用可能である。<br/>
 (3.6 より前のバージョンではこれは通常のプレイから
 「探索モード」またの名を「発見モード」に切り替えるコマンドであった;
 これは ''<span class='tt'>#explore</span>'' に移動した。)
@@ -836,14 +836,14 @@ choices but will accept an item of armor and attempt to wear it.)
 使っている道具を表示する。
 </dd>
 <dt>*</dt><dd>
-装備しているものを表示する。
+装備しているものを表示する。<br/>
 上の 5 つのコマンドを一つにしたもの。
 </dd>
 <dt>$</dt><dd>
 持っている金貨を数える。
 </dd>
 <dt>+</dt><dd>
-知っている呪文の一覧を表示する。
+知っている呪文の一覧を表示する。<br/>
 このコマンドを使うと、リスト全体をソートするか、メニューから一つの呪文を
 選択して他の呪文と入れ替えることで、呪文が表示される順番を
 入れ替えることが出来る。
@@ -865,7 +865,7 @@ choices but will accept an item of armor and attempt to wear it.)
 シェルに抜ける。
 </dd>
 <dt>#</dt><dd>
-拡張コマンドを実行する。
+拡張コマンドを実行する。<br/>
 以上から分かるように <span class='italic'>NetHack</span> の作者たちはすべての文字を
 使い果たしてしまったので、あまり頻繁に使われないコマンドはこのようにして
 導入された。
@@ -876,13 +876,11 @@ choices but will accept an item of armor and attempt to wear it.)
 持物の目録記号を変更する(
 <span class='italic'>fixinv</span>
 オプションが''on''の時に非常に便利である)。<br/>
-This command allows you to move an item from one particular inventory
-slot to another so that it has a letter which is more meaningful for you
-or that it will appear in a particular location when inventory listings
-are displayed.
+このコマンドは、ある特定の持ち物スロットから他のスロットに
+変更できる; これによりあなたにとってより意味のある文字にしたり、
+一覧表示時に特定の位置に現れるようにしたりできる。
 ''<span class='tt'>#adjust</span>'' はまた、物の塊を分割するのにも使える;
 調整する物を選択するときに、文字の前に数を入力する。
-(TBT)
 </dd>
 <dt>#annotate</dt><dd>
 現在の階層に結びつけられる 1 行の文を指定できる。
@@ -893,7 +891,7 @@ are displayed.
 誰かと話をする。
 </dd>
 <dt>#conduct</dt><dd>
-維持している自発的挑戦の一覧を表示する。
+維持している自発的挑戦の一覧を表示する。<br/>
 詳しくは後述する''Conduct''の章を参照すること。
 </dd>
 <dt>#dip</dt><dd>
@@ -923,7 +921,7 @@ are displayed.
 '<span class='tt'>C</span>'と同じ。
 </dd>
 <dt>#offer</dt><dd>
-神にいけにえを捧げる。
+神にいけにえを捧げる。<br/>
 成功するためには祭壇を見つける必要がある。
 最近殺したモンスターの死体がよい選択肢である。
 </dd>
@@ -936,7 +934,7 @@ are displayed.
 全ての訪れた階層が含まれる。
 </dd>
 <dt>#pray</dt><dd>
-神に祈って助けを求める。
+神に祈って助けを求める。<br/>
 前回の助けの後すぐに祈るのは良くない考えである。
 (ヒント: 洞窟に生きて入るということは助けを受けたものとして扱われる。
 新しいゲームを始めてすぐに祈るべきではないだろう。)
@@ -946,7 +944,7 @@ are displayed.
 <span class='italic'>paranoid_confirmation</span> をリセットすることが出来る。
 </dd>
 <dt>#quit</dt><dd>
-ゲームをセーブせずにプログラムを終了する。
+ゲームをセーブせずにプログラムを終了する。<br/>
 このコマンドを間違って使うと現在のゲームを捨ててしまうことになるので、
 終了する前に意思を確認される。
 標準設定では 'y' を押すことで確認される。
@@ -972,12 +970,12 @@ are displayed.
 不死の怪物を追い払う。
 </dd>
 <dt>#twoweapon</dt><dd>
-二刀流戦闘のオン・オフを切り替える。
+二刀流戦闘のオン・オフを切り替える。<br/>
 二刀流に適切な武器を使うこと。
 さもなければ自動的にオフになる。
 </dd>
 <dt>#untrap</dt><dd>
-何か(罠、扉、宝箱)の罠をはずす。
+何か(罠、扉、宝箱)の罠をはずす。<br/>
 状況によっては罠に掛かった怪物を助けるのにも使えるかも知れない。
 </dd>
 <dt>#version</dt><dd>
@@ -1109,7 +1107,6 @@ nethack にこれをmeta+キーと組み合わせるために
 ''<span class='tt'>#name</span>'' や ''<span class='tt'>M-n</span>'' と同じ。
 怪物、個々のオブジェクト、オブジェクトの種類に名前を付ける。
 '<span class='tt'>C</span>'コマンドと同じであるところの「<span class='tt'>#name</span>」(あるいは「<span class='tt'>M-n</span>」)と同じ。
-(TBT)
 </dd>
 <dt>u</dt><dd>
 罠、扉、宝箱などの仕掛けられた罠をはずす。「<span class='tt'>#untrap</span>」や「<span class='tt'>M-u</span>」と同じ。
@@ -1288,13 +1285,13 @@ nethack にこれをmeta+キーと組み合わせるために
 「三十六計逃げるにしかず」ということわざを忘れずに。
 </p>
 <p>
-In most circumstances, if you attempt to attack a peaceful monster by
-moving into its location, you'll be asked to confirm your intent.  By 
-default an answer of '<span class='tt'>y</span>' acknowledges that intent,
-which can be error prone if you're using '<span class='tt'>y</span>' to move.  You can set the
+ほとんどの場合、友好的な怪物の位置に移動することで攻撃をしようとすると、
+意図を確認される。
+デフォルトでは '<span class='tt'>y</span>' を押すと確認したことになるが、
+移動に '<span class='tt'>y</span>' を使っていると間違いがちである。
+代わりに ''<span class='tt'>yes</span>'' の返答が必要なように
 <span class='italic'>paranoid_confirmation</span>
-option to require a response of ''<span class='tt'>yes</span>'' instead.
-(TBT)
+オプションを設定できる。
 </p>
 <p>
 怪物が見えない(怪物が透明、またはあなたが目が見えない)場合、
@@ -1426,11 +1423,12 @@ NetHack では荷物の重さがどれくらい悪影響を与えるかを教え
 例えば祝福された武器は悪魔たちに一層のダメージを与えることができるだろう。
 </p>
 <p>
-Objects which are neither cursed nor blessed are referred to as uncursed.
-They could just as easily have been described as unblessed, but the
-uncursed designation is what you will see within the game.  A ''glass
-half full versus glass half empty'' situation; make of that what you will.
-(TBT)
+呪われてるわけでも祝福されているわけでもない物は「呪われていない(uncursed)」と
+呼ばれる。
+これは「祝福されていない(unblessed)」と表現することもできるが、
+ゲームの中では「呪われていない」という表現が使われる。
+これは「コップに半分だけ入っている/半分しか入っていない」問題である;
+解釈はあなた次第である。
 </p>
 <p>
 魔法を使うと物に呪いをかけたり呪いを解いたりすることができる。
@@ -1606,30 +1604,26 @@ swords や bows に対してはそうではない。
 <h2>二刀流</h2>
 <p>
 一部のキャラクタは二つの武器を一度に使うことができる。
-Setting things up to
-do so can seem cumbersome but becomes second nature with use.
-To wield two weapons, you need to use the ''<span class='tt'>#twoweapon</span>'' command.
-But first you need to have a weapon in each hand.
-(Note that your two weapons are not fully equal; the one in the
-hand you normally wield with is considered primary and the other
-one is considered secondary.  The most noticeable difference is   
-after you stop--or before you begin, for that matter--wielding
-two weapons at once.  The primary is your wielded weapon and the
-secondary is just an item in your inventory that's been designated
-as alternate weapon.)
-(TBT)
+そうするための準備は厄介だが、使うことで身についていく。
+二つの武器を装備するには、''<span class='tt'>#twoweapon</span>'' コマンドを使う必要がある。
+しかし、まずそれぞれの手に一つの武器を手にする必要がある。
+(二つの武器は完全に同じではないことに注意すること; 通常装備している手で
+手にしている武器は主要武器として扱われ、もう一方は補助武器として扱われる。
+もっとも注意するべき違いは、二つの武器を手にするのを止めた後--
+または始める前--である。
+優先武器は手にしている武器であり、補助武器は単に、
+予備の武器として指定された、持ち物の一つである。)
 </p>
 <p>
-If your primary weapon is wielded but your off hand is empty or has
-the wrong weapon, use the sequence 'x', 'w', 'x' to first swap your
-primary into your off hand, wield whatever you want as secondary
-weapon, then swap them both back into the intended hands.
-If your secondary or alternate weapon is correct but your primary
-one is not, simply use 'w' to wield the primary.
-Lastly, if neither hand holds the correct weapon, use 'w', 'x', 'w'
-to first wield the intended secondary, swap it to off hand, and then
-wield the primary.
-(TBT)
+主要武器を手にしているけれどももう片方の手が空いていたり間違った武器を
+持っていたりする場合、'<span class='tt'>x</span>', '<span class='tt'>w</span>', '<span class='tt'>x</span>' とすると、
+まず主要武器をもう片方の手に持ち替え、補助武器として使いたいものを装備し、
+再び意図通りの手に入れ替えられる。
+補助武器が正しいけれども主要武器が間違っている場合、単に
+'<span class='tt'>w</span>' を使って主要武器を手にすることができる。
+最後に、どちらの手にも正しい武器を手にしていない場合、
+'<span class='tt'>w</span>', '<span class='tt'>x</span>', '<span class='tt'>w</span>' として、最初に補助武器を手にし、
+それを入れ替え、主要武器を手にする。
 </p>
 <p>
 処理全体は
@@ -2467,15 +2461,15 @@ Amiga, Gem, tty で実装されている。(標準設定は ',')
 <br/>
 後方互換性のために、値を省略するのは <span class='tt'>1</span> と同じで、
 否定する <span class='italic'>number_pad</span> と <span class='tt'>0</span> を指定するのと同じである。
-(Settings <span class='tt'>2</span> and <span class='tt'>4</span> are for compatibility with MSDOS or old PC Hack;
-in addition to the different behavior for '<span class='tt'>5</span>', '<span class='tt'>Alt-5</span>' acts as '<span class='tt'>G</span>'
-and '<span class='tt'>Alt-0</span>' acts as '<span class='tt'>I</span>'.
-Setting <span class='tt'>-1</span> is to accommodate some German keyboards which have the
-location of the '<span class='tt'>y</span>' and '<span class='tt'>z</span>' keys swapped.)
-When moving by numbers, to enter a count prefix for those commands
-which accept one (such as ''<span class='tt'>12s</span>'' to search twelve times), precede it
-with the letter '<span class='tt'>n</span>' (''<span class='tt'>n12s</span>'').
-(TBT)
+(設定 <span class='tt'>2</span> と <span class='tt'>4</span> は MSDOS や古い PC Hack との互換性のためのものである;
+'<span class='tt'>5</span>' のための異なった振る舞いに加えて、
+'<span class='tt'>Alt-5</span>' は '<span class='tt'>G</span>' として振る舞い、
+'<span class='tt'>Alt-0</span>' は '<span class='tt'>I</span>' として振る舞う。
+設定 <span class='tt'>-1</span> は、'<span class='tt'>y</span>' と '<span class='tt'>z</span>' の位置が入れ替わっている一部の
+ドイツ語キーボードに対応するものである。)
+数字で移動するとき、(12 回調べるために ''<span class='tt'>12s</span>'' とするような)
+コマンドに対する回数接頭辞を入力するには、
+文字 '<span class='tt'>n</span>' を前置する (''<span class='tt'>n12s</span>'')。
 </dd>
 <dt>packorder</dt><dd>
 物の種類を表示するときの順番を指定する(標準設定は
@@ -2484,25 +2478,20 @@ with the letter '<span class='tt'>n</span>' (''<span class='tt'>n12s</span>'').
 設定されなかった種類は以前の順序で最後に表示される。
 </dd>
 <dt>paranoid_confirmation</dt><dd>
-A space separated list of specific situations where alternate
-prompting is desired.
+プロンプトを変えたい状況の、スペースで区切られた一覧。
 標準設定は ''<span class='tt'>paranoid_confirmation:pray</span>''。
-(TBT)
 <dl>
 <dt>Confirm</dt><dd>
-for any prompts which are set to require "yes" rather than 'y', also
-require "no" to reject instead of accepting any non-yes response as no
-(TBT)
+'y' ではなく "yes" を必要とする場合、"yes" 以外の何でも
+否定したことにするのではなく、否定する場合には "no" が必要。
 </dd>
 <dt>quit</dt><dd>
-require "yes" rather than 'y' to confirm quitting
-the game or switching into non-scoring explore mode;
-(TBT)
+ゲームを抜けたりスコアが記録されない探検モードに切り替えるときに
+'y' ではなく "yes" が必要;
 </dd>
 <dt>die</dt><dd>
-require "yes" rather than 'y' to confirm dying (not
-useful in normal play; applies to explore mode);
-(TBT)
+死ぬときに 'y' ではなく "yes" が必要
+(通常のプレイでは無意味; 探検モードで適用される);
 </dd>
 <dt>bones</dt><dd>
 デバッグモードで死んだときの骨ファイルの保存確認に 'y' ではなく "yes" が必要;
@@ -2567,32 +2556,33 @@ useful in normal play; applies to explore mode);
 永続する。
 </dd>
 <dt>pile_limit</dt><dd>
-When walking across a pile of objects on the floor, threshold at which
-the message "there are few/several/many objects here" is given instead
-of showing a popup list of those objects.  A value of 0 means "no limit"
-(always list the objects); a value of 1 effectively means "never show
-the objects" since the pile size will always be at least that big;
-default value is 5.  Persistent.
-(TBT)
+床の上の物の山の上を歩くとき、物の一覧を表示する代わりに
+"there are few/several/many objects here"
+(ここにはいくつかの/たくさんの物がある)を表示する閾値。
+値 0 は「無制限」(常に物の一覧を表示する)を意味する;
+値 1 は、山のサイズが最低 1 はあるので、事実上「物は一切表示しない」を
+意味する; 標準設定は 5。
+永続する。
 </dd>
 <dt>playmode</dt><dd>
-Values are '<span class='tt'>normal</span>', '<span class='tt'>explore</span>', or '<span class='tt'>debug</span>'.
-Allows selection of explore mode (also known as discovery mode) or debug
-mode (also known as wizard mode) instead of normal play.
-Debug mode might only be allowed for someone logged in under a particular
-user name (on multi-user systems) or specifying a particular character
-name (on single-user systems) or it might be disabled entirely.  Requesting
-it when not allowed or not possible results in explore mode instead.
-Default is normal play.
-(TBT)
+値は '<span class='tt'>normal</span>', '<span class='tt'>explore</span>', '<span class='tt'>debug</span>' のいずれか。
+通常のプレイの代わりに(発見モードとも呼ばれる)探検モード、あるいは
+(ウィザードモードとも呼ばれる)デバッグモードを選択する。
+デバッグモードは、(マルチユーザーシステムでは)特定のユーザー名で
+ログインしている必要があるかもしれないし、
+(シングルユーザーシステムでは)特定のキャラクタ名を指定している
+必要があるかもしれないし、
+完全に無効になっているかもしれない。
+デバッグモードを要求したけれども許されていないか不可能な場合は
+代わりに探検モードになる。
+標準設定は通常プレイ。
 </dd>
 <dt>pushweapon</dt><dd>
 既に武器を持っている時に '<span class='tt'>w</span>' (wield: 武器を持つ) コマンドを使ったとき、
 既に持っていた武器を予備の武器に設定する(標準設定はオフ)。
-Likewise for the '<span class='tt'>a</span>' (apply) command if it causes the applied item to
-become wielded.  
+アイテムを使うことで装備したことになる場合は
+'<span class='tt'>a</span>' (apply) コマンドと同様である。
 永続する。
-(TBT)
 </dd>
 <dt>race</dt><dd>
 種族を選択する(例: ''<span class='tt'>race:human</span>'')。標準設定はランダムである。
@@ -2617,16 +2607,14 @@ become wielded.
 永続する。
 </dd>
 <dt>roguesymset</dt><dd>
-This option may be used to select one of the named symbol sets found within
-<span class='tt'>symbols</span> to alter the symbols displayed on the screen on the
-rogue level.
-(TBT)
+このオプションは、rogue レベルで表示されるシンボルを変更するために、
+<span class='tt'>symbols</span> の中にある名前付きシンボル集合の一つを選択するために
+使われる。
 </dd>
 <dt>rlecomp</dt><dd>
-When writing out a save file, perform run length compression of the map. 
-Not all ports support run length compression. It has no
-effect on reading an existing save file.
-(TBT)
+セーブファイルを書き出すときに、地図にランレングス圧縮を行う。
+ランレングス圧縮に対応していないシステムもある。
+既存のセーブファイルを読み込むときには影響しない。
 </dd>
 <dt>runmode</dt><dd>
 「まとめて移動」する(shift+方向やcontrol+方向で移動するか、
@@ -2911,15 +2899,15 @@ ESC で始まる 2 文字並びを 2 番目の文字の meta-shift に変換す�
 指定する (標準設定はオフ)。
 <br/>
 この変換はコマンドに対してのみ行われ、その他の入力プロンプトでは行われない。
-Note that typing one or more digits as a count prefix prior to a
-command&mdash;preceded by <span class='tt'>n</span> if the
+コマンドの前にカウント接頭辞としてのいくつかの数字のタイプも、
+&mdash;
 <span class='italic'>number_pad</span>
-option is set&mdash;is also subject to this conversion, so attempting to
-abort the count by typing ESC will leave nethack waiting for another
-character to complete the two character sequence.
+オプションが設定されているなら <span class='tt'>n</span> を前置して&mdash;、
+この変換が行われるので、
+ESC をタイプすることでカウントを中断しようとすると、
+nethack は 2 文字並びを完成させるために待つことになる。
 2 回 ESC をタイプすることでそのようなカウントのキャンセルが完了する。
 その他のプロンプトでは単一の ESC で十分である。
-(TBT)
 </dd>
 <dt>BIOS</dt><dd>
 高速に画面を書き換え、移動にカーソルキーを使えるようにキーボードを読むために、
@@ -3154,9 +3142,9 @@ MSGTYPE 行の定義順は重要である; 最後にマッチングした規則�
 音声ファイルとユーザーが指定するメッセージパターンを関連付ける項目。
 各 SOUND 項目は以下の項目に分解される。
 <br/>
-<span class='tt'>MESG      </span> &mdash; メッセージウィンドウ指定 (3.6 ではただ一つだけに対応している)
-<span class='tt'>pattern   </span> &mdash; マッチするパターン
-<span class='tt'>sound file</span> &mdash; 鳴らす音声ファイル
+<span class='tt'>MESG      </span> &mdash; メッセージウィンドウ指定 (3.6 ではただ一つだけに対応している)<br/>
+<span class='tt'>pattern   </span> &mdash; マッチするパターン<br/>
+<span class='tt'>sound file</span> &mdash; 鳴らす音声ファイル<br/>
 <span class='tt'>volume    </span> &mdash; 音声ファイルを鳴らすときの音量
 </dd>
 </dl>
@@ -3165,16 +3153,15 @@ MSGTYPE 行の定義順は重要である; 最後にマッチングした規則�
 </p>
 <h2>ステータスハイライトの設定</h2>
 <p>
-Your copy of NetHack may have been compiled with support for <span class='italic'>Status Hilites</span>.
-If so, you can customize your game display by setting thresholds to 
-change the color or appearance of fields in the status display.
-(TBT)
+Your copy of NetHack may have been compiled with support for 
+あなたの入手した NetHack は <span class='italic'>ステータスハイライト</span> に対応して
+コンパイルされているかもしれない。
+その場合、ステータスディスプレイのフィールドの色や見た目を
+閾値を設定することでカスタマイズできる。
 </p>
 <p>
-For example, the following line in your config file will cause
-the hitpoints field to display in the color red if your hitpoints
-drop to or below a threshold of 30%:
-(TBT)
+例えば、設定ファイルに次の行を書くと、ヒットポイントが30%の閾値以下になると
+ヒットポイントが赤色で表示される:
 </p>
 <pre>
     OPTION=hilite_status: hitpoints/30%/red/normal
@@ -3212,14 +3199,13 @@ drop to or below a threshold of 30%:
 指定できる属性は:
 bold, inverse, normal。
 なお、プラットフォームはこれを好きなように解釈するかも知れない。
-Behaviours can occur based on percentage thresholds, updown, or absolute values.
-The in-game options menu can help you determine the correct syntax for a
-config file.
-(TBT)
+振る舞いは割合の閾値、上下、絶対値を基に起こる。
+ゲーム内のオプションメニューは、設定ファイルでの正しい文法を決定する
+助けになるだろう。
 </p>
 <p>
 The whole feature can be disabled by setting option statushilites off.
-(TBT)
+オプション statushilites をオフにすることでこの機能全体を無効にできる。
 </p>
 <h2>NetHack のシンボルの変更</h2>
 <p>
@@ -3231,6 +3217,7 @@ symbol ファイルから特定のシンボル集合を選択するために使�
 <dl>
 <dt>symset</dt><dd>
 読み込みたいシンボル集合の名前を設定する。
+<span class='italic'>symbols</span>。
 <br/>
 </dd>
 <dt>roguesymset</dt><dd>
@@ -3238,16 +3225,14 @@ rogue レベルで表示するために読み込みたいシンボル集合の�
 </dd>
 </dl>
 <p>
-You can also override one or more symbols using the <span class='italic'>SYMBOLS</span> config 
-file option. Symbols are specified as <span class='italic'>name:value</span> pairs. Note that 
-<span class='italic'>NetHack</span> escape-processes the <span class='italic'>value</span> string in conventional C
-fashion.  This means that '' is a prefix to take the following
-character literally.  Thus '' needs to be represented as '\'.
-The special escape form
-'m' switches on the meta bit in the symbol value, and the
-'<span class='tt'>^{</span>}' prefix causes the following character to be treated as a control
-character.
-(TBT)
+<span class='italic'>SYMBOLS</span> 設定ファイルオプションを使っていくつかのシンボルを
+上書きすることもできる。
+シンボルは <span class='italic'>name:value</span> の組で指定する。
+<span class='italic'>NetHack</span> は <span class='italic'>value</span> 文字列を伝統的な C の方法でエスケープする。
+つまり、'' は次の文字をリテラルにする接頭辞である。
+従って、'' は '\' と表現する必要がある。
+特殊エスケープ型式 'm' はシンボル値のメタビットを切り替え、
+'<span class='tt'>^{</span>}' 接頭辞は引き続く文字を制御文字として扱う。
 </p>
 <table>
 <caption>NetHack Symbols</caption>
@@ -3639,8 +3624,8 @@ bigskip
 </p>
 <p>
 <span class='italic'>Don G. Kneller</span> は <span class='italic'>Hack</span> 1.0.3 を Microsoft C を使用して MS-DOS へ移植
-し <span class='italic'>PC Hack</span> 1.01e を作成した。バージョン 1.03g では DEC Rainbow のグラ
-フィックをサポートし、続いて少なくともあと 4 つのバージョン(3.0、3.2、
+し <span class='italic'>PC Hack</span> 1.01e を作成した。バージョン 1.03g では DEC Rainbow の
+グラフィックをサポートし、続いて少なくともあと 4 つのバージョン(3.0、3.2、
 3.51、3.6)を作成した。
 </p>
 <p>
@@ -3678,7 +3663,8 @@ PC <span class='italic'>NetHack</span> 3.0 のためのオーバーレイルー�
 <p>
 <span class='italic'>Mike Stephenson</span> をリーダーとし、
 <span class='italic'>Izchak Miller</span> と <span class='italic'>Janet Walz</span> の助けによって
-<span class='italic'>Ken Arromdee</span>, <span class='italic'>David Cohrs</span>, <span class='italic'>Jean-Christophe Collet</span>, <span class='italic'>Kevin Darcy</span>,
+<span class='italic'>Ken Arromdee</span>,
+<span class='italic'>David Cohrs</span>, <span class='italic'>Jean-Christophe Collet</span>, <span class='italic'>Kevin Darcy</span>,
 <span class='italic'>Matt Day</span>, <span class='italic'>Timo Hakulinen</span>, <span class='italic'>Steve Linhart</span>, <span class='italic'>Dean Luick</span>, 
 <span class='italic'>Pat Rankin</span>, <span class='italic'>Eric Raymond</span>, <span class='italic'>Eric Smith</span> を含む制作チームが
 3.0の徹底的な見直しを行なった。
@@ -3698,30 +3684,34 @@ Amiga 用 <span class='italic'>NetHack</span> 3.1 を作成した。
 <span class='italic'>Paul Winner</span> の助けを借りて <span class='italic'>NetHack</span> 3.1 を PC に移植した。
 </p>
 <p>
-<span class='italic'>Jon Watte</span> と <span class='italic'>Hao-yang Wang</span> は <span class='italic'>Ross Brown</span>,
-<span class='italic'>Mike Engber</span>, <span class='italic'>David Hairston</span>, <span class='italic'>Michael Hamel</span>,
-<span class='italic'>Jonathan Handler</span>, <span class='italic'>Johnny Lee</span>, <span class='italic'>Tim Lennan</span>, <span class='italic'>Rob Menke</span>,
-<span class='italic'>Andy Swanson</span> の助けを借りて MPW 用の Macintosh 用 <span class='italic'>NetHack</span> 3.1 を作成した。
+<span class='italic'>Jon Watte</span> と <span class='italic'>Hao-yang Wang</span> は
+<span class='italic'>Ross Brown</span>, <span class='italic'>Mike Engber</span>, <span class='italic'>David Hairston</span>,
+<span class='italic'>Michael Hamel</span>, <span class='italic'>Jonathan Handler</span>, <span class='italic'>Johnny Lee</span>,
+<span class='italic'>Tim Lennan</span>, <span class='italic'>Rob Menke</span>, <span class='italic'>Andy Swanson</span> の助けを借りて
+MPW 用の Macintosh 用 <span class='italic'>NetHack</span> 3.1 を作成した。
 その作成中に、<span class='italic'>Barton House</span> は Think C 用を加えた。
 </p>
 <p>
 <span class='italic'>Timo Hakulinen</span> は <span class='italic'>NetHack</span> 3.1 を OS/2 に移植した。
 <span class='italic'>Eric Smith</span> は <span class='italic'>NetHack</span> 3.1 を Atari に移植した。
-<span class='italic'>Pat Rankin</span> は <span class='italic'>Joshua Delahunty</span> の助けを借りて VMS 版 <span class='italic'>NetHack</span> 3.1 を作成した。
+<span class='italic'>Pat Rankin</span> は <span class='italic'>Joshua Delahunty</span> の助けを借りて VMS 版
+<span class='italic'>NetHack</span> 3.1 を作成した。
 <span class='italic'>Michael Allison</span> は <span class='italic'>NetHack</span> 3.1 を Windows NT に移植した。
 </p>
 <p>
-<span class='italic'>Dean Luick</span> は <span class='italic'>David Cohrs</span> の助けを借りて X11 用 <span class='italic'>NetHack</span>3.1 を作成した。
-<span class='italic'>Warwick Allison</span> は Atari 用に <span class='italic'>NetHack</span> のタイルバージョンを作成した。
-彼は後にタイルを開発チームに寄贈し、タイルサポートは他のプラットフォームにも追加された。
+<span class='italic'>Dean Luick</span> は <span class='italic'>David Cohrs</span> の助けを借りて X11 用
+<span class='italic'>NetHack</span>3.1 を作成した。
+<span class='italic'>Warwick Allison</span> は Atari 用に <span class='italic'>NetHack</span> のタイル版を作成した。
+彼は後にタイルを開発チームに寄贈し、タイルサポートは他のプラットフォームにも
+追加された。
 </p>
 <p>
-<span class='italic'>Michael Allison</span>, {it Ken
-Arromdee}, <span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>, <span class='italic'>Steve Creps</span>,
-<span class='italic'>Kevin Darcy</span>, <span class='italic'>Timo Hakulinen</span>, <span class='italic'>Steve Linhart</span>, {it Dean
-Luick}, <span class='italic'>Pat Rankin</span>, <span class='italic'>Eric Smith</span>, <span class='italic'>Mike Stephenson</span>,
-<span class='italic'>Janet Walz</span>, and <span class='italic'>Paul Winner</span>
-からなる 3.2の開発チームは バージョン 3.2 を 1996 年 4 月にリリースした。
+<span class='italic'>Michael Allison</span>, <span class='italic'>Ken Arromdee</span>,
+<span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>, <span class='italic'>Steve Creps</span>,
+<span class='italic'>Kevin Darcy</span>, <span class='italic'>Timo Hakulinen</span>, <span class='italic'>Steve Linhart</span>, <span class='italic'>Dean Luick</span>,
+<span class='italic'>Pat Rankin</span>, <span class='italic'>Eric Smith</span>, <span class='italic'>Mike Stephenson</span>, <span class='italic'>Janet Walz</span>,
+<span class='italic'>Paul Winner</span> からなる 3.2の開発チームは バージョン 3.2 を
+1996 年 4 月にリリースした。
 </p>
 <p>
 バージョン 3.2 は開発チームが結成されてから 10 周年のものであった。
@@ -3743,12 +3733,14 @@ Luick}, <span class='italic'>Pat Rankin</span>, <span class='italic'>Eric Smith<
 SLASH を作成した。
 <span class='italic'>Larry Stewart-Zerba</span> と <span class='italic'>Warwick Allison</span> は呪文詠唱システムを改良した
 Wizard Patch を作成した。
-<span class='italic'>Warwick Allison</span> は <span class='italic'>NetHack</span> を Qt インターフェースを使うように変更した。
+<span class='italic'>Warwick Allison</span> は <span class='italic'>NetHack</span> を Qt インターフェースを使うように
+変更した。
 </p>
 <p>
 <span class='italic'>Warren Cheung</span> は SLASH と Wizard Patch を統合して Slash'em を作成し、
 <span class='italic'>Kevin Hugo</span> の力を借りて、多くの要素を追加した。
-Kevin は後に開発チームに加わり、これらのアイデアを <span class='italic'>NetHack</span> 3.3 に統合した。
+Kevin は後に開発チームに加わり、これらのアイデアを <span class='italic'>NetHack</span> 3.3 に
+統合した。
 </p>
 <p>
 3.2 の最終バージョンはバグ修正版である 3.2.3 である。
@@ -3759,9 +3751,8 @@ Kevin は後に開発チームに加わり、これらのアイデアを <span c
 <span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>, <span class='italic'>Steve Creps</span>, <span class='italic'>Kevin Darcy</span>, 
 <span class='italic'>Timo Hakulinen</span>, <span class='italic'>Kevin Hugo</span>, <span class='italic'>Steve Linhart</span>, <span class='italic'>Ken Lorber</span>, 
 <span class='italic'>Dean Luick</span>, <span class='italic'>Pat Rankin</span>, <span class='italic'>Eric Smith</span>, <span class='italic'>Mike Stephenson</span>, 
-<span class='italic'>Janet Walz</span>, <span class='italic'>Paul Winner</span>
-からなる 3.3 の開発チームは 1999 年 12 月に 3.3.0を、
-2000 年 8 月に 3.3.1 をリリースした。
+<span class='italic'>Janet Walz</span>, <span class='italic'>Paul Winner</span> からなる 3.3 の開発チームは
+1999 年 12 月に 3.3.0を、2000 年 8 月に 3.3.1 をリリースした。
 </p>
 <p>
 バージョン 3.3 は多くの新要素を提供した。
@@ -3779,11 +3770,12 @@ Kevin は後に開発チームに加わり、これらのアイデアを <span c
 <span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>, <span class='italic'>Kevin Hugo</span>, <span class='italic'>Ken Lorber</span>,
 <span class='italic'>Dean Luick</span>, <span class='italic'>Pat Rankin</span>, <span class='italic'>Mike Stephenson</span>, 
 <span class='italic'>Janet Walz</span>, and <span class='italic'>Paul Winner</span> で開始され、
-<span class='italic'>NetHack</span> 3.4.0 リリース直前の 2002 年 3 月に <span class='italic'> Warwick Allison</span> が加わった。
+<span class='italic'>NetHack</span> 3.4.0 リリース直前の 2002 年 3 月に
+<span class='italic'>Warwick Allison</span> が加わった。
 </p>
 <p>
-バージョン 3.3 と同様に、様々な人々が <span class='italic'>NetHack</span> の色々なプラットフォームへの
-移植を行なってくれた。
+バージョン 3.3 と同様に、様々な人々が <span class='italic'>NetHack</span> の色々な
+プラットフォームへの移植を行なってくれた。
 </p>
 <p>
 <span class='italic'>Pat Rankin</span> は 3.4 の VMS への移植を担当した。
@@ -3798,16 +3790,18 @@ Kevin は後に開発チームに加わり、これらのアイデアを <span c
 </p>
 <p>
 <span class='italic'>Michael Allison</span>, <span class='italic'>David Cohrs</span>, <span class='italic'>Alex Kompel</span>, <span class='italic'>Dion Nicolaas</span>,
-<span class='italic'>Yitzhak Sapir</span> は 3.4 の Microsoft Windows プラットフォームへの移植と拡張を担当した。
-<span class='italic'>Alex Kompel</span> は Windows 版への新しいグラフィックインターフェースを提供した。
+<span class='italic'>Yitzhak Sapir</span> は 3.4 の Microsoft Windows プラットフォームへの
+移植と拡張を担当した。
+<span class='italic'>Alex Kompel</span> は Windows 版への新しいグラフィックインターフェースを
+提供した。
 <span class='italic'>Alex Kompel</span> はまた、3.4.1 の Windows CE 版を提供した。
 </p>
 <p>
-<span class='italic'>Ron Van Iwaarden</span> は過去いくつかのリリースの OS/2 版 <span class='italic'>NetHack</span> の唯一の
-管理者だった。
+<span class='italic'>Ron Van Iwaarden</span> は過去いくつかのリリースの OS/2 版 <span class='italic'>NetHack</span> の
+唯一の管理者だった。
 残念ながら Ron の最後の OS/2 マシンは 2006 年初頭に動かなくなった。
-近年まで OS/2 で <span class='italic'>NetHack</span> を生き続けさせたことにことについて Ron に非常に
-感謝する。
+近年まで OS/2 で <span class='italic'>NetHack</span> を生き続けさせたことにことについて Ron に
+非常に感謝する。
 </p>
 <p>
 Amiga への移植は <span class='italic'>Janne Salmij&auml;rvi</span> が 3.3.1 で復活させた後、
@@ -3817,6 +3811,39 @@ Amiga への移植は <span class='italic'>Janne Salmij&auml;rvi</span> が 3.3.
 <p>
 3.3.1 で復活した Atari 版は
 <span class='italic'>Christian ''Marvin'' Bressler</span> が 3.4 を保守した。
+</p>
+<p>
+2003 年 12 月の NetHack 3.4.3 のリリースは、長いリリース中断の始まりとなった。
+3.4.3 は、コミュニティによって 10 年以上楽しまれ続けられたことで
+非常に安定したバージョンであることが示された。
+3.4.3 の間、The devteam は水面下でゆっくりと静かにゲームに対して作業を
+続けていた。
+同じ頃、NetHack コミュニティにいくつかの新しいバリアントが出現した。
+特に、Derek S. Ray による sporkhack、Patric Mueller による unnethack、
+元々は Daniel Thaler で、それからは Alex Smith による
+nitrohack およびその後継、Tung Nguyen による Dynahack である。
+これらのバリアントの一部は開発と保守が続けられ、今でもコミュニティで
+楽しまれている。
+</p>
+<p>
+最終的に 3.6.0 としてリリースされるものの開発の初期では、
+開発チームは <span class='italic'>Warwick Allison</span>, 
+<span class='italic'>Michael Allison</span>, <span class='italic'>Ken Arromdee</span>,
+<span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>, 
+<span class='italic'>Ken Lorber</span>, <span class='italic'>Dean Luick</span>, <span class='italic'>Pat Rankin</span>, 
+<span class='italic'>Mike Stephenson</span>, <span class='italic'>Janet Walz</span>, <span class='italic'>Paul Winner</span> で構成されていた。
+2015 年初頭の 3.6.0 リリースの下準備として、新しいメンバーである
+<span class='italic'>Sean Hunt</span>, <span class='italic'>Pasi Kallinen</span>, <span class='italic'>Derek S. Ray</span> が
+NetHack 開発チームに加わった。
+</p>
+<p>
+2014 年 9 月に、開発中のコードの中間的なスナップショットが他のグループによって
+公にされた。
+コードは作業中の物で、適切なリリースのためのデバッグプロセスを経ていない
+物であったので、コードスナップショットに使われていたバージョン番号は
+欠番として、公式な NetHack リリースでは使わないことに決定した。
+devteam の公式 nethack.org web サイトにアナウンスが投稿され、
+公式リリースバージョンとして 3.4.4, 3.5, 3.5.0 は使わないことを示した。
 </p>
 <p>
 2014 年 11 月、NetHack 3.6 のリリースのための準備が開始された。
