@@ -160,6 +160,7 @@ EOF
             my $text = strip($1);
             $text =~ s/\"//g;
             $text =~ s/\~//g;
+            $text =~ s/\$backslash\$/\\/g;
             putpop($f);
             if($mode[0] eq 'itemize'){
                 print $f "<li>\n";
@@ -311,8 +312,6 @@ if($mode[0] eq ''){
         print $f "<p>\n";
     unshift @mode, 'p';
 }
-
-s@\$\\backslash\$@\\@g;
 
 print $f $_ . "\n";
     }
