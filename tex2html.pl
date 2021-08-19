@@ -36,8 +36,6 @@ border: solid 1px #000000; border-collapse: collapse;
 }
 </style>
 <link rel="Stylesheet" href="nhr.css" type="text/css">
-</head>
-<body>
 EOF
    ;
     
@@ -123,6 +121,9 @@ EOF
             $text =~ s@\{\\it ([^}]+)\\/\}@<span class='italic'>$1</span>@g;
             $text =~ s@\\\\@<br/>@g;
             $text =~ s@\}$@@g;
+            my $title = $text;
+            $title =~ s@<[^>]+>@@g;
+            printf $f "<title>%s</title>\n</head>\n<body>\n", $title;
             printf $f "<h1 style='text-align:center'>%s</h1>\n", $text;
             next;
         }
