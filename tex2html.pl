@@ -1,6 +1,8 @@
 use strict;
 use warnings;
 
+use utf8;
+
 my (@src);
 my %ts;
 my @close = ();
@@ -283,6 +285,9 @@ EOF
         if($_ eq '}'){
             next;
         }
+
+        #1ヶ所しかないので決め撃ち
+        s/\$(\d+)\\times(\d+)\$/$1×$2/g;
 
         s@&@&amp;@g;
         s@<@&lt;@g;
