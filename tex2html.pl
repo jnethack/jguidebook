@@ -9,7 +9,7 @@ my @close = ();
 my @mode = ('init', '');
 
 {
-    open my $f, '<:encoding(UTF-8)', 'jGuidebook.360.tex';
+    open my $f, '<:encoding(UTF-8)', 'jGuidebook.366.tex';
     while(<$f>){
         if(!/^%/){
             chomp;
@@ -20,7 +20,7 @@ my @mode = ('init', '');
 }
 
 {
-    open my $f, '>:encoding(UTF-8)', 'docs/jguidebook.html';
+    open my $f, '>:encoding(UTF-8)', 'docs/jguidebook.366.html';
     print $f <<EOF
 <html>
 <head>
