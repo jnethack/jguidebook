@@ -63,8 +63,8 @@
 %(Edited and expanded for 3.6 by Mike Stephenson and others)}
 \author{オリジナル - Eric S. Raymond\\
 (Mike Stephenson らによるバージョン 3.6 のための校訂と拡充)}
-%\date{December 7, 2015}
-\date{2015 年 12 月 7 日}
+%\date{March 8, 2020}
+\date{2020 年 3 月 8 日}
 
 \maketitle
 
@@ -611,23 +611,34 @@
 オプションがオンのときに表示される。
 %%.lp
 \item[\bb{状態(status)}]
-%Your current hunger status, ranging from %
-%{\it Satiated\/} down to {\it Fainting}.  If your hunger status is normal,
-%it is not displayed.
-現在の腹具合である。腹具合は {\it 満腹(Satiated)\/} から
-{\it ふらふら(Fainting) } までの値をとる。腹具合が普通なら表示されない。
+%%.lp ""
+%Fatal~conditions:
+%{\it Stone\/} (aka {\it Petrifying}, turning to stone),
+%{\it Slime\/} (turning into green slime),
+%{\it Strngl\/} (being strangled),
+%{\it FoodPois\/} (suffering from acute food poisoning),
+%{\it TermIll\/} (suffering from a terminal illness).
+致命的な状態:
+{\it Stone\/} (石化),
+{\it Slime\/} (どろどろ; スライム化),
+{\it Strngl\/} (窒息),
+{\it FoodPois\/} (食毒),
+{\it TermIll\/} (病気)。
 
 %%.lp ""
-%Additional status flags may appear after the hunger status:
-%{\it Conf\/} when you're confused, {\it FoodPois\/} or {\it Ill\/}
-%when sick, {\it Blind\/}
-%when you can't see, {\it Stun\/} when stunned, and {\it Hallu\/} when
-%hallucinating.
-この他にも状態を示す表示が腹具合の後ろに表示されることがあるかもしれ
-ない。混乱しているときには {\it Conf\/}、病気のときには {\it FoodPois\/}
-または {\it Ill\/}、
-目が見えないときには {\it Blind\/}、眩暈がしたときは {\it Stun\/}、
-幻覚を見ているときは {\it Hallu\/} と表示される。
+%Non-fatal~conditions:
+%{\it Blind\/} (can't see), {\it Deaf\/} (can't hear),
+%{\it Stun\/} (stunned), {\it Conf\/} (confused), {\it Hallu\/} (hallucinating).
+致命的でない状態:
+{\it Blind\/} (盲目), {\it Deaf\/} (耳聾),
+{\it Stun\/} (眩暈), {\it Conf\/} (混乱), {\it Hallu\/} (幻覚)。
+
+%%.lp ""
+%Movement~modifiers:
+%{\it Lev\/} (levitating), {\it Fly\/} (flying), {\it Ride\/} (riding).
+移動状態変化:
+{\it Lev\/} (浮遊), {\it Fly\/} (飛行), {\it Ride\/} (騎乗)。
+
 %%.lp ""
 %Other conditions and modifiers exist, but there isn't enough room to
 %display them with the other status fields.  The `{\tt \^{}X}' command shows
@@ -793,11 +804,11 @@
 %%.lp
 \item[\tb{I}]
 %This marks the last known location of an invisible or otherwise unseen
-%monster.  Note that the monster could have moved.  The `F' and `m' commands
-%may be useful here.
+%monster.  Note that the monster could have moved.
+%The `{\tt F}' and `{\tt m}' commands may be useful here.
 このマークは透明、あるいはその他の見えない怪物が最後にいたらしい場所に表示される。
 怪物はすでに移動しているかもしれないことに注意すること。
-ここでは`F'と`m'のコマンドが便利だろう。
+ここでは`{\tt F}'と`{\tt m}'のコマンドが便利だろう。
 
 \elist
 %%.pg
@@ -812,8 +823,9 @@
 \section{コマンド}
 
 %%.pg
-%Commands are initiated by typing one or two characters.
-%Some commands,
+%Commands can be initiated by typing one or two characters to which
+%the command is bound to, or typing the command name in the extended
+%commands entry.  Some commands,
 %like ``{\tt search}'', do not require that any more information be collected
 %by {\it NetHack\/}.  Other commands might require additional information, for
 %example a direction, or an object to be used.  For those commands that
@@ -822,7 +834,8 @@
 %Which you are presented with will depend chiefly on how you have set the
 %`{\it menustyle\/}'
 %option.
-コマンドは 1 文字か 2 文字のキー入力を行うことで実行される。
+コマンドは、そのコマンドに割り当てられている 1 文字か 2 文字のキー入力を
+行うか、拡張コマンドエントリのコマンド名を入力することで実行できる。
 いくつかのコマンド、例えば``{\tt search}''はそれ以上 {\it NetHack\/} に
 情報を与える必要がない。
 他のコマンドは例えば方向や使用する物などの情報をさらに与える必要がある。
@@ -904,7 +917,8 @@
 %`{\it help\/}'
 %option is on, and then you will be asked to pick another location;
 %`{\tt ,}' will explain the symbol but skip any additional
-%information; `{\tt ;}' will skip additional info and also not bother asking
+%information, then let you pick another location;
+%`{\tt ;}' will skip additional info and also not bother asking
 %you to choose another location to examine; `{\tt :}' will show additional
 %info, if any, without asking for confirmation.  When picking a location,
 %pressing the {\tt ESC} key will terminate this command, or pressing `{\tt ?}'
@@ -915,7 +929,8 @@
 もし `{\it help\/}'
 オプションがオンなら場合によっては``{\tt More info?}''(詳細を見る?)と質問され、
 それからさらに他の場所を指定することができる。
-`{\tt ,}'を押すと、シンボルの説明が表示されるが、詳細情報は表示されない。
+`{\tt ,}'を押すと、シンボルの説明が表示されるが、詳細情報は表示されない;
+それから新しい場所を指定する。
 `{\tt ;}'を押すと、詳細情報は表示されず、さらに他の場所の指定もできない。
 `{\tt :}'を押すと、(もしあるなら)確認なしで詳細情報が表示される。
 場所を選ぶ時に {\tt ESC} キーを押すことによってこのコマンドを中断でき、
@@ -1452,8 +1467,8 @@
 {\it autopickup\/} オプションのオン・オフを切り替える。
 %%.lp
 \item[\tb{\^{}}]
-%Ask for the type of a trap you found earlier.
-今までに発見した罠の種類を調べる。
+%Ask for the type of an adjacent trap you found earlier.
+今までに発見した隣接した罠の種類を調べる。
 %%.lp
 \item[\tb{)}]
 %Tell what weapon you are wielding.
@@ -1542,10 +1557,12 @@
 \item[\tb{\#adjust}]
 %Adjust inventory letters (most useful when the
 %{\it fixinv\/}
-%option is ``on'').\\
+%option is ``on''). Autocompletes. Default key is `{\tt M-a}'.\\
 持ち物の目録記号を変更する(
 {\it fixinv\/}
-オプションが``on''の時に非常に便利である)。\\
+オプションが``on''の時に非常に便利である)。
+補完される。
+標準キーは `{\tt M-a}'。\\
 %%.lp ""
 %This command allows you to move an item from one particular inventory
 %slot to another so that it has a letter which is more meaningful for you
@@ -1569,12 +1586,16 @@
 補完される。
 %%.lp
 \item[\tb{\#chat}]
-%Talk to someone.
+%Talk to someone. Default key is `{\tt M-c}'.
 誰かと話をする。
+標準キーは`{\tt M-c}'。
 %%.lp
 \item[\tb{\#conduct}]
-%List voluntary challenges you have maintained.\\
-維持している自発的挑戦の一覧を表示する。\\
+%List voluntary challenges you have maintained. Autocompletes.
+%Default key is `{\tt M-C}'.\\
+維持している自発的挑戦の一覧を表示する。
+補完される。
+標準キーは `{\tt M-C}'。
 %%.lp ""
 %See the section below entitled ``Conduct'' for details.
 詳しくは後述する``Conduct''の章を参照すること。
@@ -1621,13 +1642,16 @@
 (怪物の姿に変化している時に)怪物の特殊能力を使う。
 %%.lp
 \item[\tb{\#name}]
-%Name a monster, an individual object, or a type of object.  Same as `{\tt C}'.
+%Name a monster, an individual object, or a type of object.
+%Same as ``{\tt \#call}''.
 怪物、個々のオブジェクト、オブジェクトの種類に名前を付ける。
-`{\tt C}'と同じ。
+``{\tt \#call}''と同じ。
 %%.lp
 \item[\tb{\#offer}]
-%Offer a sacrifice to the gods.\\
-神にいけにえを捧げる。\\
+%Offer a sacrifice to the gods. Autocompletes. Default key is `{\tt M-o}'.\\
+神にいけにえを捧げる。
+補完する。
+標準キーは `{\tt M-o}' 。\\
 %%.lp ""
 %You'll need to find an altar to have any chance at success.
 %Corpses of recently killed monsters are the fodder of choice.
@@ -1650,8 +1674,10 @@
 補完される。
 %%.lp
 \item[\tb{\#pray}]
-%Pray to the gods for help.\\
-神に祈って助けを求める。\\
+%Pray to the gods for help. Autocompletes. Default key is `{\tt M-p}'.\\
+神に祈って助けを求める。
+補完する。
+標準キーは `{\tt M-p}' 。\\
 %%.lp ""
 %Praying too soon after receiving prior help is a bad idea.
 %(Hint: entering the dungeon alive is treated as having received help.
@@ -1678,15 +1704,17 @@
 %%.lp ""
 %Since using this command by accident would throw away the current game,
 %you are asked to confirm your intent before quitting.
-%By default a response of `{\tt y}' acknowledges that intent.
+%Default response is `{\tt n}' (no); continue playing.
+%To really quit, respond with `{\tt y}'.
 %You can set the
-%{\it paranoid\verb+_+confirmation\/}
+%{\it paranoid\verb+_+confirmation:quit\/}
 %option to require a response of ``{\tt yes}'' instead.
 このコマンドを間違って使うと現在のゲームを捨ててしまうことになるので、
 終了する前に意思を確認される。
-標準設定では 'y' を押すことで確認される。
-{\it paranoid\verb+_+confirmation\/} オプションをオンにすることで、
-代わりに "yes" の入力が必要であるようにすることができる。
+標準の返答は `{\tt n}' (ノー); プレイを続ける。
+本当に終了するためには、`{\tt y}' と応答する。
+{\it paranoid\verb+_+confirmation:quit\/} オプションをオンにすることで、
+代わりに ``{\tt yes}'' の入力が必要であるようにすることができる。
 %%.lp
 \item[\tb{\#ride}]
 %Ride (or stop riding) a saddled creature. Autocompletes.
@@ -1732,8 +1760,11 @@
 さもなければ自動的にオフになる。
 %%.lp
 \item[\tb{\#untrap}]
-%Untrap something (trap, door, or chest).\\
-何か(罠、扉、宝箱)の罠をはずす。\\
+%Untrap something (trap, door, or chest).
+%Default key is `{\tt M-u}', and `{\tt u}' if {\it number\verb+_+pad\/} is on.\\
+何か(罠、扉、宝箱)の罠をはずす。
+標準キーは `{\tt M-u}' と、
+{\it number\verb+_+pad\/} がオンなら `{\tt u}'。\\
 %%.lp ""
 %In some circumstances it can also be used to rescue trapped monsters.
 状況によっては罠に掛かった怪物を助けるのにも使えるかも知れない。
@@ -1973,7 +2004,7 @@
 
 %%.pg
 %Doors can be useful for shutting out monsters.  Most monsters cannot
-%open doors, although a few don't need to (ex.\ ghosts can walk through
+%open doors, although a few don't need to (for example, ghosts can walk through
 %doors).
 扉は怪物を締め出すのに役に立つ。たいていの怪物は扉を開けることができない。
 けれどもいくつかの怪物にとっては扉を開ける必要などない(例: 亡霊は
@@ -2016,8 +2047,9 @@
 行き詰まってしまった冒険者のためにいくつかの助け舟が用意されているが、
 これらは運を低下させてしまう。
 
-%\subsection*{Stairs (`{\tt <}', `{\tt >}')}
-\subsection*{階段 (`{\tt <}', `{\tt >}')}
+%%.hn 2
+%\subsection*{Stairs and ladders (`{\tt <}', `{\tt >}')}
+\subsection*{階段とはしご (`{\tt <}', `{\tt >}')}
 
 %%.pg
 %In general, each level in the dungeon will have a staircase going up
@@ -2071,9 +2103,6 @@
 時々それらの一体があなたと入れ替わることがある。
 こうなった場合、ペットやその他の怪物が階段の上に現れ、
 あなたはそのそばに現れる。
-
-%\subsection*{Ladders (`{\tt <}', `{\tt >}')}
-\subsection*{はしご (`{\tt <}', `{\tt >}')}
 
 %%.pg
 %Ladders serve the same purpose as staircases, and the two types of
@@ -2145,7 +2174,7 @@
 {\tt Ix}コマンドは使ってしまった物の代金の一覧(あれば)が表示される。
 
 %%.hn 3
-%\subsubsection*{Shop idiosyncracies}
+%\subsubsection*{Shop idiosyncrasies}
 \subsubsection*{店の特殊な性質}
 
 %%.pg
@@ -2171,7 +2200,7 @@
 一般的にその他の消費者については無視する。
 %%.lp \(bu 2
 \item[$\bullet$]
-%If a shop is ``closed for inventory'', it will not open of its own accord.
+%If a shop is ``closed for inventory,'' it will not open of its own accord.
 店が``closed for inventory''(「棚卸のため閉店」)の場合、
 待っていても開店はしない。
 %%.lp \(bu 2
@@ -2197,14 +2226,15 @@
 %%.pg
 %The commands `{\tt /}' and `{\tt ;}' may be used to obtain information
 %about those
-%monsters who are displayed on the screen.  The command ``{\tt \#name}'', or
-%its synonym `{\tt C}', allows you
+%monsters who are displayed on the screen.  The command ``{\tt \#name}''
+%(by default bound to `{\tt C}'), allows you
 %to assign a name to a monster, which may be useful to help distinguish
 %one from another when multiple monsters are present.  Assigning a name
 %which is just a space will remove any prior name.
 `{\tt /}' コマンドと `{\tt ;}' コマンドが画面上に表示されている怪物に関する情報を得るのに
 用いられる。
-``{\tt \#name}'' コマンド、または別名の `C' コマンドは怪物に名前をつけるのに用いられ、
+``{\tt \#name}'' コマンド(標準では `{\tt C}' に割り当てられている) は
+怪物に名前をつけるのに用いられ、
 複数の怪物がいる時に、ある怪物を他のものと見分けたいときに便利である。
 名前としてスペースを指定すると、以前につけた名前を消すことになる。
 
@@ -2276,14 +2306,16 @@
 %or pony (`{\tt u}'), which follows
 %you about the dungeon and fights monsters with you.
 %Like you, your pet needs food to survive.
-%It usually feeds itself on fresh carrion and other meats.
+%Dogs and cats usually feed themselves on fresh carrion and other meats;
+%horses need vegetarian food which is harder to come by.
 %If you're worried about your pet or want to train it, you
 %can feed it, too, by throwing it food.
 %A properly trained pet can be very useful under certain circumstances.
 あなたは仔犬(`{\tt d}')、子猫(`{\tt f}')、ポニー(`{\tt u}')のいずれかとともにゲームを始める。
 あなたのペットはあなたとともに洞窟をさまよい、怪物と戦う。
 ペットはあなたと同様に生きのびるための食料を必要とする。
-ペットは新鮮な死肉やその他の肉をえさにしている。
+犬と猫は新鮮な死肉やその他の肉をえさにしている;
+馬は手に入れるのがより難しい草食の食料が必要である。
 もしもペットのことが気がかりであったり、ペットを飼い慣らしておきたいと思うなら、
 あなたが直接えさを与えることもできる。
 そのためには食料をペットに向かって投げてやればよい。
@@ -2329,17 +2361,17 @@
 野生の生物にあなたが乗ることを納得させるのは困難である。
 多くの洞窟の主は協力関係をでっち上げるのに魔法の力に頼らなければならない。
 %Once you do have the beast under your control however, you can
-%easily climb in and out of the saddle with the `{\tt \#ride}' command.  Lead
+%easily climb in and out of the saddle with the ``{\tt \#ride}'' command.  Lead
 %the beast around the dungeon when riding, in the same manner as
 %you would move yourself.  It is the beast that you will see displayed
 %on the map.
 しかし、一旦動物をあなたの支配下に置いたなら、
-`{\tt \#ride}'コマンドで乗り降りすることができる。
+``{\tt \#ride}''コマンドで乗り降りすることができる。
 動物に乗って洞窟を移動する方法は、自分自身が移動するのと同じである。
 地図に表示されるのはあなたが乗っている動物である。
 
 %%.pg
-%Riding skill is managed by the `{\tt \#enhance}' command.  See the section
+%Riding skill is managed by the ``{\tt \#enhance}'' command.  See the section
 %on Weapon proficiency for more information about that.
 乗馬技術は`{\tt \#enhance}'コマンドで管理することができる。
 詳しくは後述する武器の技術の章を参照すること。
@@ -2391,7 +2423,7 @@
 %As you add items to your inventory, you also add the weight of that object
 %to your load.  The amount that you can carry depends on your strength and
 %your constitution.  The
-%stronger
+%stronger and sturdier
 %you are, the less the additional load will affect you.  There comes
 %a point, though, when the weight of all of that stuff you are carrying around
 %with you through the dungeon will encumber you.  Your reactions
@@ -2400,17 +2432,21 @@
 %to discard some of what you're carrying or collapse under its weight.
 持ち物が増えるに連れて、荷物の重さが重くなる。
 どれだけの重さの物を運べるかは筋力と耐久力による。
-力が強いほど、荷物の重さの影響は小さくなる。
+力が強く丈夫なほど、荷物の重さの影響は小さくなる。
 しかしそれでも、洞窟の中を持ち歩いている荷物の重さがあなたに負担になるときがくる。
 反応は鈍くなり、カロリー消費が早くなってより多くの食料が必要となる。
 そして最終的には荷物が重すぎて何かを捨てないと動けなくなってしまう。
 %%.pg
-%{\it NetHack\/} will tell you how badly you have loaded yourself.  The symbols
-%`Burdened', `Stressed', `Strained', `Overtaxed' and `Overloaded' are
-%displayed on the bottom line display to indicate your condition.
+%{\it NetHack\/} will tell you how badly you have loaded yourself.
+%If you are encumbered, one of the conditions
+%``{\it Burdened\/}'', ``{\it Stressed\/}'', ``{\it Strained\/}'',
+%``{\it Overtaxed\/}'' or ``{\it Overloaded\/}'' will be
+%shown on the bottom line status display.
 NetHack では荷物の重さがどれくらい悪影響を与えるかを教えてくれる。
-最下行に表示される`Burdened', `Stressed', `Strained', `Overtaxed', `Overloaded'
-の表示があなたの状態を示している。
+荷物が邪魔になってきた場合、状態
+``{\it Burdened\/}'', ``{\it Stressed\/}'', ``{\it Strained\/}'',
+``{\it Overtaxed\/}'', ``{\it Overloaded\/}'' が
+の一つが最下行に表示される。
 
 %%.pg
 %When you pick up an object, it is assigned an inventory letter.  Many
@@ -2438,7 +2474,7 @@ NetHack では荷物の重さがどれくらい悪影響を与えるかを教え
 %will remember what it is for you.  If its effect isn't extremely
 %obvious, you will be asked what you want to call this type of object
 %so you will recognize it later.  You can also use the ``{\tt \#name}''
-%command, or its synonym `{\tt C}', for the same purpose at any time, to name
+%command, for the same purpose at any time, to name
 %all objects of a particular type or just an individual object.
 %When you use ``{\tt \#name}'' on an object which has already been named,
 %specifying a space as the value will remove the prior name instead
@@ -2447,7 +2483,7 @@ NetHack では荷物の重さがどれくらい悪影響を与えるかを教え
 何であるかを憶えていてくれる。
 その効果があまり明らかでない場合はその物の種類を何と名付けるか尋ねてくる。
 このため後になってそれを思い出すことができる。
-またいつでも``{\tt \#name}''コマンド、またはその別名の`C'コマンドを使って
+またいつでも``{\tt \#name}''コマンドを使って
 同様のことができ、
 ある種類の物すべてに名前を付けたり個々の物に名前を付けたりできる。
 すでに名前をつけているものに``{\tt \#name}''を使う場合、
@@ -2643,11 +2679,11 @@ AD\&D をプレイしたことのある読者はお気付きだろうが、AD\&D
 %%.pg
 %The commands to use weapons are `{\tt w}' (wield), `{\tt t}' (throw),
 %`{\tt f}' (fire, an alternate way of throwing), `{\tt Q}' (quiver),
-%`{\tt x}' (exchange), `{\tt \#twoweapon}', and ``{\tt \#enhance}''
+%`{\tt x}' (exchange), `{\tt X}' (twoweapon), and ``{\tt \#enhance}''
 %(see below).
 武器を使うコマンドは `{\tt w}'(wield: 武器を持つ)、 `{\tt t}'(throw: 投げる)、
 `{\tt f}' (fire: 武器を発射するもうひとつの方法), `{\tt Q}'(quiver: 矢筒)、
-`{\tt x}' (exchange: 武器を交換する)、`{\tt \#twoweapon}'、`{\tt \#enhance}'(後述) である。
+`{\tt x}' (exchange: 武器を交換する)、`{\tt X}' (二刀流)、`{\tt \#enhance}'(後述) である。
 
 %%.hn 3
 %\subsection*{Throwing and shooting}
@@ -2924,18 +2960,24 @@ AD\&D に存在する鎧はいずれも {\it NetHack\/} においても同じ防
 %splint mail            & 4 &                   & banded mail           & 4\\
 %dwarvish mithril-coat  & 4 &                   & elven mithril-coat    & 5\\
 %chain mail             & 5 &                   & orcish chain mail     & 6\\
-%scale mail             & 6 &                   & studded leather armor & 7\\
-%ring mail              & 7 &                   & orcish ring mail      & 8\\
-%leather armor          & 8 &                   & leather jacket        & 9\\
+%scale mail             & 6 &                   & 
+%studded leather armor  & 7\\
+%ring mail              & 7 &                   & 
+%orcish ring mail       & 8\\
+%leather armor          & 8 &                   & 
+%leather jacket         & 9\\
 %no armor               & 10
 dragon scale mail(ドラゴンの鱗鎧) & 1 & & plate mail(鋼鉄の鎧) & 3\\
-crystal plate mail(水晶の鎧) & 3 & & bronze plate mail(青銅の鎧) & 4\\
-splint mail(鉄片の鎧) & 4 & & banded mail(帯金の鎧) & 4\\
+crystal plate mail(水晶の鎧)      & 3 & & bronze plate mail(青銅の鎧) & 4\\
+splint mail(鉄片の鎧)             & 4 & & banded mail(帯金の鎧) & 4\\
 dwarvish mithril-coat(ドワーフのミスリル服) & 4 & & elven mithril-coat(エルフのミスリル服) & 5\\
-chain mail(鎖かたびら) & 5 & & orcish chain mail(オークの鎖かたびら) & 6\\
-scale mail(鱗の鎧) & 6 & & studded leather armor(鋲付き皮鎧) & 7\\
-ring mail(鉄環の鎧) & 7 & & orcish ring mail(オークの鉄環の鎧) & 8\\
-leather armor(皮鎧) & 8 & & leather jacket(皮ジャケット) & 9\\
+chain mail(鎖かたびら)            & 5 & & orcish chain mail(オークの鎖かたびら) & 6\\
+scale mail(鱗の鎧)                & 6 & & 
+studded leather armor(鋲付き皮鎧) & 7\\
+ring mail(鉄環の鎧)               & 7 & & 
+orcish ring mail(オークの鉄環の鎧) & 8\\
+leather armor(皮鎧)               & 8 & & 
+leather jacket(皮ジャケット) & 9\\
 no armor(鎧なし) & 10
 \end{tabular}
 \end{center}
@@ -3121,18 +3163,18 @@ no armor(鎧なし) & 10
 
 %%.pg
 %Wands usually have multiple magical charges.
-%Some wands are directional---you must give a direction in which to zap them.
+%Some types of wands require a direction in which to zap them.
 %You can also
 %zap them at yourself (just give a `{\tt .}' or `{\tt s}' for the direction).
 %Be warned, however, for this is often unwise.
-%Other wands are
-%nondirectional---they don't require a direction.  The number of charges in a
+%Other types of wands
+%don't require a direction.  The number of charges in a
 %wand is random and decreases by one whenever you use it.
-杖は通常何回も魔力を発揮する．杖の中には方向性のあるものがあり、
-この場合杖を振る方向を指示しなくてはならない。
+杖は通常何回も魔力を発揮する。
+一部の杖は杖を振る際に方向を指示する必要がある。
 杖を自分に向けて振ることもできる(方向として `{\tt .}' か `{\tt s}' を入力する)が、
 これはしばしば愚かな行為となる。
-その他の杖には方向性がなく、杖を振る方向を尋ねてこない。
+その他の杖は方向は必要でない。
 杖が効力を発揮する回数は杖ごとに不定で、杖を使う度にその回数は 1 ずつ減る。
 
 %%.pg
@@ -3263,7 +3305,7 @@ no armor(鎧なし) & 10
 %Just as weapons are divided into groups in which a character can become
 %proficient (to varying degrees), spells are similarly grouped.
 %Successfully casting a spell exercises its skill group; using the
-%`{\tt \#enhance}' command to advance a sufficiently exercised skill
+%``{\tt \#enhance}'' command to advance a sufficiently exercised skill
 %will affect all spells within the group.  Advanced skill may increase the
 %potency of spells, reduce their risk of failure during casting attempts,
 %and improve the accuracy of the estimate for how much longer they will
@@ -3570,18 +3612,18 @@ no armor(鎧なし) & 10
 素手や脚で戦うことも許される。
 
 %%.pg
-%In {\it NetHack\/}, a pacifist refuses to cause the death of any other monster
+%In {\it NetHack}, a pacifist refuses to cause the death of any other monster
 %(i.e. if you would get experience for the death).  This is a particularly
 %difficult challenge, although it is still possible to gain experience
 %by other means.
-{\it NetHack\/} において、平和主義者は他の怪物を殺してはならない(言い換えると、
+{\it NetHack} において、平和主義者は他の怪物を殺してはならない(言い換えると、
 怪物の死によって経験値を得てはならない)。
 これは特に難しい挑戦であるが、他の手段によって経験値を得ることは可能である。
 
 %%.pg
 %An illiterate character cannot read or write.  This includes reading
 %a scroll, spellbook, fortune cookie message, or t-shirt; writing a
-%scroll; or making an engraving of anything other than a single ``x'' (the
+%scroll; or making an engraving of anything other than a single ``X'' (the
 %traditional signature of an illiterate person).  Reading an engraving,
 %or any item that is absolutely necessary to win the game, is not counted
 %against this conduct.  The identity of scrolls and spellbooks (and
@@ -3590,7 +3632,7 @@ no armor(鎧なし) & 10
 %counted.
 文盲者は読み書きができない。これには以下の行為が含まれる。
 巻き物を読む、魔法書を読む、占いクッキーのメッセージを読む、Tシャツの文字を読む、
-巻き物を書く、``x''一文字(文盲者の伝統的なサイン)以外の文字を刻む。
+巻き物を書く、``X''一文字(文盲者の伝統的なサイン)以外の文字を刻む。
 刻んである文字を読むことと、ゲームに勝利するために絶対に必要なアイテムを
 読むことは制限には反しないものとする。
 ゲーム開始時に持っている巻き物と魔法書の内容を知っていることおよび
@@ -4238,14 +4280,16 @@ Amiga, Gem, X11, tty で実装されている。(標準設定は `.')
 Amiga, Gem, tty で実装されている。(標準設定は `,')
 %%.lp
 \item[\ib{msghistory}]
-%The number of top line messages to save (and recall with `{\tt \^{}P}')
-%(default 20). Cannot be set with the `{\tt O}' command.
+%The number of top line messages to save (and recall
+%with `{\tt \^{}P}') (default 20).
+%Cannot be set with the `{\tt O}' command.
 後で `{\tt \^{}P}' で呼び出すために保存しておく最上行のメッセージの数(標準設定は 20)。
 `{\tt O}' コマンドで設定することはできない。
 %%.lp
 \item[\ib{msg\verb+_+window}]
 %Allows you to change the way recalled messages are displayed.
-%(It is currently implemented for tty only.) The possible values are:
+%(It is currently implemented for tty only.)
+%The possible values are:
 過去のメッセージの表示方法を変更する(現時点では tty にのみ実装されている)。
 指定できる値は以下のとおり。
 
@@ -4336,7 +4380,7 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 %(Settings {\tt 2} and {\tt 4} are for compatibility with MS-DOS or old PC Hack;
 %in addition to the different behavior for `{\tt 5}', `{\tt Alt-5}' acts as `{\tt G}'
 %and `{\tt Alt-0}' acts as `{\tt I}'.
-%Setting {\tt -1} is to accommodate some German keyboards which have the
+%Setting {\tt -1} is to accommodate some QWERTZ keyboards which have the
 %location of the `{\tt y}' and `{\tt z}' keys swapped.)
 %When moving by numbers, to enter a count prefix for those commands
 %which accept one (such as ``{\tt 12s}'' to search twelve times), precede it
@@ -4348,7 +4392,7 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 `{\tt Alt-5}' は `{\tt G}' として振る舞い、
 `{\tt Alt-0}' は `{\tt I}' として振る舞う。
 設定 {\tt -1} は、`{\tt y}' と `{\tt z}' の位置が入れ替わっている一部の
-ドイツ語キーボードに対応するものである。)
+QWERTZ キーボードに対応するものである。)
 数字で移動するとき、(12 回調べるために ``{\tt 12s}'' とするような)
 コマンドに対する回数接頭辞を入力するには、
 文字 `{\tt n}' を前置する (``{\tt n12s}'')。
@@ -4372,7 +4416,7 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 %%.sd
 %%.si
 \newlength{\pcwidth}
-\settowidth{\pcwidth}{\tt Confirm}
+\settowidth{\pcwidth}{\tt Were-change}
 \addtolength{\pcwidth}{\labelsep}
 \blist{\leftmargin \pcwidth \topsep 1mm \itemsep 0mm}
 \item[{\tt Confirm}]
@@ -4461,7 +4505,8 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 %%.lp
 \item[\ib{pickup\verb+_+thrown}]
 %If this option is on and ``{\it autopickup\/}'' is also on, try to pick up
-%things that you threw, even if they aren't in ``{\it pickup\verb+_+types\/}'' or
+%things that you threw, even if they aren't in
+%``{\it pickup\verb+_+types\/}'' or
 %match an autopickup exception.  Default is on.  Persistent.
 このオプションがオンで
 ``{\it autopickup\/}''
@@ -4475,7 +4520,8 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 %%.lp
 \item[\ib{pickup\verb+_+types}]
 %Specify the object types to be picked up when ``{\it autopickup\/}''
-%is on.  Default is all types.  You can use ``{\it autopickup\verb+_+exception\/}''
+%is on.  Default is all types.  You can use
+%``{\it autopickup\verb+_+exception\/}''
 %configuration file lines to further refine ``{\it autopickup\/}'' behavior.
 %Persistent.
 ``{\it autopickup\/}''
@@ -4535,7 +4581,7 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 %%.Ip
 \item[\ib{race}]
 %Selects your race (for example, ``{\tt race:human}'').  Default is random.
-%If you prefix `{\tt !}' or ``{\tt no}'' to the value, you can
+%If you prefix the value with `{\tt !}' or ``{\tt no}'', you will
 %exclude that race from being picked randomly.
 %Cannot be set with the `{\tt O}' command.  Persistent.
 種族を選択する(例: ``{\tt race:human}'')。標準設定はランダムである。
@@ -4545,19 +4591,19 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 永続する。
 %%.lp
 \item[\ib{rest\verb+_+on\verb+_+space}]
-%Make the space bar a synonym for the `{\tt .}' (rest) command (default off).
+%Make the space bar a synonym for the `{\tt .}' (\#wait) command (default off).
 %Persistent.
-スペースキーを `{\tt .}'(rest: 休憩する) コマンドとして使用する
+スペースキーを `{\tt .}'(\#wait) コマンドとして使用する
 (標準設定はオフ)。
 永続する。
 %%.lp
 \item[\ib{role}]
-%Pick your type of character (ex.\ ``{\tt role:Samurai}'');
+%Pick your type of character (for example, ``{\tt role:Samurai}'');
 %synonym for ``{\it character\/}''.  See ``{\it name\/}'' for an alternate method
 %of specifying your role.  Normally only the first letter of the
 %value is examined; `r' is an exception with ``{\tt Rogue}'', {\tt Ranger}'',
 %and ``{\tt random}'' values.
-%If you prefix `{\tt !}' or ``{\tt no}'' to the value, you can
+%If you prefix the value with `{\tt !}' or ``{\tt no}'', you will
 %exclude that role from being picked randomly.
 %Cannot be set with the `{\tt O}' command.  Persistent.
 キャラクターのタイプを設定する (例:``{\tt role:Samurai}'')。
@@ -4625,7 +4671,7 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 永続する。
 %%.lp
 \item[\ib{scores}]
-%Control what parts of the score list you are shown at the end (ex.\
+%Control what parts of the score list you are shown at the end (for example,
 %``{\tt scores:5top scores/4around my score/own scores}'').  Only the first
 %letter of each category (`{\tt t}', `{\tt a}' or `{\tt o}') is necessary.
 %Persistent.
@@ -4710,11 +4756,11 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 さらなる情報については ``{\it Configuring Status Hilites\/}'' を参照のこと。
 %%.lp
 \item[\ib{suppress\verb+_+alert}]
-%This option may be set to a NetHack version level to suppress
+%This option may be set to a {\it NetHack\/} version level to suppress
 %alert notification messages about feature changes for that
-%and prior versions (ex.\ ``{\tt suppress\verb+_+alert:3.3.1}'')
+%and prior versions (for example, ``{\tt suppress\verb+_+alert:3.3.1}'')
 前のバージョンから変更された機能に対して注意を促すメッセージを
-表示しないようにする NetHack のバージョンを設定する。
+表示しないようにする {\it NetHack\/} のバージョンを設定する。
 (例: ``{\tt suppress\verb+_+alert:3.3.1}'')
 例のように指定すると 3.3.1 以前に変更された機能に対する注意メッセージは表示されない。
 %%.lp
@@ -4748,14 +4794,14 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 永続する。
 %%.lp
 \item[\ib{toptenwin}]
-%Put the ending display in a NetHack window instead of on stdout (default off).
+%Put the ending display in a {\it NetHack\/} window instead of on stdout (default off).
 %Setting this option makes the score list visible when a windowing version
-%of NetHack is started without a parent window, but it no longer leaves
+%of {\it NetHack\/} is started without a parent window, but it no longer leaves
 %the score list around after game end on a terminal or emulating window.
-ゲーム終了時の表示を標準出力のかわりに NetHack のウィンドウに表示する
+ゲーム終了時の表示を標準出力のかわりに {\it NetHack\/} のウィンドウに表示する
 (標準設定はオフ)。
 このオプションを設定すると
-ウィンドウを使うバージョンの NetHack では
+ウィンドウを使うバージョンの {\it NetHack\/} では
 起動した親ウィンドウとは別のウィンドウにスコアリストが表示される。
 しかし、スコアリストはゲームが終了したあとターミナルやウィンドウには残らない。
 %%.lp
@@ -4803,7 +4849,7 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 %Character strings that are too long may be truncated.
 %Not all window ports will adjust for all settings listed
 %here.  You can safely add any of these options to your
-%config file, and if the window port is capable of adjusting
+%configuration file, and if the window port is capable of adjusting
 %to suit your preferences, it will attempt to do so. If it
 %can't it will silently ignore it.  You can find out if an
 %option is supported by the window port that you are currently
@@ -4885,7 +4931,8 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 テキストウィンドウを表示するフォントサイズ
 %%.lp
 \item[\ib{fullscreen}]
-%NetHack should try and display on the entire screen rather than in a window.
+%NetHack should try and display on the entire screen rather than
+%in a window.
 ウィンドウでなく画面全体で表示しようと試みる
 %%.lp
 \item[\ib{large\verb+_+font}]
@@ -5032,7 +5079,7 @@ ESC で始まる 2 文字並びを 2 番目の文字の meta-shift に変換す�
 %Note that typing one or more digits as a count prefix prior to a
 %command---preceded by {\tt n} if the {\it number\verb+_+pad\/}
 %option is set---is also subject to this conversion, so attempting to
-%abort the count by typing ESC will leave nethack waiting for another
+%abort the count by typing ESC will leave {\it NetHack\/} waiting for another
 %character to complete the two character sequence.  Type a second ESC to
 %finish cancelling such a count.  At other prompts a single ESC suffices.
 この変換はコマンドに対してのみ行われ、その他の入力プロンプトでは行われない。
@@ -5042,7 +5089,7 @@ ESC で始まる 2 文字並びを 2 番目の文字の meta-shift に変換す�
 オプションが設定されているなら {\tt n} を前置して---、
 この変換が行われるので、
 ESC をタイプすることでカウントを中断しようとすると、
-nethack は 2 文字並びを完成させるために待つことになる。
+{\it NetHack\/} は 2 文字並びを完成させるために待つことになる。
 2 回 ESC をタイプすることでそのようなカウントのキャンセルが完了する。
 その他のプロンプトでは単一の ESC で十分である。
 %%.lp
@@ -5069,7 +5116,7 @@ IBM-PC 互換の BIOS ROM を使用しているマシンで BIOS コールを使
 \item[\ib{rawio}]
 %Force raw (non-cbreak) mode for faster output and more
 %bulletproof input (MS-DOS sometimes treats `{\tt \^{}P}' as a printer toggle
-%without it) (default off, {\it OS/2, PC\/ {\rm and} ST NetHack\/} only). 
+%without it) (default off, {\it OS/2, PC\/ {\rm and} ST NetHack\/} only).
 %Note:  DEC Rainbows hang if this is turned on.
 %Cannot be set with the `{\tt O}' command.
 raw(cbreak でない) モードを使用して、
@@ -5089,25 +5136,27 @@ raw(cbreak でない) モードを使用して、
 \item[\ib{subkeyvalue}]
 %({\it Win32 tty NetHack \/} only).
 %May be used to alter the value of keystrokes that the operating system
-%returns to NetHack to help compensate for international keyboard issues.
+%returns to {\it NetHack\/} to help compensate for international keyboard
+%issues.
 %OPTIONS=subkeyvalue:171/92
-%will return 92 to NetHack, if 171 was originally going to be returned.
-%You can use multiple subkeyvalue statements in the config file if needed.
+%will return 92 to {\it NetHack\/}, if 171 was originally going to be returned.
+%You can use multiple subkeyvalue statements in the configuration file
+%if needed.
 %Cannot be set with the `{\tt O}' command.
 ({\it Win32 tty NetHack \/} のみ)。
 国際キーボードの問題を補正するのを助けるために、
-OS が NetHack に返すキー入力の値を変更するために使用する。
+OS が {\it NetHack\/} に返すキー入力の値を変更するために使用する。
 OPTIONS=subkeyvalue:171/92
 とすると、もともと 171 が返されようとしていた場合、
-NetHack に 92 を返す。
+{\it NetHack\/} に 92 を返す。
 必要なら、複数の subkeyvalue 行を設定ファイルに書いてもよい。
 `{\tt O}' コマンドで設定することはできない。
 %%.lp
 \item[\ib{video}]
 %Set the video mode used ({\it PC\/ NetHack\/} only).
 %Values are {\it autodetect\/}, {\it default\/}, or {\it vga\/}.
-%Setting {\it vga\/} (or {\it autodetect\/} with vga hardware present) will cause
-%the game to display tiles.
+%Setting {\it vga\/} (or {\it autodetect\/} with vga hardware present) will
+%cause the game to display tiles.
 %Cannot be set with the `{\tt O}' command.
 使用するビデオモードを設定する({\it PC\/ NetHack\/} のみ)。
 値は {\tt autodetect\/}, {\tt default\/}, {\tt vga\/} のいずれかである。
@@ -5150,14 +5199,15 @@ NO\verb+_+TERMS を使用しているPCシステムのカラーパレットを�
 
 %%.pg
 %Regular expressions are normally POSIX extended regular expressions. It is
-%possible to compile NetHack without regular expression support on a platform where
+%possible to compile {\it NetHack\/} without regular expression support on
+%a platform where
 %there is no regular expression library. While this is not true of any modern
-%platform, if your NetHack was built this way, patterns are instead glob
+%platform, if your {\it NetHack\/} was built this way, patterns are instead glob
 %patterns.
 正規表現は通常 POSIX 拡張正規表現である。
 正規表現ライブラリがないプラットフォームでは正規表現対応なしで
-NetHack をコンパイルすることも可能である。
-これは最近のプラットフォームでは真ではないが、この方法で NetHack が
+{\it NetHack\/} をコンパイルすることも可能である。
+これは最近のプラットフォームでは真ではないが、この方法で {\it NetHack\/} が
 ビルドされると、パターンは代わりにグロブパターンが使われる。
 
 %%.hn 2
@@ -5181,7 +5231,7 @@ NetHack をコンパイルすることも可能である。
 \blist{}
 %%.lp
 \item[\ib{autopickup\verb+_+exception}]
-%Sets an exception to the `{\it pickup\verb+_+types}' option.
+%Sets an exception to the ``{\it pickup\verb+_+types}'' option.
 `{\it pickup\verb+_+types\/}' オプションの例外を設定する。
 %The {\it autopickup\verb+_+exception\/} option should be followed by a regular
 %expression to be used as a pattern to match against the singular form of the
@@ -6026,19 +6076,19 @@ Rogue 風コマンドを使うこと。
 \subsection*{システム管理者のためのグローバルな設定}
 
 %%.pg
-%If NetHack is compiled with the SYSCF option, a system administrator
+%If {\it NetHack\/} is compiled with the SYSCF option, a system administrator
 %should set up a global configuration; this is a file in the
 %same format as the traditional per-user configuration file (see above).
-NetHack が SYSCF オプション付きでコンパイルされている場合、システム管理者は
+{\it NetHack\/} が SYSCF オプション付きでコンパイルされている場合、システム管理者は
 グローバル設定を設定するべきである; これは(前述した)伝統的なユーザー毎の
 設定ファイルと同じ形式のファイルである。
 
 %This file should be named sysconf and placed in the same directory as
-%the other NetHack support files.
+%the other {\it NetHack\/} support files.
 %The options recognized in this file are listed below. Any option not
 %set uses a compiled-in default (which may not be appropriate for your
 %system).
-このファイルは sysconf という名前で、その他の NetHack 補助ファイルと
+このファイルは sysconf という名前で、その他の {\it NetHack\/} 補助ファイルと
 同じディレクトリに置かれる。
 このファイルで認識されるオプションは以下の通りである。
 設定されてなかったオプションは(あなたのシステムでは適切ではないかもしれない)
@@ -6049,10 +6099,10 @@ NetHack が SYSCF オプション付きでコンパイルされている場合�
 %%.lp
 \item[\ib{WIZARDS}]
 %A space-separated list of user name who are allowed to
-%play in wizard mode (the debugging mode, not the magic-useing role). 
+%play in debug mode (commonly referred to as wizard mode).
 %A value of a single
 %asterisk (*) allows anyone to start a game in debug mode.
-ウィザードモード(職業の魔法使いではなくデバッグモード)でプレイすることを
+(一般的にウィザードモードと呼ばれる)デバッグモードでプレイすることを
 許されたユーザー名の空白区切りのリスト。
 値が単一のアスタリスク (*) の場合は誰でもデバッグモードでゲームを
 開始できる。
@@ -6210,7 +6260,8 @@ score ファイル上でプレイヤーを認識するのに、0 ではユーザ
 
 %%.pg
 %Debug mode, also known as wizard mode, is undocumented aside from this
-%brief description.
+%brief description and the various ``debug mode only'' commands listed
+%among the command descriptions.
 %It is intended for tracking down problems within the
 %program rather than to provide god-like powers to your character, and
 %players who attempt debugging are expected to figure out how to use it
@@ -6220,7 +6271,8 @@ score ファイル上でプレイヤーを認識するのに、0 ではユーザ
 %command-line switch or with the
 %{\it playmode:debug\/}
 %option.
-ウィザードモードとも呼ばれるデバッグモードは、この概説の他には
+ウィザードモードとも呼ばれるデバッグモードは、この概説と、
+コマンド説明で挙げられている様々な「デバッグモード専用」コマンドの他には
 文書化されていない。
 これはキャラクターに神のような力を与えるためではなく、プログラムの問題を
 調べることを意図したもので、デバッグを試みるプレイヤーは
@@ -6651,19 +6703,19 @@ Kevin は後に開発チームに加わり、これらのアイデアを {\it Ne
 %{\it NetHack Development Team} slowly and quietly continued to work on the game behind the scenes
 %during the tenure of 3.4.3. It was during that same period that several new
 %variants emerged within the {\it NetHack\/} community. Notably sporkhack by
-%Derek S. Ray, unnethack by Patric Mueller, nitrohack and its successors
-%originally by Daniel Thaler and then by Alex Smith, and
-%Dynahack by Tung Nguyen. Some of those variants continue to be developed,
-%maintained, and enjoyed by the community to this day.
+%Derek S. Ray, {\it unnethack\/} by Patric Mueller, {\it nitrohack\/} and its
+%successors originally by Daniel Thaler and then by Alex Smith, and
+%{\it Dynahack\/} by Tung Nguyen. Some of those variants continue to be
+%developed, maintained, and enjoyed by the community to this day.
 2003 年 12 月の {\it NetHack\/} 3.4.3 のリリースは、長いリリース中断の始まりとなった。
 3.4.3 は、コミュニティによって 10 年以上楽しまれ続けられたことで
 非常に安定したバージョンであることが示された。
 3.4.3 の間、The {\it NetHack Development Team} は水面下でゆっくりと静かにゲームに対して作業を
 続けていた。
 同じ頃、{\it NetHack\/} コミュニティにいくつかの新しいバリアントが出現した。
-特に、Derek S. Ray による sporkhack、Patric Mueller による unnethack、
+特に、Derek S. Ray による sporkhack、Patric Mueller による {\it unnethack\/}、
 元々は Daniel Thaler で、それからは Alex Smith による
-nitrohack およびその後継、Tung Nguyen による Dynahack である。
+{\it nitrohack\/} およびその後継、Tung Nguyen による {\it Dynahack\/} である。
 これらのバリアントの一部は開発と保守が続けられ、今でもコミュニティで
 楽しまれている。
 
@@ -6674,16 +6726,15 @@ nitrohack およびその後継、Tung Nguyen による Dynahack である。
 %and had not gone through the process of debugging it as a suitable release,
 %it was decided that the version numbers present on that code snapshot would
 %be retired and never used in an official {\it NetHack\/} release. An
-%announcement was posted on the {\it NetHack Development Team}'s official
-%nethack.org website to that effect,
-%stating that there would never be a 3.4.4, 3.5, or 3.5.0
+%announcement was posted on the {\it NetHack Development Team}'s official {\it nethack.org\/} website
+%to that effect, stating that there would never be a 3.4.4, 3.5, or 3.5.0
 %official release version.
 2014 年 9 月に、開発中のコードの中間的なスナップショットが他のグループによって
 公にされた。
 コードは作業中のもので、適切なリリースのためのデバッグプロセスを経ていない
 ものであったので、コードスナップショットに使われていたバージョン番号は
 欠番として、公式な {\it NetHack\/} リリースでは使わないことに決定した。
-{\it NetHack Development Team} の公式 nethack.org web サイトにアナウンスが投稿され、
+{\it NetHack Development Team} の公式 {\it nethack.org\/} web サイトにアナウンスが投稿され、
 公式リリースバージョンとして 3.4.4, 3.5, 3.5.0 は使わないことを示した。
 
 %%.pg
@@ -6699,7 +6750,7 @@ nitrohack およびその後継、Tung Nguyen による Dynahack である。
 %{\it David Cohrs}, {\it Jessie Collet},
 %{\it Ken Lorber}, {\it Dean Luick}, {\it Pat Rankin},
 %{\it Mike Stephenson}, {\it Janet Walz}, and {\it Paul Winner}.
-%Leading up to the release of 3.6.0 in early 2015, new members
+%In early 2015, ahead of the release of 3.6.0, new members
 %{\it Sean Hunt}, {\it Pasi Kallinen}, and {\it Derek S. Ray}
 %joined the {\it NetHack\/} development team.
 最終的に 3.6.0 としてリリースされるものの開発の初期では、
@@ -6708,16 +6759,17 @@ nitrohack およびその後継、Tung Nguyen による Dynahack である。
 {\it David Cohrs}, {\it Jessie Collet},
 {\it Ken Lorber}, {\it Dean Luick}, {\it Pat Rankin},
 {\it Mike Stephenson}, {\it Janet Walz}, {\it Paul Winner} で構成されていた。
-2015 年初頭の 3.6.0 リリースの下準備として、新しいメンバーである
+2015 年初頭、3.6.0 リリースに先だって、新しいメンバーである
 {\it Sean Hunt}, {\it Pasi Kallinen}, {\it Derek S. Ray} が
 NetHack 開発チームに加わった。
 
 %%.pg
 \medskip
-%The 3.6 version merges work done by NetHack development
+%3.6.0 was released in December 2015, and merged work done by the development
 %team since the release of 3.4.3 with some of the beloved community
 %patches.  Many bugs were fixed and some code was restructured.
-3.6 バージョンでは、3.4.3 リリースから開発チームによってなされた作業と、
+3.6.0 は 2015 年 12 月にリリースされ、
+3.4.3 リリースから開発チームによってなされた作業と、
 いくつかの愛好者コミュニティのパッチがマージされた。
 多くのバグが修正され、一部のコードが再構成された。
 
@@ -6761,23 +6813,14 @@ https:{\tt /}{\tt /}www.nethack.org{\tt /}.
 %%.pg
 %%.hn 2
 
-%\subsection*{Shout Outs}
+%\subsection*{Special Thanks}
 \subsection*{謝辞}
-%\nd The devteam would like to give a special "shout-out" to thank the generous
-%people primarily responsible for the public NetHack servers available for
-%playing the game at nethack.alt.org and devnull.net. In addition to providing
-%a way for the public to play a game of NetHack from almost anywhere, they
-%have hosted annual NetHack tournaments for many, many years.
-\nd The devteam は、nethack.alt.org と devnull.net でゲームを
-プレイすることを可能にしている公共 NetHack サーバに関わっている親切な人々に
-特別な感謝の意を伝えたい。
-ほとんどどこからでも NetHack のゲームを公式にプレイする方法を
-提供するだけではなく、年次 NetHack トーナメントを何年も何年もホストしている。
-%%.pg
-%\nd On behalf of the NetHack community, thank you very much to
-%{\it M. Drew Streib}, {\it Pasi Kallinen} and {\it Robin Bandy}.
-\nd NetHack コミュニティに成り代わって、
-{\it M. Drew Streib}, {\it Pasi Kallinen}, {\it Robin Bandy} に感謝する。
+%\nd On behalf of the {\it NetHack\/} community, thank you very much once
+%again to {\it M. Drew Streib} and {\it Pasi Kallinen} for providing a
+%public NetHack server at nethack.alt.org. 
+\nd {\it NetHack\/} コミュニティに成り代わって、
+nethack.alt.org で公開 NetHack サーバーを提供してくれていることについて
+再度 {\it M. Drew Streib} と {\it Pasi Kallinen} に感謝する。
 \clearpage
 
 %%.hn
@@ -6786,47 +6829,59 @@ https:{\tt /}{\tt /}www.nethack.org{\tt /}.
 %%.pg
 %\nd From time to time, some depraved individual out there in netland sends a
 %particularly intriguing modification to help out with the game.  The
-%Gods of the Dungeon sometimes makes note of the names of the worst
+%{\it NetHack Development Team} sometimes makes note of the names of the worst
 %of these miscreants in this, the list of Dungeoneers:
 \nd 時々ネットワークの世界のどうしようもない連中が、
 ゲームの改良の手助けをしようとしてとりわけ興味をそそるような修正を送ってよこす。
-洞窟の神々は、ときにはこういった悪党のうちでも最も邪悪な連中の名前を
+{\it NetHack Development Team} は、ときにはこういった悪党のうちでも最も邪悪な連中の名前を
 洞窟の主たちの一覧としてここに記すのだ。
 %%.sd
 \begin{center}
 \begin{tabular}{llll}
-%%TABLE_START
-Adam Aronow & Frederick Roeber & Kevin Smolkowski & Richard Beigel\\
-Alex Kompel & Gil Neiger & Kevin Sweet & Richard P. Hughey\\
-Andreas Dorn & Greg Laskin & Lars Huttar & Rob Menke\\
-Andy Church & Greg Olson & Leon Arnott & Robin Bandy\\
-Andy Swanson & Gregg Wonderly & M. Drew Streib & Robin Johnson\\
-Ari Huttunen & Hao-yang Wang & Malcolm Ryan & Roderick Schertler\\
-Barton House & Helge Hafting & Mark Gooderum & Roland McGrath\\
-Benson I. Margulies & Irina Rempt-Drijfhout & Mark Modrall & Ron Van Iwaarden\\
-Bill Dyer & Izchak Miller & Marvin Bressler & Ronnen Miller\\
-Boudewijn Waijers & J. Ali Harlow & Matthew Day & Ross Brown\\
-Bruce Cox & Janet Walz & Merlyn LeRoy & Sascha Wostmann\\
-Bruce Holloway & Janne Salmij\"{a}rvi & Michael Allison & Scott Bigham\\
-Bruce Mewborne & Jean-Christophe Collet & Michael Feir & Scott R. Turner\\
-Carl Schelin & Jeff Bailey & Michael Hamel & Sean Hunt\\
-Chris Russo & Jochen Erwied & Michael Sokolov & Stephen Spackman\\
-David Cohrs & John Kallen & Mike Engber & Stefan Thielscher\\
-David Damerell & John Rupley & Mike Gallop & Stephen White\\
-David Gentzel & John S. Bien & Mike Passaretti & Steve Creps\\
-David Hairston & Johnny Lee & Mike Stephenson & Steve Linhart\\
-Dean Luick & Jon W\{tte & Mikko Juola & Steve VanDevender\\
-Del Lamb & Jonathan Handler & Nathan Eady & Teemu Suikki\\
-Derek S. Ray & Joshua Delahunty & Norm Meluch & Tim Lennan\\
-Deron Meranda & Keizo Yamamoto & Olaf Seibert & Timo Hakulinen\\
-Dion Nicolaas & Ken Arnold & Pasi Kallinen & Tom Almy\\
-Dylan O'Donnell & Ken Arromdee & Pat Rankin & Tom West\\
-Eric Backus & Ken Lorber & Paul Winner & Warren Cheung\\
-Eric Hendrickson & Ken Washikita & Pierre Martineau & Warwick Allison\\
-Eric R. Smith & Kevin Darcy & Ralf Brown & Yitzhak Sapir\\
-Eric S. Raymond & Kevin Hugo & Ray Chason\\
-Erik Andersen & Kevin Sitze & Richard Addison
-%%TABLE_END  Do not delete this line.
+%TABLE_START
+Adam Aronow & J. Ali Harlow & Mikko Juola\\
+Alex Kompel & Janet Walz & Nathan Eady\\
+Alex Smith & Janne Salmij\"{a}rvi & Norm Meluch\\
+Andreas Dorn & Jean-Christophe Collet & Olaf Seibert\\
+Andy Church & Jeff Bailey & Pasi Kallinen\\
+Andy Swanson & Jochen Erwied & Pat Rankin\\
+Andy Thomson & John Kallen & Patric Mueller\\
+Ari Huttunen & John Rupley & Paul Winner\\
+Bart House & John S. Bien & Pierre Martineau\\
+Benson I. Margulies & Johnny Lee & Ralf Brown\\
+Bill Dyer & Jon W\{tte & Ray Chason\\
+Boudewijn Waijers & Jonathan Handler & Richard Addison\\
+Bruce Cox & Joshua Delahunty & Richard Beigel\\
+Bruce Holloway & Karl Garrison & Richard P. Hughey\\
+Bruce Mewborne & Keizo Yamamoto & Rob Menke\\
+Carl Schelin & Keith Simpson & Robin Bandy\\
+Chris Russo & Ken Arnold & Robin Johnson\\
+David Cohrs & Ken Arromdee & Roderick Schertler\\
+David Damerell & Ken Lorber & Roland McGrath\\
+David Gentzel & Ken Washikita & Ron Van Iwaarden\\
+David Hairston & Kevin Darcy & Ronnen Miller\\
+Dean Luick & Kevin Hugo & Ross Brown\\
+Del Lamb & Kevin Sitze & Sascha Wostmann\\
+Derek S. Ray & Kevin Smolkowski & Scott Bigham\\
+Deron Meranda & Kevin Sweet & Scott R. Turner\\
+Dion Nicolaas & Lars Huttar & Sean Hunt\\
+Dylan O'Donnell & Leon Arnott & Stephen Spackman\\
+Eric Backus & M. Drew Streib & Stefan Thielscher\\
+Eric Hendrickson & Malcolm Ryan & Stephen White\\
+Eric R. Smith & Mark Gooderum & Steve Creps\\
+Eric S. Raymond & Mark Modrall & Steve Linhart\\
+Erik Andersen & Marvin Bressler & Steve VanDevender\\
+Fredrik Ljungdahl & Matthew Day & Teemu Suikki\\
+Frederick Roeber & Merlyn LeRoy & Tim Lennan\\
+Gil Neiger & Michael Allison & Timo Hakulinen\\
+Greg Laskin & Michael Feir & Tom Almy\\
+Greg Olson & Michael Hamel & Tom West\\
+Gregg Wonderly & Michael Sokolov & Warren Cheung\\
+Hao-yang Wang & Mike Engber & Warwick Allison\\
+Helge Hafting & Mike Gallop & Yitzhak Sapir\\
+Irina Rempt-Drijfhout & Mike Passaretti\\
+Izchak Miller & Mike Stephenson
+%TABLE_END  Do not delete this line.
 \end{tabular}
 \end{center}
 %%.ed
@@ -6839,7 +6894,7 @@ Erik Andersen & Kevin Sitze & Richard Addison
 %%UNIX is a registered trademark of AT\&T.\\
 %%Lattice is a trademark of Lattice, Inc.\\
 %%Atari and 1040ST are trademarks of Atari, Inc.\\
-%%AMIGA is a trademark of Commodore-Amiga, Inc.\\
+%%Amiga is a trademark of Commodore-Amiga, Inc.\\
 %%%.sm
 %%Brand and product names are trademarks or registered trademarks
 %%of their respective holders.
