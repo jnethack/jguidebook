@@ -1,0 +1,5120 @@
+<html>
+<head>
+<style type="text/css">
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+dt {
+  color: #ffffcc;
+}
+table {
+border: solid 1px #000000; border-collapse: collapse;
+}
+</style>
+<link rel="Stylesheet" href="nhr.css" type="text/css">
+<title> 恐怖の迷宮への招待: NetHack ガイドブック</title>
+</head>
+<body>
+<h1 style='text-align:center'> 恐怖の迷宮への招待:<br/> <span class='italic'>NetHack</span> ガイドブック</h1>
+<div style='text-align:center'>オリジナル - Eric S. Raymond<br/>(Mike Stephenson らによるバージョン 3.6 のための校訂と拡充)</div>
+<div style='text-align:center'>2020 年 3 月 8 日</div>
+<h1>はじめに</h1>
+<p>
+最近、あなたは日々の仕事に満たされなく、敬遠しつつある自分に気がついた。
+最近数ヶ月、あなたが見る夢は探査、盗み、聖戦、戦闘といったものであったが、
+あなたにはその理由がはっきりとはわからなかった。
+あなたはこれらの夢を実際には生まれてこのかたずっと見続けていて、
+なぜか今までそれらについて忘れようとしていたのではないか、と思った。
+ある夜、あなたは飛び起きて、
+夢の中の洞窟のあらゆる角の後ろに潜んでいるように見える、
+奇妙で強力な怪物の鮮明な記憶にぞっとして大声で叫んだ。
+あなたの夢に出没する内容は本当なのだろうか?
+夜毎に、廃墟の近くの不思議な洞窟に入るという欲求が強くなった。
+それでも、毎朝あなたはそのような考えを、
+洞窟に入って帰って来なかった人々の話を思い出すことで頭から追い出した。
+しかし、ついにあなたは夢の中に出てくる不思議な場所を捜し求めるという思いを
+抑えきれなくなった。
+何といっても、冒険者は最初にその道を通っていった時より、
+こちらに戻って来る時の方が裕福になっているように見えるのだ。
+戻って来ない人たちは皆、単にまだ冒険を続けているだけなのでは?
+</p>
+<p>
+あちこちで尋ねるうちに、あなたはある噂を耳にした。
+イェンダーの魔除けとかいうものがあり、手に入れることができたなら、
+すばらしい財産をもたらすと言うのだ。
+あなたが聞いたとある伝説では、
+魔除けを見つけたものは神から不死の体を授かるとさえ言われているらしい。
+魔除けは恐怖の迷宮の奥深く、ゲヘナの谷を越えたどこかにあるという噂である。
+伝説を聞いた瞬間あなたは、自分には洞窟に入って彼らの話している
+魔除けを捜し求めるべき深遠で未知のなんらかの理由があると確信した。
+あなたはたとえ魔除けの力が真実でなくても、
+少なくとも冒険談を地元の吟遊詩人にかなりの金額で売り込めるだろうと考えた。
+夢の中で出てきた恐ろしく、不思議な怪物に出会うことができればなおさらである。
+あなたは地元の安宿で最後の宿を取り対策を練った。
+安宿の壁に掲げられた成功率のオッズが下がれば下がるほど、
+あなたは意気消沈した。
+</p>
+<p>
+朝起きると、あなたは所持品をかき集め、あなたは洞窟に向けて旅立った。
+無事何日かの旅を続けて恐怖の迷宮への入口を
+示す古代の遺跡へとたどり着いた。夜も更けていたので入口でキャンプをすることにし、
+その夜は広々とした空の下で眠りに就いた。翌朝あなたは道具をかき集め、
+もしかすると地上での最後になるかもしれない食事を済ませ、
+洞窟へと入っていった…
+</p>
+<h1>あなたを取り巻く状況</h1>
+<p>
+こうしてあなたは <span class='italic'>NetHack</span> というゲームを始めることになった。あなたの目的は
+持てる限りの宝を集め、イェンダーの魔除けを見つけ出し、さらにはこの恐怖
+の迷宮から生きて脱出することである。
+</p>
+<p>
+冒険におけるいろいろな困難に対応するための各種の能力や力は、
+あなたの生い立ちと修行によって変化する。
+</p>
+<dl>
+<dt>考古学者(Archeologist)</dt><dd>
+洞窟について多くの知識を持っている。
+このため素早く動いたり洞窟での不快な事態を切り抜けることができる。
+彼らは学術的調査のための探検旅行に適した道具を持って出発する。
+</dd>
+<dt>野蛮人(Barbarian)</dt><dd>
+奥地からやってきた戦士であり、戦闘のために鍛えられている。
+彼らは類まれな力の強さを持ち、丈夫な鎖かたびらと大きな両手持ちの
+剣のみを持って探求に出発する。
+</dd>
+<dt>洞窟人(Caveman と Cavewoman)</dt><dd>
+とりわけ強い力を持っているが、
+新石器時代に使われた武器を持って出発する。
+</dd>
+<dt>薬師(Healer)</dt><dd>
+医術や薬物について精通している。
+生気を回復させたり、苦痛を和らげたり、麻酔をかけたり、
+毒を中和させたりする香草や薬草について詳しい。
+そして器具を使って生物の健康状態を見抜くことができる。
+彼らは開業医としてかなりよい報酬を得て、それを持って洞窟に入っていく。
+</dd>
+<dt>騎士(Knight)</dt><dd>
+騎士道に忠実であることと防具が驚くほど優れていることという
+点で、普通の戦士とは区別される。
+</dd>
+<dt>モンク(Monk)</dt><dd>
+修道者であり、厳格な肉体的習慣と精神的訓練によって、
+武器なしでも武器を使うのと同じように戦うことが出来る。
+モンクは防具をつけないが、機動性を向上させることで埋め合わせている。
+</dd>
+<dt>僧侶と尼僧(Priest と Priestess)</dt><dd>
+聖職の戦士であり、
+武器と防具を持ち魔法の業を駆使して正義を広めんとする聖戦士である。
+祈りを通じて神と語る能力により、彼らはしばしば危難から逃れることができるが、
+祈りは危難をもたらすこともある。
+</dd>
+<dt>レンジャー(Ranger)</dt><dd>
+ほとんど森を住みかとし、洞窟は少々場違いかもしれない。
+しかし、彼らは追跡術や隠密行動と共に、弓術の達人である。
+</dd>
+<dt>盗賊(Rogue)</dt><dd>
+敏捷で身を隠す業に長けた泥棒であり、
+錠や罠や毒に詳しい。
+彼らの長所は奇襲であり、これは非常な長所となる。
+</dd>
+<dt>侍(Samurai)</dt><dd>
+封建時代の日本の精鋭の武人である。
+防具は軽装で身のこなしに秀でており、
+この上なく研ぎ澄まされた <span class='italic'>大小 </span> 2本の刀を帯びている。
+</dd>
+<dt>観光客(Tourist)</dt><dd>
+多額の金(買物に最適である)とクレジットカード、大量の食料、
+地図、そして高価なカメラを持って出発する。
+ほとんどの怪物は写真に撮られるのを嫌うものである。
+</dd>
+<dt>ワルキューレ(Valkyrie)</dt><dd>
+勇敢な女戦士である。
+過酷なスカンジナビアの国々で育った彼女らは頑強で、厳しい寒さにも耐え、
+身を隠す業と巧妙さを身につけている。
+</dd>
+<dt>魔法使い(Wizard)</dt><dd>
+魔術の知識とに選び抜かれた魔法の道具を準備しており、
+いにしえの魔法学に対して特に造詣が深い。
+見かけは弱そうで簡単に打ち倒せるように思えるが、
+経験を積んだ魔法使いは恐るべき敵である。
+</dd>
+</dl>
+<p>
+また、キャラクターの種族も選ぶことができる
+(制限はある; ほとんどの職業はどの種族がなれるかに制限がある):
+</p>
+<dl>
+<dt>ドワーフ(Dwarf)</dt><dd>
+人間やエルフよりも小さいが、がっしりした体つきで丈夫である。
+ドワーフの注目すべき特性は採掘と金属工作の専門的技術である。
+ドワーフの防具はエルフのミスリル防具と同じとまではいかないまでも、
+それに次ぐ品質である。
+</dd>
+<dt>エルフ(Elf)</dt><dd>
+機敏さと迅速さ、そして鋭敏な感覚を持っている。
+周囲で起きるどんな些細なことも彼らの目を逃れることはできない。
+職人気質の彼らの持つ武器と防具は優秀なものである。
+</dd>
+<dt>ノーム(Gnome)</dt><dd>
+ドワーフよりもさらに小さいが、ドワーフと似ている。
+ノームは熟練した採掘師として知られ、
+富と危険で満ちている秘密の地下坑道を恐怖の迷宮に作っていることで知られる。
+</dd>
+<dt>人間(Human)</dt><dd>
+地上で最も一般的な種族で、ゆえに他の種族と比較される時の基準となっている。
+特別な能力は持っていないが、あらゆる職業で成功することができる。
+</dd>
+<dt>オーク(Orc)</dt><dd>
+残酷で野蛮な種族で、(他のオークを含む)あらゆる生物を嫌っている。
+特に、オークはエルフを感性の違いゆえに嫌い、わざわざあらゆる機会を見つけて殺そうとする。
+オークによって作られた防具と武器は一般的に品質が劣る。
+</dd>
+</dl>
+<h1>画面に表示されるものの意味</h1>
+<p>
+画面上にはあなたが現在いる洞窟の階
+ですでに探索を終えた部分の地図と、そこで目にした物が示されている。さら
+に深く探検を進めるに連れて洞窟はその姿を次第にあなたの前の画面に明らか
+にしていく。
+</p>
+<p>
+<span class='italic'>NetHack</span> の祖先である <span class='italic'>rogue</span> が最初に現れたとき、その
+スクリーン指向はコンピュータファンタジーゲームの中でも全く独特のものであった。
+それ以来スクリーン指向は例外的なものというよりむしろ標準となった。
+<span class='italic'>NetHack</span> はこのすばらしい伝統を受け継いでいる。疑似的な英語で
+コマンドを入力し、結果が文章で表示されるテキストアドベンチャーゲームとは
+異なり、<span class='italic'>NetHack</span> のコマンドはすべて 1 文字か 2 文字のキー入力で
+与えられ、その結果は画面上にグラフィカルに表示される。
+画面は最低 80 桁および 24 行の大きさが推奨される。
+それ以上の大きさがあっても 21×80 の領域だけが地図の表示に使われる。
+</p>
+<p>
+<span class='italic'>NetHack</span> は点字や音声合成の助けを借りて、目の不自由な人でもプレイできる。
+目の不自由な人のための<span class='italic'>NetHack</span>の設定方法については、このドキュメントで
+後述する。
+</p>
+<p>
+<span class='italic'>NetHack</span> はプレイするたびに新しい洞窟を作成する。
+このため何回かゲームに勝利したことのある作者たちにも、
+いまだこのゲームは楽しく興奮に満ちたものと感じられる。
+</p>
+<p>
+<span class='italic'>NetHack</span> はさまざまな表示のオプションを提供する。
+オプションはあなたのハードウェアやソフトウェアの能力に依存し、
+プラットフォーム毎にさまざまである。
+さまざまなコンパイル時のオプションは実行ファイルが作られたときにのみ可能となる。
+モノクロキャラクタインタフェース、
+カラーキャラクタインタフェース、
+タイルと呼ばれる小さな絵を用いたグラフィカルインタフェースの 3 つの表示方法がある。
+2 つのキャラクタインタフェースはフォントを他の文字に置き換えることもできるが、
+標準設定では 標準の ASCII キャラクタを用いて全てを表現する。
+さまざまな表示のオプションはゲーム内容には影響を与えない。
+タイルや色はガイドブックで表記できないし、
+それは全てのプラットフォームに共通ではないので、
+ゲーム中に表示されるものの説明としては
+モノクロキャラクタディスプレイで表示される標準の ASCII キャラクタを用いる。
+<span class='italic'>NetHack</span> で何が起きているのかを理解するには、まず <span class='italic'>NetHack</span> では画面が
+どうなっているのかを理解しなくてはならない。<span class='italic'>NetHack</span> の画面は、テキストアド
+ベンチャーゲームにおける「あなたは…を見た」のような文章の代わりである。
+図 1 は <span class='italic'>NetHack</span> では画面に何が表示されるかの一例である。
+画面がどのように表示されるかはプラットホームに依存する。
+</p>
+<pre>
+        The bat bites!
+
+                ------
+                |....|    ----------
+                |.&lt;..|####...@...$.|
+                |....-#   |...B....+
+                |....|    |.d......|
+                ------    -------|--
+
+
+
+        Player the Rambler    St:12 Dx:7 Co:18 In:11 Wi:9 Ch:15 Neutral
+        Dlvl:1 $:0 HP:9(12) Pw:3(3) AC:10 Exp:1/19 T:257 Weak
+</pre>
+<div style='align:center'>
+図1
+</div>
+<h2>ステータス行(画面の下部)</h2>
+<p>
+画面の下 2 行には、あなたの現在の状態を表す暗号のような情報の断片が含まれている。
+どちらかの行が画面の幅よりも長くなるとその全部を見ることはできない
+かもしれない。以下に状態を示すいろいろな項目が何を意味するのかを述べる
+(コンフィグレーションによっては、以下に一覧されている状態を示す項目の
+すべてが表示されるとは限らない)。
+</p>
+<dl>
+<dt>ランク(Rank)</dt><dd>
+あなたのキャラクタ名と(後述の経験レベルに基づく)職業別の等級。
+</dd>
+<dt>強さ(Strength)</dt><dd>
+あなたのキャラクタの力の強さの値であり、6 つの基本的な属性の 1
+つである。人間のキャラクターの場合，力の強さは 3 から 18 の間の値をとる。
+その他の場合，この制限を越えることもある
+(時折 18/xx のような特別な力を得ることもあり、魔法の力も普通の制限を越える
+能力を与えることがある)。
+力の強さの値が大きいほど、あなたの力は強い。
+力の強さは力仕事をどれだけうまくやれるか、戦いでどれだけの
+ダメージを与えるか、どれくらい荷物を運べるかに影響する。
+</dd>
+<dt>素早さ(Dexterity)</dt><dd>
+素早さは戦いにおける命中率、罠を逃れる可能性、そしてその他の
+敏捷さを必要とする仕事や物をいかに器用に扱えるかなどのことがら
+に影響を与える。
+</dd>
+<dt>耐久力(Constitution)</dt><dd>
+耐久力は怪我やその他の圧迫によるスタミナの消耗から回復する能力に影響する。
+強さが低いか中くらいの場合、どれだけのものを運べるかに耐久力も影響する。
+十分に強さが高い場合、運搬能力に関して耐久力は関係なくなる。
+</dd>
+<dt>知力(Intelligence)</dt><dd>
+知力は呪文を唱える能力や魔法書を読む能力に影響を与える。
+</dd>
+<dt>賢さ(Wisdom)</dt><dd>
+賢さは(特に魔法を扱う)実戦的な経験により得られる。
+魔法のエネルギーに影響する。
+</dd>
+<dt>魅力(Charisma)</dt><dd>
+魅力はある種の生物があなたに対してとる態度に影響を与える。
+特に店主が示す価格に影響する。
+</dd>
+<dt>属性(Alignment)</dt><dd>
+属性には <span class='italic'>秩序 (Lawful)</span>, <span class='italic'>中立 (Neutral)</span>,
+<span class='italic'>混沌(Chaotic)</span> がある。
+しばしば、秩序は善、混沌は悪であるとされるが、法と道徳が
+常に一致するとは限らない。
+あなたの属性は他の怪物のあなたに対する反応に影響を与える。
+属性が似ている怪物は好戦的ではなく、
+反対の属性に対してはあなたの存在に対して極めて好戦的であるらしい。
+</dd>
+<dt>階数(Dungeon Level)</dt><dd>
+どれだけ洞窟の奥深くまで行ったかを示す。
+初期値は 1 で、洞窟を奥深く行くほど大きな値になる。
+いくつかの階は特別で、数字ではなく名前で識別される。
+イェンダーの魔除けは地下 20 階より深くのどこかにあると考えられている。
+</dd>
+<dt>金(Gold)</dt><dd>
+大っぴらに所持している金貨の数である。箱などに隠したお金は勘定に入っていない。
+</dd>
+<dt>体力(Hit Points)</dt><dd>
+体力の現在値と最大値である。
+体力はあとどれだけのダメージを受けると死ぬかを示す。
+戦いで傷つくほど値は減少する。体力は休息や魔法のアイテムや呪文により回復できる。
+括弧の中の数字は体力のとり得る最大値である。
+</dd>
+<dt>魔力(Power)</dt><dd>
+呪文に使う魔力である。これは呪文を唱えるのに必要な神秘の力
+(<span class='italic'>mana: マナ</span>) がどれほどあるかを示す。
+魔力もまた休息することにより回復する。
+</dd>
+<dt>防御値(Armor Class)</dt><dd>
+非友好的な生物からの攻撃を防具がどれほど食い止められるかを示す値である。
+数字が小さいほど防具は有効であり、
+防御値が負の値になることさえ十分あり得る。
+</dd>
+<dt>経験値(Experience)</dt><dd>
+現在の経験レベルと経験値である。冒険が進むと経験値を得ること
+ができる。経験値の合計がある一定値まで達すると、経験レベルが上
+がる。経験を積むにつれ、戦い方が上達し魔法の攻撃にも耐えられるよ
+うになる。多くのバージョンでは経験レベルだけが表示される。
+</dd>
+<dt>時間(Time)</dt><dd>
+経過したターン数である。
+<span class='italic'>time</span>
+オプションがオンのときに表示される。
+</dd>
+<dt>状態(Status)</dt><dd>
+腹具合:
+現在の腹具合状態。
+値は <span class='italic'>Satiated</span>, <span class='italic'>Not~Hungry</span> (or <span class='italic'>Normal</span>),
+<span class='italic'>Hungry</span>, <span class='italic'>Weak</span>, <span class='italic'>Fainting</span>。
+<br/>
+荷物の重さ:
+運んでいる物があなたの移動能力にどれくらい影響を与えているかを示す。
+値は <span class='italic'>Unencumbered</span> (通常)、<span class='italic'>Encumbered</span> (よろめき)、
+<span class='italic'>Stressed</span> (圧迫)、<span class='italic'>Strained</span> (限界)、
+<span class='italic'>Overtaxed</span> (過重)、 <span class='italic'>Overloaded</span> (超過)。
+<span class='italic'>Unencumbered</span> のときには表示されない。
+<br/>
+致命的な状態:
+<span class='italic'>Stone</span> (石化)、
+<span class='italic'>Slime</span> (どろどろ; スライム化)、
+<span class='italic'>Strngl</span> (窒息)、
+<span class='italic'>FoodPois</span> (食毒)、
+<span class='italic'>TermIll</span> (病気)。
+<br/>
+致命的でない状態:
+<span class='italic'>Blind</span> (盲目)、<span class='italic'>Deaf</span> (耳聾)、
+<span class='italic'>Stun</span> (眩暈)、<span class='italic'>Conf</span> (混乱)、<span class='italic'>Hallu</span> (幻覚)。
+<br/>
+移動状態変化:
+<span class='italic'>Lev</span> (浮遊)、<span class='italic'>Fly</span> (飛行)、<span class='italic'>Ride</span> (騎乗)。
+<br/>
+その他の状態も存在するが、それらの状態を表示するための空きがない。
+'<span class='tt'>^{</span>X}' コマンドは関係する全ての状態を表示する。
+</dd>
+</dl>
+<h2>メッセージ行(画面の上部)</h2>
+<p>
+画面の最上行は視覚的に表現できないことを説明するメッセージのために使われる。
+最上行に''<span class='tt'>--More--</span>''が表示されたときは、
+このあとにさらにメッセージが続いているけれども
+現在のメッセージをまず確実に読むよう促しているということである。
+次のメッセージを読むためには単にスペースキーを押せばよい。
+</p>
+<p>
+メッセージ行にどんなメッセージをどのように表示するかを変更するには、
+''<span class='italic'>Configuring Message Types</span>'' と
+<span class='italic'>verbose</span> オプションを参照のこと。
+</p>
+<h2>地図(画面のその他の部分)</h2>
+<p>
+画面のその他の部分は、あなたが現在いる階で
+それまでに探索し終わった部分の地図である。
+画面上のシンボルはそれぞれ何かを表している。
+表示されるシンボルのうちいくつかは、
+さまざまなグラフィックオプションを設定することによって変えることができる。
+そうでなければ標準設定のシンボルが用いられる。
+次に標準設定のシンボルの意味の一覧を示す。
+</p>
+<dl>
+<dt>- と |</dt><dd>
+部屋の壁、または開いた扉、または墓 (<span class='tt'>|</span>)。
+</dd>
+<dt>.</dt><dd>
+部屋の床、氷、または扉のない出入口。
+</dd>
+<dt>#</dt><dd>
+通路、鉄の棒、木、あるいは台所の流し台(流し台がインプリメントされているとき)
+または跳ね橋
+</dd>
+<dt>&gt;</dt><dd>
+上り階段:上の階への通路。
+</dd>
+<dt>&lt;</dt><dd>
+下り階段:下の階への通路。
+</dd>
+<dt>+</dt><dd>
+閉じた扉、または学習できるかもしれない呪文の書かれた魔法書。
+</dd>
+<dt>@</dt><dd>
+あなたのキャラクター、または人間。
+</dd>
+<dt>$</dt><dd>
+金貨の山。
+</dd>
+<dt>^</dt><dd>
+罠(ひとたび発見すれば表示される)。
+</dd>
+<dt>)</dt><dd>
+武器。
+</dd>
+<dt>[</dt><dd>
+服またはなんらかの防具。
+</dd>
+<dt>%</dt><dd>
+食料(衛生的であるとは限らない)。
+</dd>
+<dt>?</dt><dd>
+巻物。
+</dd>
+<dt>/</dt><dd>
+杖。
+</dd>
+<dt>=</dt><dd>
+指輪。
+</dd>
+<dt>!</dt><dd>
+水薬。
+</dd>
+<dt>(</dt><dd>
+便利なアイテム(つるはし、鍵、ランプ…)。
+</dd>
+<dt></dt><dd>
+魔除けまたはくもの巣。
+</dd>
+<dt>*</dt><dd>
+宝石または岩(貴重なものかもしれないし、価値のないものかもしれない)。
+</dd>
+<dt>`</dt><dd>
+岩、または彫像。
+</dd>
+<dt>0</dt><dd>
+鉄球。
+</dd>
+<dt>_</dt><dd>
+祭壇、または鉄の鎖。
+</dd>
+<dt>{</dt><dd>
+泉
+</dd>
+<dt>}</dt><dd>
+水たまり、または堀、または溶岩の海。
+</dd>
+<dt>\</dt><dd>
+豪華な王座
+</dd>
+<dt>a-zA-Z およびその他のシンボル</dt><dd>
+これらの文字とその他のいくつかのシンボルは恐怖の迷宮のいろいろな住人たちを表す。
+彼らは不機嫌で悪意に満ちているかも知れないので警戒しなければならない。
+が、ときには何かの手助けになることもある。
+</dd>
+<dt>I</dt><dd>
+このマークは透明、あるいはその他の見えない怪物が最後にいたらしい場所に表示される。
+怪物はすでに移動しているかもしれないことに注意すること。
+ここでは'<span class='tt'>F</span>'と'<span class='tt'>m</span>'のコマンドが便利だろう。
+<br/>
+</dd>
+</dl>
+<p>
+これらのシンボルをすべて記憶する必要はない。'<span class='tt'>/</span>' コマンドでどのシンボ
+ルが何を表すか知ることができる(詳細は次の項を参照のこと)。
+</p>
+<h1>コマンド</h1>
+<p>
+コマンドは、そのコマンドに割り当てられている 1 文字か 2 文字のキー入力を
+行うか、拡張コマンドエントリのコマンド名を入力することで実行できる。
+いくつかのコマンド、例えば''<span class='tt'>search</span>''はそれ以上 <span class='italic'>NetHack</span> に
+情報を与える必要がない。
+他のコマンドは例えば方向や使用する物などの情報をさらに与える必要がある。
+これらさらなる情報を必要とするコマンドに対しては、
+<span class='italic'>NetHack</span> は選択メニューもしくはコマンドラインプロンプトのいずれかを表示する。
+どちらが表示されるかは主として
+'<span class='italic'>menustyle</span>'
+オプションをどのように設定したかによる。
+</p>
+<p>
+例えば
+''<span class='tt'>What do you want to use? [a-zA-Z ?*]</span>'' という形式の質問がよくあるが、
+これはあなたに持っている物のうちどれを選ぶかを尋ねるものである。
+この質問において「a-zA-Z」はあなたが選べる持ち物の目録記号である。
+'<span class='tt'>?</span>' を入力するとこれらの物の目録一覧が得られ、
+個々の記号が何を表しているのか知ることができる。
+この例では、'<span class='tt'>*</span>' もある。これは一覧には表示されておらず、
+通常そのコマンドでの使用を想定していない物でも、使おうと思えばそれを
+選ぶことができることを示している。'<span class='tt'>*</span>' を入力するとすべての持ち物の目録が
+表示され、個々の持ち物すべてについての目録記号を知ることができる。
+考え直して結局このコマンドを使わないことにしたときには 'ESC' キーを押せば
+コマンドを終了することができる。
+</p>
+<p>
+コマンドの中には、その前に数字を入力することで何回も繰り返すこと
+ができるものもある。例えば「10s」は 10 回の探索を表している。もし
+<span class='italic'>number_pad</span>
+オプションがオンのときには数字の前に '<span class='tt'>n</span>' を入力しなければならない。
+つまり上の例では代わりに「n 10s」と入力しなければならない。
+複数回実行することが無意味なコマンドではこれは無視される。
+さらに、移動コマンドの前に特定の文字(プレフィックス)を付けることによって
+さまざまな移動方法をとることができる(後述)。
+繰り返し回数やプレフィックスを取り消すためには 'ESC' キーを押せばよい。
+</p>
+<p>
+コマンドの一覧はかなり長いが、ゲーム中に '<span class='tt'>?</span>' コマンドを使用して
+ヘルプメニューを見ることにより、いつでもコマンドの一覧を見ることができる。
+以下は標準キー配置の一覧である。
+</p>
+<dl>
+<dt>?</dt><dd>
+ヘルプメニュー: 表示可能なヘルプ画面のうちの 1 つを表示する。
+</dd>
+<dt>/</dt><dd>
+<span class='tt'>これは何</span> コマンド;
+シンボルが何を意味するかを示す。指定するには場所を示すか、
+またはシンボル(あるいは単語全体)を入力するかを選択することができる。
+場所の指定は、適切な位置までカーソルを移動させてから
+'<span class='tt'>.</span>'、'<span class='tt'>,</span>'、'<span class='tt'>;</span>'、'<span class='tt'>:</span>'のどれかを押すことによって行なう。
+'<span class='tt'>.</span>'を押すと、選んだ場所で表示されているシンボルの説明が表示され、
+もし '<span class='italic'>help</span>'
+オプションがオンなら場合によっては''<span class='tt'>More info?</span>''(詳細を見る?)と質問され、
+それからさらに他の場所を指定することができる。
+'<span class='tt'>,</span>'を押すと、シンボルの説明が表示されるが、詳細情報は表示されない;
+それから新しい場所を指定する。
+'<span class='tt'>;</span>'を押すと、詳細情報は表示されず、さらに他の場所の指定もできない。
+'<span class='tt'>:</span>'を押すと、(もしあるなら)確認なしで詳細情報が表示される。
+場所を選ぶ時に <span class='tt'>ESC</span> キーを押すことによってこのコマンドを中断でき、
+'<span class='tt'>?</span>'を押すとどのように動作するかの簡単な説明が表示される。
+<br/>
+<span class='italic'>autodescribe</span> がオンの場合、カーソルを動かす毎にその場所で見える物の
+短い説明が表示される。
+場所を選ぶ際に '<span class='tt'>#</span>' を押すとこのオプションのオンオフが切り替わる。
+<span class='italic'>whatis_coord</span>
+オプションは短い説明にマップの座標を含むかどうかを制御する。
+<br/>
+場所でなく名前を指定した場合は、
+常にその名前に対する追加情報が表示される。
+<br/>
+近くの怪物、現在表示されている全ての怪物、近くの物、全ての物の説明を
+要求することもできる。
+<span class='italic'>whatis_coord</span>
+オプションはその説明にマップの座標を含むかどうかを制御する。
+</dd>
+<dt>&amp;</dt><dd>
+コマンドの動作を示す。
+</dd>
+<dt>&lt;</dt><dd>
+上の階へ行く(階段やはしごにいるとき)。
+</dd>
+<dt>&gt;</dt><dd>
+下の階へ行く(階段やはしごにいるとき)。
+</dd>
+<dt>[yuhjklbn]</dt><dd>
+指定した方向へ一歩進む(図 2 参照)。その方向に怪物がいると感じているか
+覚えているときは、
+移動するのではなく怪物と戦うことになる。
+怪物と戦うことになるのはこの一歩移動のコマンドだけである。
+その他のコマンド(後述)は「安全」である。
+<div style='align:center'>
+<table>
+<tr><td><pre>   y  k  u    </pre></td><td><pre>    7  8  9   </pre></td></tr>
+<tr><td><pre>     | /     </pre></td><td><pre>      | /    </pre></td></tr>
+<tr><td><pre>   h- . -l    </pre></td><td><pre>    4- . -6   </pre></td></tr>
+<tr><td><pre>    / |      </pre></td><td><pre>     / |     </pre></td></tr>
+<tr><td><pre>   b  j  n    </pre></td><td><pre>    1  2  3   </pre></td></tr>
+<tr><td><pre>                     </pre></td><td><pre> ({it number_pad/} がオンなら)</pre></td></tr>
+</table>
+</div>
+<div style='align:center'>
+図2
+</div>
+</dd>
+<dt>[YUHJKLBN]</dt><dd>
+壁に突き当たるか何かに衝突するまで指定した方向に進む。
+</dd>
+<dt>m[yuhjklbn]</dt><dd>
+プレフィックス: 物を拾ったり、
+(たとえそこに怪物がいると思っていても)戦ったりせずに移動する。<br/>
+いくつかの移動しないコマンドは、(一時的に
+<span class='italic'>menustyle:Traditional</span>
+オプションを上書きして)メニュー経由での操作を要求するために
+'<span class='tt'>m</span>'接頭辞を使う。
+一つの種類だけの物が存在している
+(''what kinds of objects?'' と聞かれないので、ここで '<span class='tt'>m</span>' と
+答える機会がない)場合に'<span class='tt'>,</span>' (拾う) を使うときに有用である。
+いくつかのその他のコマンド(食料を食べる、生け贄を捧げる、缶詰を作る)では、
+'<span class='tt'>m</span>' 接頭辞で床の上にある適用可能な物のチェックを飛ばして、
+すぐに持ち物のチェックに向かったり、
+(鞍を外すために ''<span class='tt'>#loot</span>'' を使う場合)
+入れ物を飛ばしてすぐに隣接する怪物に向かったりする。
+''<span class='tt'>#travel</span>'' コマンドではこの接頭辞で
+視界内の興味深い目標のメニューを表示する。
+デバッグモード(またの名を''ウィザードモード'')では、
+'<span class='tt'>m</span>' 接頭辞は
+''<span class='tt'>#teleport</span>'' と ''<span class='tt'>#wizlevelport</span>'' コマンドにも使える。
+</dd>
+<dt>F[yuhjklbn]</dt><dd>
+プレフィックス: (そこに怪物がいると予想しているだけでも)怪物と戦う。
+</dd>
+<dt>M[yuhjklbn]</dt><dd>
+プレフィックス: 物を拾わずに遠くへ移動する。
+</dd>
+<dt>g[yuhjklbn]</dt><dd>
+プレフィックス: 何かが見つかるまで移動する。
+</dd>
+<dt>G[yuhjklbn] or &lt;CONTROL-&gt;[yuhjklbn]</dt><dd>
+プレフィックス: 'g' と同じ。ただし通路の分岐点では止まらない。
+</dd>
+<dt>_</dt><dd>
+指定された位置まで、最短距離アルゴリズムを用いて移動する。<br/>
+最短距離は、あなたが知っている(見た、または以前に通った)地図配置を
+基に計算される。
+知っている道がない場合、代わりに推測が行われる。
+'G'コマンドとほぼ同じ条件で停止するが、
+'M'コマンドと同様に物を拾わないで移動する。
+マウスに対応している版では、現在位置以外の位置を
+マウスでクリックしたときにもこのコマンドが発動する。
+</dd>
+<dt>.</dt><dd>
+待つ、または休憩する。1 ターン何もしない。
+</dd>
+<dt>a</dt><dd>
+道具(つるはし、鍵、ランプ…)を用いる(使う)。<br/>
+杖に対して使うと、杖を壊し、その過程で魔力が開放される。
+確認が必要である。
+</dd>
+<dt>A</dt><dd>
+1 つまたは複数の身につけているもの(防具など)をはずす。<br/>
+防具を1つだけはずすときには 'T'(take off: 防具をはずす)を、アクセサリを
+1 つだけはずすときは 'R'(remove: アクセサリをはずす)を使用せよ。
+</dd>
+<dt>^A</dt><dd>
+1 つ前のコマンドを繰り返す。
+</dd>
+<dt>c</dt><dd>
+扉を閉じる。
+</dd>
+<dt>C</dt><dd>
+怪物、個々のオブジェクト、オブジェクトの種類に名前を付ける。<br/>
+拡張コマンド''<span class='tt'>#name</span>''と同じ。
+</dd>
+<dt>^C</dt><dd>
+パニックボタン。ゲームを放棄する。
+</dd>
+<dt>d</dt><dd>
+何かを下に置く。<br/>
+例えば <span class='tt'>d7a</span> &mdash; <span class='italic'>a</span> という物を 7 個下に置く。
+</dd>
+<dt>D</dt><dd>
+いくつかの物を下に置く。<br/>
+次の質問<br/>
+''<span class='tt'>What kinds of things do you want to drop?[!%= BUCXaium]</span>''
+(どの種類のものを置きますか?)<br/>
+に対して、0 個以上の物のシンボルを入力することで答える。
+さらに'<span class='tt'>a</span>', '<span class='tt'>i</span>', '<span class='tt'>m</span>', '<span class='tt'>u</span>' をその後に入力することもできる。
+加えて、祝福された(B)/呪われていない(U)/呪われた(C)アイテムを指定することもできる。<br/>
+<span class='tt'>DB</span>  &mdash; 祝福されていると判明している物全てを下に置く。<br/>
+<span class='tt'>DU</span>  &mdash; 呪われていないと判明している物全てを下に置く。<br/>
+<span class='tt'>DC</span>  &mdash; 呪われていると判明している物全てを下に置く。<br/>
+<span class='tt'>DX</span>  &mdash; 祝福/呪いが判明していない物全てを下に置く。<br/>
+<span class='tt'>Da</span>  &mdash; 確認なしにすべての物を下に置く。<br/>
+<span class='tt'>Di</span>  &mdash; 物を置く前に持ち物を確認する。<br/>
+<span class='tt'>Du</span>  &mdash; (店にいるとき)代金未払の物だけを下に置く。<br/>
+<span class='tt'>Dm</span>  &mdash; 置く物を選ぶのにメニューを用いる。<br/>
+<span class='tt'>D%u</span> &mdash; 代金未払の食料だけを下に置く。
+<br/>
+The last example shows a combination.
+There are three categories of object filtering: class ('<span class='tt'>!</span>' for
+potions, '<span class='tt'>?</span>' for scrolls, and so on), shop status ('<span class='tt'>u</span>' for
+unpaid, in other words, owned by the shop), and bless/curse state
+('<span class='tt'>B</span>', '<span class='tt'>U</span>', '<span class='tt'>C</span>', and '<span class='tt'>X</span>' as shown above).
+If you specify more than one value in a category (such as ''<span class='tt'>!?</span>'' for
+potions and scrolls or ''<span class='tt'>BU</span>'' for blessed and uncursed), an inventory
+object will meet the criteria if it matches any of the specified
+values (so ''<span class='tt'>!?</span>'' means '<span class='tt'>!</span>' or '<span class='tt'>?</span>').
+If you specify more than one category, an inventory object must meet
+each of the category criteria (so ''<span class='tt'>%u</span>'' means class '<span class='tt'>%</span>' and
+unpaid '<span class='tt'>u</span>').
+Lastly, you may specify multiple values within multiple categories:
+''<span class='tt'>!?BU</span>'' will select all potions and scrolls which are known to be
+blessed or uncursed.
+(In versions prior to 3.6, filter combinations behaved differently.)
+(TBT)
+</dd>
+<dt>^D</dt><dd>
+何か(普通は扉)を蹴る。
+</dd>
+<dt>e</dt><dd>
+食料を食べる。<br/>
+通常は床にある食べ物が調べられ、何も見つからないかどれも選ばなかった場合には
+持ち物の食べ物が調べられる。
+'<span class='tt'>e</span>' の前に '<span class='tt'>m</span>' 接頭辞を置くことで床にあるものを食べようとするのを
+回避する。
+If you attempt to eat while already satiated, you might choke to death.
+If you risk it, you will be asked whether
+to ''continue eating?'' <span class='italic'>if you survive the first bite</span>.
+You can set the
+<span class='italic'>paranoid_confirmation:eating</span>
+option to require a response of ''<span class='tt'>yes</span>'' instead of just '<span class='tt'>y</span>'.
+(TBT)
+</dd>
+<dt>E</dt><dd>
+床にメッセージを刻み込む。<br/>
+<span class='tt'>E-</span> &mdash; ほこりの中に指で書く。<br/>
+''<span class='tt'>Elbereth</span>'' という語を刻み込むと、
+たいていの怪物はあなたに白兵戦を挑んで来なくなる
+(しかしあなたが攻撃をすると文字は消えてしまう)。
+これは、一息いれたいときになかなか便利である。
+</dd>
+<dt>f</dt><dd>
+矢筒(または矢筒袋または準備しているもの)に入れてあるものを発射する
+(投げるか撃つ)。
+発射するものは予め'<span class='tt'>Q</span>'コマンドで選択することも出来るし、
+<span class='italic'>autoquiver</span> オプションが設定されている場合は、コンピューターに
+自動的に適当なものを設定させることもできる。<br/>
+より一般的に投げたり撃ったりするには '<span class='tt'>t</span>'(投げる) も参照のこと。
+</dd>
+<dt>i</dt><dd>
+持ち物の目録(持っている物すべて)を表示する。
+</dd>
+<dt>I</dt><dd>
+持ち物の目録のうち指定した一部を表示する; 普通は鎧なら'<span class='tt'>[</span>'、薬なら'<span class='tt'>!</span>'というように
+オブジェクトの種類の文字で指定する。<br/>
+<span class='tt'>I*</span> &mdash; 持ち物のうち宝石をすべて表示する。<br/>
+<span class='tt'>Iu</span> &mdash; 代金未払いの物をすべて表示する。<br/>
+<span class='tt'>Ix</span> &mdash; 代金未払いだが使ってしまった物をすべて表示する。<br/>
+<span class='tt'>IB</span> &mdash; 祝福されていると分かっている物を全て表示する。<br/>
+<span class='tt'>IU</span> &mdash; 呪われていないと分かっている物を全て表示する。<br/>
+<span class='tt'>IC</span> &mdash; 呪われていると分かっている物を全て表示する。<br/>
+<span class='tt'>IX</span> &mdash; 祝福/呪いの状態が分からないものを全て表示する。<br/>
+<span class='tt'>I$</span> &mdash; お金を数える。
+</dd>
+<dt>o</dt><dd>
+扉を開ける。
+</dd>
+<dt>O</dt><dd>
+オプションを設定する。<br/>
+現在のオプションの値の一覧が表示される。
+(見出し文字をタイプするかクリックすることによって)変更したいオプションを選んで、
+ほとんどの値を変更することができる。
+ブール値でないオプションの場合は、さらにメニューが出るか、プロンプトが出る。
+設定可能なオプションはこのガイドブックの後ほどに一覧がある。
+オプションは通常は '<span class='tt'>O</span>' コマンドではなく、ゲームを始める前に設定する。
+後述のオプションの項を参照のこと。
+</dd>
+<dt>^O</dt><dd>
+概要を表示する。
+''<span class='tt'>#overview</span>'' の短縮版:
+訪れた興味深い階の一覧。<br/>
+</dd>
+<dt>p</dt><dd>
+代金を払う。
+</dd>
+<dt>P</dt><dd>
+装飾品（指輪、魔除け、目隠し）を身につける。<br/>
+このコマンドは防具を身につけるのにも使える。
+どれを選ぶかの一覧では装飾品しか表示されないが、一覧に表示されていない
+防具を選択することでそれを身につけようとすることができる。
+(後述する '<span class='tt'>W</span>' コマンドを参照のこと。
+これは一覧として防具が表示されるが、装飾品も選択できて、それを
+身につけようとする)。
+</dd>
+<dt>^P</dt><dd>
+1 つ前のメッセージをもう一度表示する。<br/>
+続けて <span class='tt'>^{</span>P} を入力するとさらに前のメッセージが順に表示される。
+一部のインターフェースでは、
+この振る舞いは <span class='italic'>msg_windows</span> オプションによって変化する。
+</dd>
+<dt>q</dt><dd>
+何か(水薬，水など)を飲む。
+</dd>
+<dt>Q</dt><dd>
+矢筒、矢筒袋、あるいた単に一般的に準備するものを選択する(同時に指定できるのは
+これらのうち一つのみ)。
+ここで選択したものは'f'コマンドで発射することができる。<br/>
+(バージョン 3.3 以前ではこのコマンドはゲームを放棄するものだったが、
+その機能は'<span class='tt'>#quit</span>'に移動した。)
+</dd>
+<dt>r</dt><dd>
+巻物や魔法書を読む。
+</dd>
+<dt>R</dt><dd>
+装飾品（指輪、魔除け、目隠し）をはずす。<br/>
+複数の物を身につけている場合、どれを外すかを指定する。
+一つしか身につけていない場合、標準設定では確認なしにその一つを外すが、
+確認が必要になるように
+<span class='italic'>paranoid_confirmation</span>
+オプションをセットできる。<br/>
+このコマンドは防具を外すのにも使える。
+外す物を選ぶプロンプトには身につけている装飾品のみが表示されるが、
+身につけている防具も選ぶことが出来る。
+(後述の '<span class='tt'>T</span>' コマンドを参照のこと。
+これは持ち物の選択時に防具が表示できるが、装飾品も受け付けて外そうとする。)
+</dd>
+<dt>^R</dt><dd>
+画面を描き直す。
+</dd>
+<dt>s</dt><dd>
+周囲の隠し扉や罠を探す。何かを見つけるには普通何回も探す必要がある。<br/>
+隣接する「覚えているが見えていない怪物」マーカーの怪物が
+まだそこにいるかを確認するためにも使える。
+</dd>
+<dt>S</dt><dd>
+ゲームをセーブする(プレイを中断してプログラムを終了する)。
+セーブされたゲームは、同じキャラクタ名を使った次回プレイ時に
+自動的に復旧される。<br/>
+In normal play, once a saved game is restored the file used to hold
+the saved data is deleted.
+In explore mode, once restoration is accomplished you are asked whether
+to keep or delete the file.
+Keeping the file makes it feasible to play for a while then quit
+without saving and later restore again.<br/>
+(TBT)
+There is no ''save current game state and keep playing'' command, not
+even in explore mode where saved game files can be kept and re-used.
+(TBT)
+</dd>
+<dt>t</dt><dd>
+物を投げる。または矢などを発射する。<br/>
+There's no separate ''shoot'' command.
+If you ''throw'' an arrow while wielding a bow, you are shooting
+that arrow and any weapon skill bonus or penalty for bow applies.
+If you ''throw'' an arrow while not wielding a bow, you are throwing
+it by hand and it will generally be less effective than when shot.<br/>
+(TBT)
+See also '<span class='tt'>f</span>' (fire) for throwing or shooting an item pre-selected
+via the '<span class='tt'>Q</span>' (quiver) command.
+(TBT)
+</dd>
+<dt>T</dt><dd>
+防具をはずす。<br/>
+複数の物を身につけている場合は、どれを外すかのプロンプトが出る。
+(例え実際に身につけていなくても、クロークは防具やシャツの上に身につけ、
+防具はシャツの上に身につけているものとして扱われる。)
+一つしか身につけている場合は、デフォルトでは質問されることなくそれをはずすが、
+<span class='italic'>paranoid_confirmation</span>
+オプションを設定することでプロンプトを要求できるようにできる。<br/>
+このコマンドはアクセサリをはずすのにも使える。
+どれを外すかを選ぶためのプロンプトには身につけている防具のみが表示されるが、
+身につけているアクセサリも選ぶことができる。
+(上述した '<span class='tt'>R</span>' を参照のこと。
+選択肢としてはアクセサリのみが表示されるが防具も選ぶことができ、それを
+外そうとする。)
+</dd>
+<dt>^T</dt><dd>
+テレポート能力があればテレポートする。
+</dd>
+<dt>v</dt><dd>
+バージョン番号を表示する。
+</dd>
+<dt>V</dt><dd>
+このゲームの履歴を表示する。
+</dd>
+<dt>w</dt><dd>
+武器を持つ。<br/>
+<span class='tt'>w-</span> &mdash; 武器として何も持たず素手(またはグローブを付けた手)になる。<br/>
+一部のキャラクタは二つの武器を同時に持つことが出来る;
+そうするには '<span class='tt'>X</span>' コマンド
+(または ''<span class='tt'>#twoweapon</span>'' 拡張コマンド) を使う。
+</dd>
+<dt>W</dt><dd>
+鎧を装備する。<br/>
+このコマンドはアクセサリ(指輪、魔除け、目隠し)を身につけるのにも
+使われる。
+どれを選ぶかの一覧では防具しか表示されないが、一覧に表示されていない
+アクセサリを選択することでそれを身につけようとすることができる。
+どれを身につけるかを選ぶためのプロンプトには防具のみが表示されるが、
+身につけるためのアクセサリも選ぶことができる。
+(前述した '<span class='tt'>P</span>' コマンドを参照のこと。
+選択肢としてはアクセサリのみが表示されるが防具も選ぶことができ、それを
+身につけようとする。)
+</dd>
+<dt>x</dt><dd>
+装備している武器を予備の武器と交換する。<br/>
+予備の武器は二刀流攻撃で用いられる。
+予備の武器がなくても交換は実行される(今持っているものを予備にして、
+素手になる)ことに注意。
+</dd>
+<dt>X</dt><dd>
+キャラクタが実行可能なら、二刀流モードを切り替える。
+''<span class='tt'>#twoweapon</span>'' 拡張コマンドも利用可能である。<br/>
+(3.6 より前のバージョンではこれは通常のプレイから
+「探索モード」またの名を「発見モード」に切り替えるコマンドであった;
+これは ''<span class='tt'>#exploremode</span>'' に移動した。)
+</dd>
+<dt>^X</dt><dd>
+あなたのキャラクタの基本的な情報を表示する。<br/>
+名前、職業、(職業名によって冗長にならないなら)性別、属性、従っている神および
+敵対している神を表示する。
+また、ステータス行の内容を、スペースの問題で通常のステータス表示には現れない
+追加のものも含めて、より詳細に表示する。<br/>
+In normal play, that's all that '<span class='tt'>^{</span>X}' displays.
+In explore mode, the role and status feedback is augmented by the
+information provided by <span class='italic'>enlightenment</span> magic.
+(TBT)
+</dd>
+<dt>z</dt><dd>
+杖を振る。<br/>
+<span class='tt'>z.</span> &mdash; 自分に振る場合は、方向に'<span class='tt'>.</span>'を使う。
+</dd>
+<dt>Z</dt><dd>
+呪文を唱える。<br/>
+<span class='tt'>Z.</span> &mdash; 自分を狙いたいときは、方向に'<span class='tt'>.</span>'を使う。
+</dd>
+<dt>^Z</dt><dd>
+ゲームを一時中止する(ジョブコントロール機能のある UNIX バージョンのみ)。
+</dd>
+<dt>:</dt><dd>
+足元に何があるか見る。
+</dd>
+<dt>;</dt><dd>
+見えているシンボルが何を示すかを表示する。
+</dd>
+<dt>,</dt><dd>
+足下にあるものを拾う。<br/>
+'<span class='tt'>m</span>'の後に押すことによって、設定に関わらず選択メニューを表示する。
+</dd>
+<dt>@</dt><dd>
+<span class='italic'>autopickup</span> オプションのオン・オフを切り替える。
+</dd>
+<dt>^</dt><dd>
+今までに発見した隣接した罠の種類を調べる。
+</dd>
+<dt>)</dt><dd>
+持っている武器を表示する。
+</dd>
+<dt>[</dt><dd>
+付けている防具を表示する。
+</dd>
+<dt>=</dt><dd>
+はめている指輪を表示する。
+</dd>
+<dt></dt><dd>
+付けている魔除けを表示する。
+</dd>
+<dt>(</dt><dd>
+使っている道具を表示する。
+</dd>
+<dt>*</dt><dd>
+装備しているものを表示する。<br/>
+上の 5 つのコマンドを一つにしたもの。
+</dd>
+<dt>$</dt><dd>
+持っている金貨を数える。
+</dd>
+<dt>+</dt><dd>
+知っている呪文の一覧を表示する。<br/>
+このコマンドを使うと、リスト全体をソートするか、メニューから一つの呪文を
+選択して他の呪文と入れ替えることで、呪文が表示される順番を
+入れ替えることが出来る。
+呪文の組を入れ替えると詠唱の文字が変わるので、変更は今回の
+'<span class='tt'>+</span>' コマンドが終了した後もそのままになる。
+リスト全体のソートは一時的なものである。
+今回の '<span class='tt'>+</span>' コマンド以降も最近のソート順のままにするには、
+ソートオプションを再び選んで、''reassign casting letters'' を行う。
+(これを行った後に覚えた呪文は、ソート順に挿入されるのではなく、
+リストの末尾に追加される。)
+</dd>
+<dt>\</dt><dd>
+今までにどんな種類の物を見つけたかを表示する。
+</dd>
+<dt>`</dt><dd>
+一つの種類の物の中で見つけた種類を表示する。
+</dd>
+<dt>!</dt><dd>
+シェルに抜ける。
+</dd>
+<dt>#</dt><dd>
+拡張コマンドを実行する。<br/>
+以上から分かるように <span class='italic'>NetHack</span> の作者たちはすべての文字を
+使い果たしてしまったので、あまり頻繁に使われないコマンドはこのようにして
+導入された。
+どの拡張コマンドが使用可能かは、
+ゲームのコンパイル時にどの機能が有効にされたかによる。
+</dd>
+<dt>#adjust</dt><dd>
+持ち物の目録記号を変更する(
+<span class='italic'>fixinv</span>
+オプションが''on''の時に非常に便利である)。
+補完される。
+標準キーは '<span class='tt'>M-a</span>'。<br/>
+このコマンドは、ある特定の持ち物スロットから他のスロットに
+変更できる; これによりあなたにとってより意味のある文字にしたり、
+一覧表示時に特定の位置に現れるようにしたりできる。
+現在空いているスロットに移動させることもできるし、
+変更先が既に使われている場合&mdash;結合できないなら--そこのいる物は
+位置が入れ替わる。
+''<span class='tt'>#adjust</span>'' はまた、物の塊を分割するのにも使える;
+調整する物を選択するときに、文字の前に数を入力する。
+Adjusting without a count used to collect all compatible stacks when
+moving to the destination.  That behavior has been changed; to gather
+compatible stacks, ''<span class='tt'>#adjust</span>'' a stack into its own inventory slot.
+If it has a name assigned, other stacks with the same name or with
+no name will merge provided that all their other attributes match.
+If it does not have a name, only other stacks with no name are eligible.
+In either case, otherwise compatible stacks with a different name
+will not be merged.  This contrasts with using ''<span class='tt'>#adjust</span>'' to move
+from one slot to a different slot.  In that situation, moving (no
+count given) a compatible stack will merge if either stack has a
+name when the other doesn't and give that name to the result, while
+splitting (count given) will ignore the source stack's name when
+deciding whether to merge with the destination stack.
+(TBT)
+</dd>
+<dt>#annotate</dt><dd>
+現在の階層に結びつけられる 1 行の文を指定できる。
+注釈が付けられた全ての階層は
+''<span class='tt'>#overview</span>'' コマンドで表示される。
+補完される。
+標準キーは '<span class='tt'>M-A</span>' と、
+<span class='italic'>number_pad</span> がオンなら '<span class='tt'>^{</span>N}'。
+</dd>
+<dt>#apply</dt><dd>
+Apply (use) a tool such as a pick-axe, a key, or a lamp.
+Default key is '<span class='tt'>a</span>'.<br/>
+(TBT)
+If the tool used acts on items on the floor, using the '<span class='tt'>m</span>' prefix
+skips those items.<br/>
+(TBT)
+If used on a wand, that wand will be broken, releasing its magic in the
+process.  Confirmation is required.
+(TBT)
+</dd>
+<dt>#attributes</dt><dd>
+Show your attributes. Default key is '<span class='tt'>^{</span>X}'.
+(TBT)
+</dd>
+<dt>#autopickup</dt><dd>
+Toggle the <span class='italic'>autopickup</span> option. Default key is '<span class='tt'>@</span>'.
+(TBT)
+</dd>
+<dt>#call</dt><dd>
+Call (name) a monster, or an object in inventory, on the floor,
+or in the discoveries list, or add an annotation for the
+current level (same as ''<span class='tt'>#annotate</span>''). Default key is '<span class='tt'>C</span>'.
+(TBT)
+</dd>
+<dt>#cast</dt><dd>
+扉を閉じる。
+標準キーは '<span class='tt'>Z</span>'。
+</dd>
+<dt>#chat</dt><dd>
+誰かと話をする。
+標準キーは'<span class='tt'>M-c</span>'。
+</dd>
+<dt>#close</dt><dd>
+</dd>
+<dt>#conduct</dt><dd>
+維持している自発的挑戦の一覧を表示する。
+補完される。
+標準キーは '<span class='tt'>M-C</span>'。
+詳しくは後述する''Conduct''の章を参照すること。
+</dd>
+<dt>#dip</dt><dd>
+物を何かに浸す。
+補完される。
+標準キーは '<span class='tt'>M-d</span>'。
+</dd>
+<dt>#down</dt><dd>
+階段を降りる。
+標準キーは '<span class='tt'>&gt;</span>'。
+</dd>
+<dt>#drop</dt><dd>
+物を下に置く。
+標準キーは '<span class='tt'>d</span>'。
+</dd>
+<dt>#droptype</dt><dd>
+特定の酒類の物を下に置く。
+標準キーは '<span class='tt'>D</span>'。
+</dd>
+<dt>#eat</dt><dd>
+何かを食べる。
+標準キーは '<span class='tt'>e</span>'。
+'<span class='tt'>m</span>' 接頭辞は床にある物を食べるのを飛ばす。
+</dd>
+<dt>#engrave</dt><dd>
+床に何かを刻み込む。
+標準キーは '<span class='tt'>E</span>'。
+</dd>
+<dt>#enhance</dt><dd>
+武器の技量を高めたり、調べたりする。
+補完される。
+標準キーは '<span class='tt'>M-e</span>'。
+</dd>
+<dt>#exploremode</dt><dd>
+探検モードに入る。<br/>
+Requires confirmation; default response is '<span class='tt'>n</span>' (no).
+To really switch to explore mode, respond with '<span class='tt'>y</span>'.
+You can set the
+<span class='italic'>paranoid_confirmation:quit</span>
+option to require a response of ''<span class='tt'>yes</span>'' instead.
+(TBT)
+</dd>
+<dt>#fire</dt><dd>
+Fire ammunition from quiver. Default key is 
+'<span class='tt'>f</span>'.
+(TBT)
+</dd>
+<dt>#force</dt><dd>
+錠をこじ開ける。
+補完される。
+標準キーは '<span class='tt'>M-f</span>'。
+</dd>
+<dt>#glance</dt><dd>
+Show what type of thing a map symbol corresponds to. Default key is 
+'<span class='tt'>;</span>'.
+(TBT)
+</dd>
+<dt>#help</dt><dd>
+Show the help menu.
+Default key is '<span class='tt'>?</span>',
+and also '<span class='tt'>h</span>' if <span class='italic'>number_pad</span> is on.
+(TBT)
+</dd>
+<dt>#herecmdmenu</dt><dd>
+Show a menu of possible actions in your current location.
+(TBT)
+</dd>
+<dt>#history</dt><dd>
+Show long version and game history. Default key is '<span class='tt'>V</span>'.
+(TBT)
+</dd>
+<dt>#inventory</dt><dd>
+Show your inventory. Default key is '<span class='tt'>i</span>'.
+(TBT)
+</dd>
+<dt>#inventtype</dt><dd>
+Inventory specific item types. Default key is '<span class='tt'>I</span>'.
+(TBT)
+</dd>
+<dt>#invoke</dt><dd>
+物が持つ特別な能力を発動する。
+補完される。
+標準キーは '<span class='tt'>M-i</span>'。
+</dd>
+<dt>#jump</dt><dd>
+別の場所へジャンプする。
+補完される。
+標準キーは '<span class='tt'>M-j</span>' および
+<span class='italic'>number_pad</span> がオンの場合 '<span class='tt'>j</span>'。
+</dd>
+<dt>#kick</dt><dd>
+Kick something.
+Default key is '<span class='tt'>^{</span>D}',
+and also '<span class='tt'>k</span>' if <span class='italic'>number_pad</span> is on.
+(TBT)
+</dd>
+<dt>#known</dt><dd>
+Show what object types have been discovered.
+Default key is '<span class='tt'>$backslash$</span>'.
+(TBT)
+</dd>
+<dt>#knownclass</dt><dd>
+Show discovered types for one class of objects.
+Default key is '<span class='tt'>'</span>'.
+(TBT)
+</dd>
+<dt>#levelchange</dt><dd>
+Change your experience level.
+Autocompletes.
+Debug mode only.
+(TBT)
+</dd>
+<dt>#lightsources</dt><dd>
+Show mobile light sources.
+Autocompletes.
+Debug mode only.
+(TBT)
+</dd>
+<dt>#look</dt><dd>
+Look at what is here, under you. Default key is '<span class='tt'>:</span>'.
+(TBT)
+</dd>
+<dt>#loot</dt><dd>
+あなたの足下の床に置いてある箱や鞄、またはあなたの隣に立っている馬などの
+鞍を漁る。
+補完される。
+Default key is '<span class='tt'>M-l</span>',
+and also '<span class='tt'>l</span>' if <span class='italic'>number_pad</span> is on.
+Precede with the '<span class='tt'>m</span>' prefix to skip containers at your location
+and go directly to removing a saddle.
+(TBT)
+</dd>
+<dt>#monster</dt><dd>
+(怪物の姿に変化している時に)怪物の特殊能力を使う。
+補完される。
+標準キーは '<span class='tt'>M-m</span>'。
+</dd>
+<dt>#name</dt><dd>
+怪物、個々のオブジェクト、オブジェクトの種類に名前を付ける。
+''<span class='tt'>#call</span>''と同じ。
+補完される。
+標準キーは '<span class='tt'>N</span>', '<span class='tt'>M-n</span>', '<span class='tt'>M-N</span>'。
+</dd>
+<dt>#offer</dt><dd>
+神にいけにえを捧げる。
+補完される。
+標準キーは '<span class='tt'>M-o</span>' 。<br/>
+成功するためには祭壇を見つける必要がある。
+最近殺したモンスターの死体がよい選択肢である。
+The '<span class='tt'>m</span>' prefix skips offering any items which are on the altar.<br/>
+(TBT)
+</dd>
+<dt>#open</dt><dd>
+Open a door. Default key is '<span class='tt'>o</span>'.
+(TBT)
+</dd>
+<dt>#options</dt><dd>
+Show and change option settings. Default key is '<span class='tt'>O</span>'.
+(TBT)
+</dd>
+<dt>#overview</dt><dd>
+洞窟について発見した情報を表示する。
+(記憶喪失で忘れない限り)全ての訪問済みの階と注釈が含まれ、
+多くのもの(祭壇、玉座、泉など; 他の洞窟へ分岐する追加の階段)があると
+自動的に注釈が追加される。
+ゲーム終了時の情報公開中に洞窟の概要が選ばれた場合、注釈のあるなしに関わらず
+全ての訪れた階層が含まれる。
+補完される。
+標準キーは '<span class='tt'>^{</span>O}' と '<span class='tt'>M-O</span>'。
+</dd>
+<dt>#panic</dt><dd>
+Test the panic routine.
+Terminates the current game.
+Autocompletes.
+Debug mode only.<br/>
+(TBT)
+Asks for confirmation; default is '<span class='tt'>n</span>' (no); continue playing.
+To really panic, respond with '<span class='tt'>y</span>'.
+You can set the
+<span class='italic'>paranoid_confirmation:quit</span>
+option to require a response of ''<span class='tt'>yes</span>'' instead.
+(TBT)
+</dd>
+<dt>#pay</dt><dd>
+Pay your shopping bill. Default key is '<span class='tt'>p</span>'.
+(TBT)
+</dd>
+<dt>#pickup</dt><dd>
+Pick up things at the current location. Default key is '<span class='tt'>,</span>'.
+The '<span class='tt'>m</span>' prefix forces use of a menu.
+(TBT)
+</dd>
+<dt>#polyself</dt><dd>
+Polymorph self.
+Autocompletes.
+Debug mode only.
+(TBT)
+</dd>
+<dt>#pray</dt><dd>
+神に祈って助けを求める。
+補完される。
+標準キーは '<span class='tt'>M-p</span>' 。<br/>
+前回の助けの後すぐに祈るのは良くない考えである。
+(ヒント: 洞窟に生きて入るということは助けを受けたものとして扱われる。
+新しいゲームを始めてすぐに祈るべきではないだろう。)
+このコマンドを間違って使うのは問題を引き起こすので、
+祈る前に意思を確認するようにするオプションがある。
+これは標準設定ではオンになっており、オフにするために
+<span class='italic'>paranoid_confirmation</span> をリセットすることが出来る。
+</dd>
+<dt>#prevmsg</dt><dd>
+一つ前に表示されたゲームメッセージを表示する。
+標準キーは '<span class='tt'>^{</span>P}'。
+</dd>
+<dt>#puton</dt><dd>
+装飾品（指輪、魔除けなど）を身につける。
+標準キーは '<span class='tt'>P</span>'。
+</dd>
+<dt>#quaff</dt><dd>
+何かを飲む。標準キーは '<span class='tt'>q</span>'。
+</dd>
+<dt>#quit</dt><dd>
+ゲームをセーブせずにプログラムを終了する。
+補完される。
+標準キーは '<span class='tt'>M-q</span>'。<br/>
+このコマンドを間違って使うと現在のゲームを捨ててしまうことになるので、
+終了する前に意思を確認される。
+標準の返答は '<span class='tt'>n</span>' (ノー); プレイを続ける。
+本当に終了するためには、'<span class='tt'>y</span>' と応答する。
+<span class='italic'>paranoid_confirmation:quit</span> オプションをオンにすることで、
+代わりに ''<span class='tt'>yes</span>'' の入力が必要であるようにすることができる。
+</dd>
+<dt>#quiver</dt><dd>
+Select ammunition for quiver. Default key is '<span class='tt'>Q</span>'.
+(TBT)
+</dd>
+<dt>#read</dt><dd>
+Read a scroll, a spellbook, or something else. Default key is '<span class='tt'>r</span>'.
+(TBT)
+</dd>
+<dt>#redraw</dt><dd>
+Redraw the screen.
+Default key is '<span class='tt'>^{</span>R}',
+and also '<span class='tt'>^{</span>L}' if <span class='italic'>number_pad</span> is on.
+(TBT)
+</dd>
+<dt>#remove</dt><dd>
+Remove an accessory (ring, amulet, etc). Default key is '<span class='tt'>R</span>'.
+(TBT)
+</dd>
+<dt>#ride</dt><dd>
+鞍の付いている生物に乗る(あるいは乗るのをやめる)。
+補完される。
+標準キーは '<span class='tt'>M-R</span>'。
+</dd>
+<dt>#rub</dt><dd>
+ランプや石をこする。
+補完される。
+標準キーは '<span class='tt'>M-r</span>'。
+</dd>
+<dt>#save</dt><dd>
+(TBT)
+</dd>
+<dt>#search</dt><dd>
+</dd>
+<dt>#seeall</dt><dd>
+</dd>
+<dt>#seeamulet</dt><dd>
+</dd>
+<dt>#seearmor</dt><dd>
+</dd>
+<dt>#seegold</dt><dd>
+</dd>
+<dt>#seenv</dt><dd>
+</dd>
+<dt>#seerings</dt><dd>
+</dd>
+<dt>#seespells</dt><dd>
+</dd>
+<dt>#seetools</dt><dd>
+</dd>
+<dt>#seetrap</dt><dd>
+</dd>
+<dt>#seeweapon</dt><dd>
+</dd>
+<dt>#shell</dt><dd>
+</dd>
+<dt>#sit</dt><dd>
+座る。
+補完される。
+標準キーは '<span class='tt'>M-s</span>'。
+</dd>
+<dt>#stats</dt><dd>
+(TBT)
+</dd>
+<dt>#suspend</dt><dd>
+</dd>
+<dt>#swap</dt><dd>
+</dd>
+<dt>#takeoff</dt><dd>
+</dd>
+<dt>#takeoffall</dt><dd>
+</dd>
+<dt>#teleport</dt><dd>
+</dd>
+<dt>#terrain</dt><dd>
+怪物、物、罠を表示せずに、基の地図を表示する。
+補完される。
+</dd>
+<dt>#therecmdmenu</dt><dd>
+(TBT)
+</dd>
+<dt>#throw</dt><dd>
+</dd>
+<dt>#timeout</dt><dd>
+</dd>
+<dt>#tip</dt><dd>
+入れ物(鞄や箱)をひっくり返して中の物を出す。
+補完される。
+標準キーは '<span class='tt'>M-T</span>'。
+'<span class='tt'>m</span>' 接頭辞はこのコマンドでメニューを使うようにする。
+</dd>
+<dt>#travel</dt><dd>
+(TBT)
+</dd>
+<dt>#turn</dt><dd>
+不死の怪物を追い払う。
+補完される。
+標準キーは '<span class='tt'>M-t</span>'。
+</dd>
+<dt>#twoweapon</dt><dd>
+二刀流戦闘のオン・オフを切り替える。
+補完される。
+標準キーは '<span class='tt'>X</span>' 、<span class='italic'>number_pad</span> がオフの場合は
+'<span class='tt'>M-2</span>' も使える。
+二刀流に適切な武器を使うこと。
+さもなければ自動的にオフになる。
+</dd>
+<dt>#untrap</dt><dd>
+何か(罠、扉、宝箱)の罠をはずす。
+標準キーは '<span class='tt'>M-u</span>' と、
+<span class='italic'>number_pad</span> がオンなら '<span class='tt'>u</span>'。<br/>
+状況によっては罠に掛かった怪物を助けるのにも使えるかも知れない。
+</dd>
+<dt>#up</dt><dd>
+(TBT)
+</dd>
+<dt>#vanquished</dt><dd>
+</dd>
+<dt>#version</dt><dd>
+このバージョンの <span class='italic'>NetHack</span> をコンパイルしたときのオプションを表示する。
+補完される。
+標準キーは '<span class='tt'>M-v</span>'。
+</dd>
+<dt>#versionshort</dt><dd>
+(TBT)
+</dd>
+<dt>#vision</dt><dd>
+</dd>
+<dt>#wait</dt><dd>
+</dd>
+<dt>#wear</dt><dd>
+</dd>
+<dt>#whatdoes</dt><dd>
+</dd>
+<dt>#whatis</dt><dd>
+</dd>
+<dt>#wield</dt><dd>
+</dd>
+<dt>#wipe</dt><dd>
+顔を拭う。
+補完される。
+標準キーは '<span class='tt'>M-w</span>'。
+</dd>
+<dt>#wizbury</dt><dd>
+あなたの下と周りに物を埋める。
+補完される。
+デバッグモードのみ。
+</dd>
+<dt>#wizdetect</dt><dd>
+ある程度の範囲内に隠されたもの(隠し扉や罠や見えない怪物)を探す。
+補完される。
+デバッグモードのみ。
+標準キーは'<span class='tt'>^{</span>E}'.
+</dd>
+<dt>#wizgenesis</dt><dd>
+怪物を造る。
+回数を前置することで複数造ることができる。
+補完される。
+デバッグモードのみ。
+標準キーは'<span class='tt'>^{</span>G}'.
+</dd>
+<dt>#wizidentify</dt><dd>
+全ての持ち物を識別する。
+補完される。
+デバッグモードのみ。
+Default key is '<span class='tt'>^{</span>I}'.
+</dd>
+<dt>#wizintrinsic</dt><dd>
+いくつかの特性を設定する。
+補完される。
+デバッグモードのみ。
+</dd>
+<dt>#wizlevelport</dt><dd>
+他の階に瞬間移動する。
+補完される。
+デバッグモードのみ。
+標準キーは '<span class='tt'>^{</span>V}'。
+</dd>
+<dt>#wizmap</dt><dd>
+この階をマッピングする。
+補完される。
+デバッグモードのみ。
+標準キーは '<span class='tt'>^{</span>F}'。
+</dd>
+<dt>#wizrumorcheck</dt><dd>
+噂の境界を検証する。
+補完される。
+デバッグモードのみ。
+</dd>
+<dt>#wizsmell</dt><dd>
+怪物の匂いを嗅ぐ。
+補完される。
+デバッグモードのみ。
+</dd>
+<dt>#wizwhere</dt><dd>
+特殊階の場所を表示する。
+補完される。
+デバッグモードのみ。
+</dd>
+<dt>#wizwish</dt><dd>
+何かを願う。
+補完される。
+デバッグモードのみ。
+標準キーは '<span class='tt'>^{</span>W}'。
+</dd>
+<dt>#wmode</dt><dd>
+壁のモードを表示する。
+補完される。
+デバッグモードのみ。
+</dd>
+<dt>#zap</dt><dd>
+杖を振る。
+標準キーは '<span class='tt'>z</span>'。
+</dd>
+<dt>#?</dt><dd>
+ヘルプメニュー: 利用可能な拡張コマンドの一覧を表示する。
+</dd>
+</dl>
+<p>
+もしあなたのキーボードにメタキー
+(別のキーと一緒に押すことによって
+そのキーの'メタ'[第 8、または'上位']ビットをセットする)があれば、
+コマンドの頭文字をメタキーと一緒に押すことによって多くの
+拡張コマンドを起動することができる。
+<span class='italic'>NT, OS/2, PC, ST NetHack</span> では
+'Alt' キーがこの目的に使われる。
+<span class='italic'>Amiga</span> では、<span class='italic'>altmeta</span>
+オプションを設定することでこの振る舞いが得られる。
+その他のシステムでは、'Alt' と他のキーをタイプすると <span class='tt'>Escape</span> と
+タイプしたキーからなる 2 文字の並びが転送されるので、
+<span class='italic'>NetHack</span> にこれをmeta+キーと組み合わせるために
+<span class='italic'>altmeta</span>
+オプションを設定できる。
+</p>
+<dl>
+<dt>M-?</dt><dd>
+<span class='tt'>#?</span> (対応していないプラットホームもある)
+</dd>
+<dt>M-2</dt><dd>
+<span class='tt'>#twoweapon</span> (<span class='italic'>number_pad</span> がオフの場合)
+</dd>
+<dt>M-a</dt><dd>
+<span class='tt'>#adjust</span>
+</dd>
+<dt>M-A</dt><dd>
+<span class='tt'>#annotate</span>
+</dd>
+<dt>M-c</dt><dd>
+<span class='tt'>#chat</span>
+</dd>
+<dt>M-C</dt><dd>
+<span class='tt'>#conduct</span>
+</dd>
+<dt>M-d</dt><dd>
+<span class='tt'>#dip</span>
+</dd>
+<dt>M-e</dt><dd>
+<span class='tt'>#enhance</span>
+</dd>
+<dt>M-f</dt><dd>
+<span class='tt'>#force</span>
+</dd>
+<dt>M-i</dt><dd>
+<span class='tt'>#invoke</span>
+</dd>
+<dt>M-j</dt><dd>
+<span class='tt'>#jump</span>
+</dd>
+<dt>M-l</dt><dd>
+<span class='tt'>#loot</span>
+</dd>
+<dt>M-m</dt><dd>
+<span class='tt'>#monster</span>
+</dd>
+<dt>M-n</dt><dd>
+<span class='tt'>#name</span>
+</dd>
+<dt>M-o</dt><dd>
+<span class='tt'>#offer</span>
+</dd>
+<dt>M-O</dt><dd>
+<span class='tt'>#overview</span>
+</dd>
+<dt>M-p</dt><dd>
+<span class='tt'>#pray</span>
+</dd>
+<dt>M-q</dt><dd>
+<span class='tt'>#quit</span>
+</dd>
+<dt>M-r</dt><dd>
+<span class='tt'>#rub</span>
+</dd>
+<dt>M-R</dt><dd>
+<span class='tt'>#ride</span>
+</dd>
+<dt>M-s</dt><dd>
+<span class='tt'>#sit</span>
+</dd>
+<dt>M-t</dt><dd>
+<span class='tt'>#turn</span>
+</dd>
+<dt>M-T</dt><dd>
+<span class='tt'>#tip</span>
+</dd>
+<dt>M-u</dt><dd>
+<span class='tt'>#untrap</span>
+</dd>
+<dt>M-v</dt><dd>
+<span class='tt'>#version</span>
+</dd>
+<dt>M-w</dt><dd>
+<span class='tt'>#wipe</span>
+</dd>
+</dl>
+<p>
+<span class='italic'>number_pad</span>
+オプションがオンのときは、これらに加えいくつかの文字コマンドが有効になる。
+</p>
+<dl>
+<dt>h</dt><dd>
+<span class='tt'>#help</span>
+</dd>
+<dt>j</dt><dd>
+<span class='tt'>#jump</span>
+</dd>
+<dt>k</dt><dd>
+<span class='tt'>#kick</span>
+</dd>
+<dt>l</dt><dd>
+<span class='tt'>#loot</span>
+</dd>
+<dt>N</dt><dd>
+<span class='tt'>#name</span>
+</dd>
+<dt>u</dt><dd>
+<span class='tt'>#untrap</span>
+</dd>
+</dl>
+<h1>部屋と通路</h1>
+<p>
+洞窟内の部屋や通路は明りがついていることもあるし、ついていないこともある。
+明りのついている部分で自分の視野に入る部分は画面に表示される。
+暗いところでは周囲 1 つ分の空間だけが見える。
+壁や通路は画面に表示されたままになる。
+</p>
+<p>
+隠し通路は表示されない。これらは '<span class='tt'>s</span>'(search: 探す) コマンドで
+発見することができる。
+</p>
+<h2>出入口</h2>
+<p>
+出入口は部屋と通路を接続するものである。出入口の中には扉のないものがある。
+このときにはそのまま通り抜けることができる。その他の出入口には扉があるが、
+その扉は開いているか、閉じているか、錠がかかっているかのいずれかである。
+閉じている扉を開けるには '<span class='tt'>o</span>'(open: 扉を開ける) コマンドを
+用いる。再び扉を閉じるには '<span class='tt'>c</span>'(close: 扉を閉じる) コマンドを用いる。
+</p>
+<p>
+扉に錠がかかっているときは '<span class='tt'>a</span>'(apply: 道具を用いる) コマンドで錠をはずす
+道具を使うか、'<span class='tt'>^{</span>D}'(kick: 蹴る) コマンドで扉を蹴破ることで
+通ることができる。
+</p>
+<p>
+開いた扉に斜めから入ることはできない。水平あるいは垂直方向から真っ直ぐに
+近付かなければならない。扉のない出入口にはこのような制限はない。
+</p>
+<p>
+扉は怪物を締め出すのに役に立つ。たいていの怪物は扉を開けることができない。
+けれどもいくつかの怪物にとっては扉を開ける必要などない(例: 亡霊は
+扉を通り抜けることができる)。
+</p>
+<p>
+隠し扉は表示されない。これらは '<span class='tt'>s</span>'(search: 探す) コマンドで発見する
+ことができる。一度発見すると普通の扉と同様になる。
+</p>
+<h2>罠 (`^')</h2>
+<p>
+そそっかしい冒険者を陥れようとする罠が洞窟のあちこちにある。
+例えば落し穴に落ちると上り出るのに数ターンの間その場から動けなくなるであろう。
+そこに誰かが足を踏み入れて引っかかるか、'<span class='tt'>s</span>'(search: 探す) コマンドで見つけるか
+して初めて罠は表示される。怪物も罠の餌食になることがある。これは非常に有効な
+防御戦術である。
+</p>
+<p>
+古典的コンピュータゲームである''<span class='tt'>倉庫番</span>''を基にした特別なダンジョンへの
+分かれ道も存在する。
+このダンジョンでの目的は大岩を落し穴に入れることである。
+慎重に先読みすれば、全ての階は倉庫番の伝統のルールでクリアできる。
+行き詰まってしまった冒険者のためにいくつかの助け舟が用意されているが、
+これらは運を低下させてしまう。
+</p>
+<h2>階段とはしご (`&lt;', `&gt;')</h2>
+<p>
+一般的に洞窟の各階には、前の階への上り階段('&lt;')と、
+次の階への下り階段('&gt;')がひとつずつある。
+しかし、例外もある。
+例えば、洞窟の比較的浅い階であなたは二つの下り階段がある階を発見するだろう。
+ひとつは洞窟の続きであり、
+もうひとつはノームの坑道として知られる地帯に続いている。
+この坑道は最後には行き止まりになっていて、
+ここを探検した(あなたがそうすることを選択した場合)後、
+元の洞窟にまで戻って来る必要がある。
+</p>
+<p>
+階段を使うか、あるいは他の階に移動する罠に引っ掛かった場合、
+いままでいた階は非活性化されて、ディスク上のファイルに貯えられる。
+昔訪れた階に再び訪れた場合、ディスク上のファイルが読み込まれて再活性化される。
+初めて訪れる階に移動した場合、その階は(ほとんどの階は一から、
+「特別な」階はテンプレートから、「骨の」階(後述)の場合はファイルから読み込んで)
+新たに作成される。
+怪物は現在の階にいるものだけが行動する。
+他の階にいるものは止まっている。
+普通、あなたが階段を使うと、あなたは目的地で対応する階段の上に現れる。
+しかし、ペット(後述)といくつかの怪物はあなたが階段を上り降りした時についてきて、
+時々それらの一体があなたと入れ替わることがある。
+こうなった場合、ペットやその他の怪物が階段の上に現れ、
+あなたはそのそばに現れる。
+</p>
+<p>
+はしごは階段と同じ役目であり、階を繋ぐこの二つの種類は
+ゲーム中ほとんど区別ができない。
+</p>
+<h2>店と買い物</h2>
+<p>
+時々ドアのそばに店主がいて、床にたくさんの物が置いてある部屋に
+行き当たることがある．物を拾って、'<span class='tt'>p</span>'コマンドを使うことで
+物を買うことができる．
+物を拾う前に、物の上に立って''<span class='tt'>#chat</span>''コマンドを使うことで値段を確認できる．
+支払いをする前に物を使うと借金になり、店主は債務を支払うまでは
+店の外に出してくれなくなる．
+</p>
+<p>
+店の中にいるときに物を落すことで物を店主に売ることができる．
+売却価格を提示され、売るかどうかを確認されるか、
+単に店主が興味がないことを知らされる(一般的に、
+店で売っている物と同じ種類の物が買い取り対象である)。
+</p>
+<p>
+偶然で物を店の中に落してしまうと、店主は普通代償なしに所有権を主張する．
+物を取り戻すためには買い戻す必要がある．
+</p>
+<p>
+店主は資金不足になることがある。こうなった場合、何かを売ろうとすると
+現金の代わりに信用貸しを提案される。
+信用貸しは物を買うときに使えるが、同じ店でだけ有効である。
+他の店主は引き受けない。
+(迷宮で「クレジットカード」を手に入れることがあるが、
+これを店で使おうとしてはいけない。店主は受け入れない。)
+</p>
+<p>
+<span class='tt'>$</span>コマンドを使うと、今持ち運んでいる金貨の数(かばんや箱に入っているものは
+除く)とともに、負債や信用貸しがあれば表示される。
+<span class='tt'>Iu</span>コマンドは未払いの物(まだ店が所有する物)の一覧(あれば)を表示する。
+<span class='tt'>Ix</span>コマンドは使ってしまった物の代金の一覧(あれば)が表示される。
+</p>
+<h3>店の特殊な性質</h3>
+<p>
+店のいくつかの性質は意外なものかもしれない。
+</p>
+<ul>
+<li>
+アイテムの値段は色々な要素によって様々に変化する。
+</li>
+<li>
+店主はドアの一つ内側の場所は店の外として扱う。
+</li>
+<li>
+店主はあなたを鷹のように注意深く見張っているが、
+一般的にその他の消費者については無視する。
+</li>
+<li>
+店が''closed for inventory''(「棚卸のため閉店」)の場合、
+待っていても開店はしない。
+</li>
+<li>
+店は例え品物が枯渇しても新しいアイテムが入荷することはない。
+</li>
+</ul>
+<h1>怪物</h1>
+<p>
+画面上にはあなたから見える怪物しか表示されないが、ひょっとすると闇の
+中で怪物とばったり出くわすことになるかもしれないので注意が必要である。
+魔法のアイテムの中には、怪物があなたを発見するよりも前にあなたが怪物を
+発見するのに役立つ物もある(しかしこの能力に大変優れている怪物もいる。)
+</p>
+<p>
+'<span class='tt'>/</span>' コマンドと '<span class='tt'>;</span>' コマンドが画面上に表示されている怪物に関する情報を得るのに
+用いられる。
+''<span class='tt'>#name</span>'' コマンド(標準では '<span class='tt'>C</span>' に割り当てられている) は
+怪物に名前をつけるのに用いられ、
+複数の怪物がいる時に、ある怪物を他のものと見分けたいときに便利である。
+名前としてスペースを指定すると、以前につけた名前を消すことになる。
+</p>
+<p>
+拡張コマンド「<span class='tt'>#chat</span>」によって、隣接する怪物と交流できる。
+実際の台詞は選択できない(言い換えると、あなたが何をしゃべるかは選べない)が、
+店主や Oracle of Delphi(デルファイの神殿)といった相手と話をすることは、
+有益な結果をもたらす。
+</p>
+<h2>戦闘</h2>
+<p>
+発見した怪物と戦いたいときには、
+単にその怪物に向かって移動するようにすればよい。
+多くの怪物はあなたが戦いを挑まない限り、
+他のことを気にすることはない。
+腹を立てると大変危険な怪物もいる。
+「三十六計逃げるにしかず」ということわざを忘れずに。
+</p>
+<p>
+ほとんどの場合、友好的な怪物の位置に移動することで攻撃をしようとすると、
+意図を確認される。
+デフォルトでは '<span class='tt'>y</span>' を押すと確認したことになるが、
+移動に '<span class='tt'>y</span>' を使っていると間違いがちである。
+代わりに ''<span class='tt'>yes</span>'' の返答が必要なように
+<span class='italic'>paranoid_confirmation</span>
+オプションを設定できる。
+</p>
+<p>
+怪物が見えない(怪物が透明、またはあなたが目が見えない)場合、
+怪物がいるとあなたが思った位置に'I'の文字が表示される。
+その区画に歩こうとすると、見えている時と同じようにあなたは怪物に攻撃しようとする。
+もちろん、もし怪物が移動してしまっていたら、あなたの攻撃は空を切ることになる。
+もし怪物がすでに移動してしまっていると考え、戦いたくない場合は、
+'m'コマンドを使うことで戦うことなく移動できる。
+逆に、そこに怪物がいるかどうかわからないけれどもとにかく戦って見たい場合は、
+'F'コマンドが使える。
+</p>
+<h2>ペット</h2>
+<p>
+あなたは仔犬('<span class='tt'>d</span>')、子猫('<span class='tt'>f</span>')、ポニー('<span class='tt'>u</span>')のいずれかとともにゲームを始める。
+あなたのペットはあなたとともに洞窟をさまよい、怪物と戦う。
+ペットはあなたと同様に生きのびるための食料を必要とする。
+犬と猫は新鮮な死肉やその他の肉をえさにしている;
+馬は手に入れるのがより難しい草食の食料が必要である。
+もしもペットのことが気がかりであったり、ペットを飼い慣らしておきたいと思うなら、
+あなたが直接えさを与えることもできる。
+そのためには食料をペットに向かって投げてやればよい。
+きちんと訓練されたペットはある種の状況のもとで極めて利用価値が高い。
+</p>
+<p>
+ペットも怪物を倒していくにつれて経験を積んでいく。
+また時間とともに成長もし、体力や相手に与えるダメージも増加する。
+初めのうちはあなたよりもペットの方が強いだろうから、
+レベルの低いキャラクタにとっては役に立つだろう。
+</p>
+<p>
+あなたが他の階へ移動するとき、隣にペットを連れていればペットもあなた
+について移動する。置き去りにすると野生化してしまうかもしれない。
+同様に、もしあなたが自分の位置が変わるような罠にかかった場合
+(例えば、トラップドアで下の階に落ちた場合)、
+隣にいたペットはついていき、隣にいなかったペットは取り残される。
+ペットが自分でそのような罠にかかることもある。
+あなたはたとえその時にペットの隣にいても一緒に移動することはない。
+</p>
+<h2>軍馬</h2>
+<p>
+ダンジョンにいるある種の生物は、あなたが正しい装備と能力を
+持っていれば、乗ることができる。
+野生の生物にあなたが乗ることを納得させるのは困難である。
+多くの洞窟の主は協力関係をでっち上げるのに魔法の力に頼らなければならない。
+しかし、一旦動物をあなたの支配下に置いたなら、
+''<span class='tt'>#ride</span>''コマンドで乗り降りすることができる。
+動物に乗って洞窟を移動する方法は、自分自身が移動するのと同じである。
+地図に表示されるのはあなたが乗っている動物である。
+</p>
+<p>
+乗馬技術は'<span class='tt'>#enhance</span>'コマンドで管理することができる。
+詳しくは後述する武器の技術の章を参照すること。
+</p>
+<p>
+Use the '<span class='tt'>a</span>' (apply) command and pick a saddle in your inventory to
+attempt to put that saddle on an adjacent creature.  If successful,
+it will be transferred to that creature's inventory.
+(TBT)
+</p>
+<p>
+Use the ''<span class='tt'>#loot</span>'' command while adjacent to a saddled creature to
+try to remove the saddle from that creature.  If successful, it will
+be transferred to your inventory.
+(TBT)
+</p>
+<h2>骸骨の階</h2>
+<p>
+冒険者の幽霊とその死体(あるいはそれは生まれ変わる前のあなた自身であ
+ることさえある)や、その所持品に出くわすかもしれない。
+幽霊を殺すことは難しいが、
+動きがのろくほとんどダメージを受けないので簡単に逃げることができる。
+あなたは死んだ冒険者の所持品を奪うこともできる。
+しかしそれらは呪われていることが多い。
+以前の冒険者を死に到らしめたものにはすべて注意を払わねばならない。
+それはあたりを徘徊し、その直前の勝利に酔いしれているからだ。
+</p>
+<h2>怪物の永続性</h2>
+<p>
+Monsters (a generic reference which also includes humans and pets) are only
+shown while they can be seen or otherwise sensed.
+Moving to a location where you can't see or sense a monster any more
+will result in it disappearing from your map, similarly if it is the
+one who moved rather than you.
+(TBT)
+</p>
+<p>
+However, if you encounter a monster which you can't see or
+sense&mdash;perhaps it is invisible and has just tapped you on the
+noggin&mdash;a special ''remembered, unseen monster'' marker will be displayed at
+the location where you think it is.
+That will persist until you have
+proven that there is no monster there, even if the unseen monster
+moves to another location or you move to a spot where the marker's
+location ordinarily wouldn't be seen any more.
+(TBT)
+</p>
+<h1>物</h1>
+<p>
+洞窟の中で何かを見つけた場合、それを拾いたいと思うのはよくあることである。
+<span class='italic'>NetHack</span> ではその物の上を通ることによって自動的に拾うことができ(
+<span class='italic'>autopickup</span> オプション(後述)がオフになっているときや
+'<span class='tt'>m</span>' プレフィックス(前述)を用いて移動するときはこの限りではない)、
+または '<span class='tt'>,</span>' コマンドを使って手動で拾うことができる。
+持ち物が多すぎるときには、<span class='italic'>NetHack</span> はあなたにそのように告げ、
+それ以上拾うことはできなくなる。
+そうでなければ <span class='italic'>NetHack</span> はその物をあなたの荷物に加え、何を拾ったかが表示される。
+持ち物が増えるに連れて、荷物の重さが重くなる。
+どれだけの重さの物を運べるかは筋力と耐久力による。
+力が強く丈夫なほど、荷物の重さの影響は小さくなる。
+しかしそれでも、洞窟の中を持ち歩いている荷物の重さがあなたに負担になるときがくる。
+反応は鈍くなり、カロリー消費が早くなってより多くの食料が必要となる。
+そして最終的には荷物が重すぎて何かを捨てないと動けなくなってしまう。
+NetHack では荷物の重さがどれくらい悪影響を与えるかを教えてくれる。
+荷物が邪魔になってきた場合、状態
+''<span class='italic'>Burdened</span>'', ''<span class='italic'>Stressed</span>'', ''<span class='italic'>Strained</span>'',
+''<span class='italic'>Overtaxed</span>'', ''<span class='italic'>Overloaded</span>'' が
+の一つが最下行に表示される。
+</p>
+<p>
+物を拾ったとき、その物には目録記号が割り当てられる。
+物に関する多くのコマンドはあなたがどの物を使いたいのかを尋ねてくる。
+持ち物のうち特定の物を選ぶように <span class='italic'>NetHack</span> が尋ねてきたときは、
+普通目録記号の一覧が表示されてその中から選ぶ(前述のコマンドの項を参照のこと)。
+</p>
+<p>
+いくつかの物、例えば武器類のような物は、どんなものか簡単に区別が付けられる。
+この他の物、例えば巻物や水薬はその種類に応じていろいろな名前が付けられている。
+1 回のゲームの間は同じ名前を持った物は同じ種類の物である。
+しかし物に付けられる名前はゲームごとに違うものになる。
+</p>
+<p>
+このような物を使った時、もしその効果が明らかな場合は <span class='italic'>NetHack</span> がそれが
+何であるかを憶えていてくれる。
+その効果があまり明らかでない場合はその物の種類を何と名付けるか尋ねてくる。
+このため後になってそれを思い出すことができる。
+またいつでも''<span class='tt'>#name</span>''コマンドを使って
+同様のことができ、
+ある種類の物すべてに名前を付けたり個々の物に名前を付けたりできる。
+すでに名前をつけているものに''<span class='tt'>#name</span>''を使う場合、
+新しい名前としてスペースを指定することによって、
+以前つけていた名前を消すことができる。
+</p>
+<h2>呪いと祝福</h2>
+<p>
+あなたが発見したいろいろな物は、たとえそれが役に立つものであったとしても
+呪いがかけられているかも知れない。呪いがかけられている物を使うと
+それが張り付いてしまうことは最もよく見られる結果である。
+呪いがかけられている武器を持つとそれは手に張り付いてしまって取れなくなる。
+呪いがかけられている物を身につけると普通の方法でははずすことができない。
+さらに、呪いがかけられている武器や防具には必ずと言うわけではないが
+たいていの場合負の魔力が与えられていて、そうでない物よりも戦闘時の効力が劣る。
+その他の呪いがかけられている物は、あまり役に立たなかったり
+またはその他の点で害を及ぼしたりするだろう。
+</p>
+<p>
+また祝福されている物もある。祝福されている物は
+呪いがかけられていない普通の物に比べて具合良く働き役に立つ。
+例えば祝福された武器は悪魔たちに一層のダメージを与えることができるだろう。
+</p>
+<p>
+呪われてるわけでも祝福されているわけでもない物は「呪われていない(uncursed)」と
+呼ばれる。
+これは「祝福されていない(unblessed)」と表現することもできるが、
+ゲームの中では「呪われていない」という表現が使われる。
+これは「コップに半分だけ入っている/半分しか入っていない」問題である;
+解釈はあなた次第である。
+</p>
+<p>
+魔法を使うと物に呪いをかけたり呪いを解いたりすることができる。
+このためたとえ物が張り付いてしまっても、
+呪いを解いてはずすことができる。
+僧侶は生来呪いや祝福に敏感なので、
+他の職業の冒険者よりも容易に呪われているものを避けることができる。
+</p>
+<p>
+あなたの持ち物の目録の中で呪いがかけられているかどうか分からない物は
+目録のなかで特に何の説明もない。どんな状態にあるか知っている物は
+目録一覧で「cursed(呪われた)」「uncursed(呪われていない)」「blessed(祝福された)」などの
+言葉が物の説明に与えられる。
+場合によっては、その他の情報が十分に表示されている場合は
+「uncursed(呪われていない)」は省略される。
+<span class='italic'>implicit_uncursed</span>
+オプションはこれを制御するのに使われる;
+これをオフにすると、例えその他の属性から推測される場合でも
+「uncursed(呪われていない)」を表示する。
+</p>
+<h2>武器 (`)')</h2>
+<p>
+恐怖の迷宮に住むほとんどすべての怪物は、チャンスと見れば見境なくあなたを
+殺そうとするだろう。自分の身を守る(先に怪物を殺してしまう)ために
+あなたは武器を必要とする。武器なしではポイントにして 1 ～ 2 のダメージ
+(いくらかの加算があるかも知れないが)を与えることしかできない。
+但し、モンクは例外である。モンクは武器を使って攻撃するよりも
+素手(あるいはグローブをつけた手)で攻撃した方が大きなダメージを
+与えることができる。
+</p>
+<p>
+武器には鎚矛や剣のような振り回すためのものと、矢や槍のような投げつけるためのものがある。
+武器で怪物に打撃を与えるためには、武器を手にもって怪物を攻撃するか
+武器を怪物に投げなければならない。投げるには、単純に槍を投げるように選択するだけでよい。
+弓から矢を発射するには、まず弓を手に持ってから矢を投げればよい。クロスボウは
+crossbow bolt(クロスボウ用の太矢)を発射するためのものである。
+投石器は岩や(宝石のような)その他の石を投げつけるために用いる。
+</p>
+<p>
+魔力のある武器には「追加能力」(攻撃能力と言うことで正と負の両方を取り得る)が
+付けられており、
+攻撃が怪物に当たる可能性と与えるダメージに追加される。
+武器の魔力を測定するには、なんらかの方法で魔法を使って鑑定するしかない。
+多くの武器は錆のようなある種のダメージを受けやすい。このような
+「腐食」ダメージは修復可能である。
+</p>
+<p>
+攻撃がうまく怪物に命中するかと、命中した時にどれくらいのダメージを与えるかは、
+多くの要素によって決定される。それらには以下のものがある:
+武器の種類、武器の品質(魔力や腐食)、経験レベル、筋力、敏捷性、荷物の重さ、
+技量(後述)。
+怪物の防御値(一般的な防御率。防具を着ることによるとは限らない)も要素の一つである。
+また、ある種の武器に対して特に耐性を持つ怪物もいる。
+</p>
+<p>
+多くの武器は片手持ちであるが、両手が必要な武器もある。
+両手持ちの武器と盾を同時に持つことはできない。
+片手持ちの武器を持っている場合、
+もうひとつの武器を予備として準備しておいて、
+'<span class='tt'>x</span>'コマンドで今使っている武器と交換することができる。
+さらに「二刀流戦闘」技能の技量がある場合、二つの武器を同時に使うことができる。
+'<span class='tt'>X</span>' コマンドで二刀流戦闘をするかどうかを切り替えられる。
+一部のキャラクター(例えば野蛮人)だけがこの技能を持っている。
+たとえこの技能を持っていても、一度に二つの武器を使うと
+ひとつしか使わない時に比べて敵に命中する確率にペナルティを受ける。
+</p>
+<p>
+全く何の武器も装備したくない時もあるかもしれない。
+そうするためには、装備するものを選ぶ時に'<span class='tt'>-</span>'を選ぶか、あるいは'<span class='tt'>A</span>'コマンドで
+その他の身につけているものを外すのと同時に現在使っている武器を外すことができる。
+</p>
+<p>
+AD&amp;D をプレイしたことのある読者はお気付きだろうが、AD&amp;D に登場した武器は
+<span class='italic'>NetHack</span> においても怪物にだいたい同じダメージを与える。
+あまり良く知られていない武器( %
+<span class='italic'>aklys</span>(アキリス), <span class='italic'>lucern hammer</span>(ルッツェンハンマー),
+<span class='italic'>bec-de-corbin</span>(ベッグ・デ・コルビン) など)のいくつかは AD&amp;D の
+追加ルールである <span class='italic'>Unearthed Arcana</span> の付録で詳しく説明されている。
+</p>
+<p>
+武器を使うコマンドは '<span class='tt'>w</span>'(wield: 武器を持つ)、 '<span class='tt'>t</span>'(throw: 投げる)、
+'<span class='tt'>f</span>' (fire: 武器を発射するもうひとつの方法), '<span class='tt'>Q</span>'(quiver: 矢筒)、
+'<span class='tt'>x</span>' (exchange: 武器を交換する)、'<span class='tt'>X</span>' (二刀流)、'<span class='tt'>#enhance</span>'(後述) である。
+</p>
+<h2>ものを投げることと発射すること</h2>
+<p>
+'<span class='tt'>t</span>'コマンドを使うことによって、どんな物でも投げることができる。
+このコマンドを指定すると、投げる物を尋ねてくる。
+'<span class='tt'>?</span>'を押すと、持ち物の中で投げるのに向いていそうな物の一覧が表示され、
+'<span class='tt'>*</span>'を押すと、全ての持ち物の一覧が表示される。
+何を投げるかを指定した後、(どの目標に投げるかではなく)どの方向に投げるかを尋ねられる。
+投げることができる距離は、主に物の種類と筋力による。
+矢は手で投げることもできるが、弓を持って投げた方が遥かに遠くまで飛び、
+目標にも当たりやすい。
+</p>
+<p>
+'<span class='tt'>Q</span>'コマンドで予め好みの「発射物」を選択しておき、
+'<span class='tt'>f</span>'コマンドで投げることによって、投げる操作を簡単にすることが出来る。
+先程と同様に投げる方向は尋ねられるが、
+'<span class='tt'>f</span>'コマンドを使うたびに何を投げるかを指定する必要はない。
+<span class='italic'>autoquiver</span>
+オプションをオンにすると、
+'<span class='tt'>Q</span>'コマンドで設定した物がなくなった時に、
+<span class='italic'>NetHack</span> が自動的に矢筒(または矢筒袋または準備している物)に他の物を
+入れてくれる。
+</p>
+<p>
+一度に複数の物を投げることができるキャラクターもいる。
+一度に複数の矢を装填し(あるいは一度に複数の物を持ち)、
+それを目標に当てることはたやすい仕事ではない。
+レンジャーはこの技能に優れているし、適切な武器の技能
+(弓を持って矢を射るなら弓の技能、クロスボゥを使うならクロスボゥの技能、
+スリングを持って石を投げるならスリングの技能)
+において高いレベルの技量があれば他の職業でも可能である。
+あなたがいくつのアイテムを同時に投げることができるかは
+毎ターン変化する。
+'<span class='tt'>t</span>'コマンドや'<span class='tt'>f</span>'コマンドの前に数字を指定することによって、
+発射する数を明示的に制限することもできる。
+例えば、''<span class='tt'>2f</span>''(
+<span class='italic'>number_pad</span>
+オプションがオンの時には''<span class='tt'>n2f</span>'')と指定すると、
+たとえ 3 本発射可能でも最大 2 本しか発射されない。
+もし、実際に発射できる数よりも大きい数を指定した場合
+(この例では ''<span class='tt'>4f</span>'')は、
+特に数字を指定しなかった場合と同様、
+実際に発射可能な数(ここでは 3 本)しか発射されない。
+一旦動作を開始したなら、全てのアイテムは同じ方向に飛ぶ。
+もし 1 本目で怪物を倒したなら、残りはその先まで飛んでいくことになる。
+</p>
+<h2>武器の技量</h2>
+<p>
+利用できる武器の技能はさまざまに異なっている。
+武器の技量(技能)はある種の武器をどれくらいうまく扱えるかに影響する。
+技能はゲームを通じて向上させることが出来るが、
+それは職業や経験レベルや武器の使用回数による。
+</p>
+<p>
+技量を示すために、武器は daggers 、 broadswords 、 polearms といった風に
+いくつかのグループに分けられている。
+それぞれのグループで技量レベルをどこまで高めることが出来るかは職業毎に決まっている。
+例えば魔法使いは daggers や staves に対しては高いレベルに達することが出来るが、
+swords や bows に対してはそうではない。
+</p>
+<p>
+''<span class='tt'>#enhance</span>''拡張コマンドで現在の武器(と呪文)の技量を見ることができる。
+さらに、ひとつまたは複数の技能を向上させることができる状態なら、
+どの技能を向上させるかを選択することができる。
+技能のランクは''none'' (技能を向上させることができないという意味で
+''restricted''(制限された) と呼ばれることもある)、''unskilled''(初心者),
+''basic''(入門者), ''skilled''(熟練者), ''expert''(エキスパート)である。
+制限された技能は単に''<span class='tt'>#enhance</span>''コマンドで一覧に表示されない。
+(神の介入によりある種の技能の制限が解除されることもある。
+その時には技能は"unskilled"となり、限界は"basic"までとなる)
+キャラクターによっては、素手での戦闘やマーシャルアーツの技能を
+''master''(マスター)や''grand master''(グランドマスター)にまで向上させる
+ことができる。
+</p>
+<p>
+技能レベルが"restricted"や"unskilled"の武器を使うと、怪物への命中率や
+命中した時に与えるダメージにペナルティがある。
+"basic"ではペナルティもボーナスもない。
+"skilled"では命中率と与えるダメージにささやかなボーナスがある。
+"expert"ではボーナスは大きくなる。
+攻撃が命中すると、使っている武器に関する技能を(もし最大に達していないなら)
+向上させるための訓練度を増やすチャンスがある。
+この訓練度が次のレベルに必要な値に達すると、
+自分の技能により自信を持てるように感じたことが告げられる。
+この時点で''<span class='tt'>#enhance</span>''コマンドを使うことによってひとつまたは複数の技能を
+向上させることができる。
+技能は自動的には向上しない。
+なぜなら全ての技能レベルの合計には制限があるので、
+どの技能を向上させて、どれを無視するかを決める必要があるからである。
+</p>
+<h2>二刀流</h2>
+<p>
+一部のキャラクタは二つの武器を一度に使うことができる。
+そうするための準備は厄介だが、使うことで身についていく。
+二つの武器を装備するには、''<span class='tt'>#twoweapon</span>'' コマンドを使う必要がある。
+しかし、まずそれぞれの手に一つの武器を手にする必要がある。
+(二つの武器は完全に同じではないことに注意すること; 通常装備している手で
+手にしている武器は主要武器として扱われ、もう一方は補助武器として扱われる。
+もっとも注意するべき違いは、二つの武器を手にするのを止めた後&mdash;
+または始める前&mdash;である。
+優先武器は手にしている武器であり、補助武器は単に、
+予備の武器として指定された、持ち物の一つである。)
+</p>
+<p>
+主要武器を手にしているけれどももう片方の手が空いていたり間違った武器を
+持っていたりする場合、'<span class='tt'>x</span>', '<span class='tt'>w</span>', '<span class='tt'>x</span>' とすると、
+まず主要武器をもう片方の手に持ち替え、補助武器として使いたいものを装備し、
+再び意図通りの手に入れ替えられる。
+補助武器が正しいけれども主要武器が間違っている場合、単に
+'<span class='tt'>w</span>' を使って主要武器を手にすることができる。
+最後に、どちらの手にも正しい武器を手にしていない場合、
+'<span class='tt'>w</span>', '<span class='tt'>x</span>', '<span class='tt'>w</span>' として、最初に補助武器を手にし、
+それを入れ替え、主要武器を手にする。
+</p>
+<p>
+処理全体は
+<span class='italic'>pushweapon</span>
+オプションを使うことで単純化できる。
+これを有効にして、何かを装備するのに 'w' を使うと、
+現在装備している武器を予備の武器にする。
+従って 'w', 'w' と続けると、最初に予備にしたい武器を装備し、
+それから優先したい武器を装備すると、最初の武器が予備の武器に押し出される。
+</p>
+<p>
+二刀流モードのとき、'<span class='tt'>X</span>' コマンドを使うと、
+単一武器モードに戻る。
+どちらかの武器を投げたり落としたりするか、
+どちらかが盗まれたり壊されたりしても、
+単一武器モードに戻る。
+</p>
+<h2>防具 (`[')</h2>
+<p>
+多くの非友好的なものが洞窟には潜んでいる。
+そういったものからの攻撃から我が身を守るには防具が必要である。
+防具の中には他の種類の防具よりも防御効果に優れた物がある。
+Armor class(AC)(防御値)はこの防御効果の尺度である。
+防御値 (AC)は AD&amp;D での場合と同じように評価される。
+10 が防具なしの状態と等しく、数値が小さいほど優れた防具であることを示す。
+AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> においても同じ防御効果を示す。
+以下に(不完全ではあるが) 各種の鎧ごとに規定される防御値の一覧を示す。
+</p>
+<div style='align:center'>
+<table>
+<tr><td><pre>dragon scale mail(ドラゴンの鱗鎧) </pre></td><td><pre> 1 </pre></td><td><pre> plate mail(鋼鉄の鎧) </pre></td><td><pre> 3</pre></td></tr>
+<tr><td><pre>crystal plate mail(水晶の鎧)      </pre></td><td><pre> 3 </pre></td><td><pre> bronze plate mail(青銅の鎧) </pre></td><td><pre> 4</pre></td></tr>
+<tr><td><pre>splint mail(鉄片の鎧)             </pre></td><td><pre> 4 </pre></td><td><pre> banded mail(帯金の鎧) </pre></td><td><pre> 4</pre></td></tr>
+<tr><td><pre>dwarvish mithril-coat(ドワーフのミスリル服) </pre></td><td><pre> 4 </pre></td><td><pre> elven mithril-coat(エルフのミスリル服) </pre></td><td><pre> 5</pre></td></tr>
+<tr><td><pre>chain mail(鎖かたびら)            </pre></td><td><pre> 5 </pre></td><td><pre> orcish chain mail(オークの鎖かたびら) </pre></td><td><pre> 6</pre></td></tr>
+<tr><td><pre>scale mail(鱗の鎧)                </pre></td><td><pre> 6 </pre></td><td><pre> dragon scales (ドラゴンの鱗) </pre></td><td><pre> 7</pre></td></tr>
+<tr><td><pre>studded leather armor(鋲付き皮鎧) </pre></td><td><pre> 7 </pre></td><td><pre> ring mail(鉄環の鎧)          </pre></td><td><pre> 7</pre></td></tr>
+<tr><td><pre>orcish ring mail(オークの鉄環の鎧) </pre></td><td><pre> 8 </pre></td><td><pre> leather armor(皮鎧)           </pre></td><td><pre> 8</pre></td></tr>
+<tr><td><pre>leather jacket(皮ジャケット)      </pre></td><td><pre> 9 </pre></td><td><pre> no armor(鎧なし)               </pre></td><td><pre> 10</pre></td></tr>
+</table>
+</div>
+<p>
+さらに他の防具(例: 兜、靴、楯、クローク) を身につけ、
+防御値の値を小さくすることもできる。
+ただし同じ範疇に入る物は 1 つしか身につけることはできない
+(鎧は一式、クロークは 1 着、兜は 1 個、楯は 1 枚など)。
+</p>
+<p>
+防具に魔力があればその防具の防御効果は通常の物よりも良く(もしくは悪く)なっており、
+それに付いている「＋記号」(あるいは－記号)の分だけ防御値の値が小さくなる。
+例えば +1 鎖かたびらは、通常の鎖かたびらよりも防御効果が高く、
+防御値は 1 単位分小さくなって 4 になる。
+防具を身につけると直ちに防御値と「＋記号」の値が分かる。
+呪いがかけられた防具は通常負の魔力(－記号)を持っており、取りはずすことはできない。
+</p>
+<p>
+多くの鎧は錆のようなある種のダメージを受けやすい。
+このようなダメージは修復可能である。
+魔法を唱えるのを妨げる防具もある。
+</p>
+<p>
+鎧を使うためのコマンドは '<span class='tt'>W</span>'(wear: 防具を付ける) と
+'<span class='tt'>T</span>'(take off: 防具をはずす) である。
+'<span class='tt'>A</span>'(remove all: 全てをはずす)もまた他の身につけるもの同様、
+防具をはずすのに使用できる。
+</p>
+<h2>食料 (`%')</h2>
+<p>
+生きのびるには食料が不可欠である．長い間食料を口にしないままでいると
+やがて昏倒し、徐々に餓死への道をたどることになる。
+保存の処置を取ってないと傷んでしまい、食べるには不衛生になる食料もある。
+アイスボックスや缶に入っている食料は通常はいつまでも傷まないが、
+アイスボックスは重く、缶は開けるのに少しばかり時間が必要である。
+</p>
+<p>
+怪物を殺すと通常はその死体が残るが、これは「食料」にもなる。
+すべてと言うわけではないが多くは食べられるし、
+中には食べると特別な力がつくものもある。
+大ざっぱに言えば「食べたものになる」ということである。
+</p>
+<p>
+菜食主義の職業や怪物もいる。
+菜食主義の怪物は決して動物の死体を食べない。
+一方菜食主義のプレイヤーは動物の死体を食べることができるが、
+なんらかのありがたくない副作用がある。
+</p>
+<p>
+<span class='italic'>fruit</span> オプションによってあなたの好物の食料にちなんで
+その名前を 1 つ設定することができる。
+</p>
+<p>
+食料を食べるためのコマンドは '<span class='tt'>e</span>' である。
+</p>
+<h2>巻物 (`?')</h2>
+<p>
+巻物にはいろいろな表題が付けられているが、
+これはおそらくいにしえの魔術師たちが暇潰しとして選んだのであろう
+(例:''READ ME'' とか ''THANX MAUD'' の逆さ読みとか)。
+巻物は読むと消滅する(ただし魔法の呪文の書かれていない白紙は消滅しない)。
+</p>
+<p>
+これらの中で最も利用価値の高いものは<span class='italic'>scroll of identify(識別の巻物)</span>である。
+これは他の物についてそれが何であるか、
+呪いがかけられているか祝福されているか、
+あと何回効力を発揮できるかを確定できる。
+得体の知れない魔力を持つ物の中にはこの巻物なしでは何であるか鑑定し難いものもある。
+</p>
+<p>
+メイルデーモンが走ってきてあなたに<span class='italic'>scroll of mail(手紙の巻物)</span>を渡してくれることもある
+(この機能を有効にしてコンパイルされているバージョンの場合)。
+<span class='italic'>NetHack</span> のメール配達機能はシステムのメールボックスに電子メールが
+やってきた場合に起動される。
+この機能を使用するには環境変数''MAIL''にあなたのメールボックスの
+ファイル名を設定して <span class='italic'>NetHack</span> に新しいメールを探す場所を知らせる必要が
+ある。
+また望むならば環境変数''MAILREADER''に使いたいメール受信プログラ
+ムのファイル名を設定することもできる。
+このとき <span class='italic'>NetHack</span> からそのプログラムを起動してその巻物を読むことができる。
+メールがゲーム内においてランダムに生成されるバージョンの <span class='italic'>NetHack</span> では
+これらの環境変数は無視される。
+メイルデーモンは
+<span class='italic'>mail</span>
+オプションでオフにできる。
+</p>
+<p>
+巻物を読むためのコマンドは '<span class='tt'>r</span>' である。
+</p>
+<h2>水薬 (`!')</h2>
+<p>
+水薬は小びんに入っている液体の色によって区別される。
+水薬は飲むと消滅してしまう。
+</p>
+<p>
+透明な水薬は水である。これらはしばしば祝福されていたり呪いがかけられていたりして、
+聖水や不浄な水になったりする。不死の怪物にとって聖水は有害なので、
+聖水を不死の怪物に投げつける('<span class='tt'>t</span>')と有効である。
+聖水に他の物を浸す(''<span class='tt'>#dip</span>'')のもたいへん有益である。
+</p>
+<p>
+水薬を飲むためのコマンドは '<span class='tt'>q</span>'(quaff: 飲む) である。
+</p>
+<h2>杖 (`/')</h2>
+<p>
+杖は通常何回も魔力を発揮する。
+一部の杖は杖を振る際に方向を指示する必要がある。
+杖を自分に向けて振ることもできる(方向として '<span class='tt'>.</span>' か '<span class='tt'>s</span>' を入力する)が、
+これはしばしば愚かな行為となる。
+その他の杖は方向は必要でない。
+杖が効力を発揮する回数は杖ごとに不定で、杖を使う度にその回数は 1 ずつ減る。
+</p>
+<p>
+杖の魔法の量がなくなると、通常は杖を使用しても何も起きない。
+しかしながら時折、最後の一握りの魔力を使いきった杖から搾り取ることが可能である。
+しかしこれをすると杖は壊れてしまう。
+杖は適切な魔法によって再充填することができるが、
+そうすると杖が爆発してしまう可能性がある。
+爆発する可能性は最初は非常に小さく、同じ杖に何度も再充填するごとに大きくなる。
+</p>
+<p>
+自暴自虐なな行為ではあるが、どうにもならなくなったときには杖を壊すという手もある。
+これは弱気な行為ではない。それを行うことにより、
+破壊的な魔法のエネルギーが解放されるからである。
+</p>
+<p>
+ある杖を完全に鑑定した場合、持ち物の一覧では括弧の中に追加の情報が表示される。
+それは再充填された回数、コロン、現在の使用可能な回数である。
+杖が無効化された場合には使用可能な回数は <span class='tt'>-1</span> になる。
+</p>
+<p>
+杖を使うためのコマンドは '<span class='tt'>z</span>'(zap: 杖を振る) である。壊すには '<span class='tt'>a</span>'
+(apply: 道具を使う)である。
+</p>
+<h2>指輪 (`=')</h2>
+<p>
+指輪は大変役に立つ物である。
+というのも水薬や巻物や杖のように魔力が一過性にしか働かないものと違い、
+指輪の魔力は比較的恒久的であるからだ。
+</p>
+<p>
+指輪をはめることによってその魔力は発揮される。
+指輪は両手の薬指に 1 つずつ、計 2 つしかはめることはできない。
+</p>
+<p>
+またたいていの指輪は身につけると腹の減り方が速くなる。
+減り方は指輪の種類によって異なる。
+</p>
+<p>
+指輪を使うためのコマンドは '<span class='tt'>P</span>'(put on: 指輪をはめる) と
+'<span class='tt'>R</span>'(remove: 指輪をはずす) である。
+</p>
+<h2>魔法書 (`+')</h2>
+<p>
+魔法書は強力な魔法を記した大きな本である。'<span class='tt'>r</span>'(read: 読む) コマンドで
+学ぶと呪文の知識が読み手に転送される(したがって最後には読めなくなる)か、
+さもなくばその試みは不測の結果に終る。
+呪いがかけられた魔法書や知識の及ばない神秘の古代文字で記された魔法書を
+読むと健康状態に害が及ぶ可能性がある！
+</p>
+<p>
+呪文を唱えたとき(学んでいる時も)にも魔力が逆流することもある。
+あなたの経験レベルでは遠く及ばない高度な呪文を唱えようと試みたり、
+対応する呪文タイプに関する技能が低かったり、
+ひどくついてないときに呪文を唱えたりすると、
+呪文を唱えるのに必要なエネルギーと時間を浪費しただけに終わってしまうこともある。
+</p>
+<p>
+呪文を唱えることは、魔法のエネルギーを呼び起こしてそれを精神そのもの
+に集中させることである。
+あなた自身の内部から出る魔法のエネルギーが開放される。
+唱えると一時的に魔法の力が吸い出される;
+これはゆっくりと回復し、その際に追加の食料が必要になる。
+呪文を唱えるには練習が必要である。
+練習していれば、それぞれの呪文領域の技能は向上していく。
+しかしながら、時間が経つにつれてそれぞれの呪文に関する記憶は薄れ、
+もう一度呪文を学ぶ必要がでてくるだろう。
+</p>
+<p>
+一部の呪文は、杖と同様、呪文を唱える方向を指定する必要がある。
+自分自身に対して唱えるには、方向として'<span class='tt'>.</span>'または'<span class='tt'>s</span>'を指定する。
+いくつかの呪文は単なる方向ではなく場所を指定する必要がある。
+その他の呪文は方向や場所を指定する必要はない。
+</p>
+<p>
+武器が習熟度の面でグループ分けされているのと同様、呪文もグループ分けされている。
+呪文を唱えるのに成功すると、そのグループを訓練したことになる;
+十分に訓練したスキルを向上させる '<span class='tt'>#enhance</span>' コマンドはそのグループの全ての
+呪文に影響する。
+スキルが向上すると呪文の性能が向上し、詠唱時の失敗のリスクが減り、
+どれくらい長い間呪文が記憶に残っているかの推定の精度が向上する。
+技能スロットは武器スキルと共有する。(''武器の技量''の項も参照のこと)
+</p>
+<p>
+魔法を唱えるには自由に移動できなければならない。また、いくつかの種類の鎧を
+着ていると魔法を唱えるのを妨げるだろう。
+</p>
+<p>
+魔法書を読むためのコマンドは巻物を読むときと同じく '<span class='tt'>r</span>'(read: 読む) である。
+'<span class='tt'>+</span>' コマンドにより、知っている呪文毎に、レベル，スキル分野，成功率、どれくらい
+強く記憶しているかが一覧表示される。
+'<span class='tt'>Z</span>'(cast: 呪文を唱える) コマンドにより呪文を唱える。
+</p>
+<h2>道具 (`(')</h2>
+<p>
+道具はいろいろな目的に使う種々雑多な物である。杖などと同じように使用
+回数に制限のある物もある。例えばランプはしばらくたつと燃え尽きてしまう。
+その他の道具の中には容器も含まれており、物を出し入れすることができる。
+</p>
+<p>
+道具を使うためのコマンドは '<span class='tt'>a</span>'(apply: 道具を用いる) である。
+</p>
+<h2>箱</h2>
+<p>
+冒険の途中で鞄や箱やひつに出くわすこともあるであろう。
+これらは置いてある場所に立っている場合には
+拡張コマンド「<span class='tt'>#loot</span>」によって、
+また持っているときには '<span class='tt'>a</span>'(apply: 道具を用いる) コマンドで開けることができる。
+しかしながらひつにはしばしば錠がかかっており、大抵は重くて運びにくい物体である。
+ひつは手に持つことはできない物なので、
+錠をはずす('<span class='tt'>a</span>'(apply: 道具を用いる) コマンドで鍵や錠をはずす道具を使ったり、
+'<span class='tt'>^{</span>D}'コマンドで蹴とばしたり、
+拡張コマンド''<span class='tt'>#force</span>''により武器を使ってこじ開けるなどの方法による)には
+床に置かなくてはならない。
+</p>
+<p>
+ひつには罠が仕掛けられているものもあり、錠をはずしたりふたを開けたり
+したときに不快な出来事が起きる。拡張コマンド''<span class='tt'>#untrap</span>''によってチェックを
+して罠が無効になるよう試みることができる。
+</p>
+<h2>魔除け (`"')</h2>
+<p>
+魔除けは指輪と大変よく似ており、しばしばもっと大きな効力を持っている。
+指輪と同じように魔除けにはいろいろな魔法の特性があり、有益なものも有害
+なものもあって、身につけることにより効力を発揮する。
+</p>
+<p>
+魔除けは一つだけしか首にかけることができない。
+</p>
+<p>
+魔除けを使うためのコマンドは指輪の場合と同じく '<span class='tt'>P</span>'(put on: 指輪を
+はめる) と '<span class='tt'>R</span>'(remove: 指輪をはずす) である。
+</p>
+<h2>宝石 (`*')</h2>
+<p>
+宝石の中には価値のあるものもあり、高値で売れる。
+宝石は財産を持ち歩く方法としてとして極めて効果的なやり方である。
+価値のある宝石を脱出時に所持していれば得点に加算される。
+</p>
+<p>
+他の小さな石も宝石に分類されるが、その価値はほとんどない。
+しかし、全ての石は(もしスリングを持っているなら)弾として有効である。
+窮余に陥いったら手で投げることも可能である。
+</p>
+<h2>大きな岩 (``')</h2>
+<p>
+彫像や巨石は特に有用ではないし、一般的に重いものである。
+見かけとは異なった彫像もあるという噂である。
+</p>
+<p>
+巨大なヒューマノイド(巨人やその仲間)は巨石を武器として用いることができる。
+</p>
+<p>
+一部のプログラム設定では、彫像はもはや
+'<span class='tt'>'</span>'
+ではなく、表現されている怪物を意味する文字で表される。
+</p>
+<h2>金 (`$')</h2>
+<p>
+金は得点に加算され、また店では金で物を買うことができる。
+迷宮にはあなたの持つお金に影響されるかもしれない数多くの怪物が
+いる(店主は別として)。
+</p>
+<h2>物の永続性</h2>
+<p>
+(TBT)
+</p>
+<h1>制限プレイ</h1>
+<p>
+単に <span class='italic'>NetHack</span> に勝利するだけでは満足できない一部のプレイヤーは、
+プレイに制限を設けることに挑戦している。
+これらの挑戦の一部はゲームによって自動的に記録され、
+ゲーム中いつでも <span class='tt'>#conduct</span> コマンドで確認できる。
+またゲーム終了時にも表示される。
+挑戦に反するような行動を取ると、もはやその挑戦は表示されない。l
+これらの挑戦に勝利することによって、プレイヤーは追加の''自慢する権利''を
+得られる。
+なお、これらの制限に従うことなくゲームに勝利することも
+完全に有効であり、最初にゲームに勝利するときは普通これらの挑戦は関係ない。
+</p>
+<p>
+挑戦のいくつかは食べ物に関するものである。
+最も困難な挑戦は食料なしの挑戦である。
+生物は食料なしでも長い間生存できるが、水は必要である。
+従って、飲み物に対しては何の制限もない。例え栄養分があってもである。
+神に祈って飢えをしのぐことはいかなる食べ物に関する挑戦にも違反しない。
+</p>
+<p>
+厳密な菜食主義者は動物から作られた食べ物を食べない。
+基本的な栄養源は果物と野菜である。
+ブロッブ('b')、ゼリー('j')、細菌('F')も野菜とみなされる。
+人間の食料にも動物を使っていないものがある。
+レンバス、クラム、「食料」(丸薬)、Ｋレーション、Ｃレーションがそうである。
+他の生物に変化しているときは、金属などの普通消化できない物質も
+厳密な菜食主義者用の食料として扱われる。
+しかし、これらの物も食料なしの挑戦には反することに注意すること。
+</p>
+<p>
+菜食主義者は動物を食べない。
+しかし、動物からの副生産物を食べることは厳密な菜食主義者ほどは厳しくない。
+上記の厳密な菜食主義者が食べられるものに追加して、
+ブラックプリン以外のプリン('P')、卵、卵から作られた食べ物
+(占いクッキーとパンケーキ)、牛乳から造られた食べ物
+(クリームパイとキャンディーバー)、ロイヤルゼリーを食べることができる。
+モンクは菜食主義者とみなされる。
+</p>
+<p>
+肉を食べることは厳密な菜食主義者、菜食主義者、食料なしの挑戦に反する。
+これにはほし肉、上記以外の怪物の死体や缶詰、迷宮で見つかる
+その他の肉のかたまりを含む。
+変化中に「飲み込んで消化」攻撃をかけるのはその怪物の死体を
+食べたものとみなす。
+皮、竜鱗、骨でできた物体を、これらを消化できる怪物に変化して食べたり、
+マインドフレイヤーに変化して脳を食べることは動物を食べたとみなす。
+ただし、蜜蝋は動物の副生成物とみなす。
+</p>
+<p>
+挑戦に関わらず、消化不可能な物もあり、食べると危険なものもある。
+怪物に対して「飲み込んで消化」攻撃をかけることは、
+その怪物の死体を食べたものとみなす。
+「厳格な菜食主義者(''vegan'')」という言葉は食べ物に関する文脈でのみ
+用いられることに注意してほしい。
+動物から作られた物(皮、竜の鱗、骨、角、さんご)を使ったり身につけたり
+することは制限に違反しない。
+また、「ミルク色の」水薬は不透明な白色ではあるが、牛乳を含んでいるわけ
+ではないので、厳密な菜食主義者の制限に違反しない。
+スライムモルドやプレイヤーが定義した''fruits''は、
+例え「さくらんぼ」であろうが「ポークチョップ」であろうが、
+厳密な菜食主義者の制限に違反しない。
+</p>
+<p>
+無神論者は宗教を否定する。つまり、<span class='tt'>#pray</span>(祈る), <span class='tt'>#offer</span>
+(いけにえを捧げる),
+<span class='tt'>#turn</span> (不死のものを戻す), 僧侶に対する <span class='tt'>#chat</span>(話す)ことはできない。
+一部の読者はモンクや僧侶でプレイするのもこの制限に反していると主張するかもしれないが、
+ここではプレイヤーの選択の余地を残してある。
+イェンダーの魔除けを神に捧げるのはゲームに勝利するために必要なので
+制限には反しないものとする。
+また、怒った神や僧侶やその他の宗教的存在が話す言葉を聞いても制限には反しない。
+真の無神論者は言葉は聞くが，そこになんら特別な意味を見出さない。
+</p>
+<p>
+ほとんどのプレイヤーは武器(あるいは武器として装備することを
+考慮している道具)を手に戦う。
+挑戦の一つはこのような武器を手にして使わずにゲームに勝利することである。
+武器を投げたり、発射したり、蹴ったりするのは許される。
+また、杖、呪文、あるいはその他のアイテムを使ったり、
+素手や脚で戦うことも許される。
+</p>
+<p>
+<span class='italic'>NetHack</span> において、平和主義者は他の怪物を殺してはならない(言い換えると、
+怪物の死によって経験値を得てはならない)。
+これは特に難しい挑戦であるが、他の手段によって経験値を得ることは可能である。
+</p>
+<p>
+文盲者は読み書きができない。これには以下の行為が含まれる。
+巻き物を読む、魔法書を読む、占いクッキーのメッセージを読む、Tシャツの文字を読む、
+巻き物を書く、''X''一文字(文盲者の伝統的なサイン)以外の文字を刻む。
+刻んである文字を読むことと、ゲームに勝利するために絶対に必要なアイテムを
+読むことは制限には反しないものとする。
+ゲーム開始時に持っている巻き物と魔法書の内容を知っていることおよび
+呪文の知識は、ゲーム開始以前に教師から教わったものとみなし、
+制限には反しないものとする。
+</p>
+<p>
+その他にいくつかの細かいゲームとして記録される挑戦がある。
+怪物は虐殺することが可能である。これをせずにプレイするのも挑戦とみなす。
+怪物を虐殺する機会が与えられたとき、
+''none'' (''なし'')と答えると、虐殺しないままにすることができる。
+あなたはアイテムを同じグループの他のアイテムに変化させたり (''polypiling'')、
+変化の杖・呪文・薬で自分の体を他の生物に変えたり(''polyself'')できる。
+これらの効果を用いないことはそれぞれ挑戦とみなす。
+最後に、あなたはときどき願いをかなえてもらうことがある。
+なんのアイテムも願わずにプレイするのは一つの挑戦であり、
+聖器を願わない(たとえ直ちに消滅したとしても)でプレイするのも一つの挑戦である。
+アイテムを願う機会を与えられたとき、
+''nothing'' (''なし'') と答えると、願わないままにすることができる。
+</p>
+<h1>オプション</h1>
+<p>
+人にはそれぞれいろいろな好みがあり <span class='italic'>NetHack</span> の遊び方もそれぞれ異なっているの
+で、<span class='italic'>NetHack</span> の振る舞いを変更するため設定できるオプションがある。
+</p>
+<h2>オプションの設定</h2>
+<p>
+オプションを設定する方法にはいくつかある。ゲーム中に '<span class='tt'>O</span>' コマンドを
+使うことによって全てのオプションを見ることができ、そのほとんどを変更で
+きる。また、設定ファイルや環境変数''NETHACKOPTIONS''で自動的に設定する
+こともできる。
+<span class='italic'>NetHack</span> のバージョンによってはゲーム開始前にオプションや
+システム管理者のためのグローバルな設定をすることができるプログラムが
+ついていることもある。
+</p>
+<h2>設定ファイルを使う</h2>
+<p>
+設定ファイルの標準設定のファイル名と位置は OS によって異なる。<br/>
+</p>
+<p>
+MS-DOS では、mbox{<span class='italic'>nethack.exe</span>} と
+同じフォルダの mbox{''defaults.nh''} である。<br/>
+</p>
+<p>
+設定ファイルの中の'<span class='tt'>#</span>'で始まる行はコメントとして扱われる。
+空行は無視される。
+Any line beginning with 
+'<span class='tt'>[</span>' で始まり '<span class='tt'>]</span>' で終わる行は節マーカとして扱われる。
+大かっこで囲まれたテキストは節の名前である。
+節マーカ以降の行はその節に属し、その節を選択するために
+CHOOSE 文が使われない限り無視される。
+節の名前は大文字小文字を無視する。
+</p>
+<p>
+(TBT)
+</p>
+<dl>
+<dt>OPTIONS</dt><dd>
+<br/>
+<pre>
+    OPTIONS=dogname:Fido
+    OPTIONS=!legacy,autopickup,pickup_types:$"=/!?+
+</pre>
+<br/>
+</dd>
+<dt>HACKDIR</dt><dd>
+</dd>
+<dt>LEVELDIR</dt><dd>
+</dd>
+<dt>SAVEDIR</dt><dd>
+</dd>
+<dt>BONESDIR</dt><dd>
+</dd>
+<dt>LOCKDIR</dt><dd>
+</dd>
+<dt>TROUBLEDIR</dt><dd>
+</dd>
+<dt>AUTOCOMPLETE</dt><dd>
+<br/>
+<pre>
+   AUTOCOMPLETE=zap,!annotate
+</pre>
+<br/>
+</dd>
+<dt>AUTOPICKUP_EXCEPTION</dt><dd>
+</dd>
+<dt>BINDINGS</dt><dd>
+<br/>
+<pre>
+   BIND=^X:getpos.autodescribe
+</pre>
+<br/>
+</dd>
+<dt>CHOOSE</dt><dd>
+<br/>
+<pre>
+   OPTIONS=color
+   CHOOSE=char A,char B
+   [char A]
+   OPTIONS=role:arc,race:dwa,align:law,gender:fem
+   [char B]
+   OPTIONS=role:wiz,race:elf,align:cha,gender:mal
+</pre>
+<br/>
+</dd>
+<dt>MENUCOLOR</dt><dd>
+</dd>
+<dt>MSGTYPE</dt><dd>
+</dd>
+<dt>ROGUESYMBOLS</dt><dd>
+</dd>
+<dt>SOUND</dt><dd>
+</dd>
+<dt>SOUNDDIR</dt><dd>
+</dd>
+<dt>SYMBOLS</dt><dd>
+<br/>
+<pre>
+   # replace small punctuation (tick marks) with digits
+   SYMBOLS=S_boulder:0,S_golem:7
+</pre>
+<br/>
+</dd>
+<dt>WIZKIT</dt><dd>
+<br/>
+<pre>
+   WIZKIT=~/wizkit.txt
+</pre>
+</dd>
+</dl>
+<p>
+以下は設定ファイルの中身の例である:
+</p>
+<pre>
+    # Set your character's role, race, gender, and alignment.
+    OPTIONS=role:Valkyrie, race:Human, gender:female, align:lawful
+
+    # Turn on autopickup, set automatically picked up object types
+    OPTIONS=autopickup,pickup_types:$"=/!?+
+
+    # Map customization
+    OPTIONS=color           # Display things in color if possible
+    OPTIONS=lit_corridor    # Show lit corridors differently
+    OPTIONS=hilite_pet,hilite_pile
+    # Replace small punctuation (tick marks) with digits
+    SYMBOLS=S_boulder:0,S_golem:7
+
+    # No startup splash screen. Windows GUI only.
+    OPTIONS=!splash_screen
+</pre>
+<h2>環境変数 NETHACKOPTIONS を使う</h2>
+<p>
+環境変数 NETHACKOPTIONS にはいろいろなオプションの初期値をカンマで区
+切って列挙し設定する。オプションのうちのいくつかのものは単にオンかオフ
+の選択ができるだけである。そのオプション名をリストに入れるとオンになり、
+オプション名の前に '<span class='tt'>!</span>' か''<span class='tt'>no</span>''をつけるとオフになる。その他のオプショ
+ンでは設定値として文字列が必要である。これらのオプションを設定するには
+オプション名、コロンまたはイコール記号、設定値の順で入力すればよい。
+設定値は次のカンマもしくは文字列の最後までとなる。
+</p>
+<p>
+例えば <span class='italic'>color</span> をオン、<span class='italic'>legacy</span> をオフ、
+<span class='italic'>name</span>が''<span class='tt'>Blue Meanie</span>'' に、
+<span class='italic'>fruit</span>が''<span class='tt'>lime</span>''になるように
+環境変数を設定するには <span class='italic'>csh</span> では次のコマンドを入力すればよい。
+('!'は特殊文字なのでエスケープしてやる必要があることに注意)
+</p>
+<pre>
+    setenv NETHACKOPTIONS "color,\!leg,name:Blue Meanie,fruit:lime"
+</pre>
+<p>
+<span class='italic'>sh</span>, <span class='italic'>ksh</span>, <span class='italic'>bash</span> では
+</p>
+<pre>
+    NETHACKOPTIONS="color,!leg,name:Blue Meanie,fruit:lime"
+    export NETHACKOPTIONS
+</pre>
+<p>
+とすればよい。
+</p>
+<p>
+(TBT)
+</p>
+<h2>カスタマイズオプション</h2>
+<p>
+以下にいろいろなオプションの役割を説明する。
+あまりに長すぎる文字列の部分は無視される。
+以下のオプションのうち実装によっては無効となっているオプションもある。
+</p>
+<p>
+一部のオプションは永続し、ゲーム中保存および再設定される。
+設定ファイルで永続オプションを変更した場合、新しいゲームにのみ適用される。
+</p>
+<dl>
+<dt>acoustics</dt><dd>
+あなたのキャラクターが聞いたものに関するメッセージを表示する(標準設定はオン)。
+これはコンピューターの音声出力機能とは何の関係もないことに注意すること。
+永続する。
+</dd>
+<dt>align</dt><dd>
+スタート時の属性(<span class='tt'>align:lawful</span>, <span class='tt'>align:neutral</span>,
+<span class='tt'>align:chaotic</span>)。
+最初の一文字で指定することもできる。
+標準設定ではランダムに選択される。
+値に '<span class='tt'>!</span>' または ''no'' を前置すると、ランダムに選択した属性からその属性を
+除外できる。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+永続する。
+</dd>
+<dt>autodescribe</dt><dd>
+(TBT)
+</dd>
+<dt>autodig</dt><dd>
+掘るための道具を手にしていて、掘ることができる地形に移動しようとしたとき、
+自動的に掘る（標準設定はオフ）。
+永続する。
+</dd>
+<dt>autoopen</dt><dd>
+扉に向かって歩くとそれを開けようとする（標準設定はオン）。
+永続する。
+</dd>
+<dt>autopickup</dt><dd>
+移動先にあるものを自動的に拾う（標準設定はオン）。
+永続する。
+この振る舞いをカスタマイズするためには
+''<span class='italic'>pickup_types</span>'' を参照すること。
+</dd>
+<dt>autoquiver</dt><dd>
+このオプションは何も準備していない時に'f'
+(fire:矢筒の中にあるものを発射する)コマンドを実行した時にどうするかを決める
+(標準設定はオフ)。
+オンなら、コンピューターは適当な武器を矢筒または矢筒袋に入れるか、
+適切な武器を準備する。
+この時、呪い、祝福、魔法、劣化、武器の数などは考慮されないので注意すること。
+代わりに'<span class='tt'>Q</span>'コマンドを使って自分の好きな物を矢筒または矢筒袋に入れるか準備する。
+入れる武器がないか、このオプションがオフの時は
+代わりに'<span class='tt'>t</span>'(throw:物を投げる)コマンドが実行される。
+永続する。
+</dd>
+<dt>blind</dt><dd>
+恒久的に盲目の状態でゲームを開始する（標準設定はオフ）。
+永続する。
+</dd>
+<dt>bones</dt><dd>
+骨ファイルの読み書きを行う（標準設定はオン）。
+永続する。
+</dd>
+<dt>boulder</dt><dd>
+巨岩を表示するのに用いるキャラクタ（標準設定は''large rock''クラス
+文字である '<span class='tt'>'</span>'）。
+</dd>
+<dt>catname</dt><dd>
+スタート時の猫の名前(例: catname:Morris)。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>character</dt><dd>
+キャラクターのタイプを設定する(例:''<span class='tt'>character:Monk</span>'')。
+''<span class='italic'>role</span>''オプションと同じである。
+更なる詳細については <span class='italic'>role</span> を参照のこと。
+</dd>
+<dt>checkpoint</dt><dd>
+プログラムがクラッシュした時に復旧できるように
+階を移動する毎に状態をセーブする（標準設定はオン）。
+永続する。
+</dd>
+<dt>checkspace</dt><dd>
+ファイルを書き込む前にディスクの空き容量をチェックする(標準設定はオン)。
+セーブファイルやレベルファイルのために使うパーティションに2GB以上の
+空き容量がある場合、このオプションをオフをしなければならないかもしれない
+(なぜなら空き容量が大きすぎる場合、計算がオーバーフローして
+容量が足りないように見えるかもしれない)。
+このオプションはコンパイル時にMFLOPPYが定義されているときのみ適用される。
+</dd>
+<dt>clicklook</dt><dd>
+マウスの右クリックで、画面上にあるものを見ることができるようにする
+(標準設定はオフ)。
+</dd>
+<dt>cmdassist</dt><dd>
+ありがちなミスを検出したときに新規プレイヤーのために
+追加のコマンド補助メッセージを表示する(標準設定はオン)。
+</dd>
+<dt>confirm</dt><dd>
+ペット、店主、その他の攻撃してこない生物を
+攻撃しようとしたときに確認をする(標準設定はオン)。
+永続する。
+</dd>
+<dt>dark_room</dt><dd>
+明るい部屋の視界外のエリアを表示する(標準設定はオン)。
+永続する。
+</dd>
+<dt>disclose</dt><dd>
+ゲーム終了時にプログラムがどの情報を公開するかを制御する。
+値は指示/カテゴリの組のスペース区切りのリストである
+(標準設定は '<span class='tt'>ni na nv ng nc no</span>' で、全ての候補に対してデフォルトを
+'<span class='tt'>n</span>' にする)。
+永続する。
+設定できるものは以下の通り。
+<br/>
+<span class='tt'>i</span> &mdash; "持ち物の公開"<br/>
+<span class='tt'>a</span> &mdash; "属性の公開"<br/>
+<span class='tt'>v</span> &mdash; "退治した怪物の一覧"<br/>
+<span class='tt'>g</span> &mdash; "抹殺した怪物種の一覧"<br/>
+<span class='tt'>c</span> &mdash;"挑戦の表示"<br/>
+<span class='tt'>o</span> &mdash; "迷宮の概要の表示"
+<br/>
+それぞれの表示に対して、その前にどのように振舞うかを指示する文字を
+つけることができる。文字の意味は以下のとおり。
+<br/>
+<span class='tt'>y</span> &mdash; "確認するが、標準設定はイエスにする。"<br/>
+<span class='tt'>n</span> &mdash; "確認するが、標準設定はノーにする。"<br/>
+<span class='tt'>+</span> &mdash; "確認なしに表示する。"<br/>
+<span class='tt'>-</span> &mdash; "確認なしで非表示とする。"
+<br/>
+(TBT)
+<br/>
+(TBT)
+省略されたカテゴリには暗黙に '<span class='tt'>n</span>' 接頭辞が追加される。
+接頭辞が省略されて指定されたカテゴリには暗黙に '<span class='tt'>+</span>' 接頭辞が使われる。
+表示カテゴリの順序は関係なく、プログラムは設定された順序に従って
+ゲーム終了時の表示を行う。
+(例: ''<span class='tt'>disclose:yi na +v -g o</span>'')
+このように設定した場合、
+<span class='tt'>持ち物</span>は<span class='italic'>確認する</span>(標準設定は<span class='italic'>イエス</span>)。
+<span class='tt'>属性</span>は<span class='italic'>確認する</span>(標準設定は<span class='italic'>ノー</span>)。
+<span class='tt'>退治した怪物</span>は<span class='italic'>確認なしに表示する</span>。
+<span class='tt'>抹殺した怪物</span>は<span class='italic'>確認せずに非表示とする</span>。
+<span class='tt'>挑戦</span>は暗黙に<span class='italic'>確認する</span>(標準設定は<span class='italic'>ノー</span>)。
+<span class='tt'>概要</span>は<span class='italic'>確認せずに表示する</span>。
+<br/>
+退治した怪物の一覧は罠や同士討ちによって死んだ怪物も含むことに注意。
+そして迷宮の概要は、訪れた全てのレベルを表示するが、発見しなかった
+ものについては開示されない。
+</dd>
+<dt>dogname</dt><dd>
+スタート時の犬の名前(例: dogname:Fang)。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>extmenu</dt><dd>
+拡張コマンドインターフェースを、有効なコマンドの一覧メニューが出るように変更する。
+キー入力は、最後に Enter を押す必要がないこと以外は伝統的なインターフェースと互換性がある。
+tty インターフェースに実装されている。(標準設定はオフ)
+(TBT)
+</dd>
+<dt>female</dt><dd>
+''<span class='tt'>gender:female</span>'' の古い別名。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>fixinv</dt><dd>
+持ち物の目録記号と物との対応はその物を下に置いても
+変化しない(標準設定はオン)。
+オフにしたときは物を下に置くとその物の目録記号以降の記号と
+物との対応が 1 つずつずれる。
+永続する。
+</dd>
+<dt>force_invmenu</dt><dd>
+(TBT)
+</dd>
+<dt>fruit</dt><dd>
+あなたの好物の果物にちなんでその名前を設定する(例:fruit:mango)
+(標準設定は「slime mold」)。
+元来 <span class='italic'>NetHack</span> で時々使われる懐古趣味的な妙な言葉である。
+slime mold(ネバネバかび)よりももっと食欲のわく食べ物にするべきであろう。
+apples(リンゴ)、oranges(オレンジ)、 pears(洋なし)、 bananas(バナナ)、
+melons (メロン) は <span class='italic'>NetHack</span> にはもう存在しているので、設定してはならない。
+</dd>
+<dt>gender</dt><dd>
+開始時の性別(<span class='tt'>gender:male</span> または <span class='tt'>gender:female</span>).
+最初の一文字で指定することもできる。
+''<span class='tt'>male</span>'' と ''<span class='tt'>female</span>'' オプションを指定していても、
+''<span class='tt'>gender</span>'' オプションが優先される。
+標準設定では適切な性別がランダムに選択される。
+値に '<span class='tt'>!</span>' または ''<span class='tt'>no</span>'' を前置すると、ランダムに選択した
+性別からその性別を除外できる。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+永続する。
+</dd>
+<dt>goldX</dt><dd>
+(TBT)
+</dd>
+<dt>help</dt><dd>
+'<span class='tt'>/</span>' コマンドを使って調べている物について何らかの情報がある場合、
+それを見るかどうかを尋ねる(標準設定はオン)。
+ヘルプが出ないようにすれば ''<span class='tt'>More info?</span>'' というプロンプトに煩わされなくなるので、
+素早く物を調べることができる。
+しかしそれは興味深く重要な情報を見逃してしまうかも知れないことを意味する。
+永続する。
+</dd>
+<dt>herecmd_menu</dt><dd>
+(TBT)
+</dd>
+<dt>hilite_pet</dt><dd>
+ペットを同種の動物から視覚的に区別する(標準設定はオフ)。
+このオプションの振る舞いは使っているウィンドウシステムに依存する。
+テキストウィンドウ表示では、ハイライトや反転がしばしば使われる。
+タイルを使用するときは、一般的にはハートの記号をペットにつける。
+cursesインターフェースでは、<span class='italic'>petattr</span> オプションは
+どのようにペットをハイライトするかを制御し、
+これを設定すると <span class='italic'>hilite_pet</span> オプションもこれに合わせて
+オンオフされる。
+</dd>
+<dt>hilite_pile</dt><dd>
+オブジェクトの山と個々のオブジェクトで表示を変える(標準設定はオフ)。
+このオプションの振る舞いは使用するウィンドウの種類に依存する。
+テキスト表示の場合、ハイライトや反転がしばしば使われる;
+タイルの場合、一般的には山の一番上のオブジェクトの横に小さいプラスマークが
+表示される。
+</dd>
+<dt>hitpointbar</dt><dd>
+名前とランクの後ろにヒットポイントバーを表示する。
+TTYとWindows GUI版のみで、ステータスハイライトがオンの場合のみ。
+</dd>
+<dt>horsename</dt><dd>
+開始時の馬の名前をつける (例:''<span class='tt'>horsename:Trigger</span>'').
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>ignintr</dt><dd>
+ブレークを含む割り込み信号を無視する(標準設定はオフ)。
+永続する。
+</dd>
+<dt>implicit_uncursed</dt><dd>
+可能なら、持ち物一覧での「呪われていない」表示を抑制する(標準設定はオン)。
+</dd>
+<dt>legacy</dt><dd>
+ゲーム開始時に説明メッセージを表示する(標準設定はオン)。
+永続する。
+</dd>
+<dt>lit_corridor</dt><dd>
+夜目やあなたのキャラクタが持っている光源によって見える通路を
+表示する (標準設定はオフ)。
+永続する。
+</dd>
+<dt>lootabc</dt><dd>
+箱を扱うときに'<span class='tt'>o</span>', '<span class='tt'>i</span>', '<span class='tt'>b</span>'ではなく
+古い'<span class='tt'>a</span>', '<span class='tt'>b</span>', '<span class='tt'>c</span>'のキーを使う
+(標準設定はオフ)。
+永続する。
+</dd>
+<dt>mail</dt><dd>
+ゲーム中にメールを配達するようにする(標準設定はオン)。
+永続する。
+</dd>
+<dt>male</dt><dd>
+''<span class='tt'>gender:male</span>'' の古くなった別名。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>mention_walls</dt><dd>
+壁に向かって歩くときにフィードバックを与える(標準設定はオフ)。
+</dd>
+<dt>menucolors</dt><dd>
+メニュー行に色を付ける(標準設定はオフ)。
+色の設定方法については ''<span class='italic'>Configuring Menu Colors</span>'' を参照のこと。
+</dd>
+<dt>menustyle</dt><dd>
+いろいろなオブジェクトを指定するとき(たとえば Dropコマンド)に用
+いるインタフェースの制御。値は tradional, combination, full, partial
+の 4 つのタイプの最初の一文字を指定する。
+Traditional は古いバージョンで唯一利用できたもので、
+物の種類を示す文字の入力、次に選んだ種類に当てはまる全ての物を一つずつ
+確認する。
+Combination は選択したい物の種類を示す文字を入力するが、
+次に当てはまる物を一つずつ確認で選択するのではなく、メニュー形式で選択する。
+Full は物の種類の文字入力のかわりに、最初に物の種類のメニューを表示し、
+それから選択した種類に当てはまる物のメニューを表示する。
+Partial は物の種類を選ぶことをせず、
+直ちに全ての物が表示されたメニューを表示する。
+永続する。
+</dd>
+<dt>menu_deselect_all</dt><dd>
+メニューの全ての項目を非選択にするキー。
+Amiga, Gem, X11, ttyで実装されている。(標準設定は '-')
+</dd>
+<dt>menu_deselect_page</dt><dd>
+メニューのうち、現在表示されている全ての項目を非選択にするキー。
+Amiga, Gem, tty で実装されている。(標準設定は '')
+</dd>
+<dt>menu_first_page</dt><dd>
+メニューの最初のページへ移動するキー。
+Amiga, Gem, tty で実装されている。(標準設定は '^')
+</dd>
+<dt>menu_headings</dt><dd>
+メニューのうち注目している部分をどのように表示するかを指定する。
+値は ''<span class='tt'>none</span>'', ''<span class='tt'>bold</span>'', ''<span class='tt'>dim</span>'',
+''<span class='tt'>underline</span>'', ''<span class='tt'>blink</span>'', ''<span class='tt'>inverse</span>'' のいずれかである。
+全てのポートで実際に全てのタイプを表示できるわけではない。
+</dd>
+<dt>menu_invert_all</dt><dd>
+メニューの全ての項目の選択状態を反転するキー。
+Amiga, Gem, X11, tty で実装されている。(標準設定は '@')
+</dd>
+<dt>menu_invert_page</dt><dd>
+メニューの現在のページの全ての項目の選択状態を反転するキー。
+Amiga, Gem, tty で実装されている。(標準設定は '~')
+</dd>
+<dt>menu_last_page</dt><dd>
+メニューの最後のページへ移動するキー。
+Amiga, Gem, tty で実装されている。(標準設定は '|')
+</dd>
+<dt>menu_next_page</dt><dd>
+メニューの次のページへ移動するキー。
+Amiga, Gem, tty で実装されている。(標準設定は '&gt;')
+</dd>
+<dt>menu_objsyms</dt><dd>
+物の種類の記号がメニューのショートカットキーとして動作する場所では、
+メニューの一覧に物の種類の記号を表示する(標準設定はオフ)。
+</dd>
+<dt>menu_overlay</dt><dd>
+メニューを書く前に画面をクリアせず、メニューを画面の右端に寄せる。
+tty 版のみ。
+(標準設定はオン)
+</dd>
+<dt>menu_previous_page</dt><dd>
+メニューの前のページへ移動するキー。
+Amiga, Gem, tty で実装されている。(標準設定は '&lt;')
+</dd>
+<dt>menu_search</dt><dd>
+メニューで検索を行うキー。
+Amiga, Gem, X11, tty で実装されている。(標準設定は ':')
+</dd>
+<dt>menu_select_all</dt><dd>
+メニューの全ての項目を選択にするキー。
+Amiga, Gem, X11, tty で実装されている。(標準設定は '.')
+</dd>
+<dt>menu_select_page</dt><dd>
+メニューのうち、現在表示されている全ての項目を選択にするキー。
+Amiga, Gem, tty で実装されている。(標準設定は ',')
+</dd>
+<dt>monpolycontrol</dt><dd>
+怪物が姿を変えるときに新しい形になるか確認する(標準設定はオフ)。
+デバッグモードのみ。
+</dd>
+<dt>mouse_support</dt><dd>
+入力と移動にマウスを使えるようにする。
+有効な設定は:
+<br/>
+<span class='tt'>0</span> &mdash; 無効<br/>
+<span class='tt'>1</span> &mdash; 有効; マウスの使用を支援するために OS の補正を使う<br/>
+<span class='tt'>2</span> &mdash; <span class='tt'>1</span> と同様有効だが、OS の補正は使わない<br/>
+<br/>
+値を省略すると <span class='tt'>1</span> を指定したのと同じになり、
+<span class='italic'>mouse_support</span> を否定すると
+<span class='tt'>0</span> を指定したのと同じになる。
+</dd>
+<dt>msghistory</dt><dd>
+後で '<span class='tt'>^{</span>P}' で呼び出せるように保存しておく最上行のメッセージの数
+(標準設定は 20)。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>msg_window</dt><dd>
+過去のメッセージの表示方法を変更する。現時点では tty 
+(四つ全ての選択肢) と curses
+('<span class='tt'>f</span>' と '<span class='tt'>r</span>' の選択肢、標準設定は '<span class='tt'>r</span>')
+で実装されている。
+指定できる値は以下のとおり。
+<br/>
+<span class='tt'>s</span> &mdash; "single": 1 メッセージだけ (標準設定。これは 3.4.0 以前での振る舞いである)<br/>
+<span class='tt'>c</span> &mdash; "conbination": 最初の 2 メッセージは 'single'、その後は 'full'。<br/>
+<span class='tt'>f</span> &mdash; "full": 全画面; 古いメッセージが先。<br/>
+<span class='tt'>r</span> &mdash; 全画面; 新しいメッセージが先。
+<br/>
+過去との互換性のために、値なしにもできる(<span class='italic'>full</span>とみなす)し、
+否定もできる(<span class='italic'>single</span>とみなす)。
+</dd>
+<dt>name</dt><dd>
+あなたのキャラクタの名前を設定する(標準設定はあなたの ユーザー名)。
+-記号とキャラクタの職業の頭文字を付け加える(つまり
+''<span class='tt'>-A -B -C -H -K -M -P -Ra -Ro -S -T -V -W</span>''
+のどれかを後に付ける)ことによって職業を設定することもできる。
+職業として
+''<span class='tt'>-@</span>''
+を使用すると、ランダムなひとつが自動的に選択される。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>news</dt><dd>
+<span class='italic'>NetHack</span> のニュースファイルがあればそれを読む(標準設定はオン)。
+ニュースはゲームの最初に表示されるので、
+'<span class='tt'>O</span>' コマンドでこれを設定するのは無意味である。
+</dd>
+<dt>nudist</dt><dd>
+防具なしのキャラクターで開始する(デフォルトはオフ)。
+永続する。
+</dd>
+<dt>null</dt><dd>
+端末にパディングのためのナルキャラクタを送る(標準設定はオン)。
+永続する。
+</dd>
+<dt>number_pad</dt><dd>
+移動のために文字のかわりに数字キーを使用する(標準設定は 0 またはオフ)。<br/>
+設定可能な値は:
+<br/>
+<span class='tt'>0</span> &mdash; 文字で移動する; '<span class='tt'>yuhjklbn</span>'<br/>
+<span class='tt'>1</span> &mdash; 数字で移動する; 数字 '<span class='tt'>5</span>' は '<span class='tt'>G</span>' 移動の接頭辞として振る舞う<br/>
+<span class='tt'>2</span> &mdash; <span class='tt'>1</span> と同様だが数字 '<span class='tt'>5</span>' は '<span class='tt'>G</span>' ではなく '<span class='tt'>g</span>' 移動の接頭辞として振る舞う<br/>
+<span class='tt'>3</span> &mdash; 電話のキー配置の数字で移動する; <span class='tt'>123</span> は上、<span class='tt'>789</span> は下<br/>
+<span class='tt'>4</span> &mdash; <span class='tt'>3</span> と <span class='tt'>2</span> の組み合わせ; 電話配置と MS-DOS 互換<br/>
+<span class='tt'>-1</span> &mdash; 文字で移動するが '<span class='tt'>z</span>' で北西に移動し、'<span class='tt'>y</span>' で杖を振る
+<br/>
+後方互換性のために、値を省略するのは <span class='tt'>1</span> と同じで、
+否定する <span class='italic'>number_pad</span> と <span class='tt'>0</span> を指定するのと同じである。
+(設定 <span class='tt'>2</span> と <span class='tt'>4</span> は MS-DOS や古い PC Hack との互換性のためのものである;
+'<span class='tt'>5</span>' のための異なった振る舞いに加えて、
+'<span class='tt'>Alt-5</span>' は '<span class='tt'>G</span>' として振る舞い、
+'<span class='tt'>Alt-0</span>' は '<span class='tt'>I</span>' として振る舞う。
+設定 <span class='tt'>-1</span> は、'<span class='tt'>y</span>' と '<span class='tt'>z</span>' の位置が入れ替わっている一部の
+QWERTZ キーボードに対応するものである。)
+数字で移動するとき、(12 回調べるために ''<span class='tt'>12s</span>'' とするような)
+コマンドに対する回数接頭辞を入力するには、
+文字 '<span class='tt'>n</span>' を前置する (''<span class='tt'>n12s</span>'')。
+</dd>
+<dt>packorder</dt><dd>
+物の種類を表示するときの順番を指定する(標準設定は
+''amp;")[%?+!=/(*'0_amp;'').
+このオプションにはいろいろな物の種類を表す文字の列を設定する。
+設定されなかった種類は以前の順序で最後に表示される。
+</dd>
+<dt>paranoid_confirmation</dt><dd>
+プロンプトを変えたい状況の、スペースで区切られた一覧。
+標準設定は<br/>
+''<span class='italic'>paranoid_confirmation:pray</span>''。
+<dl>
+<dt>Confirm</dt><dd>
+'y' ではなく ''yes'' を必要とする場合、yes以外の何でも
+否定したことにするのではなく、否定する場合には ''no'' が必要。
+</dd>
+<dt>quit</dt><dd>
+ゲームを抜けたりスコアが記録されない探検モードに切り替えるときに
+'<span class='tt'>y</span>' ではなく ''<span class='tt'>yes</span>'' が必要;
+</dd>
+<dt>die</dt><dd>
+死ぬときに '<span class='tt'>y</span>' ではなく ''<span class='tt'>yes</span>'' が必要
+(通常のプレイでは無意味; 探検モードで適用される);
+</dd>
+<dt>bones</dt><dd>
+デバッグモードで死んだときの骨ファイルの保存確認に '<span class='tt'>y</span>' ではなく ''<span class='tt'>yes</span>'' が必要;
+</dd>
+<dt>attack</dt><dd>
+友好的な怪物を攻撃するときの確認に '<span class='tt'>y</span>' ではなく ''<span class='tt'>yes</span>'' が必要;
+</dd>
+<dt>wand-break</dt><dd>
+杖を折るときの確認に '<span class='tt'>y</span>' ではなく ''<span class='tt'>yes</span>'' が必要;
+</dd>
+<dt>eating</dt><dd>
+食べ続けるかどうかの確認に '<span class='tt'>y</span>' ではなく ''<span class='tt'>yes</span>'' が必要;
+</dd>
+<dt>Were-change</dt><dd>
+プレイヤーが変化制御を持っているときに獣化病により姿を変えるときの
+確認に'<span class='tt'>y</span>' ではなく ''<span class='tt'>yes</span>'' が必要;
+</dd>
+<dt>pray</dt><dd>
+祈るときにすぐに祈るのではなく確認で '<span class='tt'>y</span>' が必要; 標準設定でオン;
+</dd>
+<dt>Remove</dt><dd>
+'<span class='tt'>R</span>' と '<span class='tt'>T</span>' コマンドで有効なアイテムを一つしか身につけていないときでも
+持ち物一覧からの選択が必要。
+</dd>
+<dt>all</dt><dd>
+全て有効にする。
+</dd>
+</dl>
+標準設定では、pray 選択がオン、それ以外はオフになっている。
+その他の選択を設定することなくこれをオフにするには、
+''<span class='italic'>paranoid_confirmation:none</span>'' を使う。
+その他を設定しながらこれをオンのままにするには、
+''<span class='italic'>par-a-noid_con-fir-ma-tion:attack~pray~Remove</span>'' のように一覧に含める。
+<dt>perm_invent</dt><dd>
+もしオンならば、現在の持ち物一覧を常にウィンドウに表示しておく。
+この機能が実装されているウィンドウシステムでのみ有効。
+</dd>
+<dt>petattr</dt><dd>
+(TBT)
+<br/>
+<br/>
+<br/>
+<br/>
+</dd>
+<dt>pettype</dt><dd>
+プレイするキャラクタクラスが複数のタイプのペットを使用できる時に
+初期のペットを指定する、または初期のペットを全く指定しない。
+指定出来るのは''<span class='tt'>cat</span>'', ''<span class='tt'>dog</span>'', ''<span class='tt'>horse</span>'', ''<span class='tt'>none</span>'' である。
+選択が現在プレイしている職業で使えない場合、暗黙に無視される。
+例えば、''<span class='tt'>horse</span>'' は騎士をプレイしている場合にのみ有効になる。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>pickup_burden</dt><dd>
+物を拾った時にここで指定した荷物の重さレベル
+(Unencumbered, Burdened, streSsed, straiNed, overTaxed, overLoaded)
+以上になると、続行するかどうかを確認する。
+(標準設定は 'S')。
+永続する。
+</dd>
+<dt>pickup_thrown</dt><dd>
+このオプションがオンで
+''<span class='italic'>autopickup</span>''
+もオンの場合、
+例え
+''<span class='italic'>pickup_types</span>''
+にないか自動拾い例外にマッチングしても、
+自分が投げた物は拾おうとする。
+デフォルトはオン。
+永続する。
+</dd>
+<dt>pickup_types</dt><dd>
+''<span class='italic'>autopickup</span>''
+オプションが設定されている時に拾う物の種類を指定する(標準設定は全ての種類)。
+''<span class='italic'>autopickup_exception</span>''
+行を使うことで
+''<span class='italic'>autopickup</span>''
+の振る舞いをより細かく制御できる。
+永続する。
+</dd>
+<dt>pile_limit</dt><dd>
+床の上の物の山の上を歩くとき、物の一覧を表示する代わりに
+''there are few/several/many objects here''
+(ここにはいくつかの/たくさんの物がある)を表示する閾値。
+値 0 は「無制限」(常に物の一覧を表示する)を意味する;
+値 1 は、山のサイズが最低 1 はあるので、事実上「物は一切表示しない」を
+意味する; 標準設定は 5。
+永続する。
+</dd>
+<dt>playmode</dt><dd>
+値は <span class='italic'>normal</span>, <span class='italic'>explore</span>, <span class='italic'>debug</span> のいずれか。
+通常のプレイの代わりに(発見モードとも呼ばれる)探検モード、あるいは
+(ウィザードモードとも呼ばれる)デバッグモードを選択する。
+デバッグモードは、(マルチユーザーシステムでは)特定のユーザー名で
+ログインしている必要があるかもしれないし、
+(シングルユーザーシステムでは)特定のキャラクタ名を指定している
+必要があるかもしれないし、
+完全に無効になっているかもしれない。
+デバッグモードを要求したけれども許されていないか不可能な場合は
+代わりに探検モードになる。
+標準設定は通常プレイ。
+</dd>
+<dt>pushweapon</dt><dd>
+既に武器を持っている時に 'w' (wield: 武器を持つ) コマンドを使ったとき、
+既に持っていた武器を予備の武器に設定する(標準設定はオフ)。
+アイテムを使うことで装備したことになる場合は
+'a' (apply) コマンドと同様である。
+永続する。
+</dd>
+<dt>race</dt><dd>
+種族を選択する(例: ''<span class='tt'>race:human</span>'')。標準設定はランダムである。
+値に '<span class='tt'>!</span>' または ''<span class='tt'>no</span>'' を前置すると、ランダムに選択した種族からその種族を
+除外できる。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+永続する。
+</dd>
+<dt>rest_on_space</dt><dd>
+スペースキーを '<span class='tt'>.</span>'(#wait) コマンドとして使用する
+(標準設定はオフ)。
+永続する。
+</dd>
+<dt>role</dt><dd>
+キャラクターのタイプを設定する (例:''<span class='tt'>role:Samurai</span>'')。
+''<span class='italic'>character</span>''オプションと同じである。
+職業を設定するその他の方法については''<span class='italic'>name</span>''オプションを参照のこと。
+普通は先頭の 1 文字だけで判別されるが、
+'r'は例外である。''<span class='tt'>Rogue</span>''、''<span class='tt'>Ranger</span>''、''<span class='tt'>random</span>''があるからである。
+値に '<span class='tt'>!</span>' または ''<span class='tt'>no</span>'' を前置すると、ランダムに選択した職業からその職業を
+除外できる。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+永続する。
+</dd>
+<dt>roguesymset</dt><dd>
+このオプションは、rogue レベルで表示されるシンボルを変更するために、
+<span class='tt'>symbols</span> の中にある名前付きシンボル集合の一つを選択するために
+使われる。
+</dd>
+<dt>rlecomp</dt><dd>
+セーブファイルを書き出すときに、地図にランレングス圧縮を行う。
+ランレングス圧縮に対応していないシステムもある。
+既存のセーブファイルを読み込むときには影響しない。
+</dd>
+<dt>runmode</dt><dd>
+「まとめて移動」する(<span class='tt'>shift</span>+方向や<span class='tt'>control</span>+方向で移動するか、
+旅行コマンドやマウスのクリックを使った場合)
+ときにどれくらいの頻度で地図を更新するかを制御する。
+設定可能な値は以下の通り:
+<br/>
+<span class='tt'>teleport</span> &mdash; 移動が完了してから地図を更新する;<br/>
+<span class='tt'>run</span> &mdash; 7 歩ぐらい毎に地図を更新する;<br/>
+<span class='tt'>walk</span> &mdash; 1 歩毎に地図を更新する;<br/>
+<span class='tt'>crawl</span> &mdash; <span class='italic'>walk</span> と同様だが、一歩毎にしばらく停止する。
+<br/>
+このオプションは画面表示にのみ影響し、実際の移動結果には影響しない。
+標準設定は <span class='italic'>run</span> である。バージョン 3.4.1 以前は <span class='italic'>teleport</span> のみであった。
+効果が確認できるかどうかは使っている版や端末の種類に依存する。
+永続する。
+</dd>
+<dt>safe_pet</dt><dd>
+ペットを(ペットと知りつつ)攻撃してしまうのを防ぐ(標準設定はオン)。
+永続する。
+</dd>
+<dt>sanity_check</dt><dd>
+各ターンの前に怪物、物、地図を評価する(標準設定はオフ)。
+デバッグモードのみ。
+</dd>
+<dt>scores</dt><dd>
+最後にスコアリストのどの部分を見るかを制御する
+(例：''<span class='tt'>scores:5top scores/4around my score/own scores</span>'')。
+それぞれの分野の最初の文字 ('<span class='tt'>t</span>', '<span class='tt'>a</span>', '<span class='tt'>o</span>')のみが必要である。
+永続する。
+</dd>
+<dt>showexp</dt><dd>
+最下行に現在の経験点を表示する(標準設定はオフ)。
+永続する。
+</dd>
+<dt>showrace</dt><dd>
+あなたを表示するときに、職業に対応するマークではなく、
+種族に対応するマークで表示する(標準設定はオフ)。
+この設定は表示にだけ用いられ、ゲームとしては何も変わらないことに注意。
+永続する。
+</dd>
+<dt>showscore</dt><dd>
+最下行に現在のスコアを表示する(標準設定はオフ)。
+永続する。
+</dd>
+<dt>silent</dt><dd>
+端末のビープ音を鳴らさない(標準設定はオン)。
+永続する。
+</dd>
+<dt>sortloot</dt><dd>
+持ち物一覧や #loot コマンドやその他いくつかの場合でのソートの振る舞いを
+制御する。
+永続する。
+<br/>
+可能な値は:
+<br/>
+<span class='tt'>full</span> &mdash; 常に一覧をソートする;<br/>
+<span class='tt'>loot</span> &mdash; #loot コマンドや広くコマンドのように、持ち物を示す文字を
+使わないときにだけソートする;<br/>
+<span class='tt'>none</span> &mdash; ソートなしの伝統的な方法で一覧を表示する。
+</dd>
+<dt>sortpack</dt><dd>
+持ち物の目録を表示するとき種類毎に荷物の内容を並べ替える
+(標準設定はオン)。
+永続する。
+</dd>
+<dt>sparkle</dt><dd>
+怪物(やあなた)が攻撃を受け、それに抵抗した場合に画面効果を表示する
+(標準設定はオン)。
+永続する。
+</dd>
+<dt>standout</dt><dd>
+怪物と''<span class='tt'>--More--</span>''を太字で表示する(標準設定はオフ)。
+永続する。
+</dd>
+<dt>statushilites</dt><dd>
+何ターンステータスハイライトでフィールドをハイライトするかを制御する。
+負またはゼロを指定すると、ステータスハイライトを無効にする。
+さらなる情報については ''<span class='italic'>Configuring Status Hilites</span>'' を参照のこと。
+</dd>
+<dt>status_updates</dt><dd>
+(TBT)
+</dd>
+<dt>suppress_alert</dt><dd>
+前のバージョンから変更された機能に対して注意を促すメッセージを
+表示しないようにする <span class='italic'>NetHack</span> のバージョンを設定する。
+(例: ''<span class='tt'>suppress_alert:3.3.1</span>'')
+例のように指定すると 3.3.1 以前に変更された機能に対する注意メッセージは表示されない。
+</dd>
+<dt>symset</dt><dd>
+このオプションは、画面に表示される文字を変更するために、<span class='tt'>symbols</span> にある
+名前付きシンボル集合の一つを選択するために使われる。
+標準の文字を選択するには明示的に ''<span class='tt'>symset:default</span>'' を使うこと。
+</dd>
+<dt>time</dt><dd>
+最下行にゲームで経過した時間をターン数で表示する(標準設定はオフ)。
+永続する。
+</dd>
+<dt>timed_delay</dt><dd>
+爆発や物体の移動など、効果を表示するためにちょっと時間待ちするとき、
+特殊なキャラクタを画面に送るかわりにタイマーを使用する。
+(''tty'' インタフェースにのみ適用される。
+''X11'' インタフェースは常にタイマーを使用する。
+標準設定はタイマーによる時間待ちが組み込まれているならばオン)
+永続する。
+</dd>
+<dt>tombstone</dt><dd>
+死んだとき墓石を表示する(標準設定はオン)。
+永続する。
+</dd>
+<dt>toptenwin</dt><dd>
+ゲーム終了時の表示を標準出力のかわりに <span class='italic'>NetHack</span> のウィンドウに表示する
+(標準設定はオフ)。
+このオプションを設定すると
+ウィンドウを使うバージョンの <span class='italic'>NetHack</span> では
+起動した親ウィンドウとは別のウィンドウにスコアリストが表示される。
+しかし、スコアリストはゲームが終了したあとターミナルやウィンドウには残らない。
+</dd>
+<dt>travel</dt><dd>
+トラベルコマンドを有効にする(標準設定はオン)。
+このオプションをオフにすることによって、うっかり地図ウィンドウを
+クリックすることによって、望まない移動をしようとすることを防ぐことができる。
+永続する。
+</dd>
+<dt>verbose</dt><dd>
+ゲーム中のコメントを詳細に表示する(標準設定はオン)。
+永続する。
+</dd>
+<dt>whatis_coord</dt><dd>
+(TBT)
+<br/>
+<br/>
+<br/>
+</dd>
+<dt>whatis_filter</dt><dd>
+<br/>
+</dd>
+<dt>whatis_menu</dt><dd>
+</dd>
+<dt>whatis_moveskip</dt><dd>
+</dd>
+<dt>windowtype</dt><dd>
+プログラムが複数のインターフェースに対応してビルドされているとき、
+ウインドウシステムを使用するかどうかを「tty」または「X11」で選択する
+(標準設定はビルド時の設定による; ''<span class='tt'>#version</span>'' でチェックできる)。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+<br/>
+(TBT)
+</dd>
+<dt>wizweight</dt><dd>
+(TBT)
+</dd>
+<dt>zerocomp</dt><dd>
+セーブファイルを書くときに、内容に zero-comp 圧縮を掛ける。
+全てのポートで zero-comp 圧縮に対応しているわけではない。
+既存のセーブファイルを読み込むときには効果はない。
+</dd>
+</dl>
+<h2>ウインドウシステム版専用カスタマイズオプション</h2>
+<p>
+以下はあなたが選択したウィンドゥタイプの特性をカスタマイズして
+変更するために用いる様々なオプションの説明である。
+長すぎる文字列は適当に切り詰められる。
+全てのウィンドゥタイプに対してこれら全てのオプションが有効というわけではない。
+これらのオプションが設定されたとき、もしウィンドゥタイプがその設定を
+受け付けるなら、そうされる。もし受け付けられないなら、単に無視される。
+現在のウィンドゥタイプで対応しているオプションは、オプション一覧表示
+('<span class='tt'>O</span>')で表示される。
+一部のオプションは'<span class='tt'>O</span>'コマンドで動的に変更できる。
+</p>
+<dl>
+<dt>align_message</dt><dd>
+メッセージウィンドウをどこに置くか(top, bottom, left, right)
+</dd>
+<dt>align_status</dt><dd>
+ステータスウィンドウをどこに置くか(top, bottom, left, right)
+</dd>
+<dt>ascii_map</dt><dd>
+可能ならASCIIキャラクタマップを表示する
+</dd>
+<dt>color</dt><dd>
+怪物、物体、洞窟の構成要素をカラーで表示する
+<br/>
+</dd>
+<dt>eight_bit_tty</dt><dd>
+8ビットキャラクタ(例えば
+<span class='italic'>traps</span>
+オプションで指定したもの)をそのままターミナルに表示する(標準設定はオフ)。
+</dd>
+<dt>font_map</dt><dd>
+可能ならマップウィンドウにここで選んだ名前のフォントを使う。
+</dd>
+<dt>font_menu</dt><dd>
+可能ならメニューウィンドウにここで選んだ名前のフォントを使う。
+</dd>
+<dt>font_message</dt><dd>
+可能ならメッセージウィンドウにここで選んだ名前のフォントを使う。
+</dd>
+<dt>font_status</dt><dd>
+可能ならステータスウィンドウにここで選んだ名前のフォントを使う。
+</dd>
+<dt>font_text</dt><dd>
+可能ならテキストウィンドウにここで選んだ名前のフォントを使う。
+</dd>
+<dt>font_size_map</dt><dd>
+可能ならマップウィンドウにこのフォントサイズを使う。
+</dd>
+<dt>font_size_menu</dt><dd>
+可能ならメニューウィンドウにこのフォントサイズを使う。
+</dd>
+<dt>font_size_message</dt><dd>
+可能ならメッセージウィンドウにこのフォントサイズを使う。
+</dd>
+<dt>font_size_status</dt><dd>
+可能ならステータスウィンドウにこのフォントサイズを使う。
+</dd>
+<dt>font_size_text</dt><dd>
+可能ならテキストウィンドウにこのフォントサイズを使う。
+</dd>
+<dt>fullscreen</dt><dd>
+可能ならウィンドウでなく画面全体で表示しようと試みる
+</dd>
+<dt>guicolor</dt><dd>
+(TBT)
+</dd>
+<dt>large_font</dt><dd>
+可能なら大きいフォントを使う。
+</dd>
+<dt>map_mode</dt><dd>
+可能なら指定された方法でマップを表示する。
+</dd>
+<dt>player_selection</dt><dd>
+可能ならキャラクター選択時にダイアログボックスや確認画面を用いる。
+</dd>
+<dt>popup_dialog</dt><dd>
+可能なら入力時にポップアップダイアログボックスを用いる
+</dd>
+<dt>preload_tiles</dt><dd>
+可能ならタイルをメモリに予め読み込んでおく。
+例えば、プロテクトモードMS-DOS版の場合、ゲーム開始時にタイルを
+RAM に予め読み込むかどうかを制御する。
+予め読み込むとタイルグラフィックの性能は向上するが、より多くのメモリを消費する
+(標準設定はオン)。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>scroll_amount</dt><dd>
+可能なら、scroll_margin オプションで指定された位置に来たときに、
+どれだけの数スクロールさせるかを指定する。
+</dd>
+<dt>scroll_margin</dt><dd>
+可能なら、ウィンドウの端からここで指定されたマス数にあなたまたはカーソルが
+移動したときに、画面をスクロールさせる。
+</dd>
+<dt>selectsaved</dt><dd>
+可能なら、ゲーム開始時に、可能ならプレイヤーに選択させるために既存のセーブしたゲームの
+メニューを表示する。
+全てのポートがこのオプションに対応しているわけではない。
+</dd>
+<dt>softkeyboard</dt><dd>
+可能なら、ソフトウェアキーボードを表示する。
+ハンドヘルドはおそらくこのオプションに対応しているであろう。
+</dd>
+<dt>splash_screen</dt><dd>
+可能なら、起動時にスプラッシュスクリーンを表示する(標準設定はオン)
+</dd>
+<dt>statuslines</dt><dd>
+(TBT)
+</dd>
+<dt>term_cols {normalfont and}</dt><dd>
+</dd>
+<dt>term_rows</dt><dd>
+(TBT)
+</dd>
+<dt>tiled_map</dt><dd>
+可能なら、タイルマップを表示する。
+</dd>
+<dt>tile_file</dt><dd>
+標準設定を上書きする別のタイルファイルの名前
+</dd>
+<dt>tile_height</dt><dd>
+タイルが表示できる環境でのタイルの高さ
+</dd>
+<dt>tile_width</dt><dd>
+タイルが表示できる環境でのタイルの幅
+</dd>
+<dt>use_darkgray</dt><dd>
+黒記号のために青ではなくボールドの黒を使う (TTY のみ)。
+</dd>
+<dt>use_inverse</dt><dd>
+可能なら、ゲームが指定したときに画面を反転する。
+</dd>
+<dt>vary_msgcount</dt><dd>
+可能なら、メッセージウィンドウに一度に表示するメッセージの数を指定する。
+</dd>
+<dt>windowborders</dt><dd>
+<br/>
+<span class='tt'>0</span> &mdash; オフ、常に境界を表示しない<br/>
+<span class='tt'>1</span> &mdash; オン、常に境界を表示する<br/>
+<span class='tt'>2</span> &mdash; 自動、最低
+(amp;24+2amp;)x(amp;80+2amp;) ある場合に表示   (標準設定)<br/>
+<br/>
+(TBT)
+</dd>
+<dt>windowcolors</dt><dd>
+可能ならウィンドウを指定した前景色/背景色で表示する。
+Windows GUIのみ。形式は:
+<pre>
+    OPTION=windowcolors:wintype foreground/background
+</pre>
+<br/>
+(TBT)
+<br/>
+</dd>
+<dt>wraptext</dt><dd>
+可能ならウィンドウに収まらない長いテキストを折りたたむ。
+</dd>
+</dl>
+<h2>プラットフォーム固有の設定オプション</h2>
+<p>
+以下は特定のプラットフォームでカスタマイズや振る舞いの変更をするために
+用いられるオプションの説明である。
+</p>
+<dl>
+<dt>altkeyhandler</dt><dd>
+キー入力を扱う DLL を選択する(<span class='italic'>Win32 tty NetHack</span> のみ)。
+DLL の名前は、.dll の拡張子やパス抜きで指定する。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>altmeta</dt><dd>
+Amigaでは、このオプションは ''Alt'' と他のキーをタイプしたときに
+そのキーの meta-shift として機能するかどうかを制御する(標準設定はオン)。
+</dd>
+<dt>altmeta</dt><dd>
+その他 (Amiga 以外) のシステムでこのオプションが有効の場合、
+ESC で始まる 2 文字並びを 2 番目の文字の meta-shift に変換するかどうかを
+指定する (標準設定はオフ)。
+<br/>
+この変換はコマンドに対してのみ行われ、その他の入力プロンプトでは行われない。
+コマンドの前にカウント接頭辞としてのいくつかの数字のタイプも、
+&mdash;
+<span class='italic'>number_pad</span>
+オプションが設定されているなら <span class='tt'>n</span> を前置して&mdash;、
+この変換が行われるので、
+ESC をタイプすることでカウントを中断しようとすると、
+<span class='italic'>NetHack</span> は 2 文字並びを完成させるために待つことになる。
+2 回 ESC をタイプすることでそのようなカウントのキャンセルが完了する。
+その他のプロンプトでは単一の ESC で十分である。
+</dd>
+<dt>BIOS</dt><dd>
+高速に画面を書き換え、移動にカーソルキーを使えるようにキーボードを読むために、
+IBM-PC 互換の BIOS ROM を使用しているマシンで BIOS コールを使用する。
+(標準設定はオフ。<span class='italic'>OS/2, PC, ST NetHack</span> のみ)
+</dd>
+<dt>flush</dt><dd>
+(標準設定はオフ。<span class='italic'>Amiga NetHack </span> のみ)。
+</dd>
+<dt>Macgraphics</dt><dd>
+(標準設定はオン。 <span class='italic'>Mac NetHack </span> のみ)。
+</dd>
+<dt>page_wait</dt><dd>
+(標準設定はオフ。<span class='italic'>Mac NetHack </span> のみ)。
+</dd>
+<dt>rawio</dt><dd>
+raw(cbreak でない) モードを使用して、
+より高速な出力と問題の起こらない入力を実現する
+(MS-DOS ではプリンタがないにも関わらず '<span class='tt'>^{</span>P}' をプリンタ出力の
+トグルとみなしてしまうことがある)
+(標準設定はオフ; <span class='italic'>OS/2, PC, ST NetHack</span> のみ)。
+注意: DEC Rainbow ではこれがオンのときはハングアップしてしまう。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>soundcard</dt><dd>
+(標準設定はオン; <span class='italic'>PC NetHack </span> のみ)。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>subkeyvalue</dt><dd>
+(<span class='italic'>Win32 tty NetHack </span> のみ)。
+国際キーボードの問題を補正するのを助けるために、
+OS が <span class='italic'>NetHack</span> に返すキー入力の値を変更するために使用する。
+OPTIONS=subkeyvalue:171/92
+とすると、もともと 171 が返されようとしていた場合、
+<span class='italic'>NetHack</span> に 92 を返す。
+必要なら、複数の subkeyvalue 行を設定ファイルに書いてもよい。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>video</dt><dd>
+使用するビデオモードを設定する(<span class='italic'>PC NetHack</span> のみ)。
+値は <span class='tt'>autodetect</span>, <span class='tt'>default</span>, <span class='tt'>vga</span> のいずれかである。
+<span class='tt'>vga</span> (または VGA ハードウェアがあるときに<span class='tt'>autodetect</span>)に設定すると、
+表示にタイルを用いる。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>videocolors</dt><dd>
+NO_TERMS を使用しているPCシステムのカラーパレットをセットする
+(標準設定は「4-2-6-1-5-3-15-12-10-14-9-13-11」<span class='italic'>PC NetHack</span> のみ)。
+シンボルの順番は、赤・緑・茶色・青・マゼンタ・シアン・輝く白・
+輝く赤・輝く緑・黄色・輝く青・輝くマゼンタ・輝くシアン。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+<dt>videoshades</dt><dd>
+3 段階の利用可能なグレイスケールを設定する
+(標準設定は dark normal light; <span class='italic'>PC NetHack</span> のみ)。
+もしゲーム画面が見にくい場合は、
+３つのスケールを調整してみること。
+もしこれでうまくいかなかったら、<span class='tt'>!color</span> を試してみること。
+'<span class='tt'>O</span>' コマンドで設定することはできない。
+</dd>
+</dl>
+<h2>正規表現</h2>
+<p>
+正規表現は通常 POSIX 拡張正規表現である。
+正規表現ライブラリがないプラットフォームでは正規表現対応なしで
+<span class='italic'>NetHack</span> をコンパイルすることも可能である。
+これは最近のプラットフォームでは真ではないが、この方法で <span class='italic'>NetHack</span> が
+ビルドされると、パターンは代わりにグロブパターンが使われる。
+これは自動拾い例外、メッセージ型、メニュー色、ユーザー音声に適用される。
+</p>
+<h2>自動拾い例外の設定</h2>
+<p>
+''<span class='italic'>autopickup</span>'' オプションの振る舞いを
+''<span class='tt'>pickup_types</span>'' オプションを使ってより洗練させることができる。
+</p>
+<p>
+''<span class='tt'>autopickup_exception</span>''
+行を設定ファイルに書くことで、
+何かを拾おうとするときにチェックするべきパターンを定義できる。
+</p>
+<dl>
+<dt>autopickup_exception</dt><dd>
+'<span class='italic'>pickup_types</span>' オプションの例外を設定する。
+<span class='italic'>autopickup_exception</span>
+オプションはあなたの位置にある物体の説明の単数形に一致するパターンを
+指定する。これは正規表現であるべきである。
+<br/>
+さらに、パターンの先頭に置いた場合に特別扱いされる文字もある。
+<br/>
+<span class='tt'>&lt;</span> &mdash; 以下のパターンに一致する物体は常に拾う。<br/>
+<span class='tt'>&gt;</span> &mdash; 以下のパターンに一致する物体は決して拾わない。
+<br/>
+The <span class='italic'>autopickup_exception</span> rules are processed in the order
+in which they appear in your configuration file, thus allowing a
+later rule to override an earlier rule.
+(TBT)
+<br/>
+'<span class='tt'>O</span>' コマンドで設定することもできるが、
+これらは設定ファイルに含まれないので、ゲームをセーブして復元すると
+適用されない。
+<span class='italic'>autopickup_exception</span> ルールはゲームと共に保存されない。
+</dd>
+</dl>
+<p>
+以下は例である:
+</p>
+<pre>
+    autopickup_exception="&lt;*arrow"
+    autopickup_exception="&gt;*corpse"
+    autopickup_exception="&gt;* cursed*"
+</pre>
+<p>
+上記の例の最初のものは、全ての矢を自動的に拾う。
+二番目の例は、死体は自動拾いの例外とする。
+最後の例は、呪われているとわかっているものは自動拾いの例外とする。
+</p>
+<h2>キー配置を変更する</h2>
+<p>
+(TBT)
+</p>
+<p>
+例:
+</p>
+<pre>
+    BIND=^X:getpos.autodescribe
+    BIND={:menu_first_page
+    BIND=v:loot
+</pre>
+<dl>
+<dt>Extended command keys</dt><dd>
+(TBT)
+<br/>
+</dd>
+<dt>Menu accelerator keys</dt><dd>
+<br/>
+</dd>
+<dt>Special command keys</dt><dd>
+</dd>
+</dl>
+<dl>
+<dt>{count}</dt><dd>
+</dd>
+<dt>{doinv}</dt><dd>
+</dd>
+<dt>{fight}</dt><dd>
+</dd>
+<dt>{fight.numpad}</dt><dd>
+</dd>
+<dt>{getdir.help}</dt><dd>
+</dd>
+<dt>{getdir.self}</dt><dd>
+</dd>
+<dt>{getdir.self2}</dt><dd>
+</dd>
+<dt>{getpos.autodescribe}</dt><dd>
+</dd>
+<dt>{getpos.all.next}</dt><dd>
+</dd>
+<dt>{getpos.all.prev}</dt><dd>
+</dd>
+<dt>{getpos.door.next}</dt><dd>
+</dd>
+<dt>{getpos.door.prev}</dt><dd>
+</dd>
+<dt>{getpos.help}</dt><dd>
+</dd>
+<dt>{getpos.mon.next}</dt><dd>
+</dd>
+<dt>{getpos.mon.prev}</dt><dd>
+</dd>
+<dt>{getpos.obj.next}</dt><dd>
+</dd>
+<dt>{getpos.obj.prev}</dt><dd>
+</dd>
+<dt>{getpos.menu}</dt><dd>
+</dd>
+<dt>{getpos.moveskip}</dt><dd>
+</dd>
+<dt>{getpos.filter}</dt><dd>
+</dd>
+<dt>{getpos.pick}</dt><dd>
+</dd>
+<dt>{getpos.pick.once}</dt><dd>
+</dd>
+<dt>{getpos.pick.quick}</dt><dd>
+</dd>
+<dt>{getpos.pick.verbose}</dt><dd>
+</dd>
+<dt>{getpos.self}</dt><dd>
+</dd>
+<dt>{getpos.unexplored.next}</dt><dd>
+</dd>
+<dt>{getpos.unexplored.prev}</dt><dd>
+</dd>
+<dt>{getpos.valid}</dt><dd>
+</dd>
+<dt>{getpos.valid.next}</dt><dd>
+</dd>
+<dt>{getpos.valid.prev}</dt><dd>
+</dd>
+<dt>{nopickup}</dt><dd>
+</dd>
+<dt>{redraw}</dt><dd>
+</dd>
+<dt>{redraw.numpad}</dt><dd>
+</dd>
+<dt>{repeat}</dt><dd>
+</dd>
+<dt>{reqmenu}</dt><dd>
+</dd>
+<dt>{run}</dt><dd>
+</dd>
+<dt>{run.nopickup}</dt><dd>
+</dd>
+<dt>{run.numpad}</dt><dd>
+</dd>
+<dt>{rush}</dt><dd>
+</dd>
+</dl>
+<h2>メッセージ型の設定</h2>
+<p>
+メッセージがユーザー定義パターンにマッチングしたとき、メッセージを
+メッセージエリアに表示する方法を変更できる。
+</p>
+<p>
+一般的に、メッセージ型を記述する設定ファイルエントリは次のようなものである:
+</p>
+<pre>
+    MSGTYPE=type "pattern"
+</pre>
+<dl>
+<dt>type</dt><dd>
+どのようにメッセージを表示するか:
+<br/>
+<span class='tt'>show</span>  &mdash; 通常通りメッセージを表示する。<br/>
+<span class='tt'>hide</span>  &mdash; メッセージを表示しない。<br/>
+<span class='tt'>stop</span>  &mdash; more プロンプトでユーザーを待つ。<br/>
+<span class='tt'>norep</span> &mdash; 1 度目はメッセージを表示するが、他のメッセージが来るまで再びは表示しない。
+</dd>
+<dt>pattern</dt><dd>
+マッチングするパターン。
+パターンは正規表現である必要がある。
+</dd>
+</dl>
+<p>
+次のものは <span class='italic'>NetHack</span> の内部パターンマッチング機能を使ったメッセージ型の
+例である。
+</p>
+<pre>
+    MSGTYPE=stop "You feel hungry."
+    MSGTYPE=hide "You displaced *."
+</pre>
+<p>
+このように指定すると、''You feel hungry'' というメッセージが現れた時は常に
+more プロンプトが表示され、
+"You displaced (何か)." にマッチングするメッセージは一切表示されない。
+</p>
+<p>
+MSGTYPE 行の定義順は重要である; 最後にマッチングした規則が使われる。
+一般的な場合を先に書き、例外をその後に書くこと。
+</p>
+<h2>メニュー色の設定</h2>
+<p>
+一部のプラットフォームでは、メニュー行がユーザー定義パターンに
+マッチングしたとき、メニュー行に使う色を定義できる。
+現在のところ tty, curses, win32tty, win32gui インターフェースが
+これに対応している。
+</p>
+<p>
+一般的にメニュー色割り当てを記述する設定ファイルエントリは次のようなものである:
+</p>
+<pre>
+    MENUCOLOR="pattern"=color&amp;attribute
+</pre>
+<dl>
+<dt>pattern</dt><dd>
+マッチングするパターン;
+</dd>
+<dt>color</dt><dd>
+パターンがマッチングした行に使う色;
+</dd>
+<dt>attribute</dt><dd>
+パターンがマッチングした行に使う属性。
+属性はオプションで、省略するなら、アンド記号も省略しなければならない。
+属性が定義されない場合、属性は使われない。
+</dd>
+</dl>
+<p>
+パターンは正規表現である必要がある。
+</p>
+<p>
+指定できる色は:
+<span class='italic'>black</span>, <span class='italic'>red</span>, <span class='italic'>green</span>, <span class='italic'>brown</span>,
+<span class='italic'>blue</span>, <span class='italic'>magenta</span>, <span class='italic'>cyan</span>, <span class='italic'>gray</span>, <span class='italic'>orange</span>,
+<span class='italic'>light-green</span>, <span class='italic'>yellow</span>, <span class='italic'>light-blue</span>, <span class='italic'>light-magenta</span>,
+<span class='italic'>light-cyan</span>, <span class='italic'>white</span>。
+そして他の色と同じ必要のない標準の前面色である <span class='italic'>no-color</span>。
+</p>
+<p>
+指定できる属性は:
+<span class='italic'>none</span>, <span class='italic'>bold</span>, <span class='italic'>dim</span>, <span class='italic'>underline</span>,
+<span class='italic'>blink</span>, <span class='italic'>inverse</span>。
+<span class='italic'>Normal</span> は <span class='italic'>none</span> の別名である。
+なお、プラットフォームはこれを好きなように解釈するかも知れない。
+</p>
+<p>
+次のものは <span class='italic'>NetHack </span> の内部パターンマッチング機能を使ったメニュー色の
+例である。
+</p>
+<pre>
+    MENUCOLOR="* blessed *"=green
+    MENUCOLOR="* cursed *"=red
+    MENUCOLOR="* cursed *(being worn)"=red&amp;underline
+</pre>
+<p>
+このように指定すると、''~blessed~'' が含まれているメニュー行は緑色に、
+''~cursed~'' の行は赤色に、''~cursed~'' に引き続いて同じ行に ''(being worn)'' が
+ある場合は赤色かつ下線付きで表示する。
+設定ファイル中に複数の MENUCOLOR エントリを書くことができ、メニュー行に
+マッチングした中で最後の MENUCOLOR 行がその行に使われる。
+</p>
+<p>
+''~uncursed~'' にマッチングするような色指定を意図しているなら、
+呪われていないことが分かっている全ての持ち物について ''uncursed'' と
+表示するための
+<span class='italic'>implicit_uncursed</span>
+オプションをおそらく設定した方がよいことに注意すること。
+</p>
+<h2>音声の設定</h2>
+<p>
+メッセージウィンドウに表示されたメッセージが
+ユーザー定義のパターンと一致したときに
+特定の音声ファイルを鳴らすことができるプラットフォームもある。
+現在のところ、Qt, win32tty, win32gui がユーザー音声に対応している。
+</p>
+<p>
+ユーザー音声とメッセージの関連付けに関する設定ファイル項目は
+以下のとおりである。
+</p>
+<dl>
+<dt>SOUNDDIR</dt><dd>
+音声ファイルのあるディレクトリ
+</dd>
+<dt>SOUND</dt><dd>
+音声ファイルとユーザーが指定するメッセージパターンを関連付ける項目。
+各 SOUND 項目は以下の項目に分解される。
+<br/>
+<span class='tt'>MESG      </span> &mdash; メッセージウィンドウ指定 (3.6 ではただ一つだけに対応している)<br/>
+<span class='tt'>pattern   </span> &mdash; マッチするパターン<br/>
+<span class='tt'>sound file</span> &mdash; 鳴らす音声ファイル<br/>
+<span class='tt'>volume    </span> &mdash; 音声ファイルを鳴らすときの音量
+</dd>
+</dl>
+<p>
+このパターンは正規表現で指定する。
+</p>
+<h2>ステータスハイライトの設定</h2>
+<p>
+あなたの入手した <span class='italic'>NetHack</span> は <span class='italic'>ステータスハイライト</span> に対応して
+コンパイルされているかもしれない。
+その場合、ステータスディスプレイのフィールドの色や見た目を
+閾値を設定することでカスタマイズできる。
+</p>
+<p>
+ステータス色を定義する形式は:<br/>
+</p>
+<pre>
+OPTION=hilite_status:field-name/behavior/color&amp;attributes
+</pre>
+<p>
+例えば、設定ファイルに次の行を書くと、ヒットポイントが30%の閾値以下になると
+ヒットポイントが赤色で表示される:<br/>
+</p>
+<pre>
+OPTION=hilite_status:hitpoints/&lt;=30%/red/normal
+</pre>
+<p>
+(この例は実際には <span class='tt'>&lt;=30%</span> で <span class='tt'>red&amp;normal</span> に、
+<span class='tt'>&gt;30%</span> で <span class='tt'>no-color&amp;normal</span> にする。)<br/>
+</p>
+<p>
+もう一つの例として、次の行を設定ファイルに書くと、賢さが低下すると赤で
+表示され、上昇すると緑で表示される。<br/>
+</p>
+<pre>
+OPTION=hilite_status:wisdom/down/red/up/green
+</pre>
+<p>
+指定できる色は:
+black, red, green, brown, blue, magenta, cyan, gray,
+orange, light-green, yellow, light-blue, light-magenta, light-cyan, white。
+And <span class='italic'>no-color</span>, the default foreground color on the display, which
+is not necessarily the same as black or white or any of the other colors.
+(TBT)
+</p>
+<p>
+(TBT)
+</p>
+<p>
+(TBT)
+</p>
+<p>
+例: <span class='tt'>magenta&amp;inverse+dim</span>。
+</p>
+<p>
+なお、ディスプレイはその能力によっては特定の属性を置き換えたり
+無視したりするかもしれず、一般的に、これを好きなように解釈するかも
+知れないことに注意すること。
+例えば、ディスプレイシステムによっては
+太字を点滅にしたりその逆にしたりする。
+一方、他の属性が既に設定されている時に
+他の属性を要求すると、属性を合成するのではなく、以前の属性を置き換える。
+nethackは属性要求を(少なくとも <span class='italic'>tty</span>  インターフェースでは)
+同時にではなく順々に発行するため、
+この様な状況を制御する唯一の方法は一つの属性として指定することである。
+</p>
+<p>
+次のステータス項目を調整できる:
+</p>
+<div style='align:center'>
+<table>
+<tr><td><pre>title </pre></td><td><pre> dungeon-level </pre></td><td><pre> experience-level</pre></td></tr>
+<tr><td><pre>strength </pre></td><td><pre> gold </pre></td><td><pre> experience</pre></td></tr>
+<tr><td><pre>dexterity </pre></td><td><pre> hitpoints </pre></td><td><pre> HD</pre></td></tr>
+<tr><td><pre>constitution </pre></td><td><pre> hitpoints-max </pre></td><td><pre> time</pre></td></tr>
+<tr><td><pre>intelligence </pre></td><td><pre> power </pre></td><td><pre> hunger</pre></td></tr>
+<tr><td><pre>wisdom </pre></td><td><pre> power-max </pre></td><td><pre> carrying-capacity</pre></td></tr>
+<tr><td><pre>charisma </pre></td><td><pre> armor-class </pre></td><td><pre> condition</pre></td></tr>
+<tr><td><pre>alignment </pre></td><td><pre>  </pre></td><td><pre> score</pre></td></tr>
+</table>
+</div>
+<p>
+疑似フィールド 'characteristics' は Str, Dex, Con, Int, Wis, Cha の
+六つ全てを一度に設定するのに使える。
+'HD' は 'ヒットダイス(hit dice)' で、変化したときに表示される
+経験レベルの概算である。
+'experience', 'time', 'score' はその他のオプション設定に依存して
+条件によっては表示される。
+</p>
+<p>
+振る舞いの代わりに、'condition' は次の状態フラグを取れる:
+<span class='italic'>stone</span>, <span class='italic'>slime</span>, <span class='italic'>strngl</span>, <span class='italic'>foodpois</span>, <span class='italic'>termill</span>,
+<span class='italic'>blind</span>, <span class='italic'>deaf</span>, <span class='italic'>stun</span>, <span class='italic'>conf</span>, <span class='italic'>hallu</span>,
+<span class='italic'>lev</span>, <span class='italic'>fly</span>, <span class='italic'>ride</span>。
+stone から termill の別名として 'major_troubles' を、
+blind through hallu の別名として 'minor_troubles' を、
+lev, fly, ride の別名として 'movement' を、
+そして全ての別名として 'all' を使える。
+</p>
+<p>
+指定できる振る舞いは ''always'', ''up'', ''down'', ''changed'',
+割合または絶対値の閾値、マッチングするテキストである。
+</p>
+<dl>
+<dt>always</dt><dd>
+</dd>
+<dt>up, down</dt><dd>
+フィールドの値が上昇または下降したときのためのフィールド属性を
+設定する。
+この属性は <span class='tt'>statushilites</span> ターン後に元に戻る。
+</dd>
+<dt>changed</dt><dd>
+changes. This attribute times out after <span class='tt'>statushilites</span> turns.
+(If a field has both a ''changed'' rule and an ''up'' or ''down''
+rule which matches a change in the field's value,
+the ''up'' or ''down'' one takes precedence.)
+(TBT)
+</dd>
+<dt>percentage</dt><dd>
+matches the percentage.
+It is specified as a number between 0 and 100, followed by '<span class='tt'>%</span>'
+(percent sign).
+(TBT)
+If the percentage is prefixed with '<span class='tt'>&lt;=</span>' or '<span class='tt'>&gt;=</span>',
+it also matches when value is below or above the percentage.
+Use prefix '<span class='tt'>&lt;</span>' or '<span class='tt'>&gt;</span>' to match when strictly below or above.
+(The numeric limit is relaxed slightly for those: <span class='tt'>&gt;-1%</span>
+and <span class='tt'>&lt;101%</span> are allowed.)
+(TBT)
+Only four fields support percentage rules.
+Percentages for ''<span class='italic'>hitpoints</span>'' and ''<span class='italic'>power</span>'' are
+straightforward; they're based on the corresponding maximum field.
+Percentage highlight rules are also allowed for ''<span class='italic'>experience level</span>''
+and ''<span class='italic'>experience points</span>'' (valid when the
+<span class='italic'>showexp</span>
+option is enabled).
+(TBT)
+For those, the percentage is based on the progress from the start of
+the current experience level to the start of the next level.
+So if level 2 starts at 20 points and level 3 starts at 40 points,
+having 30 points is 50% and 35 points is 75%.
+100% is unattainable for experience because you'll gain a level and
+the calculations will be reset for that new level, but a rule for
+<span class='tt'>=100%</span> is allowed and matches the special case of being
+exactly 1 experience point short of the next level.
+(TBT)
+</dd>
+<dt>absolute</dt><dd>
+matches that number.
+The number must be 0 or higher, except for ''<span class='italic'>armor-class</span> which
+allows negative values, and may optionally be preceded by '<span class='tt'>=</span>'.
+If the number is preceded by '<span class='tt'>&lt;=</span>' or '<span class='tt'>&gt;=</span>' instead,
+it also matches when value is below or above.
+If the prefix is '<span class='tt'>&lt;</span>' or '<span class='tt'>&gt;</span>', only match when strictly
+above or below.
+(TBT)
+</dd>
+<dt>text</dt><dd>
+Text matches can only be used for ''<span class='italic'>alignment</span>'',
+''<span class='italic'>carrying-capacity</span>'', ''<span class='italic'>hunger</span>'', ''<span class='italic'>dungeon-level</span>'',
+and ''<span class='italic'>title</span>''.
+For title, only the role's rank title
+is tested; the character's name is ignored.
+(TBT)
+</dd>
+</dl>
+<p>
+ゲーム内のオプションメニューは、設定ファイルでの正しい文法を決定する
+助けになるだろう。
+</p>
+<p>
+オプション <span class='italic'>statushilites</span> を 0 にすることでこの機能全体を無効にできる。
+</p>
+<p>
+ハイライトの例:
+</p>
+<pre>
+    OPTION=hilite_status: gold/up/yellow/down/brown
+    OPTION=hilite_status: characteristics/up/green/down/red
+    OPTION=hilite_status: hitpoints/100%/gray&amp;normal
+    OPTION=hilite_status: hitpoints/&lt;100%/green&amp;normal
+    OPTION=hilite_status: hitpoints/&lt;66%/yellow&amp;normal
+    OPTION=hilite_status: hitpoints/&lt;50%/orange&amp;normal
+    OPTION=hilite_status: hitpoints/&lt;33%/red&amp;bold
+    OPTION=hilite_status: hitpoints/&lt;15%/red&amp;inverse
+    OPTION=hilite_status: condition/major/orange&amp;inverse
+    OPTION=hilite_status: condition/lev+fly/red&amp;inverse
+</pre>
+<h2>{it NetHack/} のシンボルの変更</h2>
+<p>
+<span class='italic'>NetHack</span> は symbol ファイルからシンボル集合全体を読み込むことができる。
+</p>
+<p>
+symbol ファイルから特定のシンボル集合を選択するために使われるオプションは:
+</p>
+<dl>
+<dt>symset</dt><dd>
+読み込みたいシンボル集合の名前を設定する。
+<span class='italic'>symbols</span>。
+<br/>
+</dd>
+<dt>roguesymset</dt><dd>
+rogue レベルで表示するために読み込みたいシンボル集合の名前を設定する。
+</dd>
+</dl>
+<p>
+<span class='italic'>SYMBOLS</span> と <span class='italic'>ROGUESYMBOLS</span> の
+設定ファイルオプションを使っていくつかのシンボルを
+上書きすることもできる。
+シンボルは <span class='italic'>name:value</span> の組で指定する。
+<span class='italic'>NetHack</span> は <span class='italic'>value</span> 文字列を伝統的な C の方法でエスケープする。
+つまり、'' は次の文字をリテラルにする接頭辞である。
+従って、'' は '\' と表現する必要がある。
+特殊接頭辞 'm' はシンボル値のメタビットを切り替え、
+'<span class='tt'>^{</span>}' 接頭辞は引き続く文字を制御文字として扱う。
+</p>
+<table>
+<caption>NetHack Symbols</caption>
+<tr><td>Default                     </td><td> Symbol Name               </td><td> Description</td></tr>
+<tr><td> </td><td> S_air                    </td><td>	(air)</td></tr>
+<tr><td>_</td><td> S_altar                  </td><td>	(altar)</td></tr>
+<tr><td>"</td><td> S_amulet                 </td><td>	(amulet)</td></tr>
+<tr><td>A</td><td> S_angel                  </td><td>	(angelic being)</td></tr>
+<tr><td>a</td><td> S_ant                    </td><td>	(ant or other insect)</td></tr>
+<tr><td>^</td><td> S_anti_magic_trap      </td><td>	(anti-magic field)</td></tr>
+<tr><td>[</td><td> S_armor                  </td><td>	(suit or piece of armor)</td></tr>
+<tr><td>[</td><td> S_armour                 </td><td>	(suit or piece of armor)</td></tr>
+<tr><td>^</td><td> S_arrow_trap            </td><td>	(arrow trap)</td></tr>
+<tr><td>0</td><td> S_ball                   </td><td>	(iron ball)</td></tr>
+<tr><td>#</td><td> S_bars                   </td><td>	(iron bars)</td></tr>
+<tr><td>B</td><td> S_bat                    </td><td>	(bat or bird)</td></tr>
+<tr><td>^</td><td> S_bear_trap             </td><td>	(bear trap)</td></tr>
+<tr><td>-</td><td> S_blcorn                 </td><td>	(bottom left corner)</td></tr>
+<tr><td>b</td><td> S_blob                   </td><td>	(blob)</td></tr>
+<tr><td>+</td><td> S_book                   </td><td>	(spellbook)</td></tr>
+<tr><td>)</td><td> S_boomleft               </td><td>	(boomerang open left)</td></tr>
+<tr><td>(</td><td> S_boomright              </td><td>	(boomerang open right)</td></tr>
+<tr><td>`</td><td> S_boulder                </td><td>	(boulder)</td></tr>
+<tr><td>-</td><td> S_brcorn                 </td><td>	(bottom right corner)</td></tr>
+<tr><td>C</td><td> S_centaur                </td><td>	(centaur)</td></tr>
+<tr><td>_</td><td> S_chain                  </td><td>	(iron chain)</td></tr>
+<tr><td>#</td><td> S_cloud                  </td><td>	(cloud)</td></tr>
+<tr><td>c</td><td> S_cockatrice             </td><td>	(cockatrice)</td></tr>
+<tr><td>$</td><td> S_coin                   </td><td>	(pile of coins)</td></tr>
+<tr><td>#</td><td> S_corr                   </td><td>	(corridor)</td></tr>
+<tr><td>-</td><td> S_crwall                 </td><td>	(wall)</td></tr>
+<tr><td>-</td><td> S_darkroom               </td><td>	(dark room)</td></tr>
+<tr><td>^</td><td> S_dart_trap             </td><td>	(dart trap)</td></tr>
+<tr><td>&amp;</td><td> S_demon                  </td><td>	(major demon)</td></tr>
+<tr><td>*</td><td> S_digbeam                </td><td>	(dig beam)</td></tr>
+<tr><td>&gt;</td><td> S_dnladder               </td><td>	(ladder down)</td></tr>
+<tr><td>&gt;</td><td> S_dnstair                </td><td>	(staircase down)</td></tr>
+<tr><td>d</td><td> S_dog                    </td><td>	(dog or other canine)</td></tr>
+<tr><td>D</td><td> S_dragon                 </td><td>	(dragon)</td></tr>
+<tr><td>;</td><td> S_eel                    </td><td>	(sea monster)</td></tr>
+<tr><td>E</td><td> S_elemental              </td><td>	(elemental)</td></tr>
+<tr><td>/</td><td> S_explode1               </td><td>	(explosion top left)</td></tr>
+<tr><td>-</td><td> S_explode2               </td><td>	(explosion top center)</td></tr>
+<tr><td></td><td> S_explode3               </td><td>	(explosion top right)</td></tr>
+<tr><td>|</td><td> S_explode4               </td><td>	(explosion middle left)</td></tr>
+<tr><td> </td><td> S_explode5               </td><td>	(explosion middle center)</td></tr>
+<tr><td>|</td><td> S_explode6               </td><td>	(explosion middle right)</td></tr>
+<tr><td></td><td> S_explode7               </td><td>	(explosion bottom left)</td></tr>
+<tr><td>-</td><td> S_explode8               </td><td>	(explosion bottom center)</td></tr>
+<tr><td>/</td><td> S_explode9               </td><td>	(explosion bottom right)</td></tr>
+<tr><td>e</td><td> S_eye                    </td><td>	(eye or sphere)</td></tr>
+<tr><td>^</td><td> S_falling_rock_trap    </td><td>	(falling rock trap)</td></tr>
+<tr><td>f</td><td> S_feline                 </td><td>	(cat or other feline)</td></tr>
+<tr><td>^</td><td> S_fire_trap             </td><td>	(fire trap)</td></tr>
+<tr><td>!</td><td> S_flashbeam              </td><td>	(flash beam)</td></tr>
+<tr><td>%</td><td> S_food                   </td><td>	(piece of food)</td></tr>
+<tr><td>{</td><td> S_fountain               </td><td>	(fountain)</td></tr>
+<tr><td>F</td><td> S_fungus                 </td><td>	(fungus or mold)</td></tr>
+<tr><td>*</td><td> S_gem                    </td><td>	(gem or rock)</td></tr>
+<tr><td> </td><td> S_ghost                  </td><td>	(ghost)</td></tr>
+<tr><td>H</td><td> S_giant                  </td><td>	(giant humanoid)</td></tr>
+<tr><td>G</td><td> S_gnome                  </td><td>	(gnome)</td></tr>
+<tr><td>'</td><td> S_golem                  </td><td>	(golem)</td></tr>
+<tr><td>|</td><td> S_grave                  </td><td>	(grave)</td></tr>
+<tr><td>g</td><td> S_gremlin                </td><td>	(gremlin)</td></tr>
+<tr><td>-</td><td> S_hbeam                  </td><td>	(wall)</td></tr>
+<tr><td>#</td><td> S_hcdbridge              </td><td>	(horizontal raised drawbridge)</td></tr>
+<tr><td>+</td><td> S_hcdoor                 </td><td>	(closed door)</td></tr>
+<tr><td>.</td><td> S_hodbridge              </td><td>	(horizontal lowered drawbridge)</td></tr>
+<tr><td>|</td><td> S_hodoor                 </td><td>	(open door)</td></tr>
+<tr><td>^</td><td> S_hole                   </td><td>	(hole)</td></tr>
+<tr><td>@</td><td> S_human                  </td><td>	(human or elf)</td></tr>
+<tr><td>h</td><td> S_humanoid               </td><td>	(humanoid)</td></tr>
+<tr><td>-</td><td> S_hwall                  </td><td>	(horizontal wall)</td></tr>
+<tr><td>.</td><td> S_ice                    </td><td>	(ice)</td></tr>
+<tr><td>i</td><td> S_imp                    </td><td>	(imp or minor demon)</td></tr>
+<tr><td>I</td><td> S_invisible              </td><td>	(invisible monster)</td></tr>
+<tr><td>J</td><td> S_jabberwock             </td><td>	(jabberwock)</td></tr>
+<tr><td>j</td><td> S_jelly                  </td><td>	(jelly)</td></tr>
+<tr><td>k</td><td> S_kobold                 </td><td>	(kobold)</td></tr>
+<tr><td>K</td><td> S_kop                    </td><td>	(Keystone Kop)</td></tr>
+<tr><td>^</td><td> S_land_mine             </td><td>	(land mine)</td></tr>
+<tr><td>}</td><td> S_lava                   </td><td>	(molten lava)</td></tr>
+<tr><td>l</td><td> S_leprechaun             </td><td>	(leprechaun)</td></tr>
+<tr><td>^</td><td> S_level_teleporter      </td><td>	(level teleporter)</td></tr>
+<tr><td>L</td><td> S_lich                   </td><td>	(lich)</td></tr>
+<tr><td>y</td><td> S_light                  </td><td>	(light)</td></tr>
+<tr><td>#</td><td> S_litcorr                </td><td>	(lit corridor)</td></tr>
+<tr><td>:</td><td> S_lizard                 </td><td>	(lizard)</td></tr>
+<tr><td></td><td> S_lslant                 </td><td>	(wall)</td></tr>
+<tr><td>^</td><td> S_magic_portal          </td><td>	(magic portal)</td></tr>
+<tr><td>^</td><td> S_magic_trap            </td><td>	(magic trap)</td></tr>
+<tr><td>m</td><td> S_mimic                  </td><td>	(mimic)</td></tr>
+<tr><td>]</td><td> S_mimic_def             </td><td>	(mimic)</td></tr>
+<tr><td>M</td><td> S_mummy                  </td><td>	(mummy)</td></tr>
+<tr><td>N</td><td> S_naga                   </td><td>	(naga)</td></tr>
+<tr><td>.</td><td> S_ndoor                  </td><td>	(doorway)</td></tr>
+<tr><td>n</td><td> S_nymph                  </td><td>	(nymph)</td></tr>
+<tr><td>O</td><td> S_ogre                   </td><td>	(ogre)</td></tr>
+<tr><td>o</td><td> S_orc                    </td><td>	(orc)</td></tr>
+<tr><td>p</td><td> S_piercer                </td><td>	(piercer)</td></tr>
+<tr><td>^</td><td> S_pit                    </td><td>	(pit)</td></tr>
+<tr><td>#</td><td> S_poisoncloud            </td><td>	(poison cloud)</td></tr>
+<tr><td>^</td><td> S_polymorph_trap        </td><td>	(polymorph trap)</td></tr>
+<tr><td>}</td><td> S_pool                   </td><td>	(water)</td></tr>
+<tr><td>!</td><td> S_potion                 </td><td>	(potion)</td></tr>
+<tr><td>P</td><td> S_pudding                </td><td>	(pudding or ooze)</td></tr>
+<tr><td>q</td><td> S_quadruped              </td><td>	(quadruped)</td></tr>
+<tr><td>Q</td><td> S_quantmech              </td><td>	(quantum mechanic)</td></tr>
+<tr><td>=</td><td> S_ring                   </td><td>	(ring)</td></tr>
+<tr><td>`</td><td> S_rock                   </td><td>	(boulder or statue)</td></tr>
+<tr><td>r</td><td> S_rodent                 </td><td>	(rodent)</td></tr>
+<tr><td>^</td><td> S_rolling_boulder_trap </td><td>	(rolling boulder trap)</td></tr>
+<tr><td>.</td><td> S_room                   </td><td>	(floor of a room)</td></tr>
+<tr><td>/</td><td> S_rslant                 </td><td>	(wall)</td></tr>
+<tr><td>^</td><td> S_rust_trap             </td><td>	(rust trap)</td></tr>
+<tr><td>R</td><td> S_rustmonst              </td><td>	(rust monster or disenchanter)</td></tr>
+<tr><td>?</td><td> S_scroll                 </td><td>	(scroll)</td></tr>
+<tr><td>#</td><td> S_sink                   </td><td>	(sink)</td></tr>
+<tr><td>^</td><td> S_sleeping_gas_trap    </td><td>	(sleeping gas trap)</td></tr>
+<tr><td>S</td><td> S_snake                  </td><td>	(snake)</td></tr>
+<tr><td>s</td><td> S_spider                 </td><td>	(arachnid or centipede)</td></tr>
+<tr><td>^</td><td> S_spiked_pit            </td><td>	(spiked pit)</td></tr>
+<tr><td>^</td><td> S_squeaky_board         </td><td>	(squeaky board)</td></tr>
+<tr><td>0</td><td> S_ss1                    </td><td>	(magic shield 1 of 4)</td></tr>
+<tr><td>#</td><td> S_ss2                    </td><td>	(magic shield 2 of 4)</td></tr>
+<tr><td>@</td><td> S_ss3                    </td><td>	(magic shield 3 of 4)</td></tr>
+<tr><td>*</td><td> S_ss4                    </td><td>	(magic shield 4 of 4)</td></tr>
+<tr><td>^</td><td> S_statue_trap           </td><td>	(statue trap)</td></tr>
+<tr><td> </td><td> S_stone                  </td><td>	(solid rock or unexplored terrain</td></tr>
+<tr><td>        </td><td>                                 </td><td>   ,or dark part of a room)</td></tr>
+<tr><td>]</td><td> S_strange_obj     </td><td>	(strange object)</td></tr>
+<tr><td>-</td><td> S_sw_bc                 </td><td>	(swallow bottom center)</td></tr>
+<tr><td></td><td> S_sw_bl                 </td><td>	(swallow bottom left)</td></tr>
+<tr><td>/</td><td> S_sw_br                 </td><td>	(swallow bottom right	)</td></tr>
+<tr><td>|</td><td> S_sw_ml                 </td><td>	(swallow middle left)</td></tr>
+<tr><td>|</td><td> S_sw_mr                 </td><td>	(swallow middle right)</td></tr>
+<tr><td>-</td><td> S_sw_tc                 </td><td>	(swallow top center)</td></tr>
+<tr><td>/</td><td> S_sw_tl                 </td><td>	(swallow top left)</td></tr>
+<tr><td></td><td> S_sw_tr                 </td><td>	(swallow top right)</td></tr>
+<tr><td>-</td><td> S_tdwall                 </td><td>	(wall)</td></tr>
+<tr><td>^</td><td> S_teleportation_trap    </td><td>	(teleportation trap)</td></tr>
+<tr><td></td><td> S_throne                 </td><td>	(opulent throne)</td></tr>
+<tr><td>-</td><td> S_tlcorn                 </td><td>	(top left corner)</td></tr>
+<tr><td>|</td><td> S_tlwall                 </td><td>	(wall)</td></tr>
+<tr><td>(</td><td> S_tool                   </td><td>	(useful item (pick-axe, key, lamp...))</td></tr>
+<tr><td>^</td><td> S_trap_door             </td><td>	(trap door)</td></tr>
+<tr><td>t</td><td> S_trapper                </td><td>	(trapper or lurker above)</td></tr>
+<tr><td>-</td><td> S_trcorn                 </td><td>	(top right corner)</td></tr>
+<tr><td>#</td><td> S_tree                   </td><td>	(tree)</td></tr>
+<tr><td>T</td><td> S_troll                  </td><td>	(troll)</td></tr>
+<tr><td>|</td><td> S_trwall                 </td><td>	(wall)</td></tr>
+<tr><td>-</td><td> S_tuwall                 </td><td>	(wall)</td></tr>
+<tr><td>U</td><td> S_umber                  </td><td>	(umber hulk)</td></tr>
+<tr><td>u</td><td> S_unicorn                </td><td>	(unicorn or horse)</td></tr>
+<tr><td>&lt;</td><td> S_upladder               </td><td>	(ladder up)</td></tr>
+<tr><td>&lt;</td><td> S_upstair                </td><td>	(staircase up)</td></tr>
+<tr><td>V</td><td> S_vampire                </td><td>	(vampire)</td></tr>
+<tr><td>|</td><td> S_vbeam                  </td><td>	(wall)</td></tr>
+<tr><td>#</td><td> S_vcdbridge              </td><td>	(vertical raised drawbridge)</td></tr>
+<tr><td>+</td><td> S_vcdoor                 </td><td>	(closed door)</td></tr>
+<tr><td>.</td><td> S_venom                  </td><td>	(splash of venom)</td></tr>
+<tr><td>^</td><td> S_vibrating_square      </td><td>	(vibrating square)</td></tr>
+<tr><td>.</td><td> S_vodbridge              </td><td>	(vertical lowered drawbridge)</td></tr>
+<tr><td>-</td><td> S_vodoor                 </td><td>	(open door)</td></tr>
+<tr><td>v</td><td> S_vortex                 </td><td>	(vortex)</td></tr>
+<tr><td>|</td><td> S_vwall                  </td><td>	(vertical wall)</td></tr>
+<tr><td>/</td><td> S_wand                   </td><td>	(wand)</td></tr>
+<tr><td>}</td><td> S_water                  </td><td>	(water)</td></tr>
+<tr><td>)</td><td> S_weapon                 </td><td>	(weapon)</td></tr>
+<tr><td>"</td><td> S_web                    </td><td>	(web)</td></tr>
+<tr><td>w</td><td> S_worm                   </td><td>	(worm)</td></tr>
+<tr><td>~</td><td> S_worm_tail             </td><td>	(long worm tail)</td></tr>
+<tr><td>W</td><td> S_wraith                 </td><td>	(wraith)</td></tr>
+<tr><td>x</td><td> S_xan                    </td><td>	(xan or other extraordinary insect)</td></tr>
+<tr><td>X</td><td> S_xorn                   </td><td>	(xorn)</td></tr>
+<tr><td>Y</td><td> S_yeti                   </td><td>	(apelike creature)</td></tr>
+<tr><td>Z</td><td> S_zombie                 </td><td>	(zombie)</td></tr>
+<tr><td>z</td><td> S_zruty                  </td><td>	(zruty)</td></tr>
+<tr><td> </td><td> S_pet_override    </td><td>	(any pet if ACCESSIBILITY=1 is set)</td></tr>
+<tr><td> </td><td> S_hero_override   </td><td>	(hero if ACCESSIBILITY=1 is set)</td></tr>
+</table>
+<p>
+hyphenation{sysconf}	%no syllable breaks =&gt; don't hyphenate file name
+注意:
+</p>
+<p>
+Several symbols in this table appear to be blank.
+They are the space character, except for S_pet_override
+and S_hero_override which don't have any default value
+and can only be used if enabled in the ''sysconf'' file.
+(TBT)
+</p>
+<p>
+S_rock is misleadingly named; rocks and stones use S_gem.
+Statues and boulders are the rock being referred to, but since
+version 3.6.0, statues are displayed as the monster they depict.
+So S_rock is only used for boulders and not used at all if
+overridden by the more specific S_boulder.
+(TBT)
+</p>
+<h2>視覚障害者が {it NetHack/} をプレイするための設定</h2>
+<p>
+<span class='italic'>NetHack</span> は洞窟の地図を作るのに標準の ASCII キャラクターだけを使うように
+設定することもできる。これにより、MS-DOS 版の <span class='italic'>NetHack</span> は
+音声合成または点字技術を用いれば目の不自由な人でも完全にプレイ可能である。
+プレイヤーはこれらの画面読み取りシステムに関する十分な知識が必要で、
+上下左右に一文字ずつ移動する方法を知らなければならないだろう。
+画面読み取りシステムの検索能力を知ることもかなり価値がある。
+プレイする前にこのガイドブックを十分に読めば、
+画面のレイアウトがどんな感じかがわかるだろう。
+また、 PC カーソルの位置を突き止めることができる必要がある。
+これは自分のキャラクターの位置を示している。
+'<span class='tt'>@</span>'は他のヒューマノイドを表わすのにも用いられるので、
+自分の位置を探すのに'<span class='tt'>@</span>'を検索するだけでは不十分である。
+さらに、あなたが見ている位置と PC カーソルの位置の物理的な行と桁を知らせる機能が
+必要だろう。この機能はスクリーン全体にどのようなアイテムがあるかを判別するのに
+便利である。
+<span class='italic'>NetHack</span> can also be compiled with support for sending the game messages
+to an external program, such as a text-to-speech synthesizer. If the
+''<span class='tt'>#version</span>'' extended command shows ''external program as a
+message handler'', your <span class='italic'>NetHack</span>
+has been compiled with the capability. When compiling <span class='italic'>NetHack</span>
+from source
+on Linux and other POSIX systems, define <span class='italic'>MSGHANDLER</span> to enable it.
+To use
+the capability, set the environment variable <span class='italic'>NETHACK_MSGHANDLER</span> to an
+executable, which will be executed with the game message as the program's
+only parameter.
+(TBT)
+慣れたユーザーなら <span class='italic'>defaults.nh</span> を修正することは難しくないだろうが、
+初心者は少しひるんでしまう仕事かもしれない。
+<span class='italic'>NetHack</span> の全ての公式配布のシンボルファイルには
+<span class='italic'>NHAccess</span> と呼ばれる symset が含まれている。
+設定ファイルでこの symset を選択することにより、目の不自由な人が
+プレイできるような設定になる。
+ファイルを修正することやゲームそのものに慣れたなら、好みに合うように
+設定ファイルの <span class='italic'>SYMBOLS=</span> と <span class='italic'>ROGUESYMBOLS=</span> で
+設定を変更するとよいだろう。
+See the previous section for the special symbols S_pet_override
+to force a consistent symbol for all pets and S_hero_override
+to force a unique symbol for the player character if <span class='italic'>accessibility</span>
+is enabled in the <span class='italic'>sysconf</span> file.
+(TBT)
+</p>
+<p>
+ゲームのアクセシビリティの改善に最も影響を与える設定は以下のものである:
+</p>
+<dl>
+<dt>symset:NHAccess</dt><dd>
+視力障害者プレイヤーに適したシンボル集合を読み込む。
+</dd>
+<dt>roguesymset:NHAccess</dt><dd>
+視力障害者プレイヤーに適した rogue レベルのためのシンボル集合を読み込む。
+</dd>
+<dt>menustyle:traditional</dt><dd>
+これは音声合成システムを利用する助けになる。
+</dd>
+<dt>nomenu_overlay</dt><dd>
+クリアされた画面に左寄せでメニューを表示する。
+</dd>
+<dt>number_pad</dt><dd>
+多くの発声プログラムは number-pad を画面の確認に用いる。
+この場合、number_pad オプションをオフにして、伝統的な
+Rogue 風コマンドを使うこと。
+</dd>
+<dt>autodescribe</dt><dd>
+Automatically describe the terrain under the cursor when targeting.
+(TBT)
+</dd>
+<dt>mention_walls</dt><dd>
+Give feedback messages when walking towards a wall or when travel command
+was interrupted.
+(TBT)
+</dd>
+<dt>whatis_coord:compass</dt><dd>
+When targeting with cursor, describe the cursor position with coordinates
+relative to your character.
+(TBT)
+</dd>
+<dt>whatis_filter:area</dt><dd>
+When targeting with cursor, filter possible locations so only those in
+the same area (eg. same room, or same corridor) are considered.
+(TBT)
+</dd>
+<dt>whatis_moveskip</dt><dd>
+When targeting with cursor and using fast-move, skip the same glyphs instead
+of moving 8 units at a time.
+(TBT)
+</dd>
+<dt>nostatus_updates</dt><dd>
+Prevent updates to the status lines at the bottom of the screen, if
+your screen-reader reads those lines. The same information can be
+seen via the <span class='tt'>#attributes</span> command.
+(TBT)
+</dd>
+</dl>
+<h2>システム管理者のためのグローバルな設定</h2>
+<p>
+<span class='italic'>NetHack</span> が SYSCF オプション付きでコンパイルされている場合、システム管理者は
+グローバル設定を設定するべきである; これは(前述した)伝統的なユーザー毎の
+設定ファイルと同じ形式のファイルである。
+</p>
+<p>
+このファイルは sysconf という名前で、その他の <span class='italic'>NetHack</span> 補助ファイルと
+同じディレクトリに置かれる。
+このファイルで認識されるオプションは以下の通りである。
+設定されてなかったオプションは(あなたのシステムでは適切ではないかもしれない)
+コンパイル時のデフォルトが使われる。
+</p>
+<dl>
+<dt>WIZARDS</dt><dd>
+(一般的にウィザードモードと呼ばれる)デバッグモードでプレイすることを
+許されたユーザー名の空白区切りのリスト。
+値が単一のアスタリスク (*) の場合は誰でもデバッグモードでゲームを
+開始できる。
+</dd>
+<dt>SHELLERS</dt><dd>
+シェルエスケープコマンド ('<span class='tt'>!</span>') の使用を許されたユーザーのリスト。
+文法は WIZARDS と同じ。
+</dd>
+<dt>EXPLORERS</dt><dd>
+探検モードを使うことを許されたユーザーのリスト。
+文法は WIZARDS と同じ。
+</dd>
+<dt>MAXPLAYERS</dt><dd>
+同時にプレイ出来るゲームの数。
+</dd>
+<dt>SUPPORT</dt><dd>
+ローカルサポートを受ける方法を示す文字列 (標準設定値はなし)。
+</dd>
+<dt>RECOVER</dt><dd>
+このシステムでゲームを復旧する方法を示す文字列 (標準設定値はなし)。
+</dd>
+<dt>SEDUCE</dt><dd>
+0 と 1 でそれぞれ SEDUCE オプションを無効/有効にする(この機能に関する詳細は
+ソースを参照のこと)。
+</dd>
+<dt>CHECK_PLNAME</dt><dd>
+これを 1 にすると、EXPLORERS, WIZARDS, SHELLERS は
+ユーザーのログイン名ではなくプレイヤー名をチェックする。
+</dd>
+<dt>CHECK_SAVE_UID</dt><dd>
+0 と 1 でそれぞれセーブファイルの UID チェックを無効/有効にする。
+</dd>
+</dl>
+<p>
+以下のオプションは score ファイルに影響する:
+</p>
+<dl>
+<dt>PERSMAX</dt><dd>
+一人のエントリの最大数。
+</dd>
+<dt>ENTRYMAX</dt><dd>
+score ファイルのエントリの最大数。
+</dd>
+<dt>POINTSMIN</dt><dd>
+score ファイルにエントリを記録する最低得点。
+</dd>
+<dt>PERS_IS_UID</dt><dd>
+score ファイル上でプレイヤーを認識するのに、0 ではユーザー名、1 では
+数値のユーザー ID を使う。
+</dd>
+<dt>ACCESSIBILITY</dt><dd>
+0 or 1 to disable or enable, respectively, the ability for players
+to set S_pet_override and S_hero_override 
+symbols in their configuration file.
+(TBT)
+</dd>
+<dt>PORTABLE_DEVICE_PATHS</dt><dd>
+0 or 1 Windows OS only, the game will look for all of its external
+files, and write to all of its output files in one place 
+rather than at the standard locations.
+(TBT)
+</dd>
+<dt>DUMPLOGFILE</dt><dd>
+A filename where the end-of-game dumplog is saved.
+Not defining this will prevent dumplog from being created. Only available
+if your game is compiled with DUMPLOG. Allows the following placeholders:
+(TBT)
+<span class='tt'>%%</span>  &mdash; リテラルな '<span class='tt'>%</span>'<br/>
+<span class='tt'>%v</span>  &mdash; バージョン (例: ''<span class='tt'>3.6.3-0</span>'')<br/>
+<span class='tt'>%u</span>  &mdash; ゲーム UID<br/>
+<span class='tt'>%t</span>  &mdash; ゲーム開始時刻、UNIX タイムスタンプ形式<br/>
+<span class='tt'>%T</span>  &mdash; 現在時刻、UNIX タイムスタンプ形式<br/>
+<span class='tt'>%d</span>  &mdash; ゲーム開始時刻、YYYYMMDDhhmmss 形式<br/>
+<span class='tt'>%D</span>  &mdash; 現在時刻、YYYYMMDDhhmmss 形式<br/>
+<span class='tt'>%n</span>  &mdash; プレイヤー名<br/>
+<span class='tt'>%N</span>  &mdash; プレイヤー名の最初の文字
+</dd>
+</dl>
+<h1>得点</h1>
+<p>
+<span class='italic'>NetHack</span> は設定によって、あなたの機械における高得点の一覧または高得点
+者の一覧を作成する。後者の設定になっている場合、ゲームを最後まで終えた
+場合を除きそのマシンの 1 つのアカウントにつき 1 つだけしかこの一覧には
+載らない。あなたがこの一覧に載っている他の誰かより高い得点を取ったとき、
+もしくはあなたの前の得点より高い得点を取ったときにのみ、その一覧のしか
+るべき位置にあなたの名前が載る。得点が何個まで載るかもコンパイル時に設
+定できる。
+</p>
+<p>
+得点は主に経験値、戦利品、到達した階とゲームの終わり方に基づいている。
+ゲームを放棄した場合には持っている金を全額手にして脱出できる。
+しかし恐怖の迷宮の中で殺された場合には、亡骸が発見されると持っている金の 90,%
+だけがギルドに伝えられる(冒険者は亡骸を発見した場合には手数料を取るこ
+とが知られている)。従って怪物にさらに一撃を加えて運あらば生き残らんと
+するか、放棄してその時点で持っている物で終了するかはあなたが決めること
+である。放棄した場合はすべての金を手にすることができる。しかし戦って生
+き残ればさらに多くを得ることができるかも知れない。
+</p>
+<p>
+単に現時点での高得点者・高得点の一覧を見たい場合にはほとんどの
+バージョンでは
+</p>
+<pre>
+    nethack -s all
+</pre>
+<p>
+と入力すればよい。
+</p>
+<h1>探検モード</h1>
+<p>
+<span class='italic'>NetHack</span> は複雑で難しいゲームである。初心者は生き残るすべを知らないこ
+とに気づき、恐怖におじけづいてしまうかもしれない。しかし恐れることはな
+い。冒険する洞窟に「探検」もしくは「発見」モードがある場合には、高得点
+の一覧に載らないというとるに足らないデメリットと引き替えに前のセーブファ
+イルを残しておけたり不死身となれたりするのである。
+</p>
+<p>
+探検モードに入るには 2 通りの方法がある。1 つはゲームの開始時に
+<span class='tt'>-X</span> スイッチを付けるか
+<span class='italic'>playmode:explore</span>
+オプションを指定することである。
+もう 1 つはゲームのプレイ中に '<span class='tt'>#exploremode</span>' 拡張コマンドを
+入力することである。
+探検モードで新しいゲームを開始すると、初期装備として願いの杖が追加される;
+プレイ中に切り替えた場合は追加されない。
+探検モードで得られる他の利点は大胆な読者諸君自ら確かめて欲しい。
+</p>
+<h2>デバッグモード</h2>
+<p>
+ウィザードモードとも呼ばれるデバッグモードは、この概説と、
+コマンド説明で挙げられている様々な「デバッグモード専用」コマンドの他には
+文書化されていない。
+これはキャラクターに神のような力を与えるためではなく、プログラムの問題を
+調べることを意図したもので、デバッグを試みるプレイヤーは
+これをどのように使うかが分かることを想定している。
+これは
+<span class='tt'>-D</span>
+コマンドラインスイッチか
+<span class='italic'>playmode:debug</span>
+オプションでゲームを始めることで開始される。
+</p>
+<p>
+システムによっては、プレイヤーは、デバッグモードを使うことを許されている
+特定のユーザー名でログインしなければならない; それ以外では、
+キャラクターは特定のキャラクター名を使わなければならない
+(しかし職業はどれでもよい; ''ウィザード'' という名前と
+職業の <span class='italic'>Wizard</span> は何の関係もない)。
+デバッグモードを許されていなかったり有効でない場合にデバッグモードを
+使おうとすると、代わりに探検モードにフォールバックする。
+</p>
+<h1>クレジット</h1>
+<p>
+最初の <span class='italic'>hack</span> というゲームは、バークレイ版
+UNIX のゲーム <span class='italic'>rogue</span> をモデルとしている。
+このドキュメントの大部分は Michael C. Toy と Kenneth C. R. C. Arnold の手になる
+<span class='italic'>A Guide to the Dungeons of Doom(運命の洞窟への招待)</span> を図々しくも盗用したものである。
+また一部は Ken Arromdee による
+<span class='italic'>Further Exploration of the Dungeons of Doom(運命の洞窟の深部への探検)</span>
+から採っている。
+</p>
+<p>
+<span class='italic'>NetHack</span> は文字どおり何十人もの人々の手によって完成された。
+以下はゲームの開発の過程での主な出来事である。
+</p>
+<p>
+bigskip
+<span class='italic'>Jay Fenlason</span> は <span class='italic'>Kenny Woodland</span>, <span class='italic'>Mike Thome</span>, <span class='italic'>Jon Payne</span>
+らの助けを得て、最初の <span class='italic'>Hack</span> を書いた。
+</p>
+<p>
+<span class='italic'>Andries Brouwer</span> はプログラムを大幅に書き換えて <span class='italic'>Hack</span> を
+元とはかなり異なったゲームに仕立て上げ、UNIX
+マシン用の(少なくとも)3 バージョン(1.0.1、1.0.2、1.0.3)を Usenet で発表した。
+</p>
+<p>
+<span class='italic'>Don G. Kneller</span> は <span class='italic'>Hack</span> 1.0.3 を Microsoft C を使用して MS-DOS へ移植
+し <span class='italic'>PC Hack</span> 1.01e を作成した。バージョン 1.03g では DEC Rainbow の
+グラフィックをサポートし、続いて少なくともあと 4 つのバージョン(3.0、3.2、
+3.51、3.6)を作成した。
+</p>
+<p>
+<span class='italic'>R. Black</span> は <span class='italic'>PC Hack</span> 3.51 を Lattice C を使用して Atari 520/1040ST へ
+移植し <span class='italic'>ST Hack</span> 1.03 を作成した。
+</p>
+<p>
+<span class='italic'>Mike Stephenson</span> はこれらのいろいろなバージョンを再び 1 つに統合し、
+多くの追加要素と合わせて <span class='italic'>NetHack</span> バージョン 1.4 を作成した。さらに彼は
+何千人もの人々に作業を分担して <span class='italic'>NetHack</span> 1.4 の拡張とデバッグを行い、
+<span class='italic'>NetHack</span> バージョン 2.2 と 2.3 を発表した。
+</p>
+<p>
+さらにその後、Mike は <span class='italic'>Ken Arromdee</span>, <span class='italic'>Jean-Christophe Collet</span>,
+<span class='italic'>Steve Creps</span>, <span class='italic'>Eric Hendrickson</span>、<span class='italic'>Izchak Miller</span>、
+<span class='italic'>Eric S. Raymond</span>、<span class='italic'>John Rupley</span>、
+<span class='italic'>Mike Threepoint</span>、<span class='italic'>Janet Walz</span>
+を含むチームを率いてゲームの大幅な書き直しを行ない、
+<span class='italic'>NetHack</span> 3.0c を作成した。
+</p>
+<p>
+<span class='italic'>NetHack</span> 3.0 は <span class='italic'>Eric R. Smith</span> によって Atari へ、
+<span class='italic'>Timo Hakulinen</span> によって OS/2 へ、
+<span class='italic'>David Gentzel</span> によって VMS へ移植された。
+この 3 人と <span class='italic'>Kevin Darcy</span> はその後主力開発チームに加わり、
+3.0 のその後のいくつかの改訂版を作成した。
+</p>
+<p>
+<span class='italic'>Olaf Seibert</span> は <span class='italic'>NetHack</span> 2.3 と 3.0 を Amiga へ移植した。
+<span class='italic'>Norm Meluch</span>、<span class='italic'>Stephen Spackman</span>、<span class='italic'>Pierre Martineau</span> は
+<span class='italic'>PC NetHack</span> 3.0 のためのオーバーレイルーチンを設計した。
+<span class='italic'>Johnny Lee</span> は <span class='italic'>NetHack</span> 3.0 を Macintosh へ移植した。
+彼らは他のさまざまな洞窟の主たちとともに PC、Macintosh、Amiga
+の移植版の拡張を続け、 3.0 のその後のいくつかの改訂版を作成した。
+</p>
+<p>
+<span class='italic'>Mike Stephenson</span> をリーダーとし、
+<span class='italic'>Izchak Miller</span> と <span class='italic'>Janet Walz</span> の助けによって
+<span class='italic'>Ken Arromdee</span>,
+<span class='italic'>David Cohrs</span>, <span class='italic'>Jean-Christophe Collet</span>, <span class='italic'>Kevin Darcy</span>,
+<span class='italic'>Matt Day</span>, <span class='italic'>Timo Hakulinen</span>, <span class='italic'>Steve Linhart</span>, <span class='italic'>Dean Luick</span>,
+<span class='italic'>Pat Rankin</span>, <span class='italic'>Eric Raymond</span>, <span class='italic'>Eric Smith</span> を含む制作チームが
+3.0の徹底的な見直しを行なった。
+彼らはゲームデザインを再構築し、コードの大部分を書き直した。
+複合ダンジョン、新しいディスプレイ、それぞれのキャラクター毎の特別のクエスト、
+新しいエンドゲームとその他の多くの新しい要素を追加し、
+<span class='italic'>NetHack</span> 3.1を制作した。
+</p>
+<p>
+<span class='italic'>Ken Lorber</span>, <span class='italic'>Gregg Wonderly</span>, <span class='italic'>Greg Olson</span> は
+<span class='italic'>Richard Addison</span>, <span class='italic'>Mike Passaretti</span>, <span class='italic'>Olaf Seibert</span> の助けを借りて
+Amiga 用 <span class='italic'>NetHack</span> 3.1 を作成した。
+</p>
+<p>
+<span class='italic'>Norm Meluch</span> と <span class='italic'>Kevin Smolkowski</span> は
+<span class='italic'>Carl Schelin</span>, <span class='italic'>Stephen Spackman</span>, <span class='italic'>Steve VanDevender</span>,
+<span class='italic'>Paul Winner</span> の助けを借りて <span class='italic'>NetHack</span> 3.1 を PC に移植した。
+</p>
+<p>
+<span class='italic'>Jon W{tte</span> と <span class='italic'>Hao-yang Wang</span> は
+<span class='italic'>Ross Brown</span>, <span class='italic'>Mike Engber</span>, <span class='italic'>David Hairston</span>,
+<span class='italic'>Michael Hamel</span>, <span class='italic'>Jonathan Handler</span>, <span class='italic'>Johnny Lee</span>,
+<span class='italic'>Tim Lennan</span>, <span class='italic'>Rob Menke</span>, <span class='italic'>Andy Swanson</span> の助けを借りて
+MPW 用の Macintosh 用 <span class='italic'>NetHack</span> 3.1 を作成した。
+その作成中に、<span class='italic'>Bart House</span> は Think C 用を加えた。
+</p>
+<p>
+<span class='italic'>Timo Hakulinen</span> は <span class='italic'>NetHack</span> 3.1 を OS/2 に移植した。
+<span class='italic'>Eric Smith</span> は <span class='italic'>NetHack</span> 3.1 を Atari に移植した。
+<span class='italic'>Pat Rankin</span> は <span class='italic'>Joshua Delahunty</span> の助けを借りて VMS 版
+<span class='italic'>NetHack</span> 3.1 を作成した。
+<span class='italic'>Michael Allison</span> は <span class='italic'>NetHack</span> 3.1 を Windows NT に移植した。
+</p>
+<p>
+<span class='italic'>Dean Luick</span> は <span class='italic'>David Cohrs</span> の助けを借りて X11 用
+<span class='italic'>NetHack</span>3.1 を作成した。
+<span class='italic'>Warwick Allison</span> は Atari 用に <span class='italic'>NetHack</span> のタイル版を作成した。
+彼は後にタイルを開発チームに寄贈し、タイルサポートは他のプラットフォームにも
+追加された。
+</p>
+<p>
+<span class='italic'>Michael Allison</span>, <span class='italic'>Ken Arromdee</span>,
+<span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>, <span class='italic'>Steve Creps</span>,
+<span class='italic'>Kevin Darcy</span>, <span class='italic'>Timo Hakulinen</span>, <span class='italic'>Steve Linhart</span>, <span class='italic'>Dean Luick</span>,
+<span class='italic'>Pat Rankin</span>, <span class='italic'>Eric Smith</span>, <span class='italic'>Mike Stephenson</span>, <span class='italic'>Janet Walz</span>,
+<span class='italic'>Paul Winner</span> からなる 3.2の開発チームは バージョン 3.2 を
+1996 年 4 月にリリースした。
+</p>
+<p>
+バージョン 3.2 は開発チームが結成されてから 10 周年のものであった。
+彼らのゲームへの貢献について記すと、13 人の初期の開発チーム全員は
+このリリースの開始時の最初の時点までチームに残っていた。
+が、 3.1.3 から 3.2 の間に、開発チームの創始者の一人である
+<span class='italic'>Izchak Miller博士</span>が癌と診断され、亡くなった。
+このリリースは開発チームおよび移植チームから彼に捧げられた。
+</p>
+<p>
+<span class='italic'>NetHack</span> 3.1 と 3.2 の時代に、ゲームに熱狂した何人かが
+ゲームに自分自身の変更を加えた「亜種」を公に発表した。
+</p>
+<p>
+<span class='italic'>Tom Proudfoot</span> と <span class='italic'>Yuval Oren</span> は <span class='italic'>NetHack++</span> を作成し、
+これはすぐに <span class='italic'>NetHack$--$</span> に改名された。
+これとは独立に、<span class='italic'>Stephen White</span> は <span class='italic'>NetHack Plus</span> を作成した。
+<span class='italic'>Tom Proudfoot</span> は後に <span class='italic'>NetHack Plus</span> と <span class='italic'>NetHack$--$</span> を統合し、
+<span class='italic'>SLASH</span> を作成した。
+<span class='italic'>Larry Stewart-Zerba</span> と <span class='italic'>Warwick Allison</span> は呪文詠唱システムを改良した
+Wizard Patch を作成した。
+<span class='italic'>Warwick Allison</span> は <span class='italic'>NetHack</span> を Qt インターフェースを使うように
+変更した。
+</p>
+<p>
+<span class='italic'>Warren Cheung</span> は <span class='italic'>SLASH</span> と Wizard Patch を統合して <span class='italic'>Slash'EM</span> を作成し、
+<span class='italic'>Kevin Hugo</span> の力を借りて、多くの要素を追加した。
+Kevin は後に開発チームに加わり、これらのアイデアを <span class='italic'>NetHack</span> 3.3 に
+統合した。
+</p>
+<p>
+3.2 の最終バージョンはバグ修正版である 3.2.3 である。
+これは 2000 年問題対策のために 3.3.0 と同時に 1999 年 12 月に発表された。
+</p>
+<p>
+<span class='italic'>Michael Allison</span>, <span class='italic'>Ken Arromdee</span>,
+<span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>, <span class='italic'>Steve Creps</span>, <span class='italic'>Kevin Darcy</span>,
+<span class='italic'>Timo Hakulinen</span>, <span class='italic'>Kevin Hugo</span>, <span class='italic'>Steve Linhart</span>, <span class='italic'>Ken Lorber</span>,
+<span class='italic'>Dean Luick</span>, <span class='italic'>Pat Rankin</span>, <span class='italic'>Eric Smith</span>, <span class='italic'>Mike Stephenson</span>,
+<span class='italic'>Janet Walz</span>, <span class='italic'>Paul Winner</span> からなる 3.3 の開発チームは
+1999 年 12 月に 3.3.0を、2000 年 8 月に 3.3.1 をリリースした。
+</p>
+<p>
+バージョン 3.3 は多くの新要素を提供した。
+まず、種族と職業を分離した最初のバージョンである。
+職業としてのエルフは削除され、種族の一つとなった。
+また、ドワーフ、ノーム、オークが種族として追加された。
+モンクとレンジャーの二つが職業として追加された。
+さらに、動物に乗ることが出来る最初のバージョンでもあり、
+発見された全てのバグをウェブサイトで公表した最初のバージョンでもある。
+バグリストが順調に伸びていったにも関わらず、
+3.3 は 1 年半続いたことで十分安定していたことを証明した。
+</p>
+<p>
+3.4 開発チームは <span class='italic'>Michael Allison</span>, <span class='italic'>Ken Arromdee</span>,
+<span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>, <span class='italic'>Kevin Hugo</span>, <span class='italic'>Ken Lorber</span>,
+<span class='italic'>Dean Luick</span>, <span class='italic'>Pat Rankin</span>, <span class='italic'>Mike Stephenson</span>,
+<span class='italic'>Janet Walz</span>, and <span class='italic'>Paul Winner</span> で開始され、
+<span class='italic'>NetHack</span> 3.4.0 リリース直前の 2002 年 3 月に
+<span class='italic'>Warwick Allison</span> が加わった。
+</p>
+<p>
+バージョン 3.3 と同様に、様々な人々が <span class='italic'>NetHack</span> の色々な
+プラットフォームへの移植を行なってくれた。
+</p>
+<p>
+<span class='italic'>Pat Rankin</span> は 3.4 の VMS への移植を担当した。
+</p>
+<p>
+<span class='italic'>Michael Allison</span> は MS-DOS 版の <span class='italic'>NetHack</span> 3.4 を管理している。
+<span class='italic'>Paul Winner</span> と <span class='italic'>Yitzhak Sapir</span> が手伝っている。
+</p>
+<p>
+<span class='italic'>Dean Luick</span>, <span class='italic'>Mark Modrall</span>, <span class='italic'>Kevin Hugo</span> は
+3.4 の Macintosh への移植と拡張を担当した。
+</p>
+<p>
+<span class='italic'>Michael Allison</span>, <span class='italic'>David Cohrs</span>, <span class='italic'>Alex Kompel</span>, <span class='italic'>Dion Nicolaas</span>,
+<span class='italic'>Yitzhak Sapir</span> は 3.4 の Microsoft Windows プラットフォームへの
+移植と拡張を担当した。
+<span class='italic'>Alex Kompel</span> は Windows 版への新しいグラフィックインターフェースを
+提供した。
+<span class='italic'>Alex Kompel</span> はまた、3.4.1 の Windows CE 版を提供した。
+</p>
+<p>
+<span class='italic'>Ron Van Iwaarden</span> は過去いくつかのリリースの OS/2 版 <span class='italic'>NetHack</span> の
+唯一の管理者だった。
+残念ながら Ron の最後の OS/2 マシンは 2006 年初頭に動かなくなった。
+近年まで OS/2 で <span class='italic'>NetHack</span> を生き続けさせたことにことについて Ron に
+非常に感謝する。
+</p>
+<p>
+Amiga への移植は <span class='italic'>Janne Salmij&auml;rvi</span> が 3.3.1 で復活させた後、
+<span class='italic'>Janne Salmij&auml;rvi</span> と <span class='italic'>Teemu Suikki</span> が 3.4 への保守と
+拡張を行った。
+</p>
+<p>
+3.3.1 で復活した Atari 版は
+<span class='italic'>Christian ''Marvin'' Bressler</span> が 3.4 を保守した。
+</p>
+<p>
+2003 年 12 月の <span class='italic'>NetHack</span> 3.4.3 のリリースは、長いリリース中断の始まりとなった。
+3.4.3 は、コミュニティによって 10 年以上楽しまれ続けられたことで
+非常に安定したバージョンであることが示された。
+3.4.3 の間、The <span class='italic'>NetHack Development Team</span> は水面下でゆっくりと静かにゲームに対して作業を
+続けていた。
+同じ頃、<span class='italic'>NetHack</span> コミュニティにいくつかの新しいバリアントが出現した。
+特に、Derek S. Ray による sporkhack、Patric Mueller による <span class='italic'>unnethack</span>、
+元々は Daniel Thaler で、それからは Alex Smith による
+<span class='italic'>nitrohack</span> およびその後継、Tung Nguyen による <span class='italic'>Dynahack</span> である。
+これらのバリアントの一部は開発と保守が続けられ、今でもコミュニティで
+楽しまれている。
+</p>
+<p>
+2014 年 9 月に、開発中のコードの中間的なスナップショットが他のグループによって
+公にされた。
+コードは作業中のもので、適切なリリースのためのデバッグプロセスを経ていない
+ものであったので、コードスナップショットに使われていたバージョン番号は
+欠番として、公式な <span class='italic'>NetHack</span> リリースでは使わないことに決定した。
+<span class='italic'>NetHack Development Team</span> の公式 <span class='italic'>nethack.org</span> web サイトにアナウンスが投稿され、
+公式リリースバージョンとして 3.4.4, 3.5, 3.5.0 は使わないことを示した。
+</p>
+<p>
+2015 年 1 月、NetHack 3.6 のリリースのための準備が開始された。
+</p>
+<p>
+最終的に 3.6.0 としてリリースされるものの開発の初期では、
+開発チームは <span class='italic'>Warwick Allison</span>,
+<span class='italic'>Michael Allison</span>, <span class='italic'>Ken Arromdee</span>,
+<span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>,
+<span class='italic'>Ken Lorber</span>, <span class='italic'>Dean Luick</span>, <span class='italic'>Pat Rankin</span>,
+<span class='italic'>Mike Stephenson</span>, <span class='italic'>Janet Walz</span>, <span class='italic'>Paul Winner</span> で構成されていた。
+2015 年初頭、3.6.0 リリースに先だって、新しいメンバーである
+<span class='italic'>Sean Hunt</span>, <span class='italic'>Pasi Kallinen</span>, <span class='italic'>Derek S. Ray</span> が
+NetHack 開発チームに加わった。
+</p>
+<p>
+3.6.0 の開発の終了近くに、one of the significant inspirations
+for many of the humorous and fun features found in the game,
+author Terry Pratchett, passed away.
+<span class='italic'>NetHack</span> 3.6.0 は彼へ捧げられた。
+</p>
+<p>
+3.6.0 は 2015 年 12 月にリリースされ、
+3.4.3 リリースから開発チームによってなされた作業と、
+いくつかの愛好者コミュニティのパッチがマージされた。
+多くのバグが修正され、一部のコードが再構成された。
+</p>
+<p>
+<span class='italic'>NetHack Development Team</span> 及び <span class='italic'>Steve VanDevender</span> と
+<span class='italic'>Kevin Smolkowski</span> は NetHack 3.6 が様々な Unix の亜種で
+動作し続けるようにし、また X11 インターフェースを管理している。
+</p>
+<p>
+<span class='italic'>Ken Lorber</span>, <span class='italic'>Haoyang Wang</span>, <span class='italic'>Pat Rankin</span>, <span class='italic'>Dean Luick</span> は
+<span class='italic'>NetHack</span> 3.6 の Mac OSX版を管理している。
+</p>
+<p>
+<span class='italic'>Michael Allison</span>, <span class='italic'>David Cohrs</span>, <span class='italic'>Bart House</span>,
+<span class='italic'>Pasi Kallinen</span>, <span class='italic'>Alex Kompel</span>, <span class='italic'>Dion Nicolaas</span>,
+<span class='italic'>Derek S. Ray</span> and  <span class='italic'>Yitzhak Sapir</span> は <span class='italic'>NetHack</span> 3.6 の
+Microsoft Windows 版を管理している。
+</p>
+<p>
+<span class='italic'>Pat Rankin</span> は、アクセスが制限されながら VMS 版を NetHack 3.6 で
+動作させ続けようとさせた。
+<span class='italic'>Kevin Smolkowski</span> はこれを、
+Alpha と Integrity (またの名を Itanium またの名を IA64) での
+最新版の OpenVMS (記述時点で V8.4) に更新、テストしたが、VAX 版ではない。
+</p>
+<p>
+<span class='italic'>Ray Chason</span> は 3.6 の msdos 版を復活させ、必要な更新をコミュニティに
+寄贈した。
+</p>
+<p>
+2018 年 4 月下旬、3.6.0 からの数百のバグ修正と、いくつかの新しい機能が
+まとめられ、NetHack 3.6.1 としてリリースされた。
+3.6.1 リリース時点での <span class='italic'>NetHack Development Team</span> は、
+<span class='italic'>Warwick Allison</span>, <span class='italic'>Michael Allison</span>, <span class='italic'>Ken Arromdee</span>,
+<span class='italic'>David Cohrs</span>, <span class='italic'>Jessie Collet</span>,
+<span class='italic'>Pasi Kallinen</span>, <span class='italic'>Ken Lorber</span>, <span class='italic'>Dean Luick</span>,
+<span class='italic'>Patric Mueller</span>, <span class='italic'>Pat Rankin</span>, <span class='italic'>Derek S. Ray</span>,
+<span class='italic'>Alex Smith</span>, <span class='italic'>Mike Stephenson</span>, <span class='italic'>Janet Walz</span>, 
+<span class='italic'>Paul Winner</span> からなる。
+</p>
+<p>
+2019 年 5 月初旬、更なる 320 のバグ修正といくつかの拡張と、
+寄贈された curses ウィンドウ対応を含んで、3.6.2 としてリリースされた。
+</p>
+<p>
+数十年にわたって移植チームとしてゲームに貢献してきた <span class='italic'>Bart House</span> は、
+2019 年 5 月に <span class='italic'>NetHack Development Team</span> に加わった。
+</p>
+<p>
+NetHack 3.6.3 は、NetHack 3.6.2 から 190 以上のバグ修正を含んで、
+2019 年 12 月 5 日にリリースされた。
+</p>
+<p>
+NetHack 3.6.4 は、セキュリティ修正といくつかのバグ修正を含んで、
+2019 年 12 月 18 日にリリースされた。
+</p>
+<p>
+NetHack 3.6.5 は、いくつかのセキュリティ修正とバグ修正を含んで、
+2020 年 1 月 27 日にリリースされた。
+</p>
+<p>
+NetHack 3.6.6 は、セキュリティ修正といくつかのバグ修正を含んで、
+2020 年 3 月 8 日にリリースされた。
+</p>
+<p>
+<span class='italic'>Ken Lorber</span> によって管理されている <span class='italic'>NetHack</span> 公式 web サイトは:
+<a href="https://www.nethack.org/">
+https:<span class='tt'>/</span><span class='tt'>/</span>www.nethack.org<span class='tt'>/</span>.
+</a>
+</p>
+<h2>謝辞</h2>
+<p>
+<span class='italic'>NetHack</span> コミュニティに成り代わって、
+nethack.alt.org で公開 NetHack サーバーを提供してくれていることについて
+再度 <span class='italic'>M. Drew Streib</span> と <span class='italic'>Pasi Kallinen</span> に感謝する。
+hardfought.org に関して <span class='italic'>Keith Simpson</span> と
+<span class='italic'>Andy Thomson</span> に感謝する。
+<span class='italic'>Junethack</span>, <span class='italic'>The November NetHack Tournament</span> や以前の
+(今はないが忘れられない) <span class='italic'>devnull.net</span> のような、
+年次 <span class='italic'>NetHack</span> トーナメントに時間と労力を使ってくれた
+無名の洞窟の主全てに感謝する。
+</p>
+<h1>洞窟の主</h1>
+<p>
+時々ネットワークの世界のどうしようもない連中が、
+ゲームの改良の手助けをしようとしてとりわけ興味をそそるような修正を送ってよこす。
+<span class='italic'>NetHack Development Team</span> は、ときにはこういった悪党のうちでも最も邪悪な連中の名前を
+洞窟の主たちの一覧としてここに記すのだ。
+</p>
+<div style='align:center'>
+<table>
+<tr><td><pre>Adam Aronow </pre></td><td><pre> J. Ali Harlow </pre></td><td><pre> Mikko Juola</pre></td></tr>
+<tr><td><pre>Alex Kompel </pre></td><td><pre> Janet Walz </pre></td><td><pre> Nathan Eady</pre></td></tr>
+<tr><td><pre>Alex Smith </pre></td><td><pre> Janne Salmij"{a}rvi </pre></td><td><pre> Norm Meluch</pre></td></tr>
+<tr><td><pre>Andreas Dorn </pre></td><td><pre> Jean-Christophe Collet </pre></td><td><pre> Olaf Seibert</pre></td></tr>
+<tr><td><pre>Andy Church </pre></td><td><pre> Jeff Bailey </pre></td><td><pre> Pasi Kallinen</pre></td></tr>
+<tr><td><pre>Andy Swanson </pre></td><td><pre> Jochen Erwied </pre></td><td><pre> Pat Rankin</pre></td></tr>
+<tr><td><pre>Andy Thomson </pre></td><td><pre> John Kallen </pre></td><td><pre> Patric Mueller</pre></td></tr>
+<tr><td><pre>Ari Huttunen </pre></td><td><pre> John Rupley </pre></td><td><pre> Paul Winner</pre></td></tr>
+<tr><td><pre>Bart House </pre></td><td><pre> John S. Bien </pre></td><td><pre> Pierre Martineau</pre></td></tr>
+<tr><td><pre>Benson I. Margulies </pre></td><td><pre> Johnny Lee </pre></td><td><pre> Ralf Brown</pre></td></tr>
+<tr><td><pre>Bill Dyer </pre></td><td><pre> Jon W{tte </pre></td><td><pre> Ray Chason</pre></td></tr>
+<tr><td><pre>Boudewijn Waijers </pre></td><td><pre> Jonathan Handler </pre></td><td><pre> Richard Addison</pre></td></tr>
+<tr><td><pre>Bruce Cox </pre></td><td><pre> Joshua Delahunty </pre></td><td><pre> Richard Beigel</pre></td></tr>
+<tr><td><pre>Bruce Holloway </pre></td><td><pre> Karl Garrison </pre></td><td><pre> Richard P. Hughey</pre></td></tr>
+<tr><td><pre>Bruce Mewborne </pre></td><td><pre> Keizo Yamamoto </pre></td><td><pre> Rob Menke</pre></td></tr>
+<tr><td><pre>Carl Schelin </pre></td><td><pre> Keith Simpson </pre></td><td><pre> Robin Bandy</pre></td></tr>
+<tr><td><pre>Chris Russo </pre></td><td><pre> Ken Arnold </pre></td><td><pre> Robin Johnson</pre></td></tr>
+<tr><td><pre>David Cohrs </pre></td><td><pre> Ken Arromdee </pre></td><td><pre> Roderick Schertler</pre></td></tr>
+<tr><td><pre>David Damerell </pre></td><td><pre> Ken Lorber </pre></td><td><pre> Roland McGrath</pre></td></tr>
+<tr><td><pre>David Gentzel </pre></td><td><pre> Ken Washikita </pre></td><td><pre> Ron Van Iwaarden</pre></td></tr>
+<tr><td><pre>David Hairston </pre></td><td><pre> Kevin Darcy </pre></td><td><pre> Ronnen Miller</pre></td></tr>
+<tr><td><pre>Dean Luick </pre></td><td><pre> Kevin Hugo </pre></td><td><pre> Ross Brown</pre></td></tr>
+<tr><td><pre>Del Lamb </pre></td><td><pre> Kevin Sitze </pre></td><td><pre> Sascha Wostmann</pre></td></tr>
+<tr><td><pre>Derek S. Ray </pre></td><td><pre> Kevin Smolkowski </pre></td><td><pre> Scott Bigham</pre></td></tr>
+<tr><td><pre>Deron Meranda </pre></td><td><pre> Kevin Sweet </pre></td><td><pre> Scott R. Turner</pre></td></tr>
+<tr><td><pre>Dion Nicolaas </pre></td><td><pre> Lars Huttar </pre></td><td><pre> Sean Hunt</pre></td></tr>
+<tr><td><pre>Dylan O'Donnell </pre></td><td><pre> Leon Arnott </pre></td><td><pre> Stephen Spackman</pre></td></tr>
+<tr><td><pre>Eric Backus </pre></td><td><pre> M. Drew Streib </pre></td><td><pre> Stefan Thielscher</pre></td></tr>
+<tr><td><pre>Eric Hendrickson </pre></td><td><pre> Malcolm Ryan </pre></td><td><pre> Stephen White</pre></td></tr>
+<tr><td><pre>Eric R. Smith </pre></td><td><pre> Mark Gooderum </pre></td><td><pre> Steve Creps</pre></td></tr>
+<tr><td><pre>Eric S. Raymond </pre></td><td><pre> Mark Modrall </pre></td><td><pre> Steve Linhart</pre></td></tr>
+<tr><td><pre>Erik Andersen </pre></td><td><pre> Marvin Bressler </pre></td><td><pre> Steve VanDevender</pre></td></tr>
+<tr><td><pre>Fredrik Ljungdahl </pre></td><td><pre> Matthew Day </pre></td><td><pre> Teemu Suikki</pre></td></tr>
+<tr><td><pre>Frederick Roeber </pre></td><td><pre> Merlyn LeRoy </pre></td><td><pre> Tim Lennan</pre></td></tr>
+<tr><td><pre>Gil Neiger </pre></td><td><pre> Michael Allison </pre></td><td><pre> Timo Hakulinen</pre></td></tr>
+<tr><td><pre>Greg Laskin </pre></td><td><pre> Michael Feir </pre></td><td><pre> Tom Almy</pre></td></tr>
+<tr><td><pre>Greg Olson </pre></td><td><pre> Michael Hamel </pre></td><td><pre> Tom West</pre></td></tr>
+<tr><td><pre>Gregg Wonderly </pre></td><td><pre> Michael Sokolov </pre></td><td><pre> Warren Cheung</pre></td></tr>
+<tr><td><pre>Hao-yang Wang </pre></td><td><pre> Mike Engber </pre></td><td><pre> Warwick Allison</pre></td></tr>
+<tr><td><pre>Helge Hafting </pre></td><td><pre> Mike Gallop </pre></td><td><pre> Yitzhak Sapir</pre></td></tr>
+<tr><td><pre>Irina Rempt-Drijfhout </pre></td><td><pre> Mike Passaretti</pre></td></tr>
+<tr><td><pre>Izchak Miller </pre></td><td><pre> Mike Stephenson</pre></td></tr>
+</table>
+</div>
+</body>
+</html>
