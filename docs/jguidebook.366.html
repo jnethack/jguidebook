@@ -703,13 +703,11 @@ blessed or uncursed.
 持ち物の食べ物が調べられる。
 '<span class='tt'>e</span>' の前に '<span class='tt'>m</span>' 接頭辞を置くことで床にあるものを食べようとするのを
 回避する。
-If you attempt to eat while already satiated, you might choke to death.
-If you risk it, you will be asked whether
-to ''continue eating?'' <span class='italic'>if you survive the first bite</span>.
-You can set the
-<span class='italic'>paranoid_confirmation:eating</span>
-option to require a response of ''<span class='tt'>yes</span>'' instead of just '<span class='tt'>y</span>'.
-(TBT)
+既に満腹のときに食べようとすると、窒息して死ぬかもしれない。
+その危険を冒すなら、<span class='italic'>最初の一口を生き残ったなら </span>
+''continue eating?'' と聞かれる。
+返答に単なる '<span class='tt'>y</span>' ではなく ''<span class='tt'>yes</span>'' が必要なように
+<span class='italic'>paranoid_confirmation:eating</span> オプションを設定できる。
 </dd>
 <dt>E</dt><dd>
 床にメッセージを刻み込む。<br/>
@@ -816,28 +814,24 @@ option to require a response of ''<span class='tt'>yes</span>'' instead of just 
 ゲームをセーブする(プレイを中断してプログラムを終了する)。
 セーブされたゲームは、同じキャラクタ名を使った次回プレイ時に
 自動的に復旧される。<br/>
-In normal play, once a saved game is restored the file used to hold
-the saved data is deleted.
-In explore mode, once restoration is accomplished you are asked whether
-to keep or delete the file.
-Keeping the file makes it feasible to play for a while then quit
-without saving and later restore again.<br/>
-(TBT)
-There is no ''save current game state and keep playing'' command, not
-even in explore mode where saved game files can be kept and re-used.
-(TBT)
+通常のプレイでは、セーブしたゲームが一旦復元されると、
+セーブしたデータを保存するのに使われていたファイルは削除される。
+探検モードでは、復元が完了した後ファイルを残すか削除するかを
+訊ねられる。
+ファイルを残すと、しばらくプレイした後セーブせずに終了し、
+後で再び復元することが可能になる。<br/>
+例えセーブしたゲームファイルを残して再利用できる探検モードでも、
+''現在のゲームの状態をセーブしてプレイを続ける'' コマンドはない。
 </dd>
 <dt>t</dt><dd>
 物を投げる。または矢などを発射する。<br/>
-There's no separate ''shoot'' command.
-If you ''throw'' an arrow while wielding a bow, you are shooting
-that arrow and any weapon skill bonus or penalty for bow applies.
-If you ''throw'' an arrow while not wielding a bow, you are throwing
-it by hand and it will generally be less effective than when shot.<br/>
-(TBT)
-See also '<span class='tt'>f</span>' (fire) for throwing or shooting an item pre-selected
-via the '<span class='tt'>Q</span>' (quiver) command.
-(TBT)
+独立した ''射撃'' コマンドはない。
+弓を装備しているときに矢を ''投げる'' と、矢を撃つことになり、
+弓に関する武器スキルのボーナスやペナルティが適用される。
+弓を装備せずに矢を ''投げる'' と、手で矢を投げたことになり、
+一般的に撃つよりも効率的でない。<br/>
+'<span class='tt'>Q</span>' (矢筒) コマンドで事前に選択された物を投げたり撃ったりする
+'<span class='tt'>f</span>' (射撃) も参照。
 </dd>
 <dt>T</dt><dd>
 防具をはずす。<br/>
@@ -901,10 +895,9 @@ via the '<span class='tt'>Q</span>' (quiver) command.
 敵対している神を表示する。
 また、ステータス行の内容を、スペースの問題で通常のステータス表示には現れない
 追加のものも含めて、より詳細に表示する。<br/>
-In normal play, that's all that '<span class='tt'>^{</span>X}' displays.
-In explore mode, the role and status feedback is augmented by the
-information provided by <span class='italic'>enlightenment</span> magic.
-(TBT)
+通常のプレイでは、これが '<span class='tt'>^{</span>X}' が表示する全てである。
+探検モードでは、職業と状態は <span class='italic'>enlightenment</span> (啓蒙)魔法で
+提供される情報によって強化される。
 </dd>
 <dt>z</dt><dd>
 杖を振る。<br/>
@@ -1023,29 +1016,25 @@ deciding whether to merge with the destination stack.
 <span class='italic'>number_pad</span> がオンなら '<span class='tt'>^{</span>N}'。
 </dd>
 <dt>#apply</dt><dd>
-Apply (use) a tool such as a pick-axe, a key, or a lamp.
-Default key is '<span class='tt'>a</span>'.<br/>
-(TBT)
-If the tool used acts on items on the floor, using the '<span class='tt'>m</span>' prefix
-skips those items.<br/>
-(TBT)
-If used on a wand, that wand will be broken, releasing its magic in the
-process.  Confirmation is required.
-(TBT)
+つるはし、鍵、ランプのような道具を用いる(使う)。
+標準キーは '<span class='tt'>a</span>'。<br/>
+道具が床にある物に使われる場合、'<span class='tt'>m</span>' 接頭辞を使うと
+それらの物は飛ばす。<br/>
+杖に使うと、杖は壊れ、その過程で魔力が解放される。
+確認が必要。
 </dd>
 <dt>#attributes</dt><dd>
-Show your attributes. Default key is '<span class='tt'>^{</span>X}'.
-(TBT)
+属性を表示する。
+標準キーは '<span class='tt'>^{</span>X}'。
 </dd>
 <dt>#autopickup</dt><dd>
-Toggle the <span class='italic'>autopickup</span> option. Default key is '<span class='tt'>@</span>'.
-(TBT)
+<span class='italic'>autopickup</span> オプションを切り替える。
+標準キーは '<span class='tt'>@</span>'。
 </dd>
 <dt>#call</dt><dd>
-Call (name) a monster, or an object in inventory, on the floor,
-or in the discoveries list, or add an annotation for the
-current level (same as ''<span class='tt'>#annotate</span>''). Default key is '<span class='tt'>C</span>'.
-(TBT)
+怪物や持ち物や床や発見物一覧にある物に名前を付けたり、
+現在の階に注釈を付ける (''<span class='tt'>#annotate</span>'' と同じ)。
+標準キーは '<span class='tt'>C</span>'。
 </dd>
 <dt>#cast</dt><dd>
 扉を閉じる。
@@ -1096,17 +1085,14 @@ current level (same as ''<span class='tt'>#annotate</span>''). Default key is '<
 </dd>
 <dt>#exploremode</dt><dd>
 探検モードに入る。<br/>
-Requires confirmation; default response is '<span class='tt'>n</span>' (no).
-To really switch to explore mode, respond with '<span class='tt'>y</span>'.
-You can set the
-<span class='italic'>paranoid_confirmation:quit</span>
-option to require a response of ''<span class='tt'>yes</span>'' instead.
-(TBT)
+確認が必要; 標準の返答は'<span class='tt'>n</span>' (ノー)。
+本当に探検モードに切り替えるなら、'<span class='tt'>y</span>' と返答する。
+代わりに返答に ''<span class='tt'>yes</span>'' を必要とするように
+<span class='italic'>paranoid_confirmation:quit</span> オプションを設定できる。
 </dd>
 <dt>#fire</dt><dd>
-Fire ammunition from quiver. Default key is 
-'<span class='tt'>f</span>'.
-(TBT)
+矢筒から弾を発射する。
+標準キーは '<span class='tt'>f</span>'。
 </dd>
 <dt>#force</dt><dd>
 錠をこじ開ける。
@@ -1114,9 +1100,8 @@ Fire ammunition from quiver. Default key is
 標準キーは '<span class='tt'>M-f</span>'。
 </dd>
 <dt>#glance</dt><dd>
-Show what type of thing a map symbol corresponds to. Default key is 
-'<span class='tt'>;</span>'.
-(TBT)
+地図のシンボルが何を示すかを表示する。
+標準キーは '<span class='tt'>;</span>'。
 </dd>
 <dt>#help</dt><dd>
 Show the help menu.
@@ -1125,20 +1110,19 @@ and also '<span class='tt'>h</span>' if <span class='italic'>number_pad</span> i
 (TBT)
 </dd>
 <dt>#herecmdmenu</dt><dd>
-Show a menu of possible actions in your current location.
-(TBT)
+現在の位置で可能な行動のメニューを表示する。
 </dd>
 <dt>#history</dt><dd>
-Show long version and game history. Default key is '<span class='tt'>V</span>'.
-(TBT)
+長いバージョンとゲームの歴史を表示する。
+標準キーは '<span class='tt'>V</span>'。
 </dd>
 <dt>#inventory</dt><dd>
-Show your inventory. Default key is '<span class='tt'>i</span>'.
-(TBT)
+持ち物の目録を表示する。
+標準キーは '<span class='tt'>i</span>'。
 </dd>
 <dt>#inventtype</dt><dd>
-Inventory specific item types. Default key is '<span class='tt'>I</span>'.
-(TBT)
+指定した物の種類の一覧を表示する。
+標準キーは '<span class='tt'>I</span>'。
 </dd>
 <dt>#invoke</dt><dd>
 物が持つ特別な能力を発動する。
@@ -1152,10 +1136,9 @@ Inventory specific item types. Default key is '<span class='tt'>I</span>'.
 <span class='italic'>number_pad</span> がオンの場合 '<span class='tt'>j</span>'。
 </dd>
 <dt>#kick</dt><dd>
-Kick something.
-Default key is '<span class='tt'>^{</span>D}',
-and also '<span class='tt'>k</span>' if <span class='italic'>number_pad</span> is on.
-(TBT)
+何かを蹴る。
+標準キーは '<span class='tt'>^{</span>D}' および
+<span class='italic'>number_pad</span> がオンの場合 '<span class='tt'>k</span>'。
 </dd>
 <dt>#known</dt><dd>
 Show what object types have been discovered.
@@ -1168,20 +1151,18 @@ Default key is '<span class='tt'>'</span>'.
 (TBT)
 </dd>
 <dt>#levelchange</dt><dd>
-Change your experience level.
-Autocompletes.
-Debug mode only.
-(TBT)
+経験レベルを変更する。
+補完される。
+デバッグモードのみ。
 </dd>
 <dt>#lightsources</dt><dd>
-Show mobile light sources.
-Autocompletes.
-Debug mode only.
-(TBT)
+携帯光源を表示する。
+補完される。
+デバッグモードのみ。
 </dd>
 <dt>#look</dt><dd>
-Look at what is here, under you. Default key is '<span class='tt'>:</span>'.
-(TBT)
+足元に何があるか見る。
+標準キーは '<span class='tt'>:</span>'。
 </dd>
 <dt>#loot</dt><dd>
 あなたの足下の床に置いてある箱や鞄、またはあなたの隣に立っている馬などの
@@ -1210,16 +1191,15 @@ and go directly to removing a saddle.
 標準キーは '<span class='tt'>M-o</span>' 。<br/>
 成功するためには祭壇を見つける必要がある。
 最近殺したモンスターの死体がよい選択肢である。
-The '<span class='tt'>m</span>' prefix skips offering any items which are on the altar.<br/>
-(TBT)
+'<span class='tt'>m</span>' 接頭辞は、床にある物を捧げるのを飛ばす。<br/>
 </dd>
 <dt>#open</dt><dd>
-Open a door. Default key is '<span class='tt'>o</span>'.
-(TBT)
+扉を開ける。
+標準キーは '<span class='tt'>o</span>'。
 </dd>
 <dt>#options</dt><dd>
-Show and change option settings. Default key is '<span class='tt'>O</span>'.
-(TBT)
+オプション設定を確認、変更する。
+標準キーは '<span class='tt'>O</span>'。
 </dd>
 <dt>#overview</dt><dd>
 洞窟について発見した情報を表示する。
@@ -1232,10 +1212,10 @@ Show and change option settings. Default key is '<span class='tt'>O</span>'.
 標準キーは '<span class='tt'>^{</span>O}' と '<span class='tt'>M-O</span>'。
 </dd>
 <dt>#panic</dt><dd>
-Test the panic routine.
-Terminates the current game.
-Autocompletes.
-Debug mode only.<br/>
+パニックルーチンをテストする。
+現在のゲームを終了する。
+補完される。
+デバッグモードのみ。<br/>
 (TBT)
 Asks for confirmation; default is '<span class='tt'>n</span>' (no); continue playing.
 To really panic, respond with '<span class='tt'>y</span>'.
@@ -1245,19 +1225,18 @@ option to require a response of ''<span class='tt'>yes</span>'' instead.
 (TBT)
 </dd>
 <dt>#pay</dt><dd>
-Pay your shopping bill. Default key is '<span class='tt'>p</span>'.
-(TBT)
+代金を支払う。
+標準キーは '<span class='tt'>p</span>'。
 </dd>
 <dt>#pickup</dt><dd>
-Pick up things at the current location. Default key is '<span class='tt'>,</span>'.
-The '<span class='tt'>m</span>' prefix forces use of a menu.
-(TBT)
+現在の位置にある物を拾う。
+標準キーは '<span class='tt'>,</span>'。
+'<span class='tt'>m</span>' 接頭辞はメニューの使用を強制する。
 </dd>
 <dt>#polyself</dt><dd>
-Polymorph self.
-Autocompletes.
-Debug mode only.
-(TBT)
+自身を変化させる。
+補完される。
+デバッグモードのみ。
 </dd>
 <dt>#pray</dt><dd>
 神に祈って助けを求める。
@@ -1294,22 +1273,22 @@ Debug mode only.
 代わりに ''<span class='tt'>yes</span>'' の入力が必要であるようにすることができる。
 </dd>
 <dt>#quiver</dt><dd>
-Select ammunition for quiver. Default key is '<span class='tt'>Q</span>'.
-(TBT)
+矢筒のための弾を選択する。
+標準キーは '<span class='tt'>Q</span>'。
 </dd>
 <dt>#read</dt><dd>
-Read a scroll, a spellbook, or something else. Default key is '<span class='tt'>r</span>'.
-(TBT)
+巻物、魔法書、あるいはその他の何かを読む。
+標準キーは '<span class='tt'>r</span>'。
 </dd>
 <dt>#redraw</dt><dd>
-Redraw the screen.
+画面を書き直す。
 Default key is '<span class='tt'>^{</span>R}',
 and also '<span class='tt'>^{</span>L}' if <span class='italic'>number_pad</span> is on.
 (TBT)
 </dd>
 <dt>#remove</dt><dd>
-Remove an accessory (ring, amulet, etc). Default key is '<span class='tt'>R</span>'.
-(TBT)
+装飾品 (指輪、魔除けなど) をはずす。
+標準キーは '<span class='tt'>R</span>'。
 </dd>
 <dt>#ride</dt><dd>
 鞍の付いている生物に乗る(あるいは乗るのをやめる)。
@@ -1322,31 +1301,51 @@ Remove an accessory (ring, amulet, etc). Default key is '<span class='tt'>R</spa
 標準キーは '<span class='tt'>M-r</span>'。
 </dd>
 <dt>#save</dt><dd>
-(TBT)
+ゲームをセーブしてプログラムを終了する。
+標準キーは '<span class='tt'>S</span>'。
 </dd>
 <dt>#search</dt><dd>
+周囲の隠し扉や罠を探す。
+標準キーは '<span class='tt'>s</span>'。
 </dd>
 <dt>#seeall</dt><dd>
+装備している物を表示する。
+標準キーは '<span class='tt'>*</span>'。
 </dd>
 <dt>#seeamulet</dt><dd>
+付けている魔除けを表示する。
+標準キーは '<span class='tt'>"</span>'。
 </dd>
 <dt>#seearmor</dt><dd>
+付けている防具を表示する。
+標準キーは '<span class='tt'>[</span>'。
 </dd>
 <dt>#seegold</dt><dd>
+持っている金貨を数える。
+標準キーは '<span class='tt'>$</span>'。
 </dd>
 <dt>#seenv</dt><dd>
+視界ベクターを表示する。
+補完される。
+デバッグモードのみ。
 </dd>
 <dt>#seerings</dt><dd>
+(TBT)
 </dd>
 <dt>#seespells</dt><dd>
+(TBT)
 </dd>
 <dt>#seetools</dt><dd>
+(TBT)
 </dd>
 <dt>#seetrap</dt><dd>
+(TBT)
 </dd>
 <dt>#seeweapon</dt><dd>
+(TBT)
 </dd>
 <dt>#shell</dt><dd>
+(TBT)
 </dd>
 <dt>#sit</dt><dd>
 座る。
@@ -1354,17 +1353,24 @@ Remove an accessory (ring, amulet, etc). Default key is '<span class='tt'>R</spa
 標準キーは '<span class='tt'>M-s</span>'。
 </dd>
 <dt>#stats</dt><dd>
-(TBT)
+メモリ使用状況を表示する。
+補完される。
+デバッグモードのみ。
 </dd>
 <dt>#suspend</dt><dd>
+(TBT)
 </dd>
 <dt>#swap</dt><dd>
+(TBT)
 </dd>
 <dt>#takeoff</dt><dd>
+(TBT)
 </dd>
 <dt>#takeoffall</dt><dd>
+(TBT)
 </dd>
 <dt>#teleport</dt><dd>
+(TBT)
 </dd>
 <dt>#terrain</dt><dd>
 怪物、物、罠を表示せずに、基の地図を表示する。
@@ -1374,8 +1380,10 @@ Remove an accessory (ring, amulet, etc). Default key is '<span class='tt'>R</spa
 (TBT)
 </dd>
 <dt>#throw</dt><dd>
+(TBT)
 </dd>
 <dt>#timeout</dt><dd>
+(TBT)
 </dd>
 <dt>#tip</dt><dd>
 入れ物(鞄や箱)をひっくり返して中の物を出す。
@@ -1384,6 +1392,13 @@ Remove an accessory (ring, amulet, etc). Default key is '<span class='tt'>R</spa
 '<span class='tt'>m</span>' 接頭辞はこのコマンドでメニューを使うようにする。
 </dd>
 <dt>#travel</dt><dd>
+Travel to a specific location on the map.
+Default key is '<span class='tt'>_</span>'.
+Using the ''request menu'' prefix shows a menu of interesting targets in sight
+without asking to move the cursor.
+When picking a target with cursor and the <span class='italic'>autodescribe</span>
+option is on, the top line will show ''(no travel path)'' if
+your character does not know of a path to that location.
 (TBT)
 </dd>
 <dt>#turn</dt><dd>
@@ -1406,9 +1421,13 @@ Remove an accessory (ring, amulet, etc). Default key is '<span class='tt'>R</spa
 状況によっては罠に掛かった怪物を助けるのにも使えるかも知れない。
 </dd>
 <dt>#up</dt><dd>
-(TBT)
+階段を上る。
+標準キーは '<span class='tt'>&lt;</span>'。
 </dd>
 <dt>#vanquished</dt><dd>
+絶滅させた怪物の一覧を表示する。
+補完される。
+デバッグモードのみ。
 </dd>
 <dt>#version</dt><dd>
 このバージョンの <span class='italic'>NetHack</span> をコンパイルしたときのオプションを表示する。
@@ -1419,16 +1438,22 @@ Remove an accessory (ring, amulet, etc). Default key is '<span class='tt'>R</spa
 (TBT)
 </dd>
 <dt>#vision</dt><dd>
+(TBT)
 </dd>
 <dt>#wait</dt><dd>
+(TBT)
 </dd>
 <dt>#wear</dt><dd>
+(TBT)
 </dd>
 <dt>#whatdoes</dt><dd>
+(TBT)
 </dd>
 <dt>#whatis</dt><dd>
+(TBT)
 </dd>
 <dt>#wield</dt><dd>
+(TBT)
 </dd>
 <dt>#wipe</dt><dd>
 顔を拭う。
@@ -1873,7 +1898,7 @@ try to remove the saddle from that creature.  If successful, it will
 be transferred to your inventory.
 (TBT)
 </p>
-<h2>骸骨の階</h2>
+<h2>骨の階</h2>
 <p>
 冒険者の幽霊とその死体(あるいはそれは生まれ変わる前のあなた自身であ
 ることさえある)や、その所持品に出くわすかもしれない。
@@ -2200,15 +2225,15 @@ AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> �
 </p>
 <div style='align:center'>
 <table>
-<tr><td><pre>dragon scale mail(ドラゴンの鱗鎧) </pre></td><td><pre> 1 </pre></td><td><pre> plate mail(鋼鉄の鎧) </pre></td><td><pre> 3</pre></td></tr>
-<tr><td><pre>crystal plate mail(水晶の鎧)      </pre></td><td><pre> 3 </pre></td><td><pre> bronze plate mail(青銅の鎧) </pre></td><td><pre> 4</pre></td></tr>
-<tr><td><pre>splint mail(鉄片の鎧)             </pre></td><td><pre> 4 </pre></td><td><pre> banded mail(帯金の鎧) </pre></td><td><pre> 4</pre></td></tr>
+<tr><td><pre>dragon scale mail(ドラゴンの鱗鎧)  </pre></td><td><pre> 1 </pre></td><td><pre> plate mail(鋼鉄の鎧)         </pre></td><td><pre> 3</pre></td></tr>
+<tr><td><pre>crystal plate mail(水晶の鎧)       </pre></td><td><pre> 3 </pre></td><td><pre> bronze plate mail(青銅の鎧)  </pre></td><td><pre> 4</pre></td></tr>
+<tr><td><pre>splint mail(鉄片の鎧)              </pre></td><td><pre> 4 </pre></td><td><pre> banded mail(帯金の鎧)        </pre></td><td><pre> 4</pre></td></tr>
 <tr><td><pre>dwarvish mithril-coat(ドワーフのミスリル服) </pre></td><td><pre> 4 </pre></td><td><pre> elven mithril-coat(エルフのミスリル服) </pre></td><td><pre> 5</pre></td></tr>
-<tr><td><pre>chain mail(鎖かたびら)            </pre></td><td><pre> 5 </pre></td><td><pre> orcish chain mail(オークの鎖かたびら) </pre></td><td><pre> 6</pre></td></tr>
-<tr><td><pre>scale mail(鱗の鎧)                </pre></td><td><pre> 6 </pre></td><td><pre> dragon scales (ドラゴンの鱗) </pre></td><td><pre> 7</pre></td></tr>
-<tr><td><pre>studded leather armor(鋲付き皮鎧) </pre></td><td><pre> 7 </pre></td><td><pre> ring mail(鉄環の鎧)          </pre></td><td><pre> 7</pre></td></tr>
-<tr><td><pre>orcish ring mail(オークの鉄環の鎧) </pre></td><td><pre> 8 </pre></td><td><pre> leather armor(皮鎧)           </pre></td><td><pre> 8</pre></td></tr>
-<tr><td><pre>leather jacket(皮ジャケット)      </pre></td><td><pre> 9 </pre></td><td><pre> no armor(鎧なし)               </pre></td><td><pre> 10</pre></td></tr>
+<tr><td><pre>chain mail(鎖かたびら)             </pre></td><td><pre> 5 </pre></td><td><pre> orcish chain mail(オークの鎖かたびら) </pre></td><td><pre> 6</pre></td></tr>
+<tr><td><pre>scale mail(鱗の鎧)                 </pre></td><td><pre> 6 </pre></td><td><pre> dragon scales (ドラゴンの鱗) </pre></td><td><pre> 7</pre></td></tr>
+<tr><td><pre>studded leather armor(鋲付き皮鎧)  </pre></td><td><pre> 7 </pre></td><td><pre> ring mail(鉄環の鎧)          </pre></td><td><pre> 7</pre></td></tr>
+<tr><td><pre>orcish ring mail(オークの鉄環の鎧) </pre></td><td><pre> 8 </pre></td><td><pre> leather armor(皮鎧)          </pre></td><td><pre> 8</pre></td></tr>
+<tr><td><pre>leather jacket(皮ジャケット)       </pre></td><td><pre> 9 </pre></td><td><pre> no armor(鎧なし)             </pre></td><td><pre> 10</pre></td></tr>
 </table>
 </div>
 <p>
@@ -2485,6 +2510,9 @@ AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> �
 <p>
 (TBT)
 </p>
+<p>
+(TBT)
+</p>
 <h1>制限プレイ</h1>
 <p>
 単に <span class='italic'>NetHack</span> に勝利するだけでは満足できない一部のプレイヤーは、
@@ -2616,13 +2644,26 @@ AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> �
 設定ファイルの標準設定のファイル名と位置は OS によって異なる。<br/>
 </p>
 <p>
+Unix, Linux, Mac OS X では、これはユーザーのホームディレクトリの
+mbox{''.nethackrc''} である。
+このファイルは存在していないかも知れないが、これは通常の
+ASCII テキストファイルで、任意のテキストエディタで作ることができる。<br/>
+</p>
+<p>
+Windowsでは、
+mbox{{''%USERPROFILE%textbackslash NetHacktextbackslash 3.6''}} フォルダの
+mbox{''.nethackrc''}。
+このファイルは存在していないかも知れないが、これは通常の
+ASCII テキストファイルで、任意のテキストエディタで作ることができる。
+(TBT)
+</p>
+<p>
 MS-DOS では、mbox{<span class='italic'>nethack.exe</span>} と
 同じフォルダの mbox{''defaults.nh''} である。<br/>
 </p>
 <p>
 設定ファイルの中の'<span class='tt'>#</span>'で始まる行はコメントとして扱われる。
 空行は無視される。
-Any line beginning with 
 '<span class='tt'>[</span>' で始まり '<span class='tt'>]</span>' で終わる行は節マーカとして扱われる。
 大かっこで囲まれたテキストは節の名前である。
 節マーカ以降の行はその節に属し、その節を選択するために
@@ -2632,8 +2673,12 @@ CHOOSE 文が使われない限り無視される。
 <p>
 (TBT)
 </p>
+<p>
+以下は指定できる文の一覧である:
+</p>
 <dl>
 <dt>OPTIONS</dt><dd>
+(TBT)
 <br/>
 <pre>
     OPTIONS=dogname:Fido
@@ -2642,35 +2687,48 @@ CHOOSE 文が使われない限り無視される。
 <br/>
 </dd>
 <dt>HACKDIR</dt><dd>
+(TBT)
 </dd>
 <dt>LEVELDIR</dt><dd>
+(TBT)
 </dd>
 <dt>SAVEDIR</dt><dd>
+(TBT)
 </dd>
 <dt>BONESDIR</dt><dd>
+(TBT)
 </dd>
 <dt>LOCKDIR</dt><dd>
+(TBT)
 </dd>
 <dt>TROUBLEDIR</dt><dd>
+(TBT)
 </dd>
 <dt>AUTOCOMPLETE</dt><dd>
+(TBT)
 <br/>
+例:
 <pre>
    AUTOCOMPLETE=zap,!annotate
 </pre>
 <br/>
 </dd>
 <dt>AUTOPICKUP_EXCEPTION</dt><dd>
+(TBT)
 </dd>
 <dt>BINDINGS</dt><dd>
+(TBT)
 <br/>
+例:
 <pre>
    BIND=^X:getpos.autodescribe
 </pre>
 <br/>
 </dd>
 <dt>CHOOSE</dt><dd>
+(TBT)
 <br/>
+例:
 <pre>
    OPTIONS=color
    CHOOSE=char A,char B
@@ -2682,17 +2740,24 @@ CHOOSE 文が使われない限り無視される。
 <br/>
 </dd>
 <dt>MENUCOLOR</dt><dd>
+(TBT)
 </dd>
 <dt>MSGTYPE</dt><dd>
+(TBT)
 </dd>
 <dt>ROGUESYMBOLS</dt><dd>
+(TBT)
 </dd>
 <dt>SOUND</dt><dd>
+(TBT)
 </dd>
 <dt>SOUNDDIR</dt><dd>
+(TBT)
 </dd>
 <dt>SYMBOLS</dt><dd>
+(TBT)
 <br/>
+例:
 <pre>
    # replace small punctuation (tick marks) with digits
    SYMBOLS=S_boulder:0,S_golem:7
@@ -2700,7 +2765,9 @@ CHOOSE 文が使われない限り無視される。
 <br/>
 </dd>
 <dt>WIZKIT</dt><dd>
+(TBT)
 <br/>
+例:
 <pre>
    WIZKIT=~/wizkit.txt
 </pre>
@@ -2755,6 +2822,9 @@ CHOOSE 文が使われない限り無視される。
 </pre>
 <p>
 とすればよい。
+</p>
+<p>
+(TBT)
 </p>
 <p>
 (TBT)
@@ -2889,6 +2959,9 @@ CHOOSE 文が使われない限り無視される。
 <span class='tt'>+</span> &mdash; "確認なしに表示する。"<br/>
 <span class='tt'>-</span> &mdash; "確認なしで非表示とする。"
 <br/>
+(TBT)
+<span class='tt'>?</span> &mdash; prompt you and default to ask on the prompt;<br/>
+<span class='tt'>#</span> &mdash; disclose it without prompting, ask for sort order.
 (TBT)
 <br/>
 (TBT)
@@ -3246,8 +3319,11 @@ QWERTZ キーボードに対応するものである。)
 <dt>petattr</dt><dd>
 (TBT)
 <br/>
+(TBT)
 <br/>
+(TBT)
 <br/>
+(TBT)
 <br/>
 </dd>
 <dt>pettype</dt><dd>
@@ -3427,7 +3503,7 @@ QWERTZ キーボードに対応するものである。)
 さらなる情報については ''<span class='italic'>Configuring Status Hilites</span>'' を参照のこと。
 </dd>
 <dt>status_updates</dt><dd>
-(TBT)
+画面の下部でのステータス行の更新を認める (標準設定はオン)。
 </dd>
 <dt>suppress_alert</dt><dd>
 前のバージョンから変更された機能に対して注意を促すメッセージを
@@ -3477,15 +3553,25 @@ QWERTZ キーボードに対応するものである。)
 <dt>whatis_coord</dt><dd>
 (TBT)
 <br/>
+可能な設定は:
 <br/>
+(TBT)
 <br/>
+(TBT)
 </dd>
 <dt>whatis_filter</dt><dd>
+(TBT)
+可能な設定は:
 <br/>
+(TBT)
+(TBT)
+(TBT)
 </dd>
 <dt>whatis_menu</dt><dd>
+(TBT)
 </dd>
 <dt>whatis_moveskip</dt><dd>
+(TBT)
 </dd>
 <dt>windowtype</dt><dd>
 プログラムが複数のインターフェースに対応してビルドされているとき、
@@ -3566,7 +3652,7 @@ QWERTZ キーボードに対応するものである。)
 可能ならテキストウィンドウにこのフォントサイズを使う。
 </dd>
 <dt>fullscreen</dt><dd>
-可能ならウィンドウでなく画面全体で表示しようと試みる
+可能ならウィンドウでなく画面全体で表示しようと試みる。
 </dd>
 <dt>guicolor</dt><dd>
 (TBT)
@@ -3641,6 +3727,7 @@ RAM に予め読み込むかどうかを制御する。
 可能なら、メッセージウィンドウに一度に表示するメッセージの数を指定する。
 </dd>
 <dt>windowborders</dt><dd>
+(TBT)
 <br/>
 <span class='tt'>0</span> &mdash; オフ、常に境界を表示しない<br/>
 <span class='tt'>1</span> &mdash; オン、常に境界を表示する<br/>
@@ -3827,11 +3914,15 @@ later rule to override an earlier rule.
 <br/>
 </dd>
 <dt>Menu accelerator keys</dt><dd>
+(TBT)
 <br/>
 </dd>
 <dt>Special command keys</dt><dd>
 </dd>
 </dl>
+<p>
+(TBT)
+</p>
 <dl>
 <dt>{count}</dt><dd>
 </dd>
@@ -4089,9 +4180,14 @@ is not necessarily the same as black or white or any of the other colors.
 (TBT)
 </p>
 <p>
+Allowed attributes are none, bold, dim, underline, blink, and inverse.
+''Normal'' is a synonym for ''none''; they should not be used in
+combination with any of the other attributes.
 (TBT)
 </p>
 <p>
+To specify both a color and an attribute, use '&amp;' to combine them.
+To specify multiple attributes, use '+' to combine those.
 (TBT)
 </p>
 <p>
@@ -4622,16 +4718,13 @@ score ファイル上でプレイヤーを認識するのに、0 ではユーザ
 数値のユーザー ID を使う。
 </dd>
 <dt>ACCESSIBILITY</dt><dd>
-0 or 1 to disable or enable, respectively, the ability for players
-to set S_pet_override and S_hero_override 
-symbols in their configuration file.
-(TBT)
+プレイヤーが自分自身の設定ファイルで
+S_pet_override and S_hero_override
+シンボルを設定することを、0 では無効に、1 では有効にする。
 </dd>
 <dt>PORTABLE_DEVICE_PATHS</dt><dd>
-0 or 1 Windows OS only, the game will look for all of its external
-files, and write to all of its output files in one place 
-rather than at the standard locations.
-(TBT)
+Windows OS のみ; 全ての外部ファイルを検索し、全ての出力ファイルを
+書き込むディレクトリを、標準の位置ではなく一ヶ所にする。
 </dd>
 <dt>DUMPLOGFILE</dt><dd>
 A filename where the end-of-game dumplog is saved.

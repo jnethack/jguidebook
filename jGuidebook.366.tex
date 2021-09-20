@@ -1306,13 +1306,11 @@ blessed or uncursed.
 %You can set the
 %{\it paranoid\verb+_+confirmation:eating\/}
 %option to require a response of ``{\tt yes}'' instead of just `{\tt y}'.
-If you attempt to eat while already satiated, you might choke to death.
-If you risk it, you will be asked whether
-to ``continue eating?'' {\it if you survive the first bite\/}.
-You can set the
-{\it paranoid\verb+_+confirmation:eating\/}
-option to require a response of ``{\tt yes}'' instead of just `{\tt y}'.
-(TBT)
+既に満腹のときに食べようとすると、窒息して死ぬかもしれない。
+その危険を冒すなら、{\it 最初の一口を生き残ったなら \/}
+``continue eating?'' と聞かれる。
+返答に単なる `{\tt y}' ではなく ``{\tt yes}'' が必要なように
+{\it paranoid\verb+_+confirmation:eating\/} オプションを設定できる。
 %%.lp
 %% Make sure Elbereth is not hyphenated below, the exact spelling matters.
 %% (Only specified here to parallel Guidebook.mn; use of \tt font implicity
@@ -1525,19 +1523,17 @@ option to require a response of ``{\tt yes}'' instead of just `{\tt y}'.
 %to keep or delete the file.
 %Keeping the file makes it feasible to play for a while then quit
 %without saving and later restore again.\\
-In normal play, once a saved game is restored the file used to hold
-the saved data is deleted.
-In explore mode, once restoration is accomplished you are asked whether
-to keep or delete the file.
-Keeping the file makes it feasible to play for a while then quit
-without saving and later restore again.\\
-(TBT)
+通常のプレイでは、セーブしたゲームが一旦復元されると、
+セーブしたデータを保存するのに使われていたファイルは削除される。
+探検モードでは、復元が完了した後ファイルを残すか削除するかを
+訊ねられる。
+ファイルを残すと、しばらくプレイした後セーブせずに終了し、
+後で再び復元することが可能になる。\\
 %%.lp ""
 %There is no ``save current game state and keep playing'' command, not
 %even in explore mode where saved game files can be kept and re-used.
-There is no ``save current game state and keep playing'' command, not
-even in explore mode where saved game files can be kept and re-used.
-(TBT)
+例えセーブしたゲームファイルを残して再利用できる探検モードでも、
+``現在のゲームの状態をセーブしてプレイを続ける'' コマンドはない。
 %%.lp
 \item[\tb{t}]
 %Throw an object or shoot a projectile.\\
@@ -1548,18 +1544,16 @@ even in explore mode where saved game files can be kept and re-used.
 %that arrow and any weapon skill bonus or penalty for bow applies.
 %If you ``throw'' an arrow while not wielding a bow, you are throwing
 %it by hand and it will generally be less effective than when shot.\\
-There's no separate ``shoot'' command.
-If you ``throw'' an arrow while wielding a bow, you are shooting
-that arrow and any weapon skill bonus or penalty for bow applies.
-If you ``throw'' an arrow while not wielding a bow, you are throwing
-it by hand and it will generally be less effective than when shot.\\
-(TBT)
+独立した ``射撃'' コマンドはない。
+弓を装備しているときに矢を ``投げる'' と、矢を撃つことになり、
+弓に関する武器スキルのボーナスやペナルティが適用される。
+弓を装備せずに矢を ``投げる'' と、手で矢を投げたことになり、
+一般的に撃つよりも効率的でない。\\
 %%.lp ""
 %See also `{\tt f}' (fire) for throwing or shooting an item pre-selected
 %via the `{\tt Q}' (quiver) command.
-See also `{\tt f}' (fire) for throwing or shooting an item pre-selected
-via the `{\tt Q}' (quiver) command.
-(TBT)
+`{\tt Q}' (矢筒) コマンドで事前に選択された物を投げたり撃ったりする
+`{\tt f}' (射撃) も参照。
 %%.lp
 \item[\tb{T}]
 %Take off armor.\\
@@ -1680,10 +1674,9 @@ via the `{\tt Q}' (quiver) command.
 %In normal play, that's all that `{\tt \^{}X}' displays.
 %In explore mode, the role and status feedback is augmented by the
 %information provided by {\it enlightenment\/} magic.
-In normal play, that's all that `{\tt \^{}X}' displays.
-In explore mode, the role and status feedback is augmented by the
-information provided by {\it enlightenment\/} magic.
-(TBT)
+通常のプレイでは、これが `{\tt \^{}X}' が表示する全てである。
+探検モードでは、職業と状態は {\it enlightenment\/} (啓蒙)魔法で
+提供される情報によって強化される。
 %%.lp
 \item[\tb{z}]
 %Zap a wand.\\
@@ -1888,40 +1881,36 @@ deciding whether to merge with the destination stack.
 \item[\tb{\#apply}]
 %Apply (use) a tool such as a pick-axe, a key, or a lamp.
 %Default key is `{\tt a}'.\\
-Apply (use) a tool such as a pick-axe, a key, or a lamp.
-Default key is `{\tt a}'.\\
-(TBT)
+つるはし、鍵、ランプのような道具を用いる(使う)。
+標準キーは `{\tt a}'。\\
 %%.lp ""
 %If the tool used acts on items on the floor, using the `{\tt m}' prefix
 %skips those items.\\
-If the tool used acts on items on the floor, using the `{\tt m}' prefix
-skips those items.\\
-(TBT)
+道具が床にある物に使われる場合、`{\tt m}' 接頭辞を使うと
+それらの物は飛ばす。\\
 %%.lp ""
 %If used on a wand, that wand will be broken, releasing its magic in the
 %process.  Confirmation is required.
-If used on a wand, that wand will be broken, releasing its magic in the
-process.  Confirmation is required.
-(TBT)
+杖に使うと、杖は壊れ、その過程で魔力が解放される。
+確認が必要。
 %%.lp
 \item[\tb{\#attributes}]
 %Show your attributes. Default key is `{\tt \^{}X}'.
-Show your attributes. Default key is `{\tt \^{}X}'.
-(TBT)
+属性を表示する。
+標準キーは `{\tt \^{}X}'。
 %%.lp
 \item[\tb{\#autopickup}]
 %Toggle the {\it autopickup\/} option. Default key is `{\tt @}'.
-Toggle the {\it autopickup\/} option. Default key is `{\tt @}'.
-(TBT)
+{\it autopickup\/} オプションを切り替える。
+標準キーは `{\tt @}'。
 %%.lp
 \item[\tb{\#call}]
 %Call (name) a monster, or an object in inventory, on the floor,
 %or in the discoveries list, or add an annotation for the
 %current level (same as ``{\tt \#annotate}''). Default key is `{\tt C}'.
-Call (name) a monster, or an object in inventory, on the floor,
-or in the discoveries list, or add an annotation for the
-current level (same as ``{\tt \#annotate}''). Default key is `{\tt C}'.
-(TBT)
+怪物や持ち物や床や発見物一覧にある物に名前を付けたり、
+現在の階に注釈を付ける (``{\tt \#annotate}'' と同じ)。
+標準キーは `{\tt C}'。
 %%.lp
 \item[\tb{\#cast}]
 %Cast a spell. Default key is `{\tt Z}'.
@@ -1995,18 +1984,15 @@ current level (same as ``{\tt \#annotate}''). Default key is `{\tt C}'.
 %You can set the
 %{\it paranoid\verb+_+confirmation:quit\/}
 %option to require a response of ``{\tt yes}'' instead.
-Requires confirmation; default response is `{\tt n}' (no).
-To really switch to explore mode, respond with `{\tt y}'.
-You can set the
-{\it paranoid\verb+_+confirmation:quit\/}
-option to require a response of ``{\tt yes}'' instead.
-(TBT)
+確認が必要; 標準の返答は`{\tt n}' (ノー)。
+本当に探検モードに切り替えるなら、`{\tt y}' と返答する。
+代わりに返答に ``{\tt yes}'' を必要とするように
+{\it paranoid\verb+_+confirmation:quit\/} オプションを設定できる。
 %%.lp
 \item[\tb{\#fire}]
 %Fire ammunition from quiver. Default key is `{\tt f}'.
-Fire ammunition from quiver. Default key is 
-`{\tt f}'.
-(TBT)
+矢筒から弾を発射する。
+標準キーは `{\tt f}'。
 %%.lp
 \item[\tb{\#force}]
 %Force a lock. Autocompletes. Default key is `{\tt M-f}'.
@@ -2016,9 +2002,8 @@ Fire ammunition from quiver. Default key is
 %%.lp
 \item[\tb{\#glance}]
 %Show what type of thing a map symbol corresponds to. Default key is `{\tt ;}'.
-Show what type of thing a map symbol corresponds to. Default key is 
-`{\tt ;}'.
-(TBT)
+地図のシンボルが何を示すかを表示する。
+標準キーは `{\tt ;}'。
 %%.lp
 \item[\tb{\#help}]
 %Show the help menu.
@@ -2031,23 +2016,22 @@ and also `{\tt h}' if {\it number\verb+_+pad\/} is on.
 %%.lp
 \item[\tb{\#herecmdmenu}]
 %Show a menu of possible actions in your current location.
-Show a menu of possible actions in your current location.
-(TBT)
+現在の位置で可能な行動のメニューを表示する。
 %%.lp
 \item[\tb{\#history}]
 %Show long version and game history. Default key is `{\tt V}'.
-Show long version and game history. Default key is `{\tt V}'.
-(TBT)
+長いバージョンとゲームの歴史を表示する。
+標準キーは `{\tt V}'。
 %%.lp
 \item[\tb{\#inventory}]
 %Show your inventory. Default key is `{\tt i}'.
-Show your inventory. Default key is `{\tt i}'.
-(TBT)
+持ち物の目録を表示する。
+標準キーは `{\tt i}'。
 %%.lp
 \item[\tb{\#inventtype}]
 %Inventory specific item types. Default key is `{\tt I}'.
-Inventory specific item types. Default key is `{\tt I}'.
-(TBT)
+指定した物の種類の一覧を表示する。
+標準キーは `{\tt I}'。
 %%.lp
 \item[\tb{\#invoke}]
 %Invoke an object's special powers. Autocompletes. Default key is `{\tt M-i}'.
@@ -2068,10 +2052,9 @@ Inventory specific item types. Default key is `{\tt I}'.
 %Kick something.
 %Default key is `{\tt \^{}D}',
 %and also `{\tt k}' if {\it number\verb+_+pad\/} is on.
-Kick something.
-Default key is `{\tt \^{}D}',
-and also `{\tt k}' if {\it number\verb+_+pad\/} is on.
-(TBT)
+何かを蹴る。
+標準キーは `{\tt \^{}D}' および
+{\it number\verb+_+pad\/} がオンの場合 `{\tt k}'。
 %%.lp
 \item[\tb{\#known}]
 %Show what object types have been discovered.
@@ -2091,24 +2074,22 @@ Default key is `{\tt `}'.
 %Change your experience level.
 %Autocompletes.
 %Debug mode only.
-Change your experience level.
-Autocompletes.
-Debug mode only.
-(TBT)
+経験レベルを変更する。
+補完される。
+デバッグモードのみ。
 %%.lp
 \item[\tb{\#lightsources}]
 %Show mobile light sources.
 %Autocompletes.
 %Debug mode only.
-Show mobile light sources.
-Autocompletes.
-Debug mode only.
-(TBT)
+携帯光源を表示する。
+補完される。
+デバッグモードのみ。
 %%.lp
 \item[\tb{\#look}]
 %Look at what is here, under you. Default key is `{\tt :}'.
-Look at what is here, under you. Default key is `{\tt :}'.
-(TBT)
+足元に何があるか見る。
+標準キーは `{\tt :}'。
 %%.lp
 \item[\tb{\#loot}]
 %Loot a box or bag on the floor beneath you, or the saddle
@@ -2155,18 +2136,17 @@ and go directly to removing a saddle.
 最近殺したモンスターの死体がよい選択肢である。
 %%.lp ""
 %The `{\tt m}' prefix skips offering any items which are on the altar.\\
-The `{\tt m}' prefix skips offering any items which are on the altar.\\
-(TBT)
+`{\tt m}' 接頭辞は、床にある物を捧げるのを飛ばす。\\
 %%.lp
 \item[\tb{\#open}]
 %Open a door. Default key is `{\tt o}'.
-Open a door. Default key is `{\tt o}'.
-(TBT)
+扉を開ける。
+標準キーは `{\tt o}'。
 %%.lp
 \item[\tb{\#options}]
 %Show and change option settings. Default key is `{\tt O}'.
-Show and change option settings. Default key is `{\tt O}'.
-(TBT)
+オプション設定を確認、変更する。
+標準キーは `{\tt O}'。
 %%.lp
 \item[\tb{\#overview}]
 %Display information you've discovered about the dungeon.  Any visited
@@ -2191,10 +2171,10 @@ Show and change option settings. Default key is `{\tt O}'.
 %Terminates the current game.
 %Autocompletes.
 %Debug mode only.\\
-Test the panic routine.
-Terminates the current game.
-Autocompletes.
-Debug mode only.\\
+パニックルーチンをテストする。
+現在のゲームを終了する。
+補完される。
+デバッグモードのみ。\\
 (TBT)
 %%.lp ""
 %Asks for confirmation; default is `{\tt n}' (no); continue playing.
@@ -2211,24 +2191,23 @@ option to require a response of ``{\tt yes}'' instead.
 %%.lp
 \item[\tb{\#pay}]
 %Pay your shopping bill. Default key is `{\tt p}'.
-Pay your shopping bill. Default key is `{\tt p}'.
-(TBT)
+代金を支払う。
+標準キーは `{\tt p}'。
 %%.lp
 \item[\tb{\#pickup}]
 %Pick up things at the current location. Default key is `{\tt ,}'.
 %The `{\tt m}' prefix forces use of a menu.
-Pick up things at the current location. Default key is `{\tt ,}'.
-The `{\tt m}' prefix forces use of a menu.
-(TBT)
+現在の位置にある物を拾う。
+標準キーは `{\tt ,}'。
+`{\tt m}' 接頭辞はメニューの使用を強制する。
 %%.lp
 \item[\tb{\#polyself}]
 %Polymorph self.
 %Autocompletes.
 %Debug mode only.
-Polymorph self.
-Autocompletes.
-Debug mode only.
-(TBT)
+自身を変化させる。
+補完される。
+デバッグモードのみ。
 %%.lp
 \item[\tb{\#pray}]
 %Pray to the gods for help. Autocompletes. Default key is `{\tt M-p}'.\\
@@ -2289,27 +2268,27 @@ Debug mode only.
 %%.lp
 \item[\tb{\#quiver}]
 %Select ammunition for quiver. Default key is `{\tt Q}'.
-Select ammunition for quiver. Default key is `{\tt Q}'.
-(TBT)
+矢筒のための弾を選択する。
+標準キーは `{\tt Q}'。
 %%.lp
 \item[\tb{\#read}]
 %Read a scroll, a spellbook, or something else. Default key is `{\tt r}'.
-Read a scroll, a spellbook, or something else. Default key is `{\tt r}'.
-(TBT)
+巻物、魔法書、あるいはその他の何かを読む。
+標準キーは `{\tt r}'。
 %%.lp
 \item[\tb{\#redraw}]
 %Redraw the screen.
 %Default key is `{\tt \^{}R}',
 %and also `{\tt \^{}L}' if {\it number\verb+_+pad\/} is on.
-Redraw the screen.
+画面を書き直す。
 Default key is `{\tt \^{}R}',
 and also `{\tt \^{}L}' if {\it number\verb+_+pad\/} is on.
 (TBT)
 %%.lp
 \item[\tb{\#remove}]
 %Remove an accessory (ring, amulet, etc). Default key is `{\tt R}'.
-Remove an accessory (ring, amulet, etc). Default key is `{\tt R}'.
-(TBT)
+装飾品 (指輪、魔除けなど) をはずす。
+標準キーは `{\tt R}'。
 %%.lp
 \item[\tb{\#ride}]
 %Ride (or stop riding) a saddled creature. Autocompletes.
@@ -2327,45 +2306,65 @@ Remove an accessory (ring, amulet, etc). Default key is `{\tt R}'.
 \item[\tb{\#save}]
 %Save the game and exit the program.
 %Default key is `{\tt S}'.
-(TBT)
+ゲームをセーブしてプログラムを終了する。
+標準キーは `{\tt S}'。
 %%.lp
 \item[\tb{\#search}]
 %Search for traps and secret doors around you. Default key is `{\tt s}'.
+周囲の隠し扉や罠を探す。
+標準キーは `{\tt s}'。
 %%.lp
 \item[\tb{\#seeall}]
 %Show all equipment in use. Default key is `{\tt *}'.
+装備している物を表示する。
+標準キーは `{\tt *}'。
 %%.lp
 \item[\tb{\#seeamulet}]
 %Show the amulet currently worn. Default key is `{\tt "}'.
+付けている魔除けを表示する。
+標準キーは `{\tt "}'。
 %%.lp
 \item[\tb{\#seearmor}]
 %Show the armor currently worn. Default key is `{\tt [}'.
+付けている防具を表示する。
+標準キーは `{\tt [}'。
 %%.lp
 \item[\tb{\#seegold}]
 %Count your gold. Default key is `{\tt \$}'.
+持っている金貨を数える。
+標準キーは `{\tt \$}'。
 %%.lp
 \item[\tb{\#seenv}]
 %Show seen vectors.
 %Autocompletes.
 %Debug mode only.
+視界ベクターを表示する。
+補完される。
+デバッグモードのみ。
 %%.lp
 \item[\tb{\#seerings}]
 %Show the ring(s) currently worn. Default key is `{\tt =}'.
+(TBT)
 %%.lp
 \item[\tb{\#seespells}]
 %List and reorder known spells. Default key is `{\tt +}'.
+(TBT)
 %%.lp
 \item[\tb{\#seetools}]
 %Show the tools currently in use. Default key is `{\tt (}'.
+(TBT)
 %%.lp
 \item[\tb{\#seetrap}]
 %Show the type of an adjacent trap. Default key is `{\tt \^{}}'.
+(TBT)
 %%.lp
 \item[\tb{\#seeweapon}]
 %Show the weapon currently wielded. Default key is `{\tt )}'.
+(TBT)
 %%.lp
 \item[\tb{\#shell}]
 %Do a shell escape. Default key is `{\tt !}'.
+(TBT)
 %%.lp
 \item[\tb{\#sit}]
 %Sit down. Autocompletes. Default key is `{\tt M-s}'.
@@ -2377,22 +2376,29 @@ Remove an accessory (ring, amulet, etc). Default key is `{\tt R}'.
 %Show memory usage statistics.
 %Autocompletes.
 %Debug mode only.
-(TBT)
+メモリ使用状況を表示する。
+補完される。
+デバッグモードのみ。
 %%.lp
 \item[\tb{\#suspend}]
 %Suspend the game. Default key is `{\tt \^{}Z}'.
+(TBT)
 %%.lp
 \item[\tb{\#swap}]
 %Swap wielded and secondary weapons. Default key is `{\tt x}'.
+(TBT)
 %%.lp
 \item[\tb{\#takeoff}]
 %Take off one piece of armor. Default key is `{\tt T}'.
+(TBT)
 %%.lp
 \item[\tb{\#takeoffall}]
 %Remove all armor. Default key is `{\tt A}'.
+(TBT)
 %%.lp
 \item[\tb{\#teleport}]
 %Teleport around the level. Default key is `{\tt \^{}T}'.
+(TBT)
 %%.lp
 \item[\tb{\#terrain}]
 %Show bare map without displaying monsters, objects, or traps.
@@ -2406,11 +2412,13 @@ Remove an accessory (ring, amulet, etc). Default key is `{\tt R}'.
 %%.lp
 \item[\tb{\#throw}]
 %Throw something. Default key is `{\tt t}'.
+(TBT)
 %%.lp
 \item[\tb{\#timeout}]
 %Look at the timeout queue.
 %Autocompletes.
 %Debug mode only.
+(TBT)
 %%.lp
 \item[\tb{\#tip}]
 %Tip over a container (bag or box) to pour out its contents.
@@ -2429,6 +2437,13 @@ Remove an accessory (ring, amulet, etc). Default key is `{\tt R}'.
 %When picking a target with cursor and the {\it autodescribe\/}
 %option is on, the top line will show ``(no travel path)'' if
 %your character does not know of a path to that location.
+Travel to a specific location on the map.
+Default key is `{\tt \verb+_+}'.
+Using the ``request menu'' prefix shows a menu of interesting targets in sight
+without asking to move the cursor.
+When picking a target with cursor and the {\it autodescribe\/}
+option is on, the top line will show ``(no travel path)'' if
+your character does not know of a path to that location.
 (TBT)
 %%.lp
 \item[\tb{\#turn}]
@@ -2464,12 +2479,16 @@ Remove an accessory (ring, amulet, etc). Default key is `{\tt R}'.
 %%.lp
 \item[\tb{\#up}]
 %Go up a staircase. Default key is `{\tt <}'.
-(TBT)
+階段を上る。
+標準キーは `{\tt <}'。
 %%.lp
 \item[\tb{\#vanquished}]
 %List vanquished monsters.
 %Autocompletes.
 %Debug mode only.
+絶滅させた怪物の一覧を表示する。
+補完される。
+デバッグモードのみ。
 %%.lp
 \item[\tb{\#version}]
 %Print compile time options for this version of {\it NetHack\/}.
@@ -2486,23 +2505,29 @@ Remove an accessory (ring, amulet, etc). Default key is `{\tt R}'.
 %Show vision array.
 %Autocompletes.
 %Debug mode only.
+(TBT)
 %%.lp
 \item[\tb{\#wait}]
 %Rest one move while doing nothing.
 %Default key is `{\tt .}', and also `{\tt{ }}' if
 %{\it rest\verb+_+on\verb+_+space\/} is on.
+(TBT)
 %%.lp
 \item[\tb{\#wear}]
 %Wear a piece of armor. Default key is `{\tt W}'.
+(TBT)
 %%.lp
 \item[\tb{\#whatdoes}]
 %Tell what a key does. Default key is `{\tt \&}'.
+(TBT)
 %%.lp
 \item[\tb{\#whatis}]
 %Show what type of thing a symbol corresponds to. Default key is `{\tt /}'.
+(TBT)
 %%.lp
 \item[\tb{\#wield}]
 %Wield a weapon. Default key is `{\tt w}'.
+(TBT)
 %%.lp
 \item[\tb{\#wipe}]
 %Wipe off your face. Autocompletes. Default key is `{\tt M-w}'.
@@ -3240,7 +3265,7 @@ be transferred to your inventory.
 
 %%.hn 2
 %\subsection*{Bones levels}
-\subsection*{骸骨の階}
+\subsection*{骨の階}
 
 %%.pg
 %You may encounter the shades and corpses of other adventurers (or even
@@ -3862,15 +3887,15 @@ AD\&D に存在する鎧はいずれも {\it NetHack\/} においても同じ防
 %studded leather armor  & 7 &                   & ring mail             & 7\\
 %orcish ring mail       & 8 &                   & leather armor         & 8\\
 %leather jacket         & 9 &                   & no armor              & 10\\
-dragon scale mail(ドラゴンの鱗鎧) & 1 & plate mail(鋼鉄の鎧) & 3\\
-crystal plate mail(水晶の鎧)      & 3 & bronze plate mail(青銅の鎧) & 4\\
-splint mail(鉄片の鎧)             & 4 & banded mail(帯金の鎧) & 4\\
+dragon scale mail(ドラゴンの鱗鎧)  & 1 & plate mail(鋼鉄の鎧)         & 3\\
+crystal plate mail(水晶の鎧)       & 3 & bronze plate mail(青銅の鎧)  & 4\\
+splint mail(鉄片の鎧)              & 4 & banded mail(帯金の鎧)        & 4\\
 dwarvish mithril-coat(ドワーフのミスリル服) & 4 & elven mithril-coat(エルフのミスリル服) & 5\\
-chain mail(鎖かたびら)            & 5 & orcish chain mail(オークの鎖かたびら) & 6\\
-scale mail(鱗の鎧)                & 6 & dragon scales (ドラゴンの鱗) & 7\\
-studded leather armor(鋲付き皮鎧) & 7 & ring mail(鉄環の鎧)          & 7\\
-orcish ring mail(オークの鉄環の鎧) & 8 & leather armor(皮鎧)           & 8\\
-leather jacket(皮ジャケット)      & 9 & no armor(鎧なし)               & 10\\
+chain mail(鎖かたびら)             & 5 & orcish chain mail(オークの鎖かたびら) & 6\\
+scale mail(鱗の鎧)                 & 6 & dragon scales (ドラゴンの鱗) & 7\\
+studded leather armor(鋲付き皮鎧)  & 7 & ring mail(鉄環の鎧)          & 7\\
+orcish ring mail(オークの鉄環の鎧) & 8 & leather armor(皮鎧)          & 8\\
+leather jacket(皮ジャケット)       & 9 & no armor(鎧なし)             & 10\\
 \end{tabular}
 \end{center}
 
@@ -4364,7 +4389,6 @@ leather jacket(皮ジャケット)      & 9 & no armor(鎧なし)               
 %%.hn 2
 %\subsection*{Persistence of Objects}
 \subsection*{物の永続性}
-(TBT)
 
 %%.pg
 %Normally, if you have seen an object at a particular map location and
@@ -4381,6 +4405,7 @@ leather jacket(皮ジャケット)      & 9 & no armor(鎧なし)               
 %actually took the object.
 %If the object is still there, then once you see or feel that location
 %again you will re-discover the object and resume remembering it.
+(TBT)
 
 %%.pg
 %The situation is the same for a pile of objects, except that only the
@@ -4389,6 +4414,7 @@ leather jacket(皮ジャケット)      & 9 & no armor(鎧なし)               
 %{\it hilite\verb+_+pile\/}
 %option can be enabled in order to show an item differently when it is
 %the top one of a pile.
+(TBT)
 
 %%.hn 1
 %\section{Conduct}
@@ -4644,17 +4670,27 @@ leather jacket(皮ジャケット)      & 9 & no armor(鎧なし)               
 %On Unix, Linux and Mac OS X it is \mbox{``.nethackrc''} in the user's home
 %directory. The file may not exist, but it is a normal ASCII text file and
 %can be created with any text editor.\\
+Unix, Linux, Mac OS X では、これはユーザーのホームディレクトリの
+\mbox{``.nethackrc''} である。
+このファイルは存在していないかも知れないが、これは通常の
+ASCII テキストファイルで、任意のテキストエディタで作ることができる。\\
 
 %%.lp ""
 %On Windows, it is \mbox{``.nethackrc''} in the folder
 %\mbox{{``\%USERPROFILE\%\textbackslash NetHack\textbackslash 3.6''}}. The
 %file may not exist, but it is a normal ASCII text file and can be created
 %with any text editor.
+Windowsでは、
+\mbox{{``\%USERPROFILE\%\textbackslash NetHack\textbackslash 3.6''}} フォルダの
+\mbox{``.nethackrc''}。
+このファイルは存在していないかも知れないが、これは通常の
+ASCII テキストファイルで、任意のテキストエディタで作ることができる。
 %After runing {\it NetHack\/} for the first time, you should find a default
 %template for ths configuration file named \mbox{``.nethackrc.template''} in
 %\mbox{{``\%USERPROFILE\%\textbackslash NetHack\textbackslash 3.6''}}.
 %If you had not created the configuration file, {\it NetHack\/} will create
 %the configuration file for you using the default template file.
+(TBT)
 
 %%.lp ""
 %On MS-DOS it is \mbox{``defaults.nh''} in the same folder as
@@ -4671,7 +4707,6 @@ MS-DOS では、\mbox{{\it nethack.exe\/}} と
 %Section names are case insensitive.
 設定ファイルの中の`{\tt \#}'で始まる行はコメントとして扱われる。
 空行は無視される。
-Any line beginning with 
 `{\tt [}' で始まり `{\tt ]}' で終わる行は節マーカとして扱われる。
 大かっこで囲まれたテキストは節の名前である。
 節マーカ以降の行はその節に属し、その節を選択するために
@@ -4688,6 +4723,7 @@ CHOOSE 文が使われない限り無視される。
 
 %%.pg
 %Here is a list of allowed statements:
+以下は指定できる文の一覧である:
 
 %%.lp
 \blist{}
@@ -4701,6 +4737,7 @@ CHOOSE 文が使われない限り無視される。
 %You can specify multiple OPTIONS statements, and multiple options
 %separated by commas in a single OPTIONS statement.
 %(Comma separated options are processed from right to left.)
+(TBT)
 
 %%.lp ""
 %Example:
@@ -4716,26 +4753,32 @@ CHOOSE 文が使われない限り無視される。
 %Default location of files {\it NetHack\/} needs. On Windows HACKDIR
 %defaults to the location of the {\it NetHack.exe\/} or {\it NetHackw.exe\/} file
 %so setting HACKDIR to override that is not usually necessary or recommended.
+(TBT)
 %%.lp
 \item[\bb{LEVELDIR}]
 %The location that in-progress level files are stored. Defaults to HACKDIR,
 %must be writable.
+(TBT)
 %%.lp
 \item[\bb{SAVEDIR}]
 %The location where saved games are kept. Defaults to HACKDIR, must be
 %writable.
+(TBT)
 %%.lp
 \item[\bb{BONESDIR}]
 %The location that bones files are kept. Defaults to HACKDIR, must be
 %writable.
+(TBT)
 %%.lp
 \item[\bb{LOCKDIR}]
 %The location that file synchronization locks are stored. Defaults to
 %HACKDIR, must be writable.
+(TBT)
 %%.lp
 \item[\bb{TROUBLEDIR}]
 %The location that a record of game aborts and self-diagnosed game problems
 %is kept. Defaults to HACKDIR, must be writable.
+(TBT)
 %%
 %% config file entries beyond this point are shown alphabetically
 %%
@@ -4747,9 +4790,11 @@ CHOOSE 文が使われない限り無視される。
 %autocompletion, list the extended command. Prefix the
 %command with ``{{\tt !}}'' to disable the autocompletion
 %for that command.
+(TBT)
 
 %%.lp ""
 %Example:
+例:
 %%.sd
 \begin{verbatim}
    AUTOCOMPLETE=zap,!annotate
@@ -4760,15 +4805,18 @@ CHOOSE 文が使われない限り無視される。
 \item[\bb{AUTOPICKUP\_EXCEPTION}]
 %Set exceptions to the {{\it pickup\_types\/}}
 %option. See the ``Configuring Autopickup Exceptions'' section.
+(TBT)
 %%.lp
 \item[\bb{BINDINGS}]
 %Change the key bindings of some special keys, menu accelerators, or
 %extended commands. You can specify multiple bindings. Format is key
 %followed by the command, separated by a colon.
 %See the ``Changing Key Bindings`` section for more information.
+(TBT)
 
 %%.lp ""
 %Example:
+例:
 %%.sd
 \begin{verbatim}
    BIND=^X:getpos.autodescribe
@@ -4779,9 +4827,11 @@ CHOOSE 文が使われない限り無視される。
 \item[\bb{CHOOSE}]
 %Chooses at random one of the comma-separated parameters as an active
 %section name. Lines in other sections are ignored.
+(TBT)
 
 %%.lp ""
 %Example:
+例:
 %%.sd
 \begin{verbatim}
    OPTIONS=color
@@ -4797,31 +4847,38 @@ CHOOSE 文が使われない限り無視される。
 \item[\bb{MENUCOLOR}]
 %Highlight menu lines with different colors.
 %See the ``Configuring Menu Colors`` section.
+(TBT)
 %%.lp
 \item[\bb{MSGTYPE}]
 %Change the way messages are shown in the top status line.
 %See the ``Configuring Message Types`` section.
+(TBT)
 %%.lp
 \item[\bb{ROGUESYMBOLS}]
 %Custom symbols for for the rogue level's symbol set.
 %See {\it SYMBOLS} below.
+(TBT)
 %%.lp
 \item[\bb{SOUND}]
 %Define a sound mapping.
 %See the ``Configuring User Sounds'' section.
+(TBT)
 %%.lp
 \item[\bb{SOUNDDIR}]
 %Define the directory that contains the sound files.
 %See the ``Configuring User Sounds'' section.
+(TBT)
 %%.lp
 \item[\bb{SYMBOLS}]
 %Override one or more symbols in the symbol set used for all dungeon
 %levels except for the special rogue level.
 %See the ``Modifying {\it NetHack\/} Symbols'' section.
+(TBT)
 %%.pg
 
 %%.lp ""
 %Example:
+例:
 %%.sd
 \begin{verbatim}
    # replace small punctuation (tick marks) with digits
@@ -4835,9 +4892,11 @@ CHOOSE 文が使われない限り無視される。
 %Value is the name of a text file containing a list of item names,
 %one per line, up to a maximum of 128 lines.
 %Each line is processed by the function that handles wishing.
+(TBT)
 
 %%.lp ""
 %Example:
+例:
 %%.sd
 \begin{verbatim}
    WIZKIT=~/wizkit.txt
@@ -4939,6 +4998,7 @@ CHOOSE 文が使われない限り無視される。
 %If that full name doesn't start with a slash, precede it with `{\tt @}'
 %(at-sign) to let NetHack know that the rest is intended as a file name.
 %If it does start with `{\tt /}', the at-sign is optional.
+(TBT)
 
 %%.hn 2
 %\subsection*{Customization options}
@@ -5165,6 +5225,9 @@ CHOOSE 文が使われない限り無視される。
 %%.si
 %{\tt ?} --- prompt you and default to ask on the prompt;\\
 %{\tt\#} --- disclose it without prompting, ask for sort order.
+{\tt ?} --- prompt you and default to ask on the prompt;\\
+{\tt\#} --- disclose it without prompting, ask for sort order.
+(TBT)
 %%.ei
 %%.ed
 
@@ -5796,11 +5859,13 @@ QWERTZ キーボードに対応するものである。)
 %{\tt t} --- iTalic text\\
 %{\tt l} --- Left line indicator\\
 %{\tt r} --- Right line indicator\\
+(TBT)
 %%.ei
 %%.ed
 
 %Some of those choices might not work, particularly the final three,
 %depending upon terminal hardware or terminal emulation software.
+(TBT)
 
 %%.lp ""
 %Currently multiple highlight-style letters can be combined by simply
@@ -5809,6 +5874,7 @@ QWERTZ キーボードに対応するものである。)
 %which works already).
 %When using the `n' choice, it should be specified on its own,
 %not in combination with any of the other letters.
+(TBT)
 
 %%.lp
 \item[\ib{pettype}]
@@ -6100,7 +6166,7 @@ QWERTZ キーボードに対応するものである。)
 %%.lp
 \item[\ib{status\verb+_+updates}]
 %Allow updates to the status lines at the bottom of the screen (default true).
-(TBT)
+画面の下部でのステータス行の更新を認める (標準設定はオン)。
 %%.lp
 \item[\ib{suppress\verb+_+alert}]
 %This option may be set to a {\it NetHack\/} version level to suppress
@@ -6181,6 +6247,7 @@ QWERTZ キーボードに対応するものである。)
 
 %%.lp ""
 %The possible settings are:
+可能な設定は:
 
 %%.sd
 %%.si
@@ -6189,6 +6256,7 @@ QWERTZ キーボードに対応するものである。)
 %{\tt m} --- \verb#map <x,y> (map column x=0 is not used)#;\\
 %{\tt s} --- \verb#screen [row,column] (row is offset to match tty usage)#;\\
 %{\tt n} --- \verb#none (no coordinates shown) [default]#.
+(TBT)
 %%.ei
 %%.ed
 
@@ -6199,39 +6267,47 @@ QWERTZ キーボードに対応するものである。)
 %the `{\tt /m}', `{\tt /M}', `{\tt /o}', and `{\tt /O}' sub-commands
 %of `{\tt /}',
 %where the `{\it none\/}' setting is overridden with `{\it map}'.
+(TBT)
 %%.lp
 \item[\ib{whatis\verb+_+filter}]
 %When getting a location on the map, and using the keys to cycle through
 %next and previous targets, allows filtering the possible targets.
 %(default none)\\
+(TBT)
 %%.lp ""
 %The possible settings are:
+可能な設定は:
 
 %%.sd
 %%.si
 %{\tt n} --- \verb#no filtering#;\\
 %{\tt v} --- \verb#in view only#;\\
 %{\tt a} --- \verb#in same area (room, corridor, etc)#.
+(TBT)
 %%.ei
 %%.ed
 %%.lp ""
 %The area-filter tries to be slightly predictive -- if you're standing
 %on a doorway, it will consider the area on the side of the door you
 %were last moving towards.\\
+(TBT)
 %%.lp ""
 %Filtering can also be changed when getting a location with
 %the ``getpos.filter'' key.
+(TBT)
 %%.lp
 \item[\ib{whatis\verb+_+menu}]
 %When getting a location on the map, and using a key to cycle through
 %next and previous targets, use a menu instead to pick a target.
 %(default off)
+(TBT)
 %%.lp
 \item[\ib{whatis\verb+_+moveskip}]
 %When getting a location on the map, and using shifted movement keys or
 %meta-digit keys to fast-move, instead of moving 8 units at a time,
 %move by skipping the same glyphs.
 %(default off)
+(TBT)
 %%.lp
 \item[\ib{windowtype}]
 %When the program has been built to support multiple interfaces,
@@ -6365,7 +6441,7 @@ QWERTZ キーボードに対応するものである。)
 %%.lp
 \item[\ib{fullscreen}]
 %If {\it NetHack\/} can, it should try and display on the entire screen rather than in a window.
-可能ならウィンドウでなく画面全体で表示しようと試みる
+可能ならウィンドウでなく画面全体で表示しようと試みる。
 %%.lp
 \item[\ib{guicolor}]
 %Use color text and/or highlighting attributes when displaying some
@@ -6482,6 +6558,7 @@ RAM に予め読み込むかどうかを制御する。
 %persistent inventory window if enabled.
 %Curses interface only.
 %Acceptable values are
+(TBT)
 
 %%.sd
 %%.si
@@ -6793,7 +6870,6 @@ later rule to override an earlier rule.
 %%.hn 2
 %\subsection*{Changing Key Bindings}
 \subsection*{キー配置を変更する}
-(TBT)
 
 %%.pg
 %It is possible to change the default key bindings of some special commands,
@@ -6802,6 +6878,7 @@ later rule to override an earlier rule.
 %separated by a colon. The key can be a single character (``{\tt x}''),
 %a control key (``{\tt \^{}X}'', ``{\tt C-x}''), a meta key (``{\tt M-x}''),
 %or a three-digit decimal ASCII code.
+(TBT)
 
 %%.pg
 %For example:
@@ -6826,6 +6903,7 @@ later rule to override an earlier rule.
 %The menu control or accelerator keys can also be rebound via OPTIONS lines
 %in the configuration file.
 %You cannot bind object symbols into menu accelerators.
+(TBT)
 
 %%.lp "Special command keys"
 \item[\tb{Special command keys}]
@@ -6834,6 +6912,7 @@ later rule to override an earlier rule.
 %to same keys, only one of those commands will be available. Special command
 %can only be bound to a single key.
 \elist
+(TBT)
 
 %%.pg
 \blist{\itemindent 10mm \labelwidth 15mm \rightmargin 15mm}
@@ -7272,10 +7351,15 @@ is not necessarily the same as black or white or any of the other colors.
 %Allowed attributes are none, bold, dim, underline, blink, and inverse.
 %``Normal'' is a synonym for ``none''; they should not be used in
 %combination with any of the other attributes.
+Allowed attributes are none, bold, dim, underline, blink, and inverse.
+``Normal'' is a synonym for ``none''; they should not be used in
+combination with any of the other attributes.
 (TBT)
 
 %To specify both a color and an attribute, use `\&' to combine them.
 %To specify multiple attributes, use `+' to combine those.
+To specify both a color and an attribute, use `\&' to combine them.
+To specify multiple attributes, use `+' to combine those.
 (TBT)
 
 %%.lp ""
@@ -8210,19 +8294,16 @@ score ファイル上でプレイヤーを認識するのに、0 ではユーザ
 %0 or 1 to disable or enable, respectively, the ability for players
 %to set S\verb+_+pet\verb+_+override and S\verb+_+hero\verb+_+override 
 %symbols in their configuration file.
-0 or 1 to disable or enable, respectively, the ability for players
-to set S\verb+_+pet\verb+_+override and S\verb+_+hero\verb+_+override 
-symbols in their configuration file.
-(TBT)
+プレイヤーが自分自身の設定ファイルで
+S\verb+_+pet\verb+_+override and S\verb+_+hero\verb+_+override
+シンボルを設定することを、0 では無効に、1 では有効にする。
 %%.lp
 \item[\ib{PORTABLE\verb+_+DEVICE\verb+_+PATHS}]
 %0 or 1 Windows OS only, the game will look for all of its external
 %files, and write to all of its output files in one place 
 %rather than at the standard locations.
-0 or 1 Windows OS only, the game will look for all of its external
-files, and write to all of its output files in one place 
-rather than at the standard locations.
-(TBT)
+Windows OS のみ; 全ての外部ファイルを検索し、全ての出力ファイルを
+書き込むディレクトリを、標準の位置ではなく一ヶ所にする。
 %%.lp
 \item[\ib{DUMPLOGFILE}]
 %A filename where the end-of-game dumplog is saved.
