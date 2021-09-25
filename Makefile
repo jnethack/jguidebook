@@ -14,3 +14,6 @@ $(TMPPDF): $(SRC)
 docs/$(PDF): $(TMPPDF)
 	cp $(TMPPDF) docs/$(PDF)
 
+# uncommented jguidebook
+jg.uc.tex:
+	perl uncomment.pl $(SRC) > jg.uc.tex
