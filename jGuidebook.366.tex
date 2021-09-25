@@ -570,7 +570,7 @@
 \item[\bb{属性(Alignment)}]
 %%
 %{\it Lawful}, {\it Neutral\/} or {\it Chaotic}.  Often, Lawful is
-%taken as good and Chaotic is evil, but legal and ethical do not always
+%taken as good and Chaotic as evil, but legal and ethical do not always
 %coincide.  Your alignment influences how other
 %monsters react toward you.  Monsters of a like alignment are more likely
 %to be non-aggressive, while those of an opposing alignment are more likely
@@ -1193,7 +1193,7 @@
 扉を閉じる。
 %%.lp
 \item[\tb{C}]
-%Call (name) a monster, an individual object, or an object type.\\
+%Call (name) a monster, an individual object, or a type of object.\\
 怪物、個々のオブジェクト、オブジェクトの種類に名前を付ける。\\
 %%.lp ""
 %Same as extended command ``{\tt \#name}''.
@@ -1407,7 +1407,7 @@ blessed or uncursed.
 %Show overview.\\
 概要を表示する。
 %%.lp ""
-%Shortcut for the ``{\tt \#overview}'':
+%Shortcut for ``{\tt \#overview}'':
 %list interesting dungeon levels visited.\\
 ``{\tt \#overview}'' の短縮版:
 訪れた興味深い階の一覧。\\
@@ -1421,7 +1421,7 @@ blessed or uncursed.
 代金を払う。
 %%.lp
 \item[\tb{P}]
-%Put on an accessory (ring, amulet, blindfold).\\
+%Put on an accessory (ring, amulet, or blindfold).\\
 装飾品（指輪、魔除け、目隠し）を身につける。\\
 %%.lp ""
 %This command may also be used to wear armor.  The prompt for
@@ -1693,7 +1693,7 @@ blessed or uncursed.
 呪文を唱える。\\
 %%.sd
 %%.si
-%{\tt Z.} --- to aim at yourself, use `{\tt .}' for the direction.
+%{\tt Z.} --- to cast at yourself, use `{\tt .}' for the direction.
 {\tt Z.} --- 自分を狙いたいときは、方向に`{\tt .}'を使う。
 %%.ei
 %%.ed
@@ -1711,7 +1711,7 @@ blessed or uncursed.
 見えているシンボルが何を示すかを表示する。
 %%.lp
 \item[\tb{,}]
-%Pick up some things.\\
+%Pick up some things from the floor beneath you.\\
 足下にあるものを拾う。\\
 %%.lp ""
 %May be preceded by `{\tt m}' to force a selection menu.
@@ -1924,6 +1924,8 @@ deciding whether to merge with the destination stack.
 %%.lp
 \item[\tb{\#close}]
 %Close a door. Default key is `{\tt c}'.
+扉を閉じる。
+標準キーは `{\tt c}'。
 %%.lp
 \item[\tb{\#conduct}]
 %List voluntary challenges you have maintained. Autocompletes.
@@ -2009,10 +2011,9 @@ deciding whether to merge with the destination stack.
 %Show the help menu.
 %Default key is `{\tt ?}',
 %and also `{\tt h}' if {\it number\verb+_+pad\/} is on.
-Show the help menu.
-Default key is `{\tt ?}',
-and also `{\tt h}' if {\it number\verb+_+pad\/} is on.
-(TBT)
+ヘルプメニューを表示する。
+標準キーは `{\tt ?}' および
+{\it number\verb+_+pad\/} がオンの場合 `{\tt h}'。
 %%.lp
 \item[\tb{\#herecmdmenu}]
 %Show a menu of possible actions in your current location.
@@ -2059,16 +2060,14 @@ and also `{\tt h}' if {\it number\verb+_+pad\/} is on.
 \item[\tb{\#known}]
 %Show what object types have been discovered.
 %Default key is `{\tt $\backslash$}'.
-Show what object types have been discovered.
-Default key is `{\tt $\backslash$}'.
-(TBT)
+今までにどんな種類の物を見つけたかを表示する。
+標準キーは `{\tt $\backslash$}'。
 %%.lp
 \item[\tb{\#knownclass}]
 %Show discovered types for one class of objects.
 %Default key is `{\tt `}'.
-Show discovered types for one class of objects.
-Default key is `{\tt `}'.
-(TBT)
+一つの種類の物の中で見つけた種類を表示する。
+標準キーは `{\tt `}'。
 %%.lp
 \item[\tb{\#levelchange}]
 %Change your experience level.
@@ -2094,18 +2093,17 @@ Default key is `{\tt `}'.
 \item[\tb{\#loot}]
 %Loot a box or bag on the floor beneath you, or the saddle
 %from a steed standing next to you. Autocompletes.
-%Default key is `{\tt M-l}',
-%and also `{\tt l}' if {\it number\verb+_+pad\/} is on.
 %Precede with the `{\tt m}' prefix to skip containers at your location
 %and go directly to removing a saddle.
+%Default key is `{\tt M-l}',
+%and also `{\tt l}' if {\it number\verb+_+pad\/} is on.
 あなたの足下の床に置いてある箱や鞄、またはあなたの隣に立っている馬などの
 鞍を漁る。
 補完される。
-Default key is `{\tt M-l}',
-and also `{\tt l}' if {\it number\verb+_+pad\/} is on.
-Precede with the `{\tt m}' prefix to skip containers at your location
-and go directly to removing a saddle.
-(TBT)
+`{\tt m}' を前置すると現在の場所にある入れ物を飛ばして
+直接鞍を外す。
+標準キーは `{\tt M-l}' および
+{\it number\verb+_+pad\/} がオンなら `{\tt l}'。
 %%.lp
 \item[\tb{\#monster}]
 %Use a monster's special ability (when polymorphed into monster form).
@@ -2164,8 +2162,8 @@ and go directly to removing a saddle.
 全ての訪れた階層が含まれる。
 補完される。
 標準キーは `{\tt \^{}O}' と `{\tt M-O}'。
-%%.lp
 %% DON'T PANIC!
+%%.lp
 \item[\tb{\#panic}]
 %Test the panic routine.
 %Terminates the current game.
@@ -2175,19 +2173,17 @@ and go directly to removing a saddle.
 現在のゲームを終了する。
 補完される。
 デバッグモードのみ。\\
-(TBT)
 %%.lp ""
 %Asks for confirmation; default is `{\tt n}' (no); continue playing.
 %To really panic, respond with `{\tt y}'.
 %You can set the
 %{\it paranoid\verb+_+confirmation:quit\/}
 %option to require a response of ``{\tt yes}'' instead.
-Asks for confirmation; default is `{\tt n}' (no); continue playing.
-To really panic, respond with `{\tt y}'.
-You can set the
+確認される; 標準設定は `{\tt n}' (ノー); プレイを続ける。
+本当にパニックさせるには、`{\tt y}' と返答すること。
+代わりに  ``{\tt yes}'' との返答が必要にするために
 {\it paranoid\verb+_+confirmation:quit\/}
-option to require a response of ``{\tt yes}'' instead.
-(TBT)
+オプションを設定できる。
 %%.lp
 \item[\tb{\#pay}]
 %Pay your shopping bill. Default key is `{\tt p}'.
@@ -2281,9 +2277,8 @@ option to require a response of ``{\tt yes}'' instead.
 %Default key is `{\tt \^{}R}',
 %and also `{\tt \^{}L}' if {\it number\verb+_+pad\/} is on.
 画面を書き直す。
-Default key is `{\tt \^{}R}',
-and also `{\tt \^{}L}' if {\it number\verb+_+pad\/} is on.
-(TBT)
+標準キーは `{\tt \^{}R}' および
+{\it number\verb+_+pad\/} がオンなら `{\tt \^{}L}'。
 %%.lp
 \item[\tb{\#remove}]
 %Remove an accessory (ring, amulet, etc). Default key is `{\tt R}'.
@@ -2344,27 +2339,33 @@ and also `{\tt \^{}L}' if {\it number\verb+_+pad\/} is on.
 %%.lp
 \item[\tb{\#seerings}]
 %Show the ring(s) currently worn. Default key is `{\tt =}'.
-(TBT)
+はめている指輪を表示する。
+標準キーは `{\tt =}'。
 %%.lp
 \item[\tb{\#seespells}]
 %List and reorder known spells. Default key is `{\tt +}'.
-(TBT)
+知っている呪文の一覧を表示し、並べ替える。
+標準キーは `{\tt +}'。
 %%.lp
 \item[\tb{\#seetools}]
 %Show the tools currently in use. Default key is `{\tt (}'.
-(TBT)
+使っている道具を表示する。
+標準キーは `{\tt (}'。
 %%.lp
 \item[\tb{\#seetrap}]
 %Show the type of an adjacent trap. Default key is `{\tt \^{}}'.
-(TBT)
+隣接した罠の種類を表示する。
+標準キーは `{\tt \^{}}'。
 %%.lp
 \item[\tb{\#seeweapon}]
 %Show the weapon currently wielded. Default key is `{\tt )}'.
-(TBT)
+持っている武器を表示する。
+標準キーは  `{\tt )}'。
 %%.lp
 \item[\tb{\#shell}]
 %Do a shell escape. Default key is `{\tt !}'.
-(TBT)
+シェルに抜ける。
+標準キーは `{\tt !}'。
 %%.lp
 \item[\tb{\#sit}]
 %Sit down. Autocompletes. Default key is `{\tt M-s}'.
@@ -2382,23 +2383,28 @@ and also `{\tt \^{}L}' if {\it number\verb+_+pad\/} is on.
 %%.lp
 \item[\tb{\#suspend}]
 %Suspend the game. Default key is `{\tt \^{}Z}'.
-(TBT)
+ゲームを一時中止する。
+標準キーは `{\tt \^{}Z}'。
 %%.lp
 \item[\tb{\#swap}]
 %Swap wielded and secondary weapons. Default key is `{\tt x}'.
-(TBT)
+装備している武器を予備の武器と交換する。
+標準キーは `{\tt x}'。
 %%.lp
 \item[\tb{\#takeoff}]
 %Take off one piece of armor. Default key is `{\tt T}'.
-(TBT)
+防具を一つ外す。
+標準キーは `{\tt T}'。
 %%.lp
 \item[\tb{\#takeoffall}]
 %Remove all armor. Default key is `{\tt A}'.
-(TBT)
+全ての防具を外す。
+標準キーは `{\tt A}'。
 %%.lp
 \item[\tb{\#teleport}]
 %Teleport around the level. Default key is `{\tt \^{}T}'.
-(TBT)
+その階の中でテレポートする。
+標準キーは `{\tt \^{}T}'。
 %%.lp
 \item[\tb{\#terrain}]
 %Show bare map without displaying monsters, objects, or traps.
@@ -2408,17 +2414,20 @@ and also `{\tt \^{}L}' if {\it number\verb+_+pad\/} is on.
 %%.lp
 \item[\tb{\#therecmdmenu}]
 %Show a menu of possible actions in a location next to you.
-(TBT)
+現在の隣の位置に対して可能な行動のメニューを表示する。
 %%.lp
 \item[\tb{\#throw}]
 %Throw something. Default key is `{\tt t}'.
-(TBT)
+何かを投げる。
+標準キーは `{\tt t}'。
 %%.lp
 \item[\tb{\#timeout}]
 %Look at the timeout queue.
 %Autocompletes.
 %Debug mode only.
-(TBT)
+タイムアウトキューを見る。
+補完される。
+デバッグモードのみ。
 %%.lp
 \item[\tb{\#tip}]
 %Tip over a container (bag or box) to pour out its contents.
@@ -2499,13 +2508,16 @@ your character does not know of a path to that location.
 %%.lp
 \item[\tb{\#versionshort}]
 %Show version string. Default key is `{\tt v}'.
-(TBT)
+バージョン文字列を表示する。
+標準キーは `{\tt v}'。
 %%.lp
 \item[\tb{\#vision}]
 %Show vision array.
 %Autocompletes.
 %Debug mode only.
-(TBT)
+視界配列を表示する。
+補完される。
+デバッグモードのみ。
 %%.lp
 \item[\tb{\#wait}]
 %Rest one move while doing nothing.
@@ -2574,7 +2586,7 @@ your character does not know of a path to that location.
 全ての持ち物を識別する。
 補完される。
 デバッグモードのみ。
-Default key is `{\tt \^{}I}'.
+標準キーは `{\tt \^{}I}'。
 %%.lp
 \item[\tb{\#wizintrinsic}]
 %Set one or more intrinsic attributes.
@@ -4399,12 +4411,27 @@ leather jacket(皮ジャケット)       & 9 & no armor(鎧なし)             &
 %away---until you can see or feel that location again.
 %One notable exception is that if the object gets covered by the
 %``remembered, unseen monster'' marker.
+Normally, if you have seen an object at a particular map location and
+move to another location where you can't directly see that object any
+more, if will continue to be displayed on your map.
+That remains the case even if it is not actually there any
+more---perhaps a monster has picked it up or it has rotted
+away---until you can see or feel that location again.
+One notable exception is that if the object gets covered by the
+``remembered, unseen monster'' marker.
+(TBT)
 %When that marker is later removed
 %after you've verified that no monster is there, you will forget that
 %there was any object there regardless of whether the unseen monster
 %actually took the object.
 %If the object is still there, then once you see or feel that location
 %again you will re-discover the object and resume remembering it.
+When that marker is later removed
+after you've verified that no monster is there, you will forget that
+there was any object there regardless of whether the unseen monster
+actually took the object.
+If the object is still there, then once you see or feel that location
+again you will re-discover the object and resume remembering it.
 (TBT)
 
 %%.pg
@@ -4414,6 +4441,12 @@ leather jacket(皮ジャケット)       & 9 & no armor(鎧なし)             &
 %{\it hilite\verb+_+pile\/}
 %option can be enabled in order to show an item differently when it is
 %the top one of a pile.
+The situation is the same for a pile of objects, except that only the
+top item of the pile is displayed.
+The
+{\it hilite\verb+_+pile\/}
+option can be enabled in order to show an item differently when it is
+the top one of a pile.
 (TBT)
 
 %%.hn 1
@@ -4690,6 +4723,11 @@ ASCII テキストファイルで、任意のテキストエディタで作る�
 %\mbox{{``\%USERPROFILE\%\textbackslash NetHack\textbackslash 3.6''}}.
 %If you had not created the configuration file, {\it NetHack\/} will create
 %the configuration file for you using the default template file.
+After runing {\it NetHack\/} for the first time, you should find a default
+template for ths configuration file named \mbox{``.nethackrc.template''} in
+\mbox{{``\%USERPROFILE\%\textbackslash NetHack\textbackslash 3.6''}}.
+If you had not created the configuration file, {\it NetHack\/} will create
+the configuration file for you using the default template file.
 (TBT)
 
 %%.lp ""
@@ -4719,6 +4757,11 @@ CHOOSE 文が使われない限り無視される。
 %In general, the statements are
 %written in capital letters, followed by an equals sign, followed by
 %settings particular to that statement.
+You can use different configuration statements in the file, some
+of which can be used multiple times.
+In general, the statements are
+written in capital letters, followed by an equals sign, followed by
+settings particular to that statement.
 (TBT)
 
 %%.pg
@@ -4989,7 +5032,11 @@ CHOOSE 文が使われない限り無視される。
 %processed from right to left.
 %Other types of configuration statements such as BIND or MSGTYPE are
 %not allowed.
-(TBT)
+NETHACKOPTIONS の値は事実上設定ファイル内の
+1 行の OPTIONS 文と同じである。
+``OPTIONS='' 接頭辞が暗黙に含まれ、
+カンマ区切りのオプションは右から左に処理される。
+BIND や MSGTYPE のようなその他の設定文は使えない。
 
 %%.pg
 %Instead of a comma-separated list of options,
@@ -4998,7 +5045,12 @@ CHOOSE 文が使われない限り無視される。
 %If that full name doesn't start with a slash, precede it with `{\tt @}'
 %(at-sign) to let NetHack know that the rest is intended as a file name.
 %If it does start with `{\tt /}', the at-sign is optional.
-(TBT)
+NETHACKOPTIONS は、カンマ区切りにオプションのリストの代わりに、
+使いたい設定ファイルのフルネームを設定できる。
+フルネームがスラッシュで始まっていない場合、
+`{\tt @}' (アットマーク) を前置することで、
+残りがファイル名を意図していることを NetHack に伝える。
+`{\tt /}' で始まっているなら、アットマークはオプションである。
 
 %%.hn 2
 %\subsection*{Customization options}
@@ -5050,6 +5102,10 @@ CHOOSE 文が使われない限り無視される。
 %on the map (default true).
 %The {\it whatis\verb+_+coord\/}
 %option controls whether the description includes map coordinates.
+Automatically describe the terrain under cursor when asked to get a location
+on the map (default true).
+The {\it whatis\verb+_+coord\/}
+option controls whether the description includes map coordinates.
 (TBT)
 %%.lp
 \item[\ib{autodig}]
@@ -5118,10 +5174,10 @@ CHOOSE 文が使われない限り無視される。
 `{\tt O}' コマンドで設定することはできない。
 %%.lp character
 \item[\ib{character}]
-%Pick your type of character (for example, ``{\tt character:Monk}'');
-%synonym for ``{\it role\/}''.  See {\it role\/} for more details.
-キャラクターのタイプを設定する(例:``{\tt character:Monk}'')。
-``{\it role\/}''オプションと同じである。
+%Synonym for ``{\tt role}'' to pick the type of your character
+%(for example ``{\tt character:Monk}'').  See {\it role\/} for more details.
+キャラクターのタイプを設定するための ``{\tt role}'' の別名。
+(例:``{\tt character:Monk}'')。
 更なる詳細については {\it role\/} を参照のこと。
 %%.lp
 \item[\ib{checkpoint}]
@@ -5169,6 +5225,7 @@ CHOOSE 文が使われない限り無視される。
 %Show out-of-sight areas of lit rooms (default on).  Persistent.
 明るい部屋の視界外のエリアを表示する(標準設定はオン)。
 永続する。
+%%.lp
 \item[\ib{disclose}]
 %Controls what information the program reveals when the game ends.
 %Value is a space separated list of prompting/category pairs
@@ -5220,6 +5277,8 @@ CHOOSE 文が使われない限り無視される。
 
 %The listing of vanquished monsters can be sorted,
 %so there are two additional choices for `{\tt v}':
+The listing of vanquished monsters can be sorted,
+so there are two additional choices for `{\tt v}':
 (TBT)
 %%.sd
 %%.si
@@ -5236,6 +5295,11 @@ CHOOSE 文が使われない限り無視される。
 %or being prompted and answering `{\tt y}' rather than `{\tt a}',
 %will default to showing monsters in the traditional order,
 %from high level to low level.\\
+Asking refers to picking one of the orderings from a menu.
+The `{\tt +}' disclose without prompting choice,
+or being prompted and answering `{\tt y}' rather than `{\tt a}',
+will default to showing monsters in the traditional order,
+from high level to low level.\\
 (TBT)
 %%.lp ""
 %Omitted categories are implicitly added with `{\tt n}' prefix.
@@ -5292,6 +5356,10 @@ tty インターフェースに実装されている。(標準設定はオフ)
 %command, it controls whether the menu shows all available commands (on)
 %or just the subset of commands which have traditionally been considered
 %extended ones (off).
+For the X11 interface, which always uses a menu for choosing an extended
+command, it controls whether the menu shows all available commands (on)
+or just the subset of commands which have traditionally been considered
+extended ones (off).
 (TBT)
 %%.lp
 \item[\ib{female}]
@@ -5313,6 +5381,8 @@ tty インターフェースに実装されている。(標準設定はオフ)
 \item[\ib{force\_invmenu}]
 %Commands asking for an inventory item show a menu instead of
 %a text query with possible menu letters. Default is off.
+Commands asking for an inventory item show a menu instead of
+a text query with possible menu letters. Default is off.
 (TBT)
 %%.lp
 \item[\ib{fruit}]
@@ -5353,7 +5423,14 @@ melons (メロン) は {\it NetHack\/} にはもう存在しているので、�
 %or {\tt U} (known to be uncursed, when `off', the default).
 %Gold is never blessed or cursed, but it is not described as ``uncursed''
 %even when the {\it implicit\verb+_+uncursed\/} option is `off'.
-(TBT)
+物を祝呪状態(BUCX)を基に絞り込むとき、
+金貨を
+{\tt X} (祝呪状態不明、`オン'のとき)、あるいは
+{\tt U} (呪われていないとわかっている、`オフ'のとき、標準設定) の
+どちらとして扱うかを設定する。
+金貨は決して祝福されたり呪われたりしないが、例え
+{\it implicit\verb+_+uncursed\/} オプションが `オフ' でも
+``呪われていない'' とは表示されない。
 %%.lp
 \item[\ib{help}]
 %If more information is available for an object looked at
@@ -5372,6 +5449,9 @@ melons (メロン) は {\it NetHack\/} にはもう存在しているので、�
 %When using a windowport that supports mouse and clicking on yourself or
 %next to you, show a menu of possible actions for the location.
 %Same as ``{\tt \#herecmdmenu}'' and ``{\tt \#therecmdmenu}'' commands.
+When using a windowport that supports mouse and clicking on yourself or
+next to you, show a menu of possible actions for the location.
+Same as ``{\tt \#herecmdmenu}'' and ``{\tt \#therecmdmenu}'' commands.
 (TBT)
 %%.lp
 \item[\ib{hilite\verb+_+pet}]
@@ -5608,11 +5688,11 @@ Amiga, Gem, tty で実装されている。(標準設定は `,')
 %%.sd
 %%.si
 %{\tt 0} --- disabled\\
-%{\tt 1} --- enabled and make OS adjustment to support mouse use\\
-%{\tt 2} --- enabled like {\tt 1}, but does not make any OS adjustments\\
+%{\tt 1} --- enabled and make OS adjustments to support mouse use\\
+%{\tt 2} --- like {\tt 1}, but does not make any OS adjustments\\
 {\tt 0} --- 無効\\
 {\tt 1} --- 有効; マウスの使用を支援するために OS の補正を使う\\
-{\tt 2} --- {\tt 1} と同様有効だが、OS の補正は使わない\\
+{\tt 2} --- {\tt 1} と同様だが、OS の補正は使わない\\
 %%.ei
 %%.ed
 
@@ -5826,7 +5906,7 @@ QWERTZ キーボードに対応するものである。)
 %By default, the pray choice is enabled, the others disabled.
 %To disable it without setting
 %any of the other choices, use ``{\it paranoid\verb+_+confirmation:none}''.  To keep
-%it enabled while setting others, include it in the list,
+%it enabled while setting any of the others, include it in the list,
 %such as ``{\it par\-a\-noid\verb+_+con\-fir\-ma\-tion:attack~pray~Remove}''.
 標準設定では、pray 選択がオン、それ以外はオフになっている。
 その他の選択を設定することなくこれをオフにするには、
@@ -5846,6 +5926,10 @@ QWERTZ キーボードに対応するものである。)
 %pets on the map.
 %Effectively a superset of the {\it hilite\verb+_+pet\/} boolean option.
 %Curses interface only; value is one or more of the following letters.
+Specifies one or more text highlighting attributes to use when showing
+pets on the map.
+Effectively a superset of the {\it hilite\verb+_+pet\/} boolean option.
+Curses interface only; value is one or more of the following letters.
 (TBT)
 
 %%.sd
@@ -5859,12 +5943,23 @@ QWERTZ キーボードに対応するものである。)
 %{\tt t} --- iTalic text\\
 %{\tt l} --- Left line indicator\\
 %{\tt r} --- Right line indicator\\
+{\tt n} --- Normal text (no highlighting)\\
+{\tt i} --- Inverse video (default)\\
+{\tt b} --- Bold text\\
+{\tt u} --- Underlined text\\
+{\tt k} --- blinKing text\\
+{\tt d} --- Dim text\\
+{\tt t} --- iTalic text\\
+{\tt l} --- Left line indicator\\
+{\tt r} --- Right line indicator\\
 (TBT)
 %%.ei
 %%.ed
 
 %Some of those choices might not work, particularly the final three,
 %depending upon terminal hardware or terminal emulation software.
+Some of those choices might not work, particularly the final three,
+depending upon terminal hardware or terminal emulation software.
 (TBT)
 
 %%.lp ""
@@ -5874,6 +5969,12 @@ QWERTZ キーボードに対応するものである。)
 %which works already).
 %When using the `n' choice, it should be specified on its own,
 %not in combination with any of the other letters.
+Currently multiple highlight-style letters can be combined by simply
+stringing them together (for example, ``bk''), but in the future
+they might require being separated by plus signs (such as ``b\verb&+&k'',
+which works already).
+When using the `n' choice, it should be specified on its own,
+not in combination with any of the other letters.
 (TBT)
 
 %%.lp
@@ -6002,7 +6103,7 @@ QWERTZ キーボードに対応するものである。)
 %Pick your type of character (for example, ``{\tt role:Samurai}'');
 %synonym for ``{\it character\/}''.  See ``{\it name\/}'' for an alternate method
 %of specifying your role.  Normally only the first letter of the
-%value is examined; `r' is an exception with ``{\tt Rogue}'', {\tt Ranger}'',
+%value is examined; `r' is an exception with ``{\tt Rogue}'', ``{\tt Ranger}'',
 %and ``{\tt random}'' values.
 %If you prefix the value with `{\tt !}' or ``{\tt no}'', you will
 %exclude that role from being picked randomly.
@@ -6243,6 +6344,10 @@ QWERTZ キーボードに対応するものである。)
 %``{\tt autodescribe}''
 %on, display coordinates after the description.
 %Also works in other situations where you are asked to pick a location.\\
+When using the `{\tt /}' or `{\tt ;}' commands to look around on the map with
+``{\tt autodescribe}''
+on, display coordinates after the description.
+Also works in other situations where you are asked to pick a location.\\
 (TBT)
 
 %%.lp ""
@@ -6256,6 +6361,11 @@ QWERTZ キーボードに対応するものである。)
 %{\tt m} --- \verb#map <x,y> (map column x=0 is not used)#;\\
 %{\tt s} --- \verb#screen [row,column] (row is offset to match tty usage)#;\\
 %{\tt n} --- \verb#none (no coordinates shown) [default]#.
+{\tt c} --- \verb#compass ('east' or '3s' or '2n,4w')#;\\
+{\tt f} --- \verb#full compass ('east' or '3south' or '2north,4west')#;\\
+{\tt m} --- \verb#map <x,y> (map column x=0 is not used)#;\\
+{\tt s} --- \verb#screen [row,column] (row is offset to match tty usage)#;\\
+{\tt n} --- \verb#none (no coordinates shown) [default]#.
 (TBT)
 %%.ei
 %%.ed
@@ -6267,12 +6377,21 @@ QWERTZ キーボードに対応するものである。)
 %the `{\tt /m}', `{\tt /M}', `{\tt /o}', and `{\tt /O}' sub-commands
 %of `{\tt /}',
 %where the `{\it none\/}' setting is overridden with `{\it map}'.
+The
+{\it whatis\verb+_+coord\/}
+option is also used with
+the `{\tt /m}', `{\tt /M}', `{\tt /o}', and `{\tt /O}' sub-commands
+of `{\tt /}',
+where the `{\it none\/}' setting is overridden with `{\it map}'.
 (TBT)
 %%.lp
 \item[\ib{whatis\verb+_+filter}]
 %When getting a location on the map, and using the keys to cycle through
 %next and previous targets, allows filtering the possible targets.
 %(default none)\\
+When getting a location on the map, and using the keys to cycle through
+next and previous targets, allows filtering the possible targets.
+(default none)\\
 (TBT)
 %%.lp ""
 %The possible settings are:
@@ -6283,6 +6402,9 @@ QWERTZ キーボードに対応するものである。)
 %{\tt n} --- \verb#no filtering#;\\
 %{\tt v} --- \verb#in view only#;\\
 %{\tt a} --- \verb#in same area (room, corridor, etc)#.
+{\tt n} --- \verb#no filtering#;\\
+{\tt v} --- \verb#in view only#;\\
+{\tt a} --- \verb#in same area (room, corridor, etc)#.
 (TBT)
 %%.ei
 %%.ed
@@ -6290,16 +6412,24 @@ QWERTZ キーボードに対応するものである。)
 %The area-filter tries to be slightly predictive -- if you're standing
 %on a doorway, it will consider the area on the side of the door you
 %were last moving towards.\\
+The area-filter tries to be slightly predictive -- if you're standing
+on a doorway, it will consider the area on the side of the door you
+were last moving towards.\\
 (TBT)
 %%.lp ""
 %Filtering can also be changed when getting a location with
 %the ``getpos.filter'' key.
+Filtering can also be changed when getting a location with
+the ``getpos.filter'' key.
 (TBT)
 %%.lp
 \item[\ib{whatis\verb+_+menu}]
 %When getting a location on the map, and using a key to cycle through
 %next and previous targets, use a menu instead to pick a target.
 %(default off)
+When getting a location on the map, and using a key to cycle through
+next and previous targets, use a menu instead to pick a target.
+(default off)
 (TBT)
 %%.lp
 \item[\ib{whatis\verb+_+moveskip}]
@@ -6307,6 +6437,10 @@ QWERTZ キーボードに対応するものである。)
 %meta-digit keys to fast-move, instead of moving 8 units at a time,
 %move by skipping the same glyphs.
 %(default off)
+When getting a location on the map, and using shifted movement keys or
+meta-digit keys to fast-move, instead of moving 8 units at a time,
+move by skipping the same glyphs.
+(default off)
 (TBT)
 %%.lp
 \item[\ib{windowtype}]
@@ -6326,11 +6460,19 @@ QWERTZ キーボードに対応するものである。)
 %non-comment line.
 %For a comma-separated list in NETHACKOPTIONS or an OPTIONS line in a
 %configuration file, that would be the {\it rightmost\/} option in the list.
+When used, it should be the first option set since its value might
+enable or disable the availability of various other options.
+For multiple lines in a configuration file, that would be the first
+non-comment line.
+For a comma-separated list in NETHACKOPTIONS or an OPTIONS line in a
+configuration file, that would be the {\it rightmost\/} option in the list.
 (TBT)
 %%.lp
 \item[\ib{wizweight}]
 %Augment object descriptions with their objects' weight (default off).
 %Debug mode only.
+Augment object descriptions with their objects' weight (default off).
+Debug mode only.
 (TBT)
 %%.lp
 \item[\ib{zerocomp}]
@@ -6387,13 +6529,13 @@ QWERTZ キーボードに対応するものである。)
 \item[\ib{color}]
 %If {\it NetHack\/} can, it should display color for different monsters,
 %objects, and dungeon features.
-怪物、物体、洞窟の構成要素をカラーで表示する
+可能なら怪物、物体、洞窟の構成要素をカラーで表示する。
 
 %%.lp
 \item[\ib{eight\verb+_+bit\verb+_+tty}]
-%Pass eight-bit character values (for example, specified with the
+%If {\it NetHack\/} can, it should pass eight-bit character values (for example, specified with the
 %{\it traps \/} option) straight through to your terminal (default off).
-8ビットキャラクタ(例えば
+可能なら8ビットキャラクタ(例えば
 {\it traps\/}
 オプションで指定したもの)をそのままターミナルに表示する(標準設定はオフ)。
 %%.lp
@@ -6447,6 +6589,9 @@ QWERTZ キーボードに対応するものである。)
 %Use color text and/or highlighting attributes when displaying some
 %non-map data (such as menu selector letters).
 %Curses interface only; default is on.
+Use color text and/or highlighting attributes when displaying some
+non-map data (such as menu selector letters).
+Curses interface only; default is on.
 (TBT)
 %%.lp
 \item[\ib{large\verb+_+font}]
@@ -6512,7 +6657,9 @@ RAM に予め読み込むかどうかを制御する。
 %Number of lines for traditional below-the-map status display.
 %Acceptable values are 2 and 3 (default is 2).
 %Curses and tty interfaces only.
-(TBT)
+伝統的な地図の下のステータス表示の行数。
+設定可能な値は 2 と 3 (標準設定は 2)。
+curses と tty インターフェースのみ。
 %%.lp
 \item[\ib{term\verb+_+cols} {\normalfont and}]
 %%.lp
@@ -6522,6 +6669,11 @@ RAM に予め読み込むかどうかを制御する。
 %Curses will attempt to resize to the values specified but will settle
 %for smaller sizes if they are too big.
 %Default is the current window size.
+Curses interface only.
+Number of columns and rows to use for the display.
+Curses will attempt to resize to the values specified but will settle
+for smaller sizes if they are too big.
+Default is the current window size.
 (TBT)
 %%.lp
 \item[\ib{tiled\verb+_+map}]
@@ -6558,6 +6710,10 @@ RAM に予め読み込むかどうかを制御する。
 %persistent inventory window if enabled.
 %Curses interface only.
 %Acceptable values are
+Whether to draw boxes around the map, status area, message area, and
+persistent inventory window if enabled.
+Curses interface only.
+Acceptable values are
 (TBT)
 
 %%.sd
@@ -6579,6 +6735,11 @@ RAM に予め読み込むかどうかを制御する。
 %A width of at least 110 columns (\verb&80+2+26+2&) is needed for
 %{\it align_status\/}
 %set to {tt left} or {\tt right}.)
+(The 26x82 size threshold for `2' refers to number of rows and
+columns of the display.
+A width of at least 110 columns (\verb&80+2+26+2&) is needed for
+{\it align_status\/}
+set to {tt left} or {\tt right}.)
 (TBT)
 %%.lp
 \item[\ib{windowcolors}]
@@ -6603,6 +6764,19 @@ Windows GUIのみ。形式は:
 %{\it btntext}, {\it captiontext}, {\it graytext}, {\it greytext}, {\it highlight},
 %{\it highlighttext}, {\it inactiveborder}, {\it inactivecaption}, {\it menu},
 %{\it menutext}, {\it scrollbar}, {\it window}, {\it windowframe}, {\it windowtext}).
+where wintype is one of {\it menu}, {\it message}, {\it status}, or {\it text}, and
+foreground and background are colors, either a hexadecimal {\it \#rrggbb},
+one of the named colors ({\it black}, {\it red}, {\it green}, {\it brown},
+{\it blue}, {\it magenta}, {\it cyan}, {\it orange},
+{\it brightgreen}, {\it yellow}, {\it brightblue}, {\it brightmagenta},
+{\it brightcyan}, {\it white}, {\it trueblack}, {\it gray}, {\it purple},
+{\it silver}, {\it maroon}, {\it fuchsia}, {\it lime}, {\it olive},
+{\it navy}, {\it teal}, {\it aqua}),
+または Windows UI 色の一つ ({\it activeborder},
+{\it activecaption}, {\it appworkspace}, {\it background}, {\it btnface}, {\it btnshadow},
+{\it btntext}, {\it captiontext}, {\it graytext}, {\it greytext}, {\it highlight},
+{\it highlighttext}, {\it inactiveborder}, {\it inactivecaption}, {\it menu},
+{\it menutext}, {\it scrollbar}, {\it window}, {\it windowframe}, {\it windowtext}).
 (TBT)
 
 %%.lp
@@ -6831,10 +7005,9 @@ NO\verb+_+TERMS を使用しているPCシステムのカラーパレットを�
 %The {\it autopickup\verb+_+exception\/} rules are processed in the order
 %in which they appear in your configuration file, thus allowing a
 %later rule to override an earlier rule.
-The {\it autopickup\verb+_+exception\/} rules are processed in the order
-in which they appear in your configuration file, thus allowing a
-later rule to override an earlier rule.
-(TBT)
+{\it autopickup\verb+_+exception\/} 規則は、
+設定ファイルで現れた順に処理されるので、
+後の規則で前の規則を上書きできる。
 
 %%.lp ""
 %Exceptions can be set with the `{\tt O}' command, but because they are not
@@ -6878,6 +7051,12 @@ later rule to override an earlier rule.
 %separated by a colon. The key can be a single character (``{\tt x}''),
 %a control key (``{\tt \^{}X}'', ``{\tt C-x}''), a meta key (``{\tt M-x}''),
 %or a three-digit decimal ASCII code.
+It is possible to change the default key bindings of some special commands,
+menu accelerator keys, and extended commands, by using BIND stanzas in the
+configuration file. Format is key, followed by the command to bind to,
+separated by a colon. The key can be a single character (``{\tt x}''),
+a control key (``{\tt \^{}X}'', ``{\tt C-x}''), a meta key (``{\tt M-x}''),
+or a three-digit decimal ASCII code.
 (TBT)
 
 %%.pg
@@ -7292,8 +7471,8 @@ MSGTYPE 行の定義順は重要である; 最後にマッチングした規則�
 \elist
 
 %%.lp ""
-%The pattern should be a regular expression.
-このパターンは正規表現で指定する。
+%The pattern should be a POSIX extended regular expression.
+このパターンは POSIX 拡張正規表現で指定する。
 
 %%.lp
 %%.hn 2
@@ -7636,7 +7815,7 @@ rogue レベルで表示するために読み込みたいシンボル集合の�
 %\caption[]{NetHack Symbols}\\
 \caption[]{NetHack Symbols}\\
 %Default                      & Symbol Name                & Description\\
-Default                      & Symbol Name                & Description\\
+標準設定                     & シンボル名                 & 説明\\
 \hline \hline
 \endhead
 %\verb@ @ & S\verb+_+air                     &	(air)\\
@@ -8250,10 +8429,10 @@ seen via the {\tt \#attributes} command.
 このシステムでゲームを復旧する方法を示す文字列 (標準設定値はなし)。
 %%.lp
 \item[\ib{SEDUCE}]
-%0 or 1 to disable or enable, respectively, the SEDUCE option (see the source)
-%for details on this function.
-0 と 1 でそれぞれ SEDUCE オプションを無効/有効にする(この機能に関する詳細は
-ソースを参照のこと)。
+%0 or 1 to disable or enable, respectively, the SEDUCE option.
+%When disabled, incubi and succubi behave like nymphs.
+0 と 1 でそれぞれ SEDUCE オプションを無効/有効にする。
+無効にすると、インキュバスとサキュバスはニンフのように振る舞う。
 %%.lp
 \item[\ib{CHECK\verb+_+PLNAME}]
 %Setting this to 1 will make the EXPLORERS, WIZARDS, and SHELLERS check
@@ -8262,8 +8441,12 @@ seen via the {\tt \#attributes} command.
 ユーザーのログイン名ではなくプレイヤー名をチェックする。
 %%.lp
 \item[\ib{CHECK\verb+_+SAVE\verb+_+UID}]
-%0 or 1 to disable or enable, respectively, the UID checking for savefiles.
-0 と 1 でそれぞれセーブファイルの UID チェックを無効/有効にする。
+%0 or 1 to disable or enable, respectively, the UID
+%(used identification number) checking for save files (to verify that the
+%user who is restoring is the same one who saved).
+0 と 1 でそれぞれ、(復元するユーザーがセーブしたユーザーと同じかを
+検証するために) セーブファイルの UID (識別番号として使われる)
+チェックを無効/有効にする。
 \elist
 
 %%.pg
@@ -8273,11 +8456,11 @@ seen via the {\tt \#attributes} command.
 %%.pg
 %%.lp
 \item[\ib{PERSMAX}]
-%Maximum number of entries for one person
+%Maximum number of entries for one person.
 一人のエントリの最大数。
 %%.lp
 \item[\ib{ENTRYMAX}]
-%Maximum number of entries in the score file
+%Maximum number of entries in the score file.
 score ファイルのエントリの最大数。
 %%.lp
 \item[\ib{POINTSMIN}]
@@ -8309,10 +8492,10 @@ Windows OS のみ; 全ての外部ファイルを検索し、全ての出力フ�
 %A filename where the end-of-game dumplog is saved.
 %Not defining this will prevent dumplog from being created. Only available
 %if your game is compiled with DUMPLOG. Allows the following placeholders:
-A filename where the end-of-game dumplog is saved.
-Not defining this will prevent dumplog from being created. Only available
-if your game is compiled with DUMPLOG. Allows the following placeholders:
-(TBT)
+ゲーム終了時のダンプログを保存するファイル名。
+これを定義していないとダンプログは作成されない。
+ゲームが DUMPLOG 付きでコンパイルされている場合にのみ利用可能。
+次のプレースフォルダが利用できる:
 %%.sd
 %%.si
 %{\tt \%\%}  --- literal `{\tt \%}'\\

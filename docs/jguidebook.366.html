@@ -237,7 +237,7 @@ border: solid 1px #000000; border-collapse: collapse;
         Player the Rambler    St:12 Dx:7 Co:18 In:11 Wi:9 Ch:15 Neutral
         Dlvl:1 $:0 HP:9(12) Pw:3(3) AC:10 Exp:1/19 T:257 Weak
 </pre>
-<div style='align:center'>
+<div style='text-align:center'>
 図1
 </div>
 <h2>ステータス行(画面の下部)</h2>
@@ -568,7 +568,7 @@ border: solid 1px #000000; border-collapse: collapse;
 移動するのではなく怪物と戦うことになる。
 怪物と戦うことになるのはこの一歩移動のコマンドだけである。
 その他のコマンド(後述)は「安全」である。
-<div style='align:center'>
+<div style='text-align:center'>
 <table>
 <tr><td><pre>   y  k  u    </pre></td><td><pre>    7  8  9   </pre></td></tr>
 <tr><td><pre>     | /     </pre></td><td><pre>      | /    </pre></td></tr>
@@ -578,7 +578,7 @@ border: solid 1px #000000; border-collapse: collapse;
 <tr><td><pre>                     </pre></td><td><pre> ({it number_pad/} がオンなら)</pre></td></tr>
 </table>
 </div>
-<div style='align:center'>
+<div style='text-align:center'>
 図2
 </div>
 </dd>
@@ -1045,6 +1045,8 @@ deciding whether to merge with the destination stack.
 標準キーは'<span class='tt'>M-c</span>'。
 </dd>
 <dt>#close</dt><dd>
+扉を閉じる。
+標準キーは '<span class='tt'>c</span>'。
 </dd>
 <dt>#conduct</dt><dd>
 維持している自発的挑戦の一覧を表示する。
@@ -1104,10 +1106,9 @@ deciding whether to merge with the destination stack.
 標準キーは '<span class='tt'>;</span>'。
 </dd>
 <dt>#help</dt><dd>
-Show the help menu.
-Default key is '<span class='tt'>?</span>',
-and also '<span class='tt'>h</span>' if <span class='italic'>number_pad</span> is on.
-(TBT)
+ヘルプメニューを表示する。
+標準キーは '<span class='tt'>?</span>' および
+<span class='italic'>number_pad</span> がオンの場合 '<span class='tt'>h</span>'。
 </dd>
 <dt>#herecmdmenu</dt><dd>
 現在の位置で可能な行動のメニューを表示する。
@@ -1141,14 +1142,12 @@ and also '<span class='tt'>h</span>' if <span class='italic'>number_pad</span> i
 <span class='italic'>number_pad</span> がオンの場合 '<span class='tt'>k</span>'。
 </dd>
 <dt>#known</dt><dd>
-Show what object types have been discovered.
-Default key is '<span class='tt'>$backslash$</span>'.
-(TBT)
+今までにどんな種類の物を見つけたかを表示する。
+標準キーは '<span class='tt'>$backslash$</span>'。
 </dd>
 <dt>#knownclass</dt><dd>
-Show discovered types for one class of objects.
-Default key is '<span class='tt'>'</span>'.
-(TBT)
+一つの種類の物の中で見つけた種類を表示する。
+標準キーは '<span class='tt'>'</span>'。
 </dd>
 <dt>#levelchange</dt><dd>
 経験レベルを変更する。
@@ -1168,11 +1167,10 @@ Default key is '<span class='tt'>'</span>'.
 あなたの足下の床に置いてある箱や鞄、またはあなたの隣に立っている馬などの
 鞍を漁る。
 補完される。
-Default key is '<span class='tt'>M-l</span>',
-and also '<span class='tt'>l</span>' if <span class='italic'>number_pad</span> is on.
-Precede with the '<span class='tt'>m</span>' prefix to skip containers at your location
-and go directly to removing a saddle.
-(TBT)
+'<span class='tt'>m</span>' を前置すると現在の場所にある入れ物を飛ばして
+直接鞍を外す。
+標準キーは '<span class='tt'>M-l</span>' および
+<span class='italic'>number_pad</span> がオンなら '<span class='tt'>l</span>'。
 </dd>
 <dt>#monster</dt><dd>
 (怪物の姿に変化している時に)怪物の特殊能力を使う。
@@ -1216,13 +1214,11 @@ and go directly to removing a saddle.
 現在のゲームを終了する。
 補完される。
 デバッグモードのみ。<br/>
-(TBT)
-Asks for confirmation; default is '<span class='tt'>n</span>' (no); continue playing.
-To really panic, respond with '<span class='tt'>y</span>'.
-You can set the
+確認される; 標準設定は '<span class='tt'>n</span>' (ノー); プレイを続ける。
+本当にパニックさせるには、'<span class='tt'>y</span>' と返答すること。
+代わりに  ''<span class='tt'>yes</span>'' との返答が必要にするために
 <span class='italic'>paranoid_confirmation:quit</span>
-option to require a response of ''<span class='tt'>yes</span>'' instead.
-(TBT)
+オプションを設定できる。
 </dd>
 <dt>#pay</dt><dd>
 代金を支払う。
@@ -1282,9 +1278,8 @@ option to require a response of ''<span class='tt'>yes</span>'' instead.
 </dd>
 <dt>#redraw</dt><dd>
 画面を書き直す。
-Default key is '<span class='tt'>^{</span>R}',
-and also '<span class='tt'>^{</span>L}' if <span class='italic'>number_pad</span> is on.
-(TBT)
+標準キーは '<span class='tt'>^{</span>R}' および
+<span class='italic'>number_pad</span> がオンなら '<span class='tt'>^{</span>L}'。
 </dd>
 <dt>#remove</dt><dd>
 装飾品 (指輪、魔除けなど) をはずす。
@@ -1330,22 +1325,28 @@ and also '<span class='tt'>^{</span>L}' if <span class='italic'>number_pad</span
 デバッグモードのみ。
 </dd>
 <dt>#seerings</dt><dd>
-(TBT)
+はめている指輪を表示する。
+標準キーは '<span class='tt'>=</span>'。
 </dd>
 <dt>#seespells</dt><dd>
-(TBT)
+知っている呪文の一覧を表示し、並べ替える。
+標準キーは '<span class='tt'>+</span>'。
 </dd>
 <dt>#seetools</dt><dd>
-(TBT)
+使っている道具を表示する。
+標準キーは '<span class='tt'>(</span>'。
 </dd>
 <dt>#seetrap</dt><dd>
-(TBT)
+隣接した罠の種類を表示する。
+標準キーは '<span class='tt'>^{</span>}'。
 </dd>
 <dt>#seeweapon</dt><dd>
-(TBT)
+持っている武器を表示する。
+標準キーは  '<span class='tt'>)</span>'。
 </dd>
 <dt>#shell</dt><dd>
-(TBT)
+シェルに抜ける。
+標準キーは '<span class='tt'>!</span>'。
 </dd>
 <dt>#sit</dt><dd>
 座る。
@@ -1358,32 +1359,40 @@ and also '<span class='tt'>^{</span>L}' if <span class='italic'>number_pad</span
 デバッグモードのみ。
 </dd>
 <dt>#suspend</dt><dd>
-(TBT)
+ゲームを一時中止する。
+標準キーは '<span class='tt'>^{</span>Z}'。
 </dd>
 <dt>#swap</dt><dd>
-(TBT)
+装備している武器を予備の武器と交換する。
+標準キーは '<span class='tt'>x</span>'。
 </dd>
 <dt>#takeoff</dt><dd>
-(TBT)
+防具を一つ外す。
+標準キーは '<span class='tt'>T</span>'。
 </dd>
 <dt>#takeoffall</dt><dd>
-(TBT)
+全ての防具を外す。
+標準キーは '<span class='tt'>A</span>'。
 </dd>
 <dt>#teleport</dt><dd>
-(TBT)
+その階の中でテレポートする。
+標準キーは '<span class='tt'>^{</span>T}'。
 </dd>
 <dt>#terrain</dt><dd>
 怪物、物、罠を表示せずに、基の地図を表示する。
 補完される。
 </dd>
 <dt>#therecmdmenu</dt><dd>
-(TBT)
+現在の隣の位置に対して可能な行動のメニューを表示する。
 </dd>
 <dt>#throw</dt><dd>
-(TBT)
+何かを投げる。
+標準キーは '<span class='tt'>t</span>'。
 </dd>
 <dt>#timeout</dt><dd>
-(TBT)
+タイムアウトキューを見る。
+補完される。
+デバッグモードのみ。
 </dd>
 <dt>#tip</dt><dd>
 入れ物(鞄や箱)をひっくり返して中の物を出す。
@@ -1435,10 +1444,13 @@ your character does not know of a path to that location.
 標準キーは '<span class='tt'>M-v</span>'。
 </dd>
 <dt>#versionshort</dt><dd>
-(TBT)
+バージョン文字列を表示する。
+標準キーは '<span class='tt'>v</span>'。
 </dd>
 <dt>#vision</dt><dd>
-(TBT)
+視界配列を表示する。
+補完される。
+デバッグモードのみ。
 </dd>
 <dt>#wait</dt><dd>
 (TBT)
@@ -1482,7 +1494,7 @@ your character does not know of a path to that location.
 全ての持ち物を識別する。
 補完される。
 デバッグモードのみ。
-Default key is '<span class='tt'>^{</span>I}'.
+標準キーは '<span class='tt'>^{</span>I}'。
 </dd>
 <dt>#wizintrinsic</dt><dd>
 いくつかの特性を設定する。
@@ -2223,7 +2235,7 @@ Armor class(AC)(防御値)はこの防御効果の尺度である。
 AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> においても同じ防御効果を示す。
 以下に(不完全ではあるが) 各種の鎧ごとに規定される防御値の一覧を示す。
 </p>
-<div style='align:center'>
+<div style='text-align:center'>
 <table>
 <tr><td><pre>dragon scale mail(ドラゴンの鱗鎧)  </pre></td><td><pre> 1 </pre></td><td><pre> plate mail(鋼鉄の鎧)         </pre></td><td><pre> 3</pre></td></tr>
 <tr><td><pre>crystal plate mail(水晶の鎧)       </pre></td><td><pre> 3 </pre></td><td><pre> bronze plate mail(青銅の鎧)  </pre></td><td><pre> 4</pre></td></tr>
@@ -2508,9 +2520,30 @@ AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> �
 </p>
 <h2>物の永続性</h2>
 <p>
+Normally, if you have seen an object at a particular map location and
+move to another location where you can't directly see that object any
+more, if will continue to be displayed on your map.
+That remains the case even if it is not actually there any
+more&mdash;perhaps a monster has picked it up or it has rotted
+away&mdash;until you can see or feel that location again.
+One notable exception is that if the object gets covered by the
+''remembered, unseen monster'' marker.
+(TBT)
+When that marker is later removed
+after you've verified that no monster is there, you will forget that
+there was any object there regardless of whether the unseen monster
+actually took the object.
+If the object is still there, then once you see or feel that location
+again you will re-discover the object and resume remembering it.
 (TBT)
 </p>
 <p>
+The situation is the same for a pile of objects, except that only the
+top item of the pile is displayed.
+The
+<span class='italic'>hilite_pile</span>
+option can be enabled in order to show an item differently when it is
+the top one of a pile.
 (TBT)
 </p>
 <h1>制限プレイ</h1>
@@ -2655,6 +2688,11 @@ mbox{{''%USERPROFILE%textbackslash NetHacktextbackslash 3.6''}} フォルダの
 mbox{''.nethackrc''}。
 このファイルは存在していないかも知れないが、これは通常の
 ASCII テキストファイルで、任意のテキストエディタで作ることができる。
+After runing <span class='italic'>NetHack</span> for the first time, you should find a default
+template for ths configuration file named mbox{''.nethackrc.template''} in
+mbox{{''%USERPROFILE%textbackslash NetHacktextbackslash 3.6''}}.
+If you had not created the configuration file, <span class='italic'>NetHack</span> will create
+the configuration file for you using the default template file.
 (TBT)
 </p>
 <p>
@@ -2671,6 +2709,11 @@ CHOOSE 文が使われない限り無視される。
 節の名前は大文字小文字を無視する。
 </p>
 <p>
+You can use different configuration statements in the file, some
+of which can be used multiple times.
+In general, the statements are
+written in capital letters, followed by an equals sign, followed by
+settings particular to that statement.
 (TBT)
 </p>
 <p>
@@ -2824,10 +2867,19 @@ CHOOSE 文が使われない限り無視される。
 とすればよい。
 </p>
 <p>
-(TBT)
+NETHACKOPTIONS の値は事実上設定ファイル内の
+1 行の OPTIONS 文と同じである。
+''OPTIONS='' 接頭辞が暗黙に含まれ、
+カンマ区切りのオプションは右から左に処理される。
+BIND や MSGTYPE のようなその他の設定文は使えない。
 </p>
 <p>
-(TBT)
+NETHACKOPTIONS は、カンマ区切りにオプションのリストの代わりに、
+使いたい設定ファイルのフルネームを設定できる。
+フルネームがスラッシュで始まっていない場合、
+'<span class='tt'>@</span>' (アットマーク) を前置することで、
+残りがファイル名を意図していることを NetHack に伝える。
+'<span class='tt'>/</span>' で始まっているなら、アットマークはオプションである。
 </p>
 <h2>カスタマイズオプション</h2>
 <p>
@@ -2856,6 +2908,10 @@ CHOOSE 文が使われない限り無視される。
 永続する。
 </dd>
 <dt>autodescribe</dt><dd>
+Automatically describe the terrain under cursor when asked to get a location
+on the map (default true).
+The <span class='italic'>whatis_coord</span>
+option controls whether the description includes map coordinates.
 (TBT)
 </dd>
 <dt>autodig</dt><dd>
@@ -2902,8 +2958,8 @@ CHOOSE 文が使われない限り無視される。
 '<span class='tt'>O</span>' コマンドで設定することはできない。
 </dd>
 <dt>character</dt><dd>
-キャラクターのタイプを設定する(例:''<span class='tt'>character:Monk</span>'')。
-''<span class='italic'>role</span>''オプションと同じである。
+キャラクターのタイプを設定するための ''<span class='tt'>role</span>'' の別名。
+(例:''<span class='tt'>character:Monk</span>'')。
 更なる詳細については <span class='italic'>role</span> を参照のこと。
 </dd>
 <dt>checkpoint</dt><dd>
@@ -2959,11 +3015,18 @@ CHOOSE 文が使われない限り無視される。
 <span class='tt'>+</span> &mdash; "確認なしに表示する。"<br/>
 <span class='tt'>-</span> &mdash; "確認なしで非表示とする。"
 <br/>
+The listing of vanquished monsters can be sorted,
+so there are two additional choices for '<span class='tt'>v</span>':
 (TBT)
 <span class='tt'>?</span> &mdash; prompt you and default to ask on the prompt;<br/>
 <span class='tt'>#</span> &mdash; disclose it without prompting, ask for sort order.
 (TBT)
 <br/>
+Asking refers to picking one of the orderings from a menu.
+The '<span class='tt'>+</span>' disclose without prompting choice,
+or being prompted and answering '<span class='tt'>y</span>' rather than '<span class='tt'>a</span>',
+will default to showing monsters in the traditional order,
+from high level to low level.<br/>
 (TBT)
 省略されたカテゴリには暗黙に '<span class='tt'>n</span>' 接頭辞が追加される。
 接頭辞が省略されて指定されたカテゴリには暗黙に '<span class='tt'>+</span>' 接頭辞が使われる。
@@ -2990,6 +3053,10 @@ CHOOSE 文が使われない限り無視される。
 拡張コマンドインターフェースを、有効なコマンドの一覧メニューが出るように変更する。
 キー入力は、最後に Enter を押す必要がないこと以外は伝統的なインターフェースと互換性がある。
 tty インターフェースに実装されている。(標準設定はオフ)
+For the X11 interface, which always uses a menu for choosing an extended
+command, it controls whether the menu shows all available commands (on)
+or just the subset of commands which have traditionally been considered
+extended ones (off).
 (TBT)
 </dd>
 <dt>female</dt><dd>
@@ -3004,6 +3071,8 @@ tty インターフェースに実装されている。(標準設定はオフ)
 永続する。
 </dd>
 <dt>force_invmenu</dt><dd>
+Commands asking for an inventory item show a menu instead of
+a text query with possible menu letters. Default is off.
 (TBT)
 </dd>
 <dt>fruit</dt><dd>
@@ -3026,7 +3095,14 @@ melons (メロン) は <span class='italic'>NetHack</span> にはもう存在し
 永続する。
 </dd>
 <dt>goldX</dt><dd>
-(TBT)
+物を祝呪状態(BUCX)を基に絞り込むとき、
+金貨を
+<span class='tt'>X</span> (祝呪状態不明、'オン'のとき)、あるいは
+<span class='tt'>U</span> (呪われていないとわかっている、'オフ'のとき、標準設定) の
+どちらとして扱うかを設定する。
+金貨は決して祝福されたり呪われたりしないが、例え
+<span class='italic'>implicit_uncursed</span> オプションが 'オフ' でも
+''呪われていない'' とは表示されない。
 </dd>
 <dt>help</dt><dd>
 '<span class='tt'>/</span>' コマンドを使って調べている物について何らかの情報がある場合、
@@ -3037,6 +3113,9 @@ melons (メロン) は <span class='italic'>NetHack</span> にはもう存在し
 永続する。
 </dd>
 <dt>herecmd_menu</dt><dd>
+When using a windowport that supports mouse and clicking on yourself or
+next to you, show a menu of possible actions for the location.
+Same as ''<span class='tt'>#herecmdmenu</span>'' and ''<span class='tt'>#therecmdmenu</span>'' commands.
 (TBT)
 </dd>
 <dt>hilite_pet</dt><dd>
@@ -3185,7 +3264,7 @@ Amiga, Gem, tty で実装されている。(標準設定は ',')
 <br/>
 <span class='tt'>0</span> &mdash; 無効<br/>
 <span class='tt'>1</span> &mdash; 有効; マウスの使用を支援するために OS の補正を使う<br/>
-<span class='tt'>2</span> &mdash; <span class='tt'>1</span> と同様有効だが、OS の補正は使わない<br/>
+<span class='tt'>2</span> &mdash; <span class='tt'>1</span> と同様だが、OS の補正は使わない<br/>
 <br/>
 値を省略すると <span class='tt'>1</span> を指定したのと同じになり、
 <span class='italic'>mouse_support</span> を否定すると
@@ -3317,12 +3396,33 @@ QWERTZ キーボードに対応するものである。)
 この機能が実装されているウィンドウシステムでのみ有効。
 </dd>
 <dt>petattr</dt><dd>
+Specifies one or more text highlighting attributes to use when showing
+pets on the map.
+Effectively a superset of the <span class='italic'>hilite_pet</span> boolean option.
+Curses interface only; value is one or more of the following letters.
 (TBT)
 <br/>
+<span class='tt'>n</span> &mdash; Normal text (no highlighting)<br/>
+<span class='tt'>i</span> &mdash; Inverse video (default)<br/>
+<span class='tt'>b</span> &mdash; Bold text<br/>
+<span class='tt'>u</span> &mdash; Underlined text<br/>
+<span class='tt'>k</span> &mdash; blinKing text<br/>
+<span class='tt'>d</span> &mdash; Dim text<br/>
+<span class='tt'>t</span> &mdash; iTalic text<br/>
+<span class='tt'>l</span> &mdash; Left line indicator<br/>
+<span class='tt'>r</span> &mdash; Right line indicator<br/>
 (TBT)
 <br/>
+Some of those choices might not work, particularly the final three,
+depending upon terminal hardware or terminal emulation software.
 (TBT)
 <br/>
+Currently multiple highlight-style letters can be combined by simply
+stringing them together (for example, ''bk''), but in the future
+they might require being separated by plus signs (such as ''bamp;+amp;k'',
+which works already).
+When using the 'n' choice, it should be specified on its own,
+not in combination with any of the other letters.
 (TBT)
 <br/>
 </dd>
@@ -3551,26 +3651,59 @@ QWERTZ キーボードに対応するものである。)
 永続する。
 </dd>
 <dt>whatis_coord</dt><dd>
+When using the '<span class='tt'>/</span>' or '<span class='tt'>;</span>' commands to look around on the map with
+''<span class='tt'>autodescribe</span>''
+on, display coordinates after the description.
+Also works in other situations where you are asked to pick a location.<br/>
 (TBT)
 <br/>
 可能な設定は:
 <br/>
+<span class='tt'>c</span> &mdash; compass ('east' or '3s' or '2n,4w');<br/>
+<span class='tt'>f</span> &mdash; full compass ('east' or '3south' or '2north,4west');<br/>
+<span class='tt'>m</span> &mdash; map &lt;x,y&gt; (map column x=0 is not used);<br/>
+<span class='tt'>s</span> &mdash; screen [row,column] (row is offset to match tty usage);<br/>
+<span class='tt'>n</span> &mdash; none (no coordinates shown) [default].
 (TBT)
 <br/>
+The
+<span class='italic'>whatis_coord</span>
+option is also used with
+the '<span class='tt'>/m</span>', '<span class='tt'>/M</span>', '<span class='tt'>/o</span>', and '<span class='tt'>/O</span>' sub-commands
+of '<span class='tt'>/</span>',
+where the '<span class='italic'>none</span>' setting is overridden with '<span class='italic'>map</span>'.
 (TBT)
 </dd>
 <dt>whatis_filter</dt><dd>
+When getting a location on the map, and using the keys to cycle through
+next and previous targets, allows filtering the possible targets.
+(default none)<br/>
 (TBT)
 可能な設定は:
 <br/>
+<span class='tt'>n</span> &mdash; no filtering;<br/>
+<span class='tt'>v</span> &mdash; in view only;<br/>
+<span class='tt'>a</span> &mdash; in same area (room, corridor, etc).
 (TBT)
+The area-filter tries to be slightly predictive -- if you're standing
+on a doorway, it will consider the area on the side of the door you
+were last moving towards.<br/>
 (TBT)
+Filtering can also be changed when getting a location with
+the ''getpos.filter'' key.
 (TBT)
 </dd>
 <dt>whatis_menu</dt><dd>
+When getting a location on the map, and using a key to cycle through
+next and previous targets, use a menu instead to pick a target.
+(default off)
 (TBT)
 </dd>
 <dt>whatis_moveskip</dt><dd>
+When getting a location on the map, and using shifted movement keys or
+meta-digit keys to fast-move, instead of moving 8 units at a time,
+move by skipping the same glyphs.
+(default off)
 (TBT)
 </dd>
 <dt>windowtype</dt><dd>
@@ -3579,9 +3712,17 @@ QWERTZ キーボードに対応するものである。)
 (標準設定はビルド時の設定による; ''<span class='tt'>#version</span>'' でチェックできる)。
 '<span class='tt'>O</span>' コマンドで設定することはできない。
 <br/>
+When used, it should be the first option set since its value might
+enable or disable the availability of various other options.
+For multiple lines in a configuration file, that would be the first
+non-comment line.
+For a comma-separated list in NETHACKOPTIONS or an OPTIONS line in a
+configuration file, that would be the <span class='italic'>rightmost</span> option in the list.
 (TBT)
 </dd>
 <dt>wizweight</dt><dd>
+Augment object descriptions with their objects' weight (default off).
+Debug mode only.
 (TBT)
 </dd>
 <dt>zerocomp</dt><dd>
@@ -3613,11 +3754,11 @@ QWERTZ キーボードに対応するものである。)
 可能ならASCIIキャラクタマップを表示する
 </dd>
 <dt>color</dt><dd>
-怪物、物体、洞窟の構成要素をカラーで表示する
+可能なら怪物、物体、洞窟の構成要素をカラーで表示する。
 <br/>
 </dd>
 <dt>eight_bit_tty</dt><dd>
-8ビットキャラクタ(例えば
+可能なら8ビットキャラクタ(例えば
 <span class='italic'>traps</span>
 オプションで指定したもの)をそのままターミナルに表示する(標準設定はオフ)。
 </dd>
@@ -3655,6 +3796,9 @@ QWERTZ キーボードに対応するものである。)
 可能ならウィンドウでなく画面全体で表示しようと試みる。
 </dd>
 <dt>guicolor</dt><dd>
+Use color text and/or highlighting attributes when displaying some
+non-map data (such as menu selector letters).
+Curses interface only; default is on.
 (TBT)
 </dd>
 <dt>large_font</dt><dd>
@@ -3698,11 +3842,18 @@ RAM に予め読み込むかどうかを制御する。
 可能なら、起動時にスプラッシュスクリーンを表示する(標準設定はオン)
 </dd>
 <dt>statuslines</dt><dd>
-(TBT)
+伝統的な地図の下のステータス表示の行数。
+設定可能な値は 2 と 3 (標準設定は 2)。
+curses と tty インターフェースのみ。
 </dd>
 <dt>term_cols {normalfont and}</dt><dd>
 </dd>
 <dt>term_rows</dt><dd>
+Curses interface only.
+Number of columns and rows to use for the display.
+Curses will attempt to resize to the values specified but will settle
+for smaller sizes if they are too big.
+Default is the current window size.
 (TBT)
 </dd>
 <dt>tiled_map</dt><dd>
@@ -3727,6 +3878,10 @@ RAM に予め読み込むかどうかを制御する。
 可能なら、メッセージウィンドウに一度に表示するメッセージの数を指定する。
 </dd>
 <dt>windowborders</dt><dd>
+Whether to draw boxes around the map, status area, message area, and
+persistent inventory window if enabled.
+Curses interface only.
+Acceptable values are
 (TBT)
 <br/>
 <span class='tt'>0</span> &mdash; オフ、常に境界を表示しない<br/>
@@ -3734,6 +3889,11 @@ RAM に予め読み込むかどうかを制御する。
 <span class='tt'>2</span> &mdash; 自動、最低
 (amp;24+2amp;)x(amp;80+2amp;) ある場合に表示   (標準設定)<br/>
 <br/>
+(The 26x82 size threshold for '2' refers to number of rows and
+columns of the display.
+A width of at least 110 columns (amp;80+2+26+2amp;) is needed for
+<span class='italic'>align_status</span>
+set to {tt left} or <span class='tt'>right</span>.)
 (TBT)
 </dd>
 <dt>windowcolors</dt><dd>
@@ -3743,6 +3903,19 @@ Windows GUIのみ。形式は:
     OPTION=windowcolors:wintype foreground/background
 </pre>
 <br/>
+where wintype is one of <span class='italic'>menu</span>, <span class='italic'>message</span>, <span class='italic'>status</span>, or <span class='italic'>text</span>, and
+foreground and background are colors, either a hexadecimal <span class='italic'>#rrggbb</span>,
+one of the named colors (<span class='italic'>black</span>, <span class='italic'>red</span>, <span class='italic'>green</span>, <span class='italic'>brown</span>,
+<span class='italic'>blue</span>, <span class='italic'>magenta</span>, <span class='italic'>cyan</span>, <span class='italic'>orange</span>,
+<span class='italic'>brightgreen</span>, <span class='italic'>yellow</span>, <span class='italic'>brightblue</span>, <span class='italic'>brightmagenta</span>,
+<span class='italic'>brightcyan</span>, <span class='italic'>white</span>, <span class='italic'>trueblack</span>, <span class='italic'>gray</span>, <span class='italic'>purple</span>,
+<span class='italic'>silver</span>, <span class='italic'>maroon</span>, <span class='italic'>fuchsia</span>, <span class='italic'>lime</span>, <span class='italic'>olive</span>,
+<span class='italic'>navy</span>, <span class='italic'>teal</span>, <span class='italic'>aqua</span>),
+または Windows UI 色の一つ (<span class='italic'>activeborder</span>,
+<span class='italic'>activecaption</span>, <span class='italic'>appworkspace</span>, <span class='italic'>background</span>, <span class='italic'>btnface</span>, <span class='italic'>btnshadow</span>,
+<span class='italic'>btntext</span>, <span class='italic'>captiontext</span>, <span class='italic'>graytext</span>, <span class='italic'>greytext</span>, <span class='italic'>highlight</span>,
+<span class='italic'>highlighttext</span>, <span class='italic'>inactiveborder</span>, <span class='italic'>inactivecaption</span>, <span class='italic'>menu</span>,
+<span class='italic'>menutext</span>, <span class='italic'>scrollbar</span>, <span class='italic'>window</span>, <span class='italic'>windowframe</span>, <span class='italic'>windowtext</span>).
 (TBT)
 <br/>
 </dd>
@@ -3872,10 +4045,9 @@ NO_TERMS を使用しているPCシステムのカラーパレットをセット
 <span class='tt'>&lt;</span> &mdash; 以下のパターンに一致する物体は常に拾う。<br/>
 <span class='tt'>&gt;</span> &mdash; 以下のパターンに一致する物体は決して拾わない。
 <br/>
-The <span class='italic'>autopickup_exception</span> rules are processed in the order
-in which they appear in your configuration file, thus allowing a
-later rule to override an earlier rule.
-(TBT)
+<span class='italic'>autopickup_exception</span> 規則は、
+設定ファイルで現れた順に処理されるので、
+後の規則で前の規則を上書きできる。
 <br/>
 '<span class='tt'>O</span>' コマンドで設定することもできるが、
 これらは設定ファイルに含まれないので、ゲームをセーブして復元すると
@@ -3898,6 +4070,12 @@ later rule to override an earlier rule.
 </p>
 <h2>キー配置を変更する</h2>
 <p>
+It is possible to change the default key bindings of some special commands,
+menu accelerator keys, and extended commands, by using BIND stanzas in the
+configuration file. Format is key, followed by the command to bind to,
+separated by a colon. The key can be a single character (''<span class='tt'>x</span>''),
+a control key (''<span class='tt'>^{</span>X}'', ''<span class='tt'>C-x</span>''), a meta key (''<span class='tt'>M-x</span>''),
+or a three-digit decimal ASCII code.
 (TBT)
 </p>
 <p>
@@ -4138,7 +4316,7 @@ MSGTYPE 行の定義順は重要である; 最後にマッチングした規則�
 </dd>
 </dl>
 <p>
-このパターンは正規表現で指定する。
+このパターンは POSIX 拡張正規表現で指定する。
 </p>
 <h2>ステータスハイライトの設定</h2>
 <p>
@@ -4208,7 +4386,7 @@ nethackは属性要求を(少なくとも <span class='italic'>tty</span>  イ�
 <p>
 次のステータス項目を調整できる:
 </p>
-<div style='align:center'>
+<div style='text-align:center'>
 <table>
 <tr><td><pre>title </pre></td><td><pre> dungeon-level </pre></td><td><pre> experience-level</pre></td></tr>
 <tr><td><pre>strength </pre></td><td><pre> gold </pre></td><td><pre> experience</pre></td></tr>
@@ -4357,7 +4535,7 @@ rogue レベルで表示するために読み込みたいシンボル集合の�
 </p>
 <table>
 <caption>NetHack Symbols</caption>
-<tr><td>Default                     </td><td> Symbol Name               </td><td> Description</td></tr>
+<tr><td>標準設定                    </td><td> シンボル名                </td><td> 説明</td></tr>
 <tr><td> </td><td> S_air                    </td><td>	(air)</td></tr>
 <tr><td>_</td><td> S_altar                  </td><td>	(altar)</td></tr>
 <tr><td>"</td><td> S_amulet                 </td><td>	(amulet)</td></tr>
@@ -4689,15 +4867,17 @@ seen via the <span class='tt'>#attributes</span> command.
 このシステムでゲームを復旧する方法を示す文字列 (標準設定値はなし)。
 </dd>
 <dt>SEDUCE</dt><dd>
-0 と 1 でそれぞれ SEDUCE オプションを無効/有効にする(この機能に関する詳細は
-ソースを参照のこと)。
+0 と 1 でそれぞれ SEDUCE オプションを無効/有効にする。
+無効にすると、インキュバスとサキュバスはニンフのように振る舞う。
 </dd>
 <dt>CHECK_PLNAME</dt><dd>
 これを 1 にすると、EXPLORERS, WIZARDS, SHELLERS は
 ユーザーのログイン名ではなくプレイヤー名をチェックする。
 </dd>
 <dt>CHECK_SAVE_UID</dt><dd>
-0 と 1 でそれぞれセーブファイルの UID チェックを無効/有効にする。
+0 と 1 でそれぞれ、(復元するユーザーがセーブしたユーザーと同じかを
+検証するために) セーブファイルの UID (識別番号として使われる)
+チェックを無効/有効にする。
 </dd>
 </dl>
 <p>
@@ -4727,10 +4907,10 @@ Windows OS のみ; 全ての外部ファイルを検索し、全ての出力フ�
 書き込むディレクトリを、標準の位置ではなく一ヶ所にする。
 </dd>
 <dt>DUMPLOGFILE</dt><dd>
-A filename where the end-of-game dumplog is saved.
-Not defining this will prevent dumplog from being created. Only available
-if your game is compiled with DUMPLOG. Allows the following placeholders:
-(TBT)
+ゲーム終了時のダンプログを保存するファイル名。
+これを定義していないとダンプログは作成されない。
+ゲームが DUMPLOG 付きでコンパイルされている場合にのみ利用可能。
+次のプレースフォルダが利用できる:
 <span class='tt'>%%</span>  &mdash; リテラルな '<span class='tt'>%</span>'<br/>
 <span class='tt'>%v</span>  &mdash; バージョン (例: ''<span class='tt'>3.6.3-0</span>'')<br/>
 <span class='tt'>%u</span>  &mdash; ゲーム UID<br/>
@@ -5163,7 +5343,7 @@ hardfought.org に関して <span class='italic'>Keith Simpson</span> と
 <span class='italic'>NetHack Development Team</span> は、ときにはこういった悪党のうちでも最も邪悪な連中の名前を
 洞窟の主たちの一覧としてここに記すのだ。
 </p>
-<div style='align:center'>
+<div style='text-align:center'>
 <table>
 <tr><td><pre>Adam Aronow </pre></td><td><pre> J. Ali Harlow </pre></td><td><pre> Mikko Juola</pre></td></tr>
 <tr><td><pre>Alex Kompel </pre></td><td><pre> Janet Walz </pre></td><td><pre> Nathan Eady</pre></td></tr>
