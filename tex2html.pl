@@ -203,7 +203,7 @@ EOF
                 print $f "</p>\n";
                 shift @mode;
             }
-            print $f "<div style='align:center'>\n";
+            print $f "<div style='text-align:center'>\n";
             unshift @mode, 'center';
             next;
         }

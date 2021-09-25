@@ -9,7 +9,7 @@ body {
 
 h1 {
     font-size: 200%;
-    font-weight: medium;
+    font-weight: 500;
     color: #ccffff;
     font-family: monospace;
 }
@@ -22,42 +22,42 @@ h2 {
 }
 
 h3 {
-    margin: 10, 15;
+    margin: 10 15;
     font-size: 100%;
     font-weight: bold;
     color: #ffffcc;
 }
 
 dl {
-    margin: 0, 30;
+    margin: 0 30;
 }
 
 dt {
-    margin: 5, 0, 2, 0;
+    margin: 5 0 2 0;
     font-size: 100%;
     font-weight: bold;
 }
 
 dd {
-    margin: 0, 40;
+    margin: 0 40;
     font-size: 95%;
     font-weight: normal;
 }
 
 ul.menu {
-    margin: 0, 0, 0, 10;
+    margin: 0 0 0 10;
     padding-left: 0;
     /* list-style-type:none; */
 }
 
 ul ul.menu {
-    margin: 0, 0, 0, 10;
+    margin: 0 0 0 10;
     padding-left: 10;
     list-style-type: none;
 }
 
 li {
-    margin: 5, 0;
+    margin: 5 0;
 }
 
 div#searchform {
@@ -98,7 +98,7 @@ hr {
 }
 
 p {
-    margin: 10, 20;
+    margin: 10 20;
     line-height: 130%;
 }
 
