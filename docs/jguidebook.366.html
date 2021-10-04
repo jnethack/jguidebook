@@ -629,7 +629,7 @@ border: solid 1px #000000; border-collapse: collapse;
 マウスでクリックしたときにもこのコマンドが発動する。
 </dd>
 <dt>.</dt><dd>
-待つ、または休憩する。1 ターン何もしない。
+待つ、または休憩する; 1 ターン何もしない。
 </dd>
 <dt>a</dt><dd>
 道具(つるはし、鍵、ランプ…)を用いる(使う)。<br/>
@@ -676,23 +676,22 @@ border: solid 1px #000000; border-collapse: collapse;
 <span class='tt'>Dm</span>  &mdash; 置く物を選ぶのにメニューを用いる。<br/>
 <span class='tt'>D%u</span> &mdash; 代金未払の食料だけを下に置く。
 <br/>
-The last example shows a combination.
-There are three categories of object filtering: class ('<span class='tt'>!</span>' for
-potions, '<span class='tt'>?</span>' for scrolls, and so on), shop status ('<span class='tt'>u</span>' for
-unpaid, in other words, owned by the shop), and bless/curse state
-('<span class='tt'>B</span>', '<span class='tt'>U</span>', '<span class='tt'>C</span>', and '<span class='tt'>X</span>' as shown above).
-If you specify more than one value in a category (such as ''<span class='tt'>!?</span>'' for
-potions and scrolls or ''<span class='tt'>BU</span>'' for blessed and uncursed), an inventory
-object will meet the criteria if it matches any of the specified
-values (so ''<span class='tt'>!?</span>'' means '<span class='tt'>!</span>' or '<span class='tt'>?</span>').
-If you specify more than one category, an inventory object must meet
-each of the category criteria (so ''<span class='tt'>%u</span>'' means class '<span class='tt'>%</span>' and
-unpaid '<span class='tt'>u</span>').
-Lastly, you may specify multiple values within multiple categories:
-''<span class='tt'>!?BU</span>'' will select all potions and scrolls which are known to be
-blessed or uncursed.
-(In versions prior to 3.6, filter combinations behaved differently.)
-(TBT)
+最後の例は組み合わせを示している。
+物のフィルタリングに三つのカテゴリがある:
+種類 (水薬 は '<span class='tt'>!</span>'、巻物は '<span class='tt'>?</span>' など)、
+買い物の状態 (未払い、言い換えると店が持っているものは '<span class='tt'>u</span>')、
+祝福/呪い状態(上述の通りの '<span class='tt'>B</span>', '<span class='tt'>U</span>', '<span class='tt'>C</span>', <span class='tt'>X</span>')。
+一つのカテゴリで二つ以上指定した場合
+(水薬と巻物で ''<span class='tt'>!?</span>'' や、祝福と呪われていないで ''<span class='tt'>BU</span>'' など)、
+持ち物は指定された値のどれかに一致した場合に条件を満たす
+(従って ''<span class='tt'>!?</span>'' は '<span class='tt'>!</span>' または '<span class='tt'>?</span>' を意味する)。.
+複数のカテゴリを指定すると、持ち物は
+それぞれのクラスタの条件に一致した場合に条件を満たす
+(従って ''<span class='tt'>%u</span>'' は種類 '<span class='tt'>%</span>' と未払い '<span class='tt'>u</span>' を意味する)。
+最後に、複数のカテゴリの複数の値を指定できる:
+''<span class='tt'>!?BU</span>'' は、祝福または呪われていないと分かっている、
+全ての水薬と巻物を選ぶ。
+(3.6 より前のバージョンでは、フィルタの組み合わせは異なる振る舞いだった。)
 </dd>
 <dt>^D</dt><dd>
 何か(普通は扉)を蹴る。
@@ -1453,19 +1452,25 @@ your character does not know of a path to that location.
 デバッグモードのみ。
 </dd>
 <dt>#wait</dt><dd>
-(TBT)
+何もせずに 1 ターン休憩する。
+標準キーは '<span class='tt'>.</span>' と、
+<span class='italic'>rest_on_space</span> がオンなら '<span class='tt'>{ </span>}'。
 </dd>
 <dt>#wear</dt><dd>
-(TBT)
+鎧を一つ装備する。
+標準キーは '<span class='tt'>W</span>'。
 </dd>
 <dt>#whatdoes</dt><dd>
-(TBT)
+あるキーが何をするかを示す。
+標準キーは '<span class='tt'>&amp;</span>'。
 </dd>
 <dt>#whatis</dt><dd>
-(TBT)
+シンボルに対応している物が何かを表示する。
+標準キーは '<span class='tt'>/</span>'。
 </dd>
 <dt>#wield</dt><dd>
-(TBT)
+武器を装備する。
+標準キーは '<span class='tt'>w</span>'。
 </dd>
 <dt>#wipe</dt><dd>
 顔を拭う。
@@ -3721,9 +3726,8 @@ configuration file, that would be the <span class='italic'>rightmost</span> opti
 (TBT)
 </dd>
 <dt>wizweight</dt><dd>
-Augment object descriptions with their objects' weight (default off).
-Debug mode only.
-(TBT)
+物の説明にその物の重さを追加する(標準設定はオフ)。
+デバッグモードのみ。
 </dd>
 <dt>zerocomp</dt><dd>
 セーブファイルを書くときに、内容に zero-comp 圧縮を掛ける。
@@ -3796,10 +3800,9 @@ Debug mode only.
 可能ならウィンドウでなく画面全体で表示しようと試みる。
 </dd>
 <dt>guicolor</dt><dd>
-Use color text and/or highlighting attributes when displaying some
-non-map data (such as menu selector letters).
-Curses interface only; default is on.
-(TBT)
+(メニュー選択の文字のような) 一部の非マップデータを表示するときに
+テキストの色やハイライト属性を使う。
+cursesインターフェースのみ; 標準設定はオン。
 </dd>
 <dt>large_font</dt><dd>
 可能なら大きいフォントを使う。
@@ -3849,12 +3852,11 @@ curses と tty インターフェースのみ。
 <dt>term_cols {normalfont and}</dt><dd>
 </dd>
 <dt>term_rows</dt><dd>
-Curses interface only.
-Number of columns and rows to use for the display.
-Curses will attempt to resize to the values specified but will settle
-for smaller sizes if they are too big.
-Default is the current window size.
-(TBT)
+cursesインターフェースのみ。
+表示に使う桁数と行数。
+cursesは指定された値にリサイズしようとするが、
+大きすぎる場合にはより小さいサイズに合わせる。
+標準設定は現在のウィンドウサイズ。
 </dd>
 <dt>tiled_map</dt><dd>
 可能なら、タイルマップを表示する。
@@ -3878,11 +3880,10 @@ Default is the current window size.
 可能なら、メッセージウィンドウに一度に表示するメッセージの数を指定する。
 </dd>
 <dt>windowborders</dt><dd>
-Whether to draw boxes around the map, status area, message area, and
-persistent inventory window if enabled.
-Curses interface only.
-Acceptable values are
-(TBT)
+マップ、ステータスエリア、メッセージエリア、および有効の場合は
+固定持ち物ウィンドウの周りに箱を書くかどうか。
+cursesインターフェースのみ。
+可能な値は
 <br/>
 <span class='tt'>0</span> &mdash; オフ、常に境界を表示しない<br/>
 <span class='tt'>1</span> &mdash; オン、常に境界を表示する<br/>
@@ -4087,98 +4088,145 @@ or a three-digit decimal ASCII code.
     BIND=v:loot
 </pre>
 <dl>
-<dt>Extended command keys</dt><dd>
-(TBT)
+<dt>拡張コマンドキー</dt><dd>
+複数のキーを一つの拡張コマンドに割り当てることができる。
+割り当てられている拡張コマンドとして ''<span class='tt'>nothing</span>'' を使うことで
+キーへの割り当てを解除する。
+また、''<span class='tt'>&lt;esc&gt;</span>'', ''<span class='tt'>&lt;enter&gt;</span>'', ''<span class='tt'>&lt;space&gt;</span>'' キーにも
+割り当てることができる。
 <br/>
 </dd>
-<dt>Menu accelerator keys</dt><dd>
-(TBT)
+<dt>メニューアクセラレーターキー</dt><dd>
+メニュー制御やアクセラレーターキーも設定ファイルのOPTIONS行を通して
+再割り当てできる。
+物のシンボルをメニューアクセラレーターに割り当てることはできない。
 <br/>
 </dd>
-<dt>Special command keys</dt><dd>
+<dt>特殊コマンドキー</dt><dd>
+以下は再割り当てできる特殊コマンドである。
+その一部は問題なく同じキーに割り当てることができる;
+それ以外は同じ「コンテキスト」にあり、同じキーに割り当てると、
+そのうち一つだけが利用可能である。
+特殊コマンドは単一のキーにのみ割り当てることができる。
 </dd>
 </dl>
-<p>
-(TBT)
-</p>
 <dl>
 <dt>{count}</dt><dd>
+(TBT)
 </dd>
 <dt>{doinv}</dt><dd>
+(TBT)
 </dd>
 <dt>{fight}</dt><dd>
+(TBT)
 </dd>
 <dt>{fight.numpad}</dt><dd>
+(TBT)
 </dd>
 <dt>{getdir.help}</dt><dd>
+(TBT)
 </dd>
 <dt>{getdir.self}</dt><dd>
+(TBT)
 </dd>
 <dt>{getdir.self2}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.autodescribe}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.all.next}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.all.prev}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.door.next}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.door.prev}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.help}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.mon.next}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.mon.prev}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.obj.next}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.obj.prev}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.menu}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.moveskip}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.filter}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.pick}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.pick.once}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.pick.quick}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.pick.verbose}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.self}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.unexplored.next}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.unexplored.prev}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.valid}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.valid.next}</dt><dd>
+(TBT)
 </dd>
 <dt>{getpos.valid.prev}</dt><dd>
+(TBT)
 </dd>
 <dt>{nopickup}</dt><dd>
+(TBT)
 </dd>
 <dt>{redraw}</dt><dd>
+(TBT)
 </dd>
 <dt>{redraw.numpad}</dt><dd>
+(TBT)
 </dd>
 <dt>{repeat}</dt><dd>
+(TBT)
 </dd>
 <dt>{reqmenu}</dt><dd>
+(TBT)
 </dd>
 <dt>{run}</dt><dd>
+(TBT)
 </dd>
 <dt>{run.nopickup}</dt><dd>
+(TBT)
 </dd>
 <dt>{run.numpad}</dt><dd>
+(TBT)
 </dd>
 <dt>{rush}</dt><dd>
+(TBT)
 </dd>
 </dl>
 <h2>メッセージ型の設定</h2>
@@ -4353,14 +4401,14 @@ OPTION=hilite_status:wisdom/down/red/up/green
 指定できる色は:
 black, red, green, brown, blue, magenta, cyan, gray,
 orange, light-green, yellow, light-blue, light-magenta, light-cyan, white。
-And <span class='italic'>no-color</span>, the default foreground color on the display, which
-is not necessarily the same as black or white or any of the other colors.
-(TBT)
+および <span class='italic'>no-color</span>、ディスプレイの標準前景色;
+黒や白やその他の色と同じである必要はない。
 </p>
 <p>
-Allowed attributes are none, bold, dim, underline, blink, and inverse.
-''Normal'' is a synonym for ''none''; they should not be used in
-combination with any of the other attributes.
+指定できる属性は:
+none, bold, dim, underline, blink, inverse。
+''Normal'' は ''none'' の別名である;
+they should not be used in combination with any of the other attributes.
 (TBT)
 </p>
 <p>

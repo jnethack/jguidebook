@@ -1164,7 +1164,7 @@
 %%.lp
 \item[\tb{.}]
 %Wait or rest, do nothing for one turn.
-待つ、または休憩する。1 ターン何もしない。
+待つ、または休憩する; 1 ターン何もしない。
 %%.lp
 \item[\tb{a}]
 %Apply (use) a tool (pick-axe, key, lamp \ldots).\\
@@ -1265,23 +1265,22 @@
 %``{\tt !?BU}'' will select all potions and scrolls which are known to be
 %blessed or uncursed.
 %(In versions prior to 3.6, filter combinations behaved differently.)
-The last example shows a combination.
-There are three categories of object filtering: class (`{\tt !}' for
-potions, `{\tt ?}' for scrolls, and so on), shop status (`{\tt u}' for
-unpaid, in other words, owned by the shop), and bless/curse state
-(`{\tt B}', `{\tt U}', `{\tt C}', and `{\tt X}' as shown above).
-If you specify more than one value in a category (such as ``{\tt !?}'' for
-potions and scrolls or ``{\tt BU}'' for blessed and uncursed), an inventory
-object will meet the criteria if it matches any of the specified
-values (so ``{\tt !?}'' means `{\tt !}' or `{\tt ?}').
-If you specify more than one category, an inventory object must meet
-each of the category criteria (so ``{\tt \%u}'' means class `{\tt \%}' and
-unpaid `{\tt u}').
-Lastly, you may specify multiple values within multiple categories:
-``{\tt !?BU}'' will select all potions and scrolls which are known to be
-blessed or uncursed.
-(In versions prior to 3.6, filter combinations behaved differently.)
-(TBT)
+最後の例は組み合わせを示している。
+物のフィルタリングに三つのカテゴリがある:
+種類 (水薬 は `{\tt !}'、巻物は `{\tt ?}' など)、
+買い物の状態 (未払い、言い換えると店が持っているものは `{\tt u}')、
+祝福/呪い状態(上述の通りの `{\tt B}', `{\tt U}', `{\tt C}', {\tt X}')。
+一つのカテゴリで二つ以上指定した場合
+(水薬と巻物で ``{\tt !?}'' や、祝福と呪われていないで ``{\tt BU}'' など)、
+持ち物は指定された値のどれかに一致した場合に条件を満たす
+(従って ``{\tt !?}'' は `{\tt !}' または `{\tt ?}' を意味する)。.
+複数のカテゴリを指定すると、持ち物は
+それぞれのクラスタの条件に一致した場合に条件を満たす
+(従って ``{\tt \%u}'' は種類 `{\tt \%}' と未払い `{\tt u}' を意味する)。
+最後に、複数のカテゴリの複数の値を指定できる:
+``{\tt !?BU}'' は、祝福または呪われていないと分かっている、
+全ての水薬と巻物を選ぶ。
+(3.6 より前のバージョンでは、フィルタの組み合わせは異なる振る舞いだった。)
 %%.lp
 \item[\tb{\^{}D}]
 %Kick something (usually a door).
@@ -2523,23 +2522,29 @@ your character does not know of a path to that location.
 %Rest one move while doing nothing.
 %Default key is `{\tt .}', and also `{\tt{ }}' if
 %{\it rest\verb+_+on\verb+_+space\/} is on.
-(TBT)
+何もせずに 1 ターン休憩する。
+標準キーは `{\tt .}' と、
+{\it rest\verb+_+on\verb+_+space\/} がオンなら `{\tt{ }}'。
 %%.lp
 \item[\tb{\#wear}]
 %Wear a piece of armor. Default key is `{\tt W}'.
-(TBT)
+鎧を一つ装備する。
+標準キーは `{\tt W}'。
 %%.lp
 \item[\tb{\#whatdoes}]
 %Tell what a key does. Default key is `{\tt \&}'.
-(TBT)
+あるキーが何をするかを示す。
+標準キーは `{\tt \&}'。
 %%.lp
 \item[\tb{\#whatis}]
 %Show what type of thing a symbol corresponds to. Default key is `{\tt /}'.
-(TBT)
+シンボルに対応している物が何かを表示する。
+標準キーは `{\tt /}'。
 %%.lp
 \item[\tb{\#wield}]
 %Wield a weapon. Default key is `{\tt w}'.
-(TBT)
+武器を装備する。
+標準キーは `{\tt w}'。
 %%.lp
 \item[\tb{\#wipe}]
 %Wipe off your face. Autocompletes. Default key is `{\tt M-w}'.
@@ -6471,9 +6476,8 @@ configuration file, that would be the {\it rightmost\/} option in the list.
 \item[\ib{wizweight}]
 %Augment object descriptions with their objects' weight (default off).
 %Debug mode only.
-Augment object descriptions with their objects' weight (default off).
-Debug mode only.
-(TBT)
+物の説明にその物の重さを追加する(標準設定はオフ)。
+デバッグモードのみ。
 %%.lp
 \item[\ib{zerocomp}]
 %When writing out a save file, perform zero-comp compression of the
@@ -6589,10 +6593,9 @@ Debug mode only.
 %Use color text and/or highlighting attributes when displaying some
 %non-map data (such as menu selector letters).
 %Curses interface only; default is on.
-Use color text and/or highlighting attributes when displaying some
-non-map data (such as menu selector letters).
-Curses interface only; default is on.
-(TBT)
+(メニュー選択の文字のような) 一部の非マップデータを表示するときに
+テキストの色やハイライト属性を使う。
+cursesインターフェースのみ; 標準設定はオン。
 %%.lp
 \item[\ib{large\verb+_+font}]
 %If {\it NetHack\/} can, it should use a large font.
@@ -6669,12 +6672,11 @@ curses と tty インターフェースのみ。
 %Curses will attempt to resize to the values specified but will settle
 %for smaller sizes if they are too big.
 %Default is the current window size.
-Curses interface only.
-Number of columns and rows to use for the display.
-Curses will attempt to resize to the values specified but will settle
-for smaller sizes if they are too big.
-Default is the current window size.
-(TBT)
+cursesインターフェースのみ。
+表示に使う桁数と行数。
+cursesは指定された値にリサイズしようとするが、
+大きすぎる場合にはより小さいサイズに合わせる。
+標準設定は現在のウィンドウサイズ。
 %%.lp
 \item[\ib{tiled\verb+_+map}]
 %If {\it NetHack\/} can, it should display a tiled map if it can.
@@ -6710,11 +6712,10 @@ Default is the current window size.
 %persistent inventory window if enabled.
 %Curses interface only.
 %Acceptable values are
-Whether to draw boxes around the map, status area, message area, and
-persistent inventory window if enabled.
-Curses interface only.
-Acceptable values are
-(TBT)
+マップ、ステータスエリア、メッセージエリア、および有効の場合は
+固定持ち物ウィンドウの周りに箱を書くかどうか。
+cursesインターフェースのみ。
+可能な値は
 
 %%.sd
 %%.si
@@ -7071,27 +7072,36 @@ or a three-digit decimal ASCII code.
 
 \blist{}
 %%.lp "Extended command keys"
-\item[\tb{Extended command keys}]
+%\item[\tb{Extended command keys}]
+\item[\tb{拡張コマンドキー}]
 %You can bind multiple keys to the same extended command. Unbind a key by
 %using ``{\tt nothing}'' as the extended command to bind to. You can also bind
 %the ``{\tt <esc>}'', ``{\tt <enter>}'', and ``{\tt <space>}'' keys.
-(TBT)
+複数のキーを一つの拡張コマンドに割り当てることができる。
+割り当てられている拡張コマンドとして ``{\tt nothing}'' を使うことで
+キーへの割り当てを解除する。
+また、``{\tt <esc>}'', ``{\tt <enter>}'', ``{\tt <space>}'' キーにも
+割り当てることができる。
 
 %%.lp "Menu accelerator keys"
-\item[\tb{Menu accelerator keys}]
+%\item[\tb{Menu accelerator keys}]
+\item[\tb{メニューアクセラレーターキー}]
 %The menu control or accelerator keys can also be rebound via OPTIONS lines
 %in the configuration file.
 %You cannot bind object symbols into menu accelerators.
-(TBT)
+メニュー制御やアクセラレーターキーも設定ファイルのOPTIONS行を通して
+再割り当てできる。
+物のシンボルをメニューアクセラレーターに割り当てることはできない。
 
 %%.lp "Special command keys"
-\item[\tb{Special command keys}]
-%Below are the special commands you can rebind. Some of them can be bound to
-%same keys with no problems, others are in the same ``context'', and if bound
-%to same keys, only one of those commands will be available. Special command
-%can only be bound to a single key.
+%\item[\tb{Special command keys}]
+\item[\tb{特殊コマンドキー}]
+以下は再割り当てできる特殊コマンドである。
+その一部は問題なく同じキーに割り当てることができる;
+それ以外は同じ「コンテキスト」にあり、同じキーに割り当てると、
+そのうち一つだけが利用可能である。
+特殊コマンドは単一のキーにのみ割り当てることができる。
 \elist
-(TBT)
 
 %%.pg
 \blist{\itemindent 10mm \labelwidth 15mm \rightmargin 15mm}
@@ -7099,149 +7109,188 @@ or a three-digit decimal ASCII code.
 \item[{\bb{count}}]
 %Prefix key to start a count, to repeat a command this many times.
 %With {\it number\verb+_+pad\/} only. Default is~`{\tt n}'.
+(TBT)
 %%.lp
 \item[{\bb{doinv}}]
 %Show inventory. With {\it number\verb+_+pad\/} only. Default is~`{\tt 0}'.
+(TBT)
 %%.lp
 \item[{\bb{fight}}]
 %Prefix key to force fight a direction. Default is~`{\tt F}'.
+(TBT)
 %%.lp
 \item[{\bb{fight.numpad}}]
 %Prefix key to force fight a direction. With {\it number\verb+_+pad\/} only.
 %Default is~`{\tt -}'.
+(TBT)
 %%.lp
 \item[{\bb{getdir.help}}]
 %When asked for a direction, the key to show the help. Default is~`{\tt ?}'.
+(TBT)
 %%.lp
 \item[{\bb{getdir.self}}]
 %When asked for a direction, the key to target yourself. Default is~`{\tt .}'.
+(TBT)
 %%.lp
 \item[{\bb{getdir.self2}}]
 %When asked for a direction, the key to target yourself. Default is~`{\tt s}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.autodescribe}}]
 %When asked for a location, the key to toggle {\it autodescribe\/}.
 %Default is~`{\tt \#}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.all.next}}]
 %When asked for a location, the key to go to next closest interesting thing.
 %Default is~`{\tt a}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.all.prev}}]
 %When asked for a location, the key to go to previous closest interesting thing.
 %Default is~`{\tt A}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.door.next}}]
 %When asked for a location, the key to go to next closest door or doorway.
 %Default is~`{\tt d}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.door.prev}}]
 %When asked for a location, the key to go to previous closest door or doorway.
 %Default is~`{\tt D}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.help}}]
 %When asked for a location, the key to show help. Default is~`{\tt ?}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.mon.next}}]
 %When asked for a location, the key to go to next closest monster.
 %Default is~`{\tt m}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.mon.prev}}]
 %When asked for a location, the key to go to previous closest monster.
 %Default is~`{\tt M}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.obj.next}}]
 %When asked for a location, the key to go to next closest object.
 %Default is~`{\tt o}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.obj.prev}}]
 %When asked for a location, the key to go to previous closest object.
 %Default is~`{\tt O}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.menu}}]
 %When asked for a location, and using one of the next or previous keys to
 %cycle through targets, toggle showing a menu instead. Default is~`{\tt !}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.moveskip}}]
 %When asked for a location, and using the shifted movement keys or
 %meta-digit keys to fast-move around, move by skipping the same glyphs
 %instead of by 8 units.
 %Default is~`{\tt *}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.filter}}]
 %When asked for a location, change the filtering mode when using one of
 %the next or previous keys to cycle through targets. Toggles between no
 %filtering, in view only, and in the same area only. Default is~`{\tt "}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.pick}}]
 %When asked for a location, the key to choose the location, and possibly
 %ask for more info. Default is~`{\tt .}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.pick.once}}]
 %When asked for a location, the key to choose the location, and skip
 %asking for more info. Default is~`{\tt ,}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.pick.quick}}]
 %When asked for a location, the key to choose the location, skip asking
 %for more info, and exit the location asking loop. Default is~`{\tt ;}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.pick.verbose}}]
 %When asked for a location, the key to choose the location, and show more
 %info without asking. Default is~`{\tt :}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.self}}]
 %When asked for a location, the key to go to your location.
 %Default is~`{\tt @}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.unexplored.next}}]
 %When asked for a location, the key to go to next closest unexplored location.
 %Default is~`{\tt x}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.unexplored.prev}}]
 %When asked for a location, the key to go to previous closest unexplored
 %location. Default is~`{\tt X}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.valid}}]
 %When asked for a location, the key to go to show valid target locations.
 %Default is~`{\tt \$}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.valid.next}}]
 %When asked for a location, the key to go to next closest valid location.
 %Default is~`{\tt z}'.
+(TBT)
 %%.lp
 \item[{\bb{getpos.valid.prev}}]
 %When asked for a location, the key to go to previous closest valid location.
 %Default is~`{\tt Z}'.
+(TBT)
 %%.lp
 \item[{\bb{nopickup}}]
 %Prefix key to move without picking up items. Default is~`{\tt m}'.
+(TBT)
 %%.lp
 \item[{\bb{redraw}}]
 %Key to redraw the screen. Default is~`{\tt \^{}R}'.
+(TBT)
 %%.lp
 \item[{\bb{redraw.numpad}}]
 %Key to redraw the screen. With {\it number\verb+_+pad\/} only.
 %Default is~`{\tt \^{}L}'.
+(TBT)
 %%.lp
 \item[{\bb{repeat}}]
 %Key to repeat previous command. Default is~`{\tt \^{}A}'.
+(TBT)
 %%.lp
 \item[{\bb{reqmenu}}]
 %Prefix key to request menu from some commands. Default is~`{\tt m}'.
+(TBT)
 %%.lp
 \item[{\bb{run}}]
 %Prefix key to run towards a direction. Default is~`{\tt G}'.
+(TBT)
 %%.lp
 \item[{\bb{run.nopickup}}]
 %Prefix key to run towards a direction without picking up items on the way.
 %Default is~`{\tt M}'.
+(TBT)
 %%.lp
 \item[{\bb{run.numpad}}]
 %Prefix key to run towards a direction. With {\it number\verb+_+pad\/} only.
 %Default is~`{\tt 5}'.
+(TBT)
 %%.lp
 \item[{\bb{rush}}]
 %Prefix key to rush towards a direction. Default is~`{\tt g}'.
+(TBT)
 \elist
 
 
@@ -7523,16 +7572,16 @@ OPTION=hilite_status:wisdom/down/red/up/green
 指定できる色は:
 black, red, green, brown, blue, magenta, cyan, gray,
 orange, light-green, yellow, light-blue, light-magenta, light-cyan, white。
-And {\it no-color}, the default foreground color on the display, which
-is not necessarily the same as black or white or any of the other colors.
-(TBT)
+および {\it no-color}、ディスプレイの標準前景色;
+黒や白やその他の色と同じである必要はない。
 
 %Allowed attributes are none, bold, dim, underline, blink, and inverse.
 %``Normal'' is a synonym for ``none''; they should not be used in
 %combination with any of the other attributes.
-Allowed attributes are none, bold, dim, underline, blink, and inverse.
-``Normal'' is a synonym for ``none''; they should not be used in
-combination with any of the other attributes.
+指定できる属性は:
+none, bold, dim, underline, blink, inverse。
+``Normal'' は ``none'' の別名である;
+they should not be used in combination with any of the other attributes.
 (TBT)
 
 %To specify both a color and an attribute, use `\&' to combine them.

@@ -119,3 +119,17 @@ b {
     font-family: 'Courier New', Courier, monospace;
     color: #ffffcc;
 }
+
+pre {
+    padding: 0;
+    margin: 0;
+}
+
+dt {
+    color: #ffffcc;
+}
+
+table {
+    border: solid 1px #000000;
+    border-collapse: collapse;
+}
