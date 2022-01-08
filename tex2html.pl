@@ -423,6 +423,10 @@ EOF
         s@\{\\tt ?([^}]+)\\/\}@<span class='tt'>$1</span>@g;
         s@\{\\tt ?([^}]+)\}@<span class='tt'>$1</span>@g;
 
+        # itより後に処理する必要がある
+        s@\\mbox\{\{(.+)\}\}@<span class='mbox'>$1</span>@g;
+        s@\\mbox\{([^\}]+)\}@<span class='mbox'>$1</span>@g;
+
         s@\\\\$@<br/>@g;
 
         s@\\verb(.)(.+?)\g1@$2@g;
@@ -432,6 +436,9 @@ EOF
         s@\\(.)@$1@g;
 
         s@`@'@g;
+
+        # 既に\は消えているが本文で出てくることはないので決め打ち
+        s@textbackslash @\\@g;
 
 if($mode[0] eq ''){
         print $f "<p>\n";
