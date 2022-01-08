@@ -769,7 +769,7 @@
 \item[\tb{\#}]
 %A corridor, or iron bars, or a tree, or possibly a kitchen sink (if
 %your dungeon has sinks), or a drawbridge.
-通路、鉄の棒、木、あるいは台所の流し台(流し台がインプリメントされているとき)
+通路、鉄の棒、木、あるいは(あなたの迷宮にあるなら)台所の流し台、
 または跳ね橋
 %%.lp
 \item[\tb{>}]
@@ -1849,20 +1849,22 @@
 %name when the other doesn't and give that name to the result, while
 %splitting (count given) will ignore the source stack's name when
 %deciding whether to merge with the destination stack.
-Adjusting without a count used to collect all compatible stacks when
-moving to the destination.  That behavior has been changed; to gather
-compatible stacks, ``{\tt \#adjust}'' a stack into its own inventory slot.
-If it has a name assigned, other stacks with the same name or with
-no name will merge provided that all their other attributes match.
-If it does not have a name, only other stacks with no name are eligible.
-In either case, otherwise compatible stacks with a different name
-will not be merged.  This contrasts with using ``{\tt \#adjust}'' to move
-from one slot to a different slot.  In that situation, moving (no
-count given) a compatible stack will merge if either stack has a
-name when the other doesn't and give that name to the result, while
-splitting (count given) will ignore the source stack's name when
-deciding whether to merge with the destination stack.
-(TBT)
+数を指定せずに調整する場合、以前は移動先に移すときに全ての互換性のある
+まとまりは集められていた。
+この振る舞いは変更された;
+互換性のあるまとまりを集めるには、まとまりを新しいスロットに
+``{\tt \#adjust}'' する。
+名前が割り当てられている場合、その他の属性が同じなら
+同じ名前か名前のないまとまりが集められる。
+名前がない場合、その他の名前のないまとまりのみが有効である。
+どちらの場合も、異なる名前のまとまりは集められない。
+これはあるスロットから他のスロットに移すために
+``{\tt \#adjust}'' を使った場合と対照的である。
+この場合、(数が指定されず)互換性のあるまとまりを移動する場合には、
+どちらかに名前がついていてもう片方についていないなら、
+これは集められ、その名前が付けられる。
+一方、(数が指定されて)分割される場合、移動先とまとまりを集めるかどうかを
+決めるときに元のまとまりの名前は無視される。
 %%.lp
 \item[\tb{\#annotate}]
 %Allows you to specify one line of text to associate with the current
@@ -2445,14 +2447,13 @@ deciding whether to merge with the destination stack.
 %When picking a target with cursor and the {\it autodescribe\/}
 %option is on, the top line will show ``(no travel path)'' if
 %your character does not know of a path to that location.
-Travel to a specific location on the map.
-Default key is `{\tt \verb+_+}'.
-Using the ``request menu'' prefix shows a menu of interesting targets in sight
-without asking to move the cursor.
-When picking a target with cursor and the {\it autodescribe\/}
-option is on, the top line will show ``(no travel path)'' if
-your character does not know of a path to that location.
-(TBT)
+地図の指定された場所まで移動(travel)する。
+標準キーは `{\tt \verb+_+}'。
+``request menu'' 接頭辞を使うと、カーソル移動を訊ねることなく
+視界内の興味深い目標の一覧を表示する。
+カーソルで目標を選び、{\it autodescribe\/} オプションがオンなら、
+もしあなたのキャラクタがその場所までの道のりを知らない場合には
+一番上の行に ``(no travel path)'' と表示される。
 %%.lp
 \item[\tb{\#turn}]
 %Turn undead away. Autocompletes. Default key is `{\tt M-t}'.
@@ -3266,19 +3267,17 @@ your character does not know of a path to that location.
 %Use the `{\tt a}' (apply) command and pick a saddle in your inventory to
 %attempt to put that saddle on an adjacent creature.  If successful,
 %it will be transferred to that creature's inventory.
-Use the `{\tt a}' (apply) command and pick a saddle in your inventory to
-attempt to put that saddle on an adjacent creature.  If successful,
-it will be transferred to that creature's inventory.
-(TBT)
+鞍を隣にいる生物に付けようとするには、
+`{\tt a}' (apply) コマンドを使って持物から鞍を選ぶ。
+成功すると、それはその生物の持物に移される。
 
 %%.pg
 %Use the ``{\tt \#loot}'' command while adjacent to a saddled creature to
 %try to remove the saddle from that creature.  If successful, it will
 %be transferred to your inventory.
-Use the ``{\tt \#loot}'' command while adjacent to a saddled creature to
-try to remove the saddle from that creature.  If successful, it will
-be transferred to your inventory.
-(TBT)
+隣にいる鞍の付いている生物から鞍を外そうとするには、
+``{\tt \#loot}'' コマンドを使う。
+成功すると、それはあなたの持物に移される。
 
 %%.hn 2
 %\subsection*{Bones levels}
@@ -3311,12 +3310,10 @@ be transferred to your inventory.
 %Moving to a location where you can't see or sense a monster any more
 %will result in it disappearing from your map, similarly if it is the
 %one who moved rather than you.
-Monsters (a generic reference which also includes humans and pets) are only
-shown while they can be seen or otherwise sensed.
-Moving to a location where you can't see or sense a monster any more
-will result in it disappearing from your map, similarly if it is the
-one who moved rather than you.
-(TBT)
+怪物 (一般に人間とペットを含む表現) は、それが見えるかその他の方法で
+感知できる場合にのみ表示される。
+怪物があなたが見えなかったり感知できない場所に移動すると、
+それがあなた以外の誰かの場合と同様、地図から消える。
 
 %%.pg
 %However, if you encounter a monster which you can't see or
@@ -3327,15 +3324,13 @@ one who moved rather than you.
 %proven that there is no monster there, even if the unseen monster
 %moves to another location or you move to a spot where the marker's
 %location ordinarily wouldn't be seen any more.
-However, if you encounter a monster which you can't see or
-sense---perhaps it is invisible and has just tapped you on the
-noggin---a special ``remembered, unseen monster'' marker will be displayed at
-the location where you think it is.
-That will persist until you have
-proven that there is no monster there, even if the unseen monster
-moves to another location or you move to a spot where the marker's
-location ordinarily wouldn't be seen any more.
-(TBT)
+しかし、見えたり感知できたりしない怪物と遭遇した--おそらく見えず、
+出会い頭に出会った--場合、
+特別な「覚えているが見えない怪物」マーカが、それがいるとあなたが考えている
+場所に表示される。
+これは、例え見えない怪物が他の場所に移動していたり、あなたが通常マーカの
+位置が見えない位置に移動したとしても、
+あなたがそこに怪物がいないと確信するまで表示され続ける。
 
 %%.hn 1
 %\section{Objects}
@@ -3611,7 +3606,7 @@ crossbow bolt(クロスボウ用の太矢)を発射するためのものであ�
 %in an appendix to {\it Unearthed Arcana}, an AD\&D supplement.
 AD\&D をプレイしたことのある読者はお気付きだろうが、AD\&D に登場した武器は
 {\it NetHack\/} においても怪物にだいたい同じダメージを与える。
-あまり良く知られていない武器( %
+あまり良く知られていない武器(
 {\it aklys}(アキリス), {\it lucern hammer}(ルッツェンハンマー),
 {\it bec-de-corbin\/}(ベッグ・デ・コルビン) など)のいくつかは AD\&D の
 追加ルールである {\it Unearthed Arcana} の付録で詳しく説明されている。
@@ -4104,7 +4099,7 @@ leather jacket(皮ジャケット)       & 9 & no armor(鎧なし)             &
 %Other types of wands
 %don't require a direction.  The number of charges in a
 %wand is random and decreases by one whenever you use it.
-杖は通常何回も魔力を発揮する。
+杖は通常複数回魔法効果を発揮する。
 一部の杖は杖を振る際に方向を指示する必要がある。
 杖を自分に向けて振ることもできる(方向として `{\tt .}' か `{\tt s}' を入力する)が、
 これはしばしば愚かな行為となる。
@@ -4131,7 +4126,7 @@ leather jacket(皮ジャケット)       & 9 & no armor(鎧なし)             &
 %might decide to go for broke and break your wand.  This is not for the faint
 %of heart.  Doing so will almost certainly cause a catastrophic release of
 %magical energies.
-自暴自虐なな行為ではあるが、どうにもならなくなったときには杖を壊すという手もある。
+自暴自棄な行為ではあるが、どうにもならなくなったときには杖を壊すという手もある。
 これは弱気な行為ではない。それを行うことにより、
 破壊的な魔法のエネルギーが解放されるからである。
 
@@ -4410,15 +4405,16 @@ leather jacket(皮ジャケット)       & 9 & no armor(鎧なし)             &
 %%.pg
 %Normally, if you have seen an object at a particular map location and
 %move to another location where you can't directly see that object any
-%more, if will continue to be displayed on your map.
+%more, it will continue to be displayed on your map.
 %That remains the case even if it is not actually there any
 %more---perhaps a monster has picked it up or it has rotted
 %away---until you can see or feel that location again.
 %One notable exception is that if the object gets covered by the
 %``remembered, unseen monster'' marker.
-Normally, if you have seen an object at a particular map location and
-move to another location where you can't directly see that object any
-more, if will continue to be displayed on your map.
+通常、あなたが地図上のある特定の位置である物を見て、
+物がもう直接見えない位置に移動した場合、
+それは地図上に表示され続ける。
+if will continue to be displayed on your map.
 That remains the case even if it is not actually there any
 more---perhaps a monster has picked it up or it has rotted
 away---until you can see or feel that location again.
@@ -4431,13 +4427,11 @@ One notable exception is that if the object gets covered by the
 %actually took the object.
 %If the object is still there, then once you see or feel that location
 %again you will re-discover the object and resume remembering it.
-When that marker is later removed
-after you've verified that no monster is there, you will forget that
-there was any object there regardless of whether the unseen monster
-actually took the object.
-If the object is still there, then once you see or feel that location
-again you will re-discover the object and resume remembering it.
-(TBT)
+あなたがそこに怪物がいないことを確認してマーカが消えると、
+見えない怪物が実際にその物を拾ったかどうかに関わらず、
+あなたはそこにあった物を忘れる。
+物がそこにあり続けている場合、再びその場所を見たり感知したりすると
+物を再び発見してそれを記憶し続ける。
 
 %%.pg
 %The situation is the same for a pile of objects, except that only the
@@ -4446,13 +4440,9 @@ again you will re-discover the object and resume remembering it.
 %{\it hilite\verb+_+pile\/}
 %option can be enabled in order to show an item differently when it is
 %the top one of a pile.
-The situation is the same for a pile of objects, except that only the
-top item of the pile is displayed.
-The
-{\it hilite\verb+_+pile\/}
-option can be enabled in order to show an item differently when it is
-the top one of a pile.
-(TBT)
+この状況は物の山でも同様だが、山の一番上の物のみが表示される。
+山の上にいる敵に物を違う方法で表示するために、
+{\it hilite\verb+_+pile\/} コマンドを有効に出来る。
 
 %%.hn 1
 %\section{Conduct}
@@ -4720,7 +4710,7 @@ ASCII テキストファイルで、任意のテキストエディタで作る�
 %with any text editor.
 Windowsでは、
 \mbox{{``\%USERPROFILE\%\textbackslash NetHack\textbackslash 3.6''}} フォルダの
-\mbox{``.nethackrc''}。
+\mbox{``.nethackrc''} である。
 このファイルは存在していないかも知れないが、これは通常の
 ASCII テキストファイルで、任意のテキストエディタで作ることができる。
 %After runing {\it NetHack\/} for the first time, you should find a default
@@ -4762,12 +4752,9 @@ CHOOSE 文が使われない限り無視される。
 %In general, the statements are
 %written in capital letters, followed by an equals sign, followed by
 %settings particular to that statement.
-You can use different configuration statements in the file, some
-of which can be used multiple times.
-In general, the statements are
-written in capital letters, followed by an equals sign, followed by
-settings particular to that statement.
-(TBT)
+ファイル中に異なる設定文を使うことができ、そのいくつかは複数回
+使われる。
+一般的に、文は英大文字で書かれ、等号が続き、その文に特有の設定が続く。
 
 %%.pg
 %Here is a list of allowed statements:
@@ -4785,10 +4772,19 @@ settings particular to that statement.
 %You can specify multiple OPTIONS statements, and multiple options
 %separated by commas in a single OPTIONS statement.
 %(Comma separated options are processed from right to left.)
-(TBT)
+真偽値オプションと複合オプションの2種類のオプションがある。
+真偽値オプションは設定のオンとオフを切り替える一方、
+複合オプションはより様々な値を取る。
+真偽値オプションに `no' または `!' を前置するとオフになる。
+複合オプションでは、オプション名と値はコロンで区切られる。
+一部のオプションは永続し、ゲーム開始時にのみ適用される。
+複数のOPTIONS文を指定したり、一つのOPTIONS文の中でカンマで区切ることで
+複数のオプションを指定したりできる。
+(カンマで区切られたオプションは右から左に処理される。)
 
 %%.lp ""
 %Example:
+例:
 %%.sd
 \begin{verbatim}
     OPTIONS=dogname:Fido
@@ -4801,32 +4797,40 @@ settings particular to that statement.
 %Default location of files {\it NetHack\/} needs. On Windows HACKDIR
 %defaults to the location of the {\it NetHack.exe\/} or {\it NetHackw.exe\/} file
 %so setting HACKDIR to override that is not usually necessary or recommended.
-(TBT)
+{\it NetHack\/} が必要なファイルのデフォルトの位置。
+Windows での HACKDIR のデフォルトは {\it NetHack.exe\/} または
+{\it NetHackw.exe\/} ファイルの位置なので、
+HACKDIR を上書きするように設定するのは通常不要で非推奨である。
 %%.lp
 \item[\bb{LEVELDIR}]
 %The location that in-progress level files are stored. Defaults to HACKDIR,
 %must be writable.
-(TBT)
+進行中のレベルファイルを保管する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 %%.lp
 \item[\bb{SAVEDIR}]
 %The location where saved games are kept. Defaults to HACKDIR, must be
 %writable.
-(TBT)
+保存されたゲームを保持する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 %%.lp
 \item[\bb{BONESDIR}]
 %The location that bones files are kept. Defaults to HACKDIR, must be
 %writable.
-(TBT)
+骨ファイルを保持する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 %%.lp
 \item[\bb{LOCKDIR}]
 %The location that file synchronization locks are stored. Defaults to
 %HACKDIR, must be writable.
-(TBT)
+同期ロックを保管する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 %%.lp
 \item[\bb{TROUBLEDIR}]
 %The location that a record of game aborts and self-diagnosed game problems
 %is kept. Defaults to HACKDIR, must be writable.
-(TBT)
+ゲーム中段の記録とゲームの問題の自己診断を保持する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 %%
 %% config file entries beyond this point are shown alphabetically
 %%
@@ -4838,7 +4842,12 @@ settings particular to that statement.
 %autocompletion, list the extended command. Prefix the
 %command with ``{{\tt !}}'' to disable the autocompletion
 %for that command.
-(TBT)
+拡張コマンドの自動補完をオンまたはオフにする。
+自動補完は X11 ウィンドウポートでは無効である。
+複数の自動補完を指定できる。
+自動補完をオンにするには、拡張コマンドの一覧を書く。
+コマンドに ``{{\tt !}}'' を前置すると、そのコマンドの自動補完を
+オフにする。
 
 %%.lp ""
 %Example:
@@ -4853,13 +4862,18 @@ settings particular to that statement.
 \item[\bb{AUTOPICKUP\_EXCEPTION}]
 %Set exceptions to the {{\it pickup\_types\/}}
 %option. See the ``Configuring Autopickup Exceptions'' section.
-(TBT)
+{{\it pickup\_types\/}} オプションの例外を設定する。
+「自動拾い例外の設定」の節を参照のこと。
 %%.lp
 \item[\bb{BINDINGS}]
 %Change the key bindings of some special keys, menu accelerators, or
 %extended commands. You can specify multiple bindings. Format is key
 %followed by the command, separated by a colon.
 %See the ``Changing Key Bindings`` section for more information.
+Change the key bindings of some special keys, menu accelerators, or
+extended commands. You can specify multiple bindings. Format is key
+followed by the command, separated by a colon.
+See the ``Changing Key Bindings`` section for more information.
 (TBT)
 
 %%.lp ""
@@ -4875,6 +4889,8 @@ settings particular to that statement.
 \item[\bb{CHOOSE}]
 %Chooses at random one of the comma-separated parameters as an active
 %section name. Lines in other sections are ignored.
+Chooses at random one of the comma-separated parameters as an active
+section name. Lines in other sections are ignored.
 (TBT)
 
 %%.lp ""
@@ -4895,32 +4911,45 @@ settings particular to that statement.
 \item[\bb{MENUCOLOR}]
 %Highlight menu lines with different colors.
 %See the ``Configuring Menu Colors`` section.
+Highlight menu lines with different colors.
+See the ``Configuring Menu Colors`` section.
 (TBT)
 %%.lp
 \item[\bb{MSGTYPE}]
 %Change the way messages are shown in the top status line.
 %See the ``Configuring Message Types`` section.
+Change the way messages are shown in the top status line.
+See the ``Configuring Message Types`` section.
 (TBT)
 %%.lp
 \item[\bb{ROGUESYMBOLS}]
 %Custom symbols for for the rogue level's symbol set.
 %See {\it SYMBOLS} below.
+Custom symbols for for the rogue level's symbol set.
+See {\it SYMBOLS} below.
 (TBT)
 %%.lp
 \item[\bb{SOUND}]
 %Define a sound mapping.
 %See the ``Configuring User Sounds'' section.
+Define a sound mapping.
+See the ``Configuring User Sounds'' section.
 (TBT)
 %%.lp
 \item[\bb{SOUNDDIR}]
 %Define the directory that contains the sound files.
 %See the ``Configuring User Sounds'' section.
+Define the directory that contains the sound files.
+See the ``Configuring User Sounds'' section.
 (TBT)
 %%.lp
 \item[\bb{SYMBOLS}]
 %Override one or more symbols in the symbol set used for all dungeon
 %levels except for the special rogue level.
 %See the ``Modifying {\it NetHack\/} Symbols'' section.
+Override one or more symbols in the symbol set used for all dungeon
+levels except for the special rogue level.
+See the ``Modifying {\it NetHack\/} Symbols'' section.
 (TBT)
 %%.pg
 
@@ -4940,7 +4969,9 @@ settings particular to that statement.
 %Value is the name of a text file containing a list of item names,
 %one per line, up to a maximum of 128 lines.
 %Each line is processed by the function that handles wishing.
-(TBT)
+デバッグモードのみ: 初期持物に追加される物。
+値は物の名前を 1 行一つ(最大 128 行)で書いたテキストファイルの名前である。
+各行は願いを扱う機能によって処理される。
 
 %%.lp ""
 %Example:
@@ -5107,11 +5138,10 @@ NETHACKOPTIONS は、カンマ区切りにオプションのリストの代わ�
 %on the map (default true).
 %The {\it whatis\verb+_+coord\/}
 %option controls whether the description includes map coordinates.
-Automatically describe the terrain under cursor when asked to get a location
-on the map (default true).
-The {\it whatis\verb+_+coord\/}
-option controls whether the description includes map coordinates.
-(TBT)
+地図上の位置を指定するときにカーソルの下の地形を自動的に表現する
+(標準設定はオン)。
+{\it whatis\verb+_+coord\/} オプションは、
+表現に位置の座標を含むかどうかを制御する。
 %%.lp
 \item[\ib{autodig}]
 %Automatically dig if you are wielding a digging tool and moving into a place
@@ -5931,11 +5961,10 @@ QWERTZ キーボードに対応するものである。)
 %pets on the map.
 %Effectively a superset of the {\it hilite\verb+_+pet\/} boolean option.
 %Curses interface only; value is one or more of the following letters.
-Specifies one or more text highlighting attributes to use when showing
-pets on the map.
-Effectively a superset of the {\it hilite\verb+_+pet\/} boolean option.
-Curses interface only; value is one or more of the following letters.
-(TBT)
+地図上にペットを表示するときに使われるハイライト属性の一つ以上の
+テキストを指定する。
+事実上 {\it hilite\verb+_+pet\/} オンオフオプションの上位互換である。
+curses インターフェースのみ; 値は一つ以上の次の文字である。
 
 %%.sd
 %%.si
@@ -5948,16 +5977,15 @@ Curses interface only; value is one or more of the following letters.
 %{\tt t} --- iTalic text\\
 %{\tt l} --- Left line indicator\\
 %{\tt r} --- Right line indicator\\
-{\tt n} --- Normal text (no highlighting)\\
-{\tt i} --- Inverse video (default)\\
-{\tt b} --- Bold text\\
-{\tt u} --- Underlined text\\
-{\tt k} --- blinKing text\\
-{\tt d} --- Dim text\\
-{\tt t} --- iTalic text\\
-{\tt l} --- Left line indicator\\
-{\tt r} --- Right line indicator\\
-(TBT)
+{\tt n} --- 通常のテキスト (ハイライトなし)\\
+{\tt i} --- 反転 (標準設定)\\
+{\tt b} --- 太字\\
+{\tt u} --- 下線\\
+{\tt k} --- 点滅\\
+{\tt d} --- 薄い表示\\
+{\tt t} --- 斜体\\
+{\tt l} --- 左の行指示子\\
+{\tt r} --- 右の行指示子\\
 %%.ei
 %%.ed
 
@@ -6735,12 +6763,12 @@ cursesインターフェースのみ。
 %columns of the display.
 %A width of at least 110 columns (\verb&80+2+26+2&) is needed for
 %{\it align_status\/}
-%set to {tt left} or {\tt right}.)
+%set to {\tt left} or {\tt right}.)
 (The 26x82 size threshold for `2' refers to number of rows and
 columns of the display.
 A width of at least 110 columns (\verb&80+2+26+2&) is needed for
 {\it align_status\/}
-set to {tt left} or {\tt right}.)
+set to {\tt left} or {\tt right}.)
 (TBT)
 %%.lp
 \item[\ib{windowcolors}]
@@ -7107,87 +7135,125 @@ or a three-digit decimal ASCII code.
 \blist{\itemindent 10mm \labelwidth 15mm \rightmargin 15mm}
 %%.lp
 \item[{\bb{count}}]
-%Prefix key to start a count, to repeat a command this many times.
+%Prefix to key start a count, to repeat a command this many times.
 %With {\it number\verb+_+pad\/} only. Default is~`{\tt n}'.
+Prefix key to start a count, to repeat a command this many times.
+With {\it number\verb+_+pad\/} only.
+標準設定は`{\tt n}'。
 (TBT)
 %%.lp
 \item[{\bb{doinv}}]
 %Show inventory. With {\it number\verb+_+pad\/} only. Default is~`{\tt 0}'.
+Show inventory. With {\it number\verb+_+pad\/} only.
+標準設定は`{\tt 0}'。
 (TBT)
 %%.lp
 \item[{\bb{fight}}]
 %Prefix key to force fight a direction. Default is~`{\tt F}'.
+Prefix key to force fight a direction.
+標準設定は`{\tt F}'。
 (TBT)
 %%.lp
 \item[{\bb{fight.numpad}}]
 %Prefix key to force fight a direction. With {\it number\verb+_+pad\/} only.
 %Default is~`{\tt -}'.
+Prefix key to force fight a direction. With {\it number\verb+_+pad\/} only.
+標準設定は`{\tt -}'。
 (TBT)
 %%.lp
 \item[{\bb{getdir.help}}]
 %When asked for a direction, the key to show the help. Default is~`{\tt ?}'.
+When asked for a direction, the key to show the help.
+標準設定は`{\tt ?}'。
 (TBT)
 %%.lp
 \item[{\bb{getdir.self}}]
 %When asked for a direction, the key to target yourself. Default is~`{\tt .}'.
+When asked for a direction, the key to target yourself.
+標準設定は`{\tt .}'。
 (TBT)
 %%.lp
 \item[{\bb{getdir.self2}}]
 %When asked for a direction, the key to target yourself. Default is~`{\tt s}'.
+When asked for a direction, the key to target yourself.
+標準設定は`{\tt s}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.autodescribe}}]
 %When asked for a location, the key to toggle {\it autodescribe\/}.
 %Default is~`{\tt \#}'.
+When asked for a location, the key to toggle {\it autodescribe\/}.
+標準設定は`{\tt \#}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.all.next}}]
 %When asked for a location, the key to go to next closest interesting thing.
 %Default is~`{\tt a}'.
+When asked for a location, the key to go to next closest interesting thing.
+標準設定は`{\tt a}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.all.prev}}]
 %When asked for a location, the key to go to previous closest interesting thing.
 %Default is~`{\tt A}'.
+When asked for a location, the key to go to previous closest interesting thing.
+標準設定は`{\tt A}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.door.next}}]
 %When asked for a location, the key to go to next closest door or doorway.
 %Default is~`{\tt d}'.
+When asked for a location, the key to go to next closest door or doorway.
+標準設定は`{\tt d}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.door.prev}}]
 %When asked for a location, the key to go to previous closest door or doorway.
 %Default is~`{\tt D}'.
+When asked for a location, the key to go to previous closest door or doorway.
+標準設定は`{\tt D}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.help}}]
 %When asked for a location, the key to show help. Default is~`{\tt ?}'.
+When asked for a location, the key to show help.
+標準設定は`{\tt ?}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.mon.next}}]
 %When asked for a location, the key to go to next closest monster.
 %Default is~`{\tt m}'.
+When asked for a location, the key to go to next closest monster.
+標準設定は`{\tt m}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.mon.prev}}]
 %When asked for a location, the key to go to previous closest monster.
 %Default is~`{\tt M}'.
+When asked for a location, the key to go to previous closest monster.
+標準設定は`{\tt M}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.obj.next}}]
 %When asked for a location, the key to go to next closest object.
 %Default is~`{\tt o}'.
+When asked for a location, the key to go to next closest object.
+標準設定は`{\tt o}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.obj.prev}}]
 %When asked for a location, the key to go to previous closest object.
 %Default is~`{\tt O}'.
+When asked for a location, the key to go to previous closest object.
+標準設定は`{\tt O}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.menu}}]
 %When asked for a location, and using one of the next or previous keys to
 %cycle through targets, toggle showing a menu instead. Default is~`{\tt !}'.
+When asked for a location, and using one of the next or previous keys to
+cycle through targets, toggle showing a menu instead.
+標準設定は`{\tt !}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.moveskip}}]
@@ -7195,101 +7261,152 @@ or a three-digit decimal ASCII code.
 %meta-digit keys to fast-move around, move by skipping the same glyphs
 %instead of by 8 units.
 %Default is~`{\tt *}'.
+When asked for a location, and using the shifted movement keys or
+meta-digit keys to fast-move around, move by skipping the same glyphs
+instead of by 8 units.
+標準設定は`{\tt *}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.filter}}]
 %When asked for a location, change the filtering mode when using one of
 %the next or previous keys to cycle through targets. Toggles between no
 %filtering, in view only, and in the same area only. Default is~`{\tt "}'.
+When asked for a location, change the filtering mode when using one of
+the next or previous keys to cycle through targets. Toggles between no
+filtering, in view only, and in the same area only.
+標準設定は`{\tt "}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.pick}}]
 %When asked for a location, the key to choose the location, and possibly
 %ask for more info. Default is~`{\tt .}'.
+When asked for a location, the key to choose the location, and possibly
+ask for more info.
+標準設定は`{\tt .}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.pick.once}}]
 %When asked for a location, the key to choose the location, and skip
 %asking for more info. Default is~`{\tt ,}'.
+When asked for a location, the key to choose the location, and skip
+asking for more info.
+標準設定は`{\tt ,}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.pick.quick}}]
 %When asked for a location, the key to choose the location, skip asking
 %for more info, and exit the location asking loop. Default is~`{\tt ;}'.
+When asked for a location, the key to choose the location, skip asking
+for more info, and exit the location asking loop.
+標準設定は`{\tt ;}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.pick.verbose}}]
 %When asked for a location, the key to choose the location, and show more
 %info without asking. Default is~`{\tt :}'.
+When asked for a location, the key to choose the location, and show more
+info without asking.
+標準設定は`{\tt :}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.self}}]
 %When asked for a location, the key to go to your location.
 %Default is~`{\tt @}'.
+When asked for a location, the key to go to your location.
+標準設定は`{\tt @}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.unexplored.next}}]
 %When asked for a location, the key to go to next closest unexplored location.
 %Default is~`{\tt x}'.
+When asked for a location, the key to go to next closest unexplored location.
+標準設定は`{\tt x}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.unexplored.prev}}]
 %When asked for a location, the key to go to previous closest unexplored
 %location. Default is~`{\tt X}'.
+When asked for a location, the key to go to previous closest unexplored
+location.
+標準設定は`{\tt X}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.valid}}]
 %When asked for a location, the key to go to show valid target locations.
 %Default is~`{\tt \$}'.
+When asked for a location, the key to go to show valid target locations.
+標準設定は`{\tt \$}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.valid.next}}]
 %When asked for a location, the key to go to next closest valid location.
 %Default is~`{\tt z}'.
+When asked for a location, the key to go to next closest valid location.
+標準設定は`{\tt z}'。
 (TBT)
 %%.lp
 \item[{\bb{getpos.valid.prev}}]
 %When asked for a location, the key to go to previous closest valid location.
 %Default is~`{\tt Z}'.
+When asked for a location, the key to go to previous closest valid location.
+標準設定は`{\tt Z}'。
 (TBT)
 %%.lp
 \item[{\bb{nopickup}}]
 %Prefix key to move without picking up items. Default is~`{\tt m}'.
+Prefix key to move without picking up items.
+標準設定は`{\tt m}'。
 (TBT)
 %%.lp
 \item[{\bb{redraw}}]
 %Key to redraw the screen. Default is~`{\tt \^{}R}'.
+Key to redraw the screen.
+標準設定は`{\tt \^{}R}'。
 (TBT)
 %%.lp
 \item[{\bb{redraw.numpad}}]
 %Key to redraw the screen. With {\it number\verb+_+pad\/} only.
 %Default is~`{\tt \^{}L}'.
+Key to redraw the screen. With {\it number\verb+_+pad\/} only.
+標準設定は`{\tt \^{}L}'。
 (TBT)
 %%.lp
 \item[{\bb{repeat}}]
 %Key to repeat previous command. Default is~`{\tt \^{}A}'.
+Key to repeat previous command.
+標準設定は`{\tt \^{}A}'。
 (TBT)
 %%.lp
 \item[{\bb{reqmenu}}]
 %Prefix key to request menu from some commands. Default is~`{\tt m}'.
+Prefix key to request menu from some commands.
+標準設定は`{\tt m}'。
 (TBT)
 %%.lp
 \item[{\bb{run}}]
 %Prefix key to run towards a direction. Default is~`{\tt G}'.
+Prefix key to run towards a direction.
+標準設定は`{\tt G}'。
 (TBT)
 %%.lp
 \item[{\bb{run.nopickup}}]
 %Prefix key to run towards a direction without picking up items on the way.
 %Default is~`{\tt M}'.
+Prefix key to run towards a direction without picking up items on the way.
+標準設定は`{\tt M}'。
 (TBT)
 %%.lp
 \item[{\bb{run.numpad}}]
 %Prefix key to run towards a direction. With {\it number\verb+_+pad\/} only.
 %Default is~`{\tt 5}'.
+Prefix key to run towards a direction. With {\it number\verb+_+pad\/} only.
+標準設定は`{\tt 5}'。
 (TBT)
 %%.lp
 \item[{\bb{rush}}]
 %Prefix key to rush towards a direction. Default is~`{\tt g}'.
+Prefix key to rush towards a direction.
+標準設定は`{\tt g}'。
 (TBT)
 \elist
 
@@ -7581,14 +7698,12 @@ orange, light-green, yellow, light-blue, light-magenta, light-cyan, white。
 指定できる属性は:
 none, bold, dim, underline, blink, inverse。
 ``Normal'' は ``none'' の別名である;
-they should not be used in combination with any of the other attributes.
-(TBT)
+これらは他の属性と組み合わせて使うべきではない。
 
 %To specify both a color and an attribute, use `\&' to combine them.
 %To specify multiple attributes, use `+' to combine those.
-To specify both a color and an attribute, use `\&' to combine them.
-To specify multiple attributes, use `+' to combine those.
-(TBT)
+色と属性の両方を指定するには、それらを結合するために `\&' を使う。
+複数の属性を指定するには、それらを結合するために `+' を使う。
 
 %%.lp ""
 %For example: {\tt magenta\&inverse+dim}.
@@ -8376,8 +8491,7 @@ Rogue 風コマンドを使うこと。
 %%.lp
 \item[\ib{autodescribe}]
 %Automatically describe the terrain under the cursor when targeting.
-Automatically describe the terrain under the cursor when targeting.
-(TBT)
+目標を決めるときにカーソルの下の地形を自動的に表現する。
 %%.lp
 \item[\ib{mention\verb+_+walls}]
 %Give feedback messages when walking towards a wall or when travel command

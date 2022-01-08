@@ -2,6 +2,126 @@
 <head>
 <style type="text/css">
 
+body {
+    background-color: #000000;
+    color: #eeeeee;
+    font-size: 100%;
+    font-family: 'Meiryo UI', 'メイリオ', Meiryo, 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', sans-serif;
+}
+
+h1 {
+    font-size: 200%;
+    font-weight: 500;
+    color: #ccffff;
+    font-family: monospace;
+}
+
+h2 {
+    font-size: 150%;
+    font-weight: bold;
+    border-bottom: 1px solid;
+    color: #bbeebb;
+}
+
+h3 {
+    margin: 10 15;
+    font-size: 100%;
+    font-weight: bold;
+    color: #ffffcc;
+}
+
+dl {
+    margin: 0 30;
+}
+
+dt {
+    margin: 5 0 2 0;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 40;
+    font-size: 95%;
+    font-weight: normal;
+}
+
+ul.menu {
+    margin: 0 0 0 10;
+    padding-left: 0;
+    /* list-style-type:none; */
+}
+
+ul ul.menu {
+    margin: 0 0 0 10;
+    padding-left: 10;
+    list-style-type: none;
+}
+
+li {
+    margin: 5 0;
+}
+
+div#searchform {
+    font-size: 90%;
+}
+
+A:link {
+    color: #99eeee;
+    /*text-decoration: none;*/
+}
+
+A:visited {
+    color: #bbbbee;
+    /*text-decoration: none;*/
+}
+
+A:active {
+    color: red;
+    /*text-decoration: none;*/
+}
+
+A:hover {
+    color: #000000;
+    background-color: #ccffff;
+    /*background-color: #bbbbee;*/
+    text-decoration: none;
+}
+
+address {
+    font-weight: bold;
+    font-style: normal;
+    text-align: right;
+}
+
+hr {
+    height: 1px;
+    width: 95%;
+}
+
+p {
+    margin: 10 20;
+    line-height: 130%;
+}
+
+b {
+    color: #ffffcc;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+    color: #ffffcc;
+}
+
+.tt {
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffcc;
+}
+
 pre {
   padding: 0;
   margin: 0;
@@ -10,10 +130,10 @@ dt {
   color: #ffffcc;
 }
 table {
-border: solid 1px #000000; border-collapse: collapse;
+  border: solid 1px #000000;
+  border-collapse: collapse;
 }
 </style>
-<link rel="Stylesheet" href="nhr.css" type="text/css">
 <title> 恐怖の迷宮への招待: NetHack ガイドブック</title>
 </head>
 <body>
@@ -390,7 +510,7 @@ border: solid 1px #000000; border-collapse: collapse;
 部屋の床、氷、または扉のない出入口。
 </dd>
 <dt>#</dt><dd>
-通路、鉄の棒、木、あるいは台所の流し台(流し台がインプリメントされているとき)
+通路、鉄の棒、木、あるいは(あなたの迷宮にあるなら)台所の流し台、
 または跳ね橋
 </dd>
 <dt>&gt;</dt><dd>
@@ -991,20 +1111,22 @@ border: solid 1px #000000; border-collapse: collapse;
 位置が入れ替わる。
 ''<span class='tt'>#adjust</span>'' はまた、物の塊を分割するのにも使える;
 調整する物を選択するときに、文字の前に数を入力する。
-Adjusting without a count used to collect all compatible stacks when
-moving to the destination.  That behavior has been changed; to gather
-compatible stacks, ''<span class='tt'>#adjust</span>'' a stack into its own inventory slot.
-If it has a name assigned, other stacks with the same name or with
-no name will merge provided that all their other attributes match.
-If it does not have a name, only other stacks with no name are eligible.
-In either case, otherwise compatible stacks with a different name
-will not be merged.  This contrasts with using ''<span class='tt'>#adjust</span>'' to move
-from one slot to a different slot.  In that situation, moving (no
-count given) a compatible stack will merge if either stack has a
-name when the other doesn't and give that name to the result, while
-splitting (count given) will ignore the source stack's name when
-deciding whether to merge with the destination stack.
-(TBT)
+数を指定せずに調整する場合、以前は移動先に移すときに全ての互換性のある
+まとまりは集められていた。
+この振る舞いは変更された;
+互換性のあるまとまりを集めるには、まとまりを新しいスロットに
+''<span class='tt'>#adjust</span>'' する。
+名前が割り当てられている場合、その他の属性が同じなら
+同じ名前か名前のないまとまりが集められる。
+名前がない場合、その他の名前のないまとまりのみが有効である。
+どちらの場合も、異なる名前のまとまりは集められない。
+これはあるスロットから他のスロットに移すために
+''<span class='tt'>#adjust</span>'' を使った場合と対照的である。
+この場合、(数が指定されず)互換性のあるまとまりを移動する場合には、
+どちらかに名前がついていてもう片方についていないなら、
+これは集められ、その名前が付けられる。
+一方、(数が指定されて)分割される場合、移動先とまとまりを集めるかどうかを
+決めるときに元のまとまりの名前は無視される。
 </dd>
 <dt>#annotate</dt><dd>
 現在の階層に結びつけられる 1 行の文を指定できる。
@@ -1400,14 +1522,13 @@ deciding whether to merge with the destination stack.
 '<span class='tt'>m</span>' 接頭辞はこのコマンドでメニューを使うようにする。
 </dd>
 <dt>#travel</dt><dd>
-Travel to a specific location on the map.
-Default key is '<span class='tt'>_</span>'.
-Using the ''request menu'' prefix shows a menu of interesting targets in sight
-without asking to move the cursor.
-When picking a target with cursor and the <span class='italic'>autodescribe</span>
-option is on, the top line will show ''(no travel path)'' if
-your character does not know of a path to that location.
-(TBT)
+地図の指定された場所まで移動(travel)する。
+標準キーは '<span class='tt'>_</span>'。
+''request menu'' 接頭辞を使うと、カーソル移動を訊ねることなく
+視界内の興味深い目標の一覧を表示する。
+カーソルで目標を選び、<span class='italic'>autodescribe</span> オプションがオンなら、
+もしあなたのキャラクタがその場所までの道のりを知らない場合には
+一番上の行に ''(no travel path)'' と表示される。
 </dd>
 <dt>#turn</dt><dd>
 不死の怪物を追い払う。
@@ -1904,16 +2025,14 @@ your character does not know of a path to that location.
 詳しくは後述する武器の技術の章を参照すること。
 </p>
 <p>
-Use the '<span class='tt'>a</span>' (apply) command and pick a saddle in your inventory to
-attempt to put that saddle on an adjacent creature.  If successful,
-it will be transferred to that creature's inventory.
-(TBT)
+鞍を隣にいる生物に付けようとするには、
+'<span class='tt'>a</span>' (apply) コマンドを使って持物から鞍を選ぶ。
+成功すると、それはその生物の持物に移される。
 </p>
 <p>
-Use the ''<span class='tt'>#loot</span>'' command while adjacent to a saddled creature to
-try to remove the saddle from that creature.  If successful, it will
-be transferred to your inventory.
-(TBT)
+隣にいる鞍の付いている生物から鞍を外そうとするには、
+''<span class='tt'>#loot</span>'' コマンドを使う。
+成功すると、それはあなたの持物に移される。
 </p>
 <h2>骨の階</h2>
 <p>
@@ -1928,23 +2047,19 @@ be transferred to your inventory.
 </p>
 <h2>怪物の永続性</h2>
 <p>
-Monsters (a generic reference which also includes humans and pets) are only
-shown while they can be seen or otherwise sensed.
-Moving to a location where you can't see or sense a monster any more
-will result in it disappearing from your map, similarly if it is the
-one who moved rather than you.
-(TBT)
+怪物 (一般に人間とペットを含む表現) は、それが見えるかその他の方法で
+感知できる場合にのみ表示される。
+怪物があなたが見えなかったり感知できない場所に移動すると、
+それがあなた以外の誰かの場合と同様、地図から消える。
 </p>
 <p>
-However, if you encounter a monster which you can't see or
-sense&mdash;perhaps it is invisible and has just tapped you on the
-noggin&mdash;a special ''remembered, unseen monster'' marker will be displayed at
-the location where you think it is.
-That will persist until you have
-proven that there is no monster there, even if the unseen monster
-moves to another location or you move to a spot where the marker's
-location ordinarily wouldn't be seen any more.
-(TBT)
+しかし、見えたり感知できたりしない怪物と遭遇した--おそらく見えず、
+出会い頭に出会った--場合、
+特別な「覚えているが見えない怪物」マーカが、それがいるとあなたが考えている
+場所に表示される。
+これは、例え見えない怪物が他の場所に移動していたり、あなたが通常マーカの
+位置が見えない位置に移動したとしても、
+あなたがそこに怪物がいないと確信するまで表示され続ける。
 </p>
 <h1>物</h1>
 <p>
@@ -2090,7 +2205,7 @@ crossbow bolt(クロスボウ用の太矢)を発射するためのものであ�
 <p>
 AD&amp;D をプレイしたことのある読者はお気付きだろうが、AD&amp;D に登場した武器は
 <span class='italic'>NetHack</span> においても怪物にだいたい同じダメージを与える。
-あまり良く知られていない武器( %
+あまり良く知られていない武器(
 <span class='italic'>aklys</span>(アキリス), <span class='italic'>lucern hammer</span>(ルッツェンハンマー),
 <span class='italic'>bec-de-corbin</span>(ベッグ・デ・コルビン) など)のいくつかは AD&amp;D の
 追加ルールである <span class='italic'>Unearthed Arcana</span> の付録で詳しく説明されている。
@@ -2355,7 +2470,7 @@ AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> �
 </p>
 <h2>杖 (`/')</h2>
 <p>
-杖は通常何回も魔力を発揮する。
+杖は通常複数回魔法効果を発揮する。
 一部の杖は杖を振る際に方向を指示する必要がある。
 杖を自分に向けて振ることもできる(方向として '<span class='tt'>.</span>' か '<span class='tt'>s</span>' を入力する)が、
 これはしばしば愚かな行為となる。
@@ -2371,7 +2486,7 @@ AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> �
 爆発する可能性は最初は非常に小さく、同じ杖に何度も再充填するごとに大きくなる。
 </p>
 <p>
-自暴自虐なな行為ではあるが、どうにもならなくなったときには杖を壊すという手もある。
+自暴自棄な行為ではあるが、どうにもならなくなったときには杖を壊すという手もある。
 これは弱気な行為ではない。それを行うことにより、
 破壊的な魔法のエネルギーが解放されるからである。
 </p>
@@ -2525,31 +2640,26 @@ AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> �
 </p>
 <h2>物の永続性</h2>
 <p>
-Normally, if you have seen an object at a particular map location and
-move to another location where you can't directly see that object any
-more, if will continue to be displayed on your map.
+通常、あなたが地図上のある特定の位置である物を見て、
+物がもう直接見えない位置に移動した場合、
+それは地図上に表示され続ける。
+if will continue to be displayed on your map.
 That remains the case even if it is not actually there any
 more&mdash;perhaps a monster has picked it up or it has rotted
 away&mdash;until you can see or feel that location again.
 One notable exception is that if the object gets covered by the
 ''remembered, unseen monster'' marker.
 (TBT)
-When that marker is later removed
-after you've verified that no monster is there, you will forget that
-there was any object there regardless of whether the unseen monster
-actually took the object.
-If the object is still there, then once you see or feel that location
-again you will re-discover the object and resume remembering it.
-(TBT)
+あなたがそこに怪物がいないことを確認してマーカが消えると、
+見えない怪物が実際にその物を拾ったかどうかに関わらず、
+あなたはそこにあった物を忘れる。
+物がそこにあり続けている場合、再びその場所を見たり感知したりすると
+物を再び発見してそれを記憶し続ける。
 </p>
 <p>
-The situation is the same for a pile of objects, except that only the
-top item of the pile is displayed.
-The
-<span class='italic'>hilite_pile</span>
-option can be enabled in order to show an item differently when it is
-the top one of a pile.
-(TBT)
+この状況は物の山でも同様だが、山の一番上の物のみが表示される。
+山の上にいる敵に物を違う方法で表示するために、
+<span class='italic'>hilite_pile</span> コマンドを有効に出来る。
 </p>
 <h1>制限プレイ</h1>
 <p>
@@ -2683,26 +2793,26 @@ the top one of a pile.
 </p>
 <p>
 Unix, Linux, Mac OS X では、これはユーザーのホームディレクトリの
-mbox{''.nethackrc''} である。
+<span class='mbox'>''.nethackrc''</span> である。
 このファイルは存在していないかも知れないが、これは通常の
 ASCII テキストファイルで、任意のテキストエディタで作ることができる。<br/>
 </p>
 <p>
 Windowsでは、
-mbox{{''%USERPROFILE%textbackslash NetHacktextbackslash 3.6''}} フォルダの
-mbox{''.nethackrc''}。
+<span class='mbox'>''%USERPROFILE%\NetHack\3.6''</span> フォルダの
+<span class='mbox'>''.nethackrc''</span> である。
 このファイルは存在していないかも知れないが、これは通常の
 ASCII テキストファイルで、任意のテキストエディタで作ることができる。
 After runing <span class='italic'>NetHack</span> for the first time, you should find a default
-template for ths configuration file named mbox{''.nethackrc.template''} in
-mbox{{''%USERPROFILE%textbackslash NetHacktextbackslash 3.6''}}.
+template for ths configuration file named <span class='mbox'>''.nethackrc.template''</span> in
+<span class='mbox'>''%USERPROFILE%\NetHack\3.6''</span>.
 If you had not created the configuration file, <span class='italic'>NetHack</span> will create
 the configuration file for you using the default template file.
 (TBT)
 </p>
 <p>
-MS-DOS では、mbox{<span class='italic'>nethack.exe</span>} と
-同じフォルダの mbox{''defaults.nh''} である。<br/>
+MS-DOS では、<span class='mbox'><span class='italic'>nethack.exe</span></span> と
+同じフォルダの <span class='mbox'>''defaults.nh''</span> である。<br/>
 </p>
 <p>
 設定ファイルの中の'<span class='tt'>#</span>'で始まる行はコメントとして扱われる。
@@ -2714,20 +2824,26 @@ CHOOSE 文が使われない限り無視される。
 節の名前は大文字小文字を無視する。
 </p>
 <p>
-You can use different configuration statements in the file, some
-of which can be used multiple times.
-In general, the statements are
-written in capital letters, followed by an equals sign, followed by
-settings particular to that statement.
-(TBT)
+ファイル中に異なる設定文を使うことができ、そのいくつかは複数回
+使われる。
+一般的に、文は英大文字で書かれ、等号が続き、その文に特有の設定が続く。
 </p>
 <p>
 以下は指定できる文の一覧である:
 </p>
 <dl>
 <dt>OPTIONS</dt><dd>
-(TBT)
+真偽値オプションと複合オプションの2種類のオプションがある。
+真偽値オプションは設定のオンとオフを切り替える一方、
+複合オプションはより様々な値を取る。
+真偽値オプションに 'no' または '!' を前置するとオフになる。
+複合オプションでは、オプション名と値はコロンで区切られる。
+一部のオプションは永続し、ゲーム開始時にのみ適用される。
+複数のOPTIONS文を指定したり、一つのOPTIONS文の中でカンマで区切ることで
+複数のオプションを指定したりできる。
+(カンマで区切られたオプションは右から左に処理される。)
 <br/>
+例:
 <pre>
     OPTIONS=dogname:Fido
     OPTIONS=!legacy,autopickup,pickup_types:$"=/!?+
@@ -2735,25 +2851,38 @@ settings particular to that statement.
 <br/>
 </dd>
 <dt>HACKDIR</dt><dd>
-(TBT)
+<span class='italic'>NetHack</span> が必要なファイルのデフォルトの位置。
+Windows での HACKDIR のデフォルトは <span class='italic'>NetHack.exe</span> または
+<span class='italic'>NetHackw.exe</span> ファイルの位置なので、
+HACKDIR を上書きするように設定するのは通常不要で非推奨である。
 </dd>
 <dt>LEVELDIR</dt><dd>
-(TBT)
+進行中のレベルファイルを保管する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 </dd>
 <dt>SAVEDIR</dt><dd>
-(TBT)
+保存されたゲームを保持する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 </dd>
 <dt>BONESDIR</dt><dd>
-(TBT)
+骨ファイルを保持する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 </dd>
 <dt>LOCKDIR</dt><dd>
-(TBT)
+同期ロックを保管する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 </dd>
 <dt>TROUBLEDIR</dt><dd>
-(TBT)
+ゲーム中段の記録とゲームの問題の自己診断を保持する位置。
+デフォルトは HACKDIR で、書き込み可能でなければならない。
 </dd>
 <dt>AUTOCOMPLETE</dt><dd>
-(TBT)
+拡張コマンドの自動補完をオンまたはオフにする。
+自動補完は X11 ウィンドウポートでは無効である。
+複数の自動補完を指定できる。
+自動補完をオンにするには、拡張コマンドの一覧を書く。
+コマンドに ''{<span class='tt'>!</span>}'' を前置すると、そのコマンドの自動補完を
+オフにする。
 <br/>
 例:
 <pre>
@@ -2762,9 +2891,14 @@ settings particular to that statement.
 <br/>
 </dd>
 <dt>AUTOPICKUP_EXCEPTION</dt><dd>
-(TBT)
+{<span class='italic'>pickup_types</span>} オプションの例外を設定する。
+「自動拾い例外の設定」の節を参照のこと。
 </dd>
 <dt>BINDINGS</dt><dd>
+Change the key bindings of some special keys, menu accelerators, or
+extended commands. You can specify multiple bindings. Format is key
+followed by the command, separated by a colon.
+See the ''Changing Key Bindings'' section for more information.
 (TBT)
 <br/>
 例:
@@ -2774,6 +2908,8 @@ settings particular to that statement.
 <br/>
 </dd>
 <dt>CHOOSE</dt><dd>
+Chooses at random one of the comma-separated parameters as an active
+section name. Lines in other sections are ignored.
 (TBT)
 <br/>
 例:
@@ -2788,21 +2924,34 @@ settings particular to that statement.
 <br/>
 </dd>
 <dt>MENUCOLOR</dt><dd>
+Highlight menu lines with different colors.
+See the ''Configuring Menu Colors'' section.
 (TBT)
 </dd>
 <dt>MSGTYPE</dt><dd>
+Change the way messages are shown in the top status line.
+See the ''Configuring Message Types'' section.
 (TBT)
 </dd>
 <dt>ROGUESYMBOLS</dt><dd>
+Custom symbols for for the rogue level's symbol set.
+See <span class='italic'>SYMBOLS</span> below.
 (TBT)
 </dd>
 <dt>SOUND</dt><dd>
+Define a sound mapping.
+See the ''Configuring User Sounds'' section.
 (TBT)
 </dd>
 <dt>SOUNDDIR</dt><dd>
+Define the directory that contains the sound files.
+See the ''Configuring User Sounds'' section.
 (TBT)
 </dd>
 <dt>SYMBOLS</dt><dd>
+Override one or more symbols in the symbol set used for all dungeon
+levels except for the special rogue level.
+See the ''Modifying <span class='italic'>NetHack</span> Symbols'' section.
 (TBT)
 <br/>
 例:
@@ -2813,7 +2962,9 @@ settings particular to that statement.
 <br/>
 </dd>
 <dt>WIZKIT</dt><dd>
-(TBT)
+デバッグモードのみ: 初期持物に追加される物。
+値は物の名前を 1 行一つ(最大 128 行)で書いたテキストファイルの名前である。
+各行は願いを扱う機能によって処理される。
 <br/>
 例:
 <pre>
@@ -2913,11 +3064,10 @@ NETHACKOPTIONS は、カンマ区切りにオプションのリストの代わ�
 永続する。
 </dd>
 <dt>autodescribe</dt><dd>
-Automatically describe the terrain under cursor when asked to get a location
-on the map (default true).
-The <span class='italic'>whatis_coord</span>
-option controls whether the description includes map coordinates.
-(TBT)
+地図上の位置を指定するときにカーソルの下の地形を自動的に表現する
+(標準設定はオン)。
+<span class='italic'>whatis_coord</span> オプションは、
+表現に位置の座標を含むかどうかを制御する。
 </dd>
 <dt>autodig</dt><dd>
 掘るための道具を手にしていて、掘ることができる地形に移動しようとしたとき、
@@ -3401,22 +3551,20 @@ QWERTZ キーボードに対応するものである。)
 この機能が実装されているウィンドウシステムでのみ有効。
 </dd>
 <dt>petattr</dt><dd>
-Specifies one or more text highlighting attributes to use when showing
-pets on the map.
-Effectively a superset of the <span class='italic'>hilite_pet</span> boolean option.
-Curses interface only; value is one or more of the following letters.
-(TBT)
+地図上にペットを表示するときに使われるハイライト属性の一つ以上の
+テキストを指定する。
+事実上 <span class='italic'>hilite_pet</span> オンオフオプションの上位互換である。
+curses インターフェースのみ; 値は一つ以上の次の文字である。
 <br/>
-<span class='tt'>n</span> &mdash; Normal text (no highlighting)<br/>
-<span class='tt'>i</span> &mdash; Inverse video (default)<br/>
-<span class='tt'>b</span> &mdash; Bold text<br/>
-<span class='tt'>u</span> &mdash; Underlined text<br/>
-<span class='tt'>k</span> &mdash; blinKing text<br/>
-<span class='tt'>d</span> &mdash; Dim text<br/>
-<span class='tt'>t</span> &mdash; iTalic text<br/>
-<span class='tt'>l</span> &mdash; Left line indicator<br/>
-<span class='tt'>r</span> &mdash; Right line indicator<br/>
-(TBT)
+<span class='tt'>n</span> &mdash; 通常のテキスト (ハイライトなし)<br/>
+<span class='tt'>i</span> &mdash; 反転 (標準設定)<br/>
+<span class='tt'>b</span> &mdash; 太字<br/>
+<span class='tt'>u</span> &mdash; 下線<br/>
+<span class='tt'>k</span> &mdash; 点滅<br/>
+<span class='tt'>d</span> &mdash; 薄い表示<br/>
+<span class='tt'>t</span> &mdash; 斜体<br/>
+<span class='tt'>l</span> &mdash; 左の行指示子<br/>
+<span class='tt'>r</span> &mdash; 右の行指示子<br/>
 <br/>
 Some of those choices might not work, particularly the final three,
 depending upon terminal hardware or terminal emulation software.
@@ -3894,7 +4042,7 @@ cursesインターフェースのみ。
 columns of the display.
 A width of at least 110 columns (amp;80+2+26+2amp;) is needed for
 <span class='italic'>align_status</span>
-set to {tt left} or <span class='tt'>right</span>.)
+set to <span class='tt'>left</span> or <span class='tt'>right</span>.)
 (TBT)
 </dd>
 <dt>windowcolors</dt><dd>
@@ -4112,120 +4260,209 @@ or a three-digit decimal ASCII code.
 </dl>
 <dl>
 <dt>{count}</dt><dd>
+Prefix key to start a count, to repeat a command this many times.
+With <span class='italic'>number_pad</span> only.
+標準設定は'<span class='tt'>n</span>'。
 (TBT)
 </dd>
 <dt>{doinv}</dt><dd>
+Show inventory. With <span class='italic'>number_pad</span> only.
+標準設定は'<span class='tt'>0</span>'。
 (TBT)
 </dd>
 <dt>{fight}</dt><dd>
+Prefix key to force fight a direction.
+標準設定は'<span class='tt'>F</span>'。
 (TBT)
 </dd>
 <dt>{fight.numpad}</dt><dd>
+Prefix key to force fight a direction. With <span class='italic'>number_pad</span> only.
+標準設定は'<span class='tt'>-</span>'。
 (TBT)
 </dd>
 <dt>{getdir.help}</dt><dd>
+When asked for a direction, the key to show the help.
+標準設定は'<span class='tt'>?</span>'。
 (TBT)
 </dd>
 <dt>{getdir.self}</dt><dd>
+When asked for a direction, the key to target yourself.
+標準設定は'<span class='tt'>.</span>'。
 (TBT)
 </dd>
 <dt>{getdir.self2}</dt><dd>
+When asked for a direction, the key to target yourself.
+標準設定は'<span class='tt'>s</span>'。
 (TBT)
 </dd>
 <dt>{getpos.autodescribe}</dt><dd>
+When asked for a location, the key to toggle <span class='italic'>autodescribe</span>.
+標準設定は'<span class='tt'>#</span>'。
 (TBT)
 </dd>
 <dt>{getpos.all.next}</dt><dd>
+When asked for a location, the key to go to next closest interesting thing.
+標準設定は'<span class='tt'>a</span>'。
 (TBT)
 </dd>
 <dt>{getpos.all.prev}</dt><dd>
+When asked for a location, the key to go to previous closest interesting thing.
+標準設定は'<span class='tt'>A</span>'。
 (TBT)
 </dd>
 <dt>{getpos.door.next}</dt><dd>
+When asked for a location, the key to go to next closest door or doorway.
+標準設定は'<span class='tt'>d</span>'。
 (TBT)
 </dd>
 <dt>{getpos.door.prev}</dt><dd>
+When asked for a location, the key to go to previous closest door or doorway.
+標準設定は'<span class='tt'>D</span>'。
 (TBT)
 </dd>
 <dt>{getpos.help}</dt><dd>
+When asked for a location, the key to show help.
+標準設定は'<span class='tt'>?</span>'。
 (TBT)
 </dd>
 <dt>{getpos.mon.next}</dt><dd>
+When asked for a location, the key to go to next closest monster.
+標準設定は'<span class='tt'>m</span>'。
 (TBT)
 </dd>
 <dt>{getpos.mon.prev}</dt><dd>
+When asked for a location, the key to go to previous closest monster.
+標準設定は'<span class='tt'>M</span>'。
 (TBT)
 </dd>
 <dt>{getpos.obj.next}</dt><dd>
+When asked for a location, the key to go to next closest object.
+標準設定は'<span class='tt'>o</span>'。
 (TBT)
 </dd>
 <dt>{getpos.obj.prev}</dt><dd>
+When asked for a location, the key to go to previous closest object.
+標準設定は'<span class='tt'>O</span>'。
 (TBT)
 </dd>
 <dt>{getpos.menu}</dt><dd>
+When asked for a location, and using one of the next or previous keys to
+cycle through targets, toggle showing a menu instead.
+標準設定は'<span class='tt'>!</span>'。
 (TBT)
 </dd>
 <dt>{getpos.moveskip}</dt><dd>
+When asked for a location, and using the shifted movement keys or
+meta-digit keys to fast-move around, move by skipping the same glyphs
+instead of by 8 units.
+標準設定は'<span class='tt'>*</span>'。
 (TBT)
 </dd>
 <dt>{getpos.filter}</dt><dd>
+When asked for a location, change the filtering mode when using one of
+the next or previous keys to cycle through targets. Toggles between no
+filtering, in view only, and in the same area only.
+標準設定は'<span class='tt'>"</span>'。
 (TBT)
 </dd>
 <dt>{getpos.pick}</dt><dd>
+When asked for a location, the key to choose the location, and possibly
+ask for more info.
+標準設定は'<span class='tt'>.</span>'。
 (TBT)
 </dd>
 <dt>{getpos.pick.once}</dt><dd>
+When asked for a location, the key to choose the location, and skip
+asking for more info.
+標準設定は'<span class='tt'>,</span>'。
 (TBT)
 </dd>
 <dt>{getpos.pick.quick}</dt><dd>
+When asked for a location, the key to choose the location, skip asking
+for more info, and exit the location asking loop.
+標準設定は'<span class='tt'>;</span>'。
 (TBT)
 </dd>
 <dt>{getpos.pick.verbose}</dt><dd>
+When asked for a location, the key to choose the location, and show more
+info without asking.
+標準設定は'<span class='tt'>:</span>'。
 (TBT)
 </dd>
 <dt>{getpos.self}</dt><dd>
+When asked for a location, the key to go to your location.
+標準設定は'<span class='tt'>@</span>'。
 (TBT)
 </dd>
 <dt>{getpos.unexplored.next}</dt><dd>
+When asked for a location, the key to go to next closest unexplored location.
+標準設定は'<span class='tt'>x</span>'。
 (TBT)
 </dd>
 <dt>{getpos.unexplored.prev}</dt><dd>
+When asked for a location, the key to go to previous closest unexplored
+location.
+標準設定は'<span class='tt'>X</span>'。
 (TBT)
 </dd>
 <dt>{getpos.valid}</dt><dd>
+When asked for a location, the key to go to show valid target locations.
+標準設定は'<span class='tt'>$</span>'。
 (TBT)
 </dd>
 <dt>{getpos.valid.next}</dt><dd>
+When asked for a location, the key to go to next closest valid location.
+標準設定は'<span class='tt'>z</span>'。
 (TBT)
 </dd>
 <dt>{getpos.valid.prev}</dt><dd>
+When asked for a location, the key to go to previous closest valid location.
+標準設定は'<span class='tt'>Z</span>'。
 (TBT)
 </dd>
 <dt>{nopickup}</dt><dd>
+Prefix key to move without picking up items.
+標準設定は'<span class='tt'>m</span>'。
 (TBT)
 </dd>
 <dt>{redraw}</dt><dd>
+Key to redraw the screen.
+標準設定は'<span class='tt'>^{</span>R}'。
 (TBT)
 </dd>
 <dt>{redraw.numpad}</dt><dd>
+Key to redraw the screen. With <span class='italic'>number_pad</span> only.
+標準設定は'<span class='tt'>^{</span>L}'。
 (TBT)
 </dd>
 <dt>{repeat}</dt><dd>
+Key to repeat previous command.
+標準設定は'<span class='tt'>^{</span>A}'。
 (TBT)
 </dd>
 <dt>{reqmenu}</dt><dd>
+Prefix key to request menu from some commands.
+標準設定は'<span class='tt'>m</span>'。
 (TBT)
 </dd>
 <dt>{run}</dt><dd>
+Prefix key to run towards a direction.
+標準設定は'<span class='tt'>G</span>'。
 (TBT)
 </dd>
 <dt>{run.nopickup}</dt><dd>
+Prefix key to run towards a direction without picking up items on the way.
+標準設定は'<span class='tt'>M</span>'。
 (TBT)
 </dd>
 <dt>{run.numpad}</dt><dd>
+Prefix key to run towards a direction. With <span class='italic'>number_pad</span> only.
+標準設定は'<span class='tt'>5</span>'。
 (TBT)
 </dd>
 <dt>{rush}</dt><dd>
+Prefix key to rush towards a direction.
+標準設定は'<span class='tt'>g</span>'。
 (TBT)
 </dd>
 </dl>
@@ -4408,13 +4645,11 @@ orange, light-green, yellow, light-blue, light-magenta, light-cyan, white。
 指定できる属性は:
 none, bold, dim, underline, blink, inverse。
 ''Normal'' は ''none'' の別名である;
-they should not be used in combination with any of the other attributes.
-(TBT)
+これらは他の属性と組み合わせて使うべきではない。
 </p>
 <p>
-To specify both a color and an attribute, use '&amp;' to combine them.
-To specify multiple attributes, use '+' to combine those.
-(TBT)
+色と属性の両方を指定するには、それらを結合するために '&amp;' を使う。
+複数の属性を指定するには、それらを結合するために '+' を使う。
 </p>
 <p>
 例: <span class='tt'>magenta&amp;inverse+dim</span>。
@@ -4847,8 +5082,7 @@ is enabled in the <span class='italic'>sysconf</span> file.
 Rogue 風コマンドを使うこと。
 </dd>
 <dt>autodescribe</dt><dd>
-Automatically describe the terrain under the cursor when targeting.
-(TBT)
+目標を決めるときにカーソルの下の地形を自動的に表現する。
 </dd>
 <dt>mention_walls</dt><dd>
 Give feedback messages when walking towards a wall or when travel command
