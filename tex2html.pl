@@ -26,6 +26,126 @@ my @mode = ('init', '');
 <head>
 <style type="text/css">
 
+body {
+    background-color: #000000;
+    color: #eeeeee;
+    font-size: 100%;
+    font-family: 'Meiryo UI', 'メイリオ', Meiryo, 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', sans-serif;
+}
+
+h1 {
+    font-size: 200%;
+    font-weight: 500;
+    color: #ccffff;
+    font-family: monospace;
+}
+
+h2 {
+    font-size: 150%;
+    font-weight: bold;
+    border-bottom: 1px solid;
+    color: #bbeebb;
+}
+
+h3 {
+    margin: 10 15;
+    font-size: 100%;
+    font-weight: bold;
+    color: #ffffcc;
+}
+
+dl {
+    margin: 0 30;
+}
+
+dt {
+    margin: 5 0 2 0;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 40;
+    font-size: 95%;
+    font-weight: normal;
+}
+
+ul.menu {
+    margin: 0 0 0 10;
+    padding-left: 0;
+    /* list-style-type:none; */
+}
+
+ul ul.menu {
+    margin: 0 0 0 10;
+    padding-left: 10;
+    list-style-type: none;
+}
+
+li {
+    margin: 5 0;
+}
+
+div#searchform {
+    font-size: 90%;
+}
+
+A:link {
+    color: #99eeee;
+    /*text-decoration: none;*/
+}
+
+A:visited {
+    color: #bbbbee;
+    /*text-decoration: none;*/
+}
+
+A:active {
+    color: red;
+    /*text-decoration: none;*/
+}
+
+A:hover {
+    color: #000000;
+    background-color: #ccffff;
+    /*background-color: #bbbbee;*/
+    text-decoration: none;
+}
+
+address {
+    font-weight: bold;
+    font-style: normal;
+    text-align: right;
+}
+
+hr {
+    height: 1px;
+    width: 95%;
+}
+
+p {
+    margin: 10 20;
+    line-height: 130%;
+}
+
+b {
+    color: #ffffcc;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+    color: #ffffcc;
+}
+
+.tt {
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffcc;
+}
+
 pre {
   padding: 0;
   margin: 0;
@@ -34,10 +154,10 @@ dt {
   color: #ffffcc;
 }
 table {
-border: solid 1px #000000; border-collapse: collapse;
+  border: solid 1px #000000;
+  border-collapse: collapse;
 }
 </style>
-<link rel="Stylesheet" href="nhr.css" type="text/css">
 EOF
    ;
     
