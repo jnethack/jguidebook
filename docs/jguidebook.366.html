@@ -686,7 +686,7 @@ table {
 指定した方向へ一歩進む(図 2 参照)。その方向に怪物がいると感じているか
 覚えているときは、
 移動するのではなく怪物と戦うことになる。
-怪物と戦うことになるのはこの一歩移動のコマンドだけである。
+怪物と戦うことになるのはこれらの一歩移動のコマンドだけである;
 その他のコマンド(後述)は「安全」である。
 <div style='text-align:center'>
 <table>
@@ -2643,13 +2643,11 @@ AD&amp;D に存在する鎧はいずれも <span class='italic'>NetHack</span> �
 通常、あなたが地図上のある特定の位置である物を見て、
 物がもう直接見えない位置に移動した場合、
 それは地図上に表示され続ける。
-if will continue to be displayed on your map.
-That remains the case even if it is not actually there any
-more&mdash;perhaps a monster has picked it up or it has rotted
-away&mdash;until you can see or feel that location again.
-One notable exception is that if the object gets covered by the
-''remembered, unseen monster'' marker.
-(TBT)
+これは、&mdash; おそらく怪物が拾ったか腐ってしまったかして &mdash; 実際には
+すでにそこになくても、あなたがその場所をもう一度見るか感じるかするまで
+残り続ける。
+注意するべき例外の一つは、その物が「覚えているけれども見えない怪物」
+マーカで覆われた場合である。
 あなたがそこに怪物がいないことを確認してマーカが消えると、
 見えない怪物が実際にその物を拾ったかどうかに関わらず、
 あなたはそこにあった物を忘れる。
@@ -2803,12 +2801,13 @@ Windowsでは、
 <span class='mbox'>''.nethackrc''</span> である。
 このファイルは存在していないかも知れないが、これは通常の
 ASCII テキストファイルで、任意のテキストエディタで作ることができる。
-After runing <span class='italic'>NetHack</span> for the first time, you should find a default
-template for ths configuration file named <span class='mbox'>''.nethackrc.template''</span> in
-<span class='mbox'>''%USERPROFILE%\NetHack\3.6''</span>.
-If you had not created the configuration file, <span class='italic'>NetHack</span> will create
-the configuration file for you using the default template file.
-(TBT)
+<span class='italic'>NetHack</span> の初回実行後、
+<span class='mbox'>''%USERPROFILE%\NetHack\3.6''</span> に
+<span class='mbox'>''.nethackrc.template''</span> というファイル名で、
+設定ファイルのデフォルトテンプレートを見つけられるはずである。
+設定ファイルを作成していない場合、
+<span class='italic'>NetHack</span> はデフォルトテンプレートファイルを使って設定ファイルを
+作成する。
 </p>
 <p>
 MS-DOS では、<span class='mbox'><span class='italic'>nethack.exe</span></span> と
@@ -2895,11 +2894,11 @@ HACKDIR を上書きするように設定するのは通常不要で非推奨で
 「自動拾い例外の設定」の節を参照のこと。
 </dd>
 <dt>BINDINGS</dt><dd>
-Change the key bindings of some special keys, menu accelerators, or
-extended commands. You can specify multiple bindings. Format is key
-followed by the command, separated by a colon.
-See the ''Changing Key Bindings'' section for more information.
-(TBT)
+一部の特殊キー、メニューアクセラレータ、拡張コマンドのキー配置を
+変更する。
+複数の配置を指定できる。
+形式は、キーの後に、転んで区切られたコマンドが続く。
+さらなる情報については ''Changing Key Bindings'' 節を参照のこと。
 <br/>
 例:
 <pre>
@@ -2908,9 +2907,8 @@ See the ''Changing Key Bindings'' section for more information.
 <br/>
 </dd>
 <dt>CHOOSE</dt><dd>
-Chooses at random one of the comma-separated parameters as an active
-section name. Lines in other sections are ignored.
-(TBT)
+カンマで区切られたパラメータの一つを有効なセクション名としてランダムに選ぶ。
+他のセクションの行は無視される。
 <br/>
 例:
 <pre>
@@ -2924,35 +2922,29 @@ section name. Lines in other sections are ignored.
 <br/>
 </dd>
 <dt>MENUCOLOR</dt><dd>
-Highlight menu lines with different colors.
-See the ''Configuring Menu Colors'' section.
-(TBT)
+メニュー行を異なった色でハイライトする。
+''Configuring Menu Colors'' 節を参照のこと。
 </dd>
 <dt>MSGTYPE</dt><dd>
-Change the way messages are shown in the top status line.
-See the ''Configuring Message Types'' section.
-(TBT)
+上部ステータス行に表示されるメッセージがどのように表示されるかを変更する。
+''Configuring Message Types'' 節を参照のこと。
 </dd>
 <dt>ROGUESYMBOLS</dt><dd>
-Custom symbols for for the rogue level's symbol set.
-See <span class='italic'>SYMBOLS</span> below.
-(TBT)
+ローグレベルのシンボル集合のためのカスタムシンボル。
+後述する <span class='italic'>SYMBOLS</span> を参照のこと。
 </dd>
 <dt>SOUND</dt><dd>
-Define a sound mapping.
-See the ''Configuring User Sounds'' section.
-(TBT)
+効果音のマッピングを定義する。
+''Configuring User Sounds'' 節を参照のこと。
 </dd>
 <dt>SOUNDDIR</dt><dd>
-Define the directory that contains the sound files.
-See the ''Configuring User Sounds'' section.
-(TBT)
+効果音ファイルがあるディレクトリを定義する。
+''Configuring User Sounds'' 節を参照のこと。
 </dd>
 <dt>SYMBOLS</dt><dd>
-Override one or more symbols in the symbol set used for all dungeon
-levels except for the special rogue level.
-See the ''Modifying <span class='italic'>NetHack</span> Symbols'' section.
-(TBT)
+特殊なローグレベル以外の全てのダンジョンレベルで使われるシンボル集合の
+いくつかのシンボルを上書きする。
+''Modifying <span class='italic'>NetHack</span> Symbols'' 節を参照のこと。
 <br/>
 例:
 <pre>
@@ -3170,19 +3162,15 @@ NETHACKOPTIONS は、カンマ区切りにオプションのリストの代わ�
 <span class='tt'>+</span> &mdash; "確認なしに表示する。"<br/>
 <span class='tt'>-</span> &mdash; "確認なしで非表示とする。"
 <br/>
-The listing of vanquished monsters can be sorted,
-so there are two additional choices for '<span class='tt'>v</span>':
-(TBT)
-<span class='tt'>?</span> &mdash; prompt you and default to ask on the prompt;<br/>
-<span class='tt'>#</span> &mdash; disclose it without prompting, ask for sort order.
-(TBT)
+絶滅した怪物の一覧はソートできるので、'<span class='tt'>v</span>' には二つの追加の
+選択肢がある:
+<span class='tt'>?</span> &mdash; "確認して、標準設定は問い合わせる。"<br/>
+<span class='tt'>#</span> &mdash; "確認なしで表示し、ソート順を問い合わせる。"
 <br/>
-Asking refers to picking one of the orderings from a menu.
-The '<span class='tt'>+</span>' disclose without prompting choice,
-or being prompted and answering '<span class='tt'>y</span>' rather than '<span class='tt'>a</span>',
-will default to showing monsters in the traditional order,
-from high level to low level.<br/>
-(TBT)
+問い合わせはメニューから順序の一つを選択する。
+確認なしの '<span class='tt'>+</span>' の公開か、
+問い合わせに対して '<span class='tt'>a</span>' ではなく '<span class='tt'>y</span>' と答えた場合、
+伝統的な順序である、レベルの高いものから低いものの順で怪物を表示する。
 省略されたカテゴリには暗黙に '<span class='tt'>n</span>' 接頭辞が追加される。
 接頭辞が省略されて指定されたカテゴリには暗黙に '<span class='tt'>+</span>' 接頭辞が使われる。
 表示カテゴリの順序は関係なく、プログラムは設定された順序に従って
@@ -3208,11 +3196,10 @@ from high level to low level.<br/>
 拡張コマンドインターフェースを、有効なコマンドの一覧メニューが出るように変更する。
 キー入力は、最後に Enter を押す必要がないこと以外は伝統的なインターフェースと互換性がある。
 tty インターフェースに実装されている。(標準設定はオフ)
-For the X11 interface, which always uses a menu for choosing an extended
-command, it controls whether the menu shows all available commands (on)
-or just the subset of commands which have traditionally been considered
-extended ones (off).
-(TBT)
+拡張コマンドを選ぶために常にメニューが表示される X11 インターフェースでは、
+これはメニューに利用可能な全てのコマンドを表示する(オン)か、
+伝統的に拡張コマンドと考えられているコマンドの部分集合のみを表示する
+(オフ)かを制御する。
 </dd>
 <dt>female</dt><dd>
 ''<span class='tt'>gender:female</span>'' の古い別名。
@@ -3226,9 +3213,9 @@ extended ones (off).
 永続する。
 </dd>
 <dt>force_invmenu</dt><dd>
-Commands asking for an inventory item show a menu instead of
-a text query with possible menu letters. Default is off.
-(TBT)
+持物を選ぶコマンドでは、可能なメニュー文字付きのテキスト問い合わせではなく、
+メニューを表示する。
+標準設定はオフ。
 </dd>
 <dt>fruit</dt><dd>
 あなたの好物の果物にちなんでその名前を設定する(例:fruit:mango)
@@ -3268,10 +3255,9 @@ melons (メロン) は <span class='italic'>NetHack</span> にはもう存在し
 永続する。
 </dd>
 <dt>herecmd_menu</dt><dd>
-When using a windowport that supports mouse and clicking on yourself or
-next to you, show a menu of possible actions for the location.
-Same as ''<span class='tt'>#herecmdmenu</span>'' and ''<span class='tt'>#therecmdmenu</span>'' commands.
-(TBT)
+マウスに対応しているウィンドウポートを使っていて、自分自身か
+自分の隣をクリックしたとき、その位置に対して可能な公道のメニューを表示する。
+''<span class='tt'>#herecmdmenu</span>'' および ''<span class='tt'>#therecmdmenu</span>'' コマンドと同じ。
 </dd>
 <dt>hilite_pet</dt><dd>
 ペットを同種の動物から視覚的に区別する(標準設定はオフ)。
@@ -3566,17 +3552,14 @@ curses インターフェースのみ; 値は一つ以上の次の文字であ�
 <span class='tt'>l</span> &mdash; 左の行指示子<br/>
 <span class='tt'>r</span> &mdash; 右の行指示子<br/>
 <br/>
-Some of those choices might not work, particularly the final three,
-depending upon terminal hardware or terminal emulation software.
-(TBT)
+ターミナルハードウェアやターミナルエミュレーションソフトウェアに
+依存して、これらの選択の一部、特に最後の三つは動作しないかもしれない。
 <br/>
-Currently multiple highlight-style letters can be combined by simply
-stringing them together (for example, ''bk''), but in the future
-they might require being separated by plus signs (such as ''bamp;+amp;k'',
-which works already).
-When using the 'n' choice, it should be specified on its own,
-not in combination with any of the other letters.
-(TBT)
+現在の所、複数のハイライトスタイル文字は単に結合されている
+(例えば ''bk'') が、将来プラス記号で区切られる必要があるようになるかも
+しれない (例えば ''bamp;+amp;k'' のように; これは既に動作する)。
+'n' の選択を使う場合、その他の文字との組み合わせではなく、
+単体で指定される必要がある。
 <br/>
 </dd>
 <dt>pettype</dt><dd>
@@ -3804,60 +3787,51 @@ not in combination with any of the other letters.
 永続する。
 </dd>
 <dt>whatis_coord</dt><dd>
-When using the '<span class='tt'>/</span>' or '<span class='tt'>;</span>' commands to look around on the map with
-''<span class='tt'>autodescribe</span>''
-on, display coordinates after the description.
-Also works in other situations where you are asked to pick a location.<br/>
-(TBT)
+When using the 
+''<span class='tt'>autodescribe</span>'' がオンのときに地図上を見て回るために
+'<span class='tt'>/</span>' や '<span class='tt'>;</span>' コマンドを使うとき、説明の後ろに座標を表示する。
+場所を選択するその他の状況でも動作する。<br/>
 <br/>
 可能な設定は:
 <br/>
-<span class='tt'>c</span> &mdash; compass ('east' or '3s' or '2n,4w');<br/>
-<span class='tt'>f</span> &mdash; full compass ('east' or '3south' or '2north,4west');<br/>
-<span class='tt'>m</span> &mdash; map &lt;x,y&gt; (map column x=0 is not used);<br/>
-<span class='tt'>s</span> &mdash; screen [row,column] (row is offset to match tty usage);<br/>
-<span class='tt'>n</span> &mdash; none (no coordinates shown) [default].
-(TBT)
+<span class='tt'>c</span> &mdash; コンパス ('east', '3s', '2n,4w');<br/>
+<span class='tt'>f</span> &mdash; 完全コンパス ('east', '3south', '2north,4west');<br/>
+<span class='tt'>m</span> &mdash; 地図 &lt;x,y&gt; (地図列 x=0 は使われない);<br/>
+<span class='tt'>s</span> &mdash; 画面 [row,column] (row は tty 利用法に一致するオフセット);<br/>
+<span class='tt'>n</span> &mdash; なし (座標は表示されない) [標準設定].
 <br/>
-The
 <span class='italic'>whatis_coord</span>
-option is also used with
-the '<span class='tt'>/m</span>', '<span class='tt'>/M</span>', '<span class='tt'>/o</span>', and '<span class='tt'>/O</span>' sub-commands
-of '<span class='tt'>/</span>',
-where the '<span class='italic'>none</span>' setting is overridden with '<span class='italic'>map</span>'.
-(TBT)
+オプションは、'<span class='tt'>/</span>' の
+'<span class='tt'>/m</span>', '<span class='tt'>/M</span>', '<span class='tt'>/o</span>', '<span class='tt'>/O</span>' サブコマンドでも使用できる;
+ここで '<span class='italic'>none</span>' 設定は '<span class='italic'>map</span>' で上書きされる。
 </dd>
 <dt>whatis_filter</dt><dd>
-When getting a location on the map, and using the keys to cycle through
-next and previous targets, allows filtering the possible targets.
-(default none)<br/>
-(TBT)
+地図上の場所を指定するときに、
+目標の中を循環して移動するキーのいずれかを使っているとき、
+可能性のある目標をフィルタリングする。
+(標準設定はなし)<br/>
 可能な設定は:
 <br/>
-<span class='tt'>n</span> &mdash; no filtering;<br/>
-<span class='tt'>v</span> &mdash; in view only;<br/>
-<span class='tt'>a</span> &mdash; in same area (room, corridor, etc).
-(TBT)
-The area-filter tries to be slightly predictive -- if you're standing
-on a doorway, it will consider the area on the side of the door you
-were last moving towards.<br/>
-(TBT)
-Filtering can also be changed when getting a location with
-the ''getpos.filter'' key.
-(TBT)
+<span class='tt'>n</span> &mdash; フィルタリングなし;<br/>
+<span class='tt'>v</span> &mdash; 視界内のみ;<br/>
+<span class='tt'>a</span> &mdash; 同じエリア(部屋、通路など).
+エリアフィルタはやや予言的である -- 出入り口に立っている場合、
+移動してきたエリア側にいるものとして扱われる。
+フィルタリングは、''getpos.filter'' キーで場所を指定するときにも
+変更できる。
 </dd>
 <dt>whatis_menu</dt><dd>
-When getting a location on the map, and using a key to cycle through
-next and previous targets, use a menu instead to pick a target.
-(default off)
-(TBT)
+地図上の場所を指定するときに、
+目標の中を循環して移動するキーのいずれかを使っているとき、
+代わりにメニューを表示する。
+(標準設定はオフ)
 </dd>
 <dt>whatis_moveskip</dt><dd>
-When getting a location on the map, and using shifted movement keys or
-meta-digit keys to fast-move, instead of moving 8 units at a time,
-move by skipping the same glyphs.
-(default off)
-(TBT)
+地図上の場所を指定するときに、
+高速移動のためにシフトを押しながらの移動や、
+meta-数字 キーでの移動を使っているとき、8 マス毎ではなく同じ記号を飛ばして
+移動する。
+(標準設定はオフ)
 </dd>
 <dt>windowtype</dt><dd>
 プログラムが複数のインターフェースに対応してビルドされているとき、
@@ -3865,13 +3839,12 @@ move by skipping the same glyphs.
 (標準設定はビルド時の設定による; ''<span class='tt'>#version</span>'' でチェックできる)。
 '<span class='tt'>O</span>' コマンドで設定することはできない。
 <br/>
-When used, it should be the first option set since its value might
-enable or disable the availability of various other options.
-For multiple lines in a configuration file, that would be the first
-non-comment line.
-For a comma-separated list in NETHACKOPTIONS or an OPTIONS line in a
-configuration file, that would be the <span class='italic'>rightmost</span> option in the list.
-(TBT)
+使われる場合は、これは設定される最初のオプションである必要がある;
+この値はその他の様々なオプションの可用性を有効にしたり無効にしたり
+するかもしれないからである。
+設定ファイルに複数行ある場合、これは最初の非コメント行である。
+NETHACKOPTIONS や設定ファイル中の OPTIONS 行でのカンマ区切りリストについては、
+リストの <span class='italic'>最も右</span> のオプションである。
 </dd>
 <dt>wizweight</dt><dd>
 物の説明にその物の重さを追加する(標準設定はオフ)。
@@ -4038,12 +4011,9 @@ cursesインターフェースのみ。
 <span class='tt'>2</span> &mdash; 自動、最低
 (amp;24+2amp;)x(amp;80+2amp;) ある場合に表示   (標準設定)<br/>
 <br/>
-(The 26x82 size threshold for '2' refers to number of rows and
-columns of the display.
-A width of at least 110 columns (amp;80+2+26+2amp;) is needed for
-<span class='italic'>align_status</span>
-set to <span class='tt'>left</span> or <span class='tt'>right</span>.)
-(TBT)
+('2' の 26x82 というサイズの閾値は、画面の行数と列数から決定されている。
+<span class='italic'>align_status</span> を <span class='tt'>left</span> または <span class='tt'>right</span> に設定するには、
+最低 110 桁 (amp;80+2+26+2amp;) の幅が必要である。
 </dd>
 <dt>windowcolors</dt><dd>
 可能ならウィンドウを指定した前景色/背景色で表示する。
@@ -4052,9 +4022,9 @@ Windows GUIのみ。形式は:
     OPTION=windowcolors:wintype foreground/background
 </pre>
 <br/>
-where wintype is one of <span class='italic'>menu</span>, <span class='italic'>message</span>, <span class='italic'>status</span>, or <span class='italic'>text</span>, and
-foreground and background are colors, either a hexadecimal <span class='italic'>#rrggbb</span>,
-one of the named colors (<span class='italic'>black</span>, <span class='italic'>red</span>, <span class='italic'>green</span>, <span class='italic'>brown</span>,
+ここで wintype <span class='italic'>menu</span>, <span class='italic'>message</span>, <span class='italic'>status</span>, <span class='italic'>text</span> のいずれか、
+foreground と background は色で、16 進 <span class='italic'>#rrggbb</span> または
+名前付き色の一つ (<span class='italic'>black</span>, <span class='italic'>red</span>, <span class='italic'>green</span>, <span class='italic'>brown</span>,
 <span class='italic'>blue</span>, <span class='italic'>magenta</span>, <span class='italic'>cyan</span>, <span class='italic'>orange</span>,
 <span class='italic'>brightgreen</span>, <span class='italic'>yellow</span>, <span class='italic'>brightblue</span>, <span class='italic'>brightmagenta</span>,
 <span class='italic'>brightcyan</span>, <span class='italic'>white</span>, <span class='italic'>trueblack</span>, <span class='italic'>gray</span>, <span class='italic'>purple</span>,
@@ -4064,8 +4034,7 @@ one of the named colors (<span class='italic'>black</span>, <span class='italic'
 <span class='italic'>activecaption</span>, <span class='italic'>appworkspace</span>, <span class='italic'>background</span>, <span class='italic'>btnface</span>, <span class='italic'>btnshadow</span>,
 <span class='italic'>btntext</span>, <span class='italic'>captiontext</span>, <span class='italic'>graytext</span>, <span class='italic'>greytext</span>, <span class='italic'>highlight</span>,
 <span class='italic'>highlighttext</span>, <span class='italic'>inactiveborder</span>, <span class='italic'>inactivecaption</span>, <span class='italic'>menu</span>,
-<span class='italic'>menutext</span>, <span class='italic'>scrollbar</span>, <span class='italic'>window</span>, <span class='italic'>windowframe</span>, <span class='italic'>windowtext</span>).
-(TBT)
+<span class='italic'>menutext</span>, <span class='italic'>scrollbar</span>, <span class='italic'>window</span>, <span class='italic'>windowframe</span>, <span class='italic'>windowtext</span>)。
 <br/>
 </dd>
 <dt>wraptext</dt><dd>
@@ -4219,13 +4188,13 @@ NO_TERMS を使用しているPCシステムのカラーパレットをセット
 </p>
 <h2>キー配置を変更する</h2>
 <p>
-It is possible to change the default key bindings of some special commands,
-menu accelerator keys, and extended commands, by using BIND stanzas in the
-configuration file. Format is key, followed by the command to bind to,
-separated by a colon. The key can be a single character (''<span class='tt'>x</span>''),
-a control key (''<span class='tt'>^{</span>X}'', ''<span class='tt'>C-x</span>''), a meta key (''<span class='tt'>M-x</span>''),
-or a three-digit decimal ASCII code.
-(TBT)
+設定ファイルで BIND 文を使うことにより、一部の特殊コマンド、
+メニューアクセラレータキー、拡張コマンドのデフォルトのキーバインディングを
+変更できる。
+形式は、キーの後に、コロンで区切られたバインド先のコマンドが続く。
+キーには、単一文字(「''<span class='tt'>x</span>'')、制御キー
+(''<span class='tt'>^{</span>X}'', ''<span class='tt'>C-x</span>'')、メタキー(''<span class='tt'>M-x</span>'')、または 3 桁の
+10 進 ASCII コードを使用できる。
 </p>
 <p>
 例:
@@ -4260,210 +4229,172 @@ or a three-digit decimal ASCII code.
 </dl>
 <dl>
 <dt>{count}</dt><dd>
-Prefix key to start a count, to repeat a command this many times.
-With <span class='italic'>number_pad</span> only.
+あるコマンドを複数回繰り返すための回数を開始するための前置キー。
+<span class='italic'>number_pad</span> がオンの場合のみ。
 標準設定は'<span class='tt'>n</span>'。
-(TBT)
 </dd>
 <dt>{doinv}</dt><dd>
-Show inventory. With <span class='italic'>number_pad</span> only.
+持物を表示する。
+<span class='italic'>number_pad</span> がオンの場合のみ。
 標準設定は'<span class='tt'>0</span>'。
-(TBT)
 </dd>
 <dt>{fight}</dt><dd>
-Prefix key to force fight a direction.
+強制的にある方向に戦うための前置キー。
 標準設定は'<span class='tt'>F</span>'。
-(TBT)
 </dd>
 <dt>{fight.numpad}</dt><dd>
-Prefix key to force fight a direction. With <span class='italic'>number_pad</span> only.
+強制的にある方向に戦うための前置キー。
+<span class='italic'>number_pad</span> がオンの場合のみ。
 標準設定は'<span class='tt'>-</span>'。
-(TBT)
 </dd>
 <dt>{getdir.help}</dt><dd>
-When asked for a direction, the key to show the help.
+方向を訊ねられたとき、 ヘルプを表示するキー。
 標準設定は'<span class='tt'>?</span>'。
-(TBT)
 </dd>
 <dt>{getdir.self}</dt><dd>
-When asked for a direction, the key to target yourself.
+方向を訊ねられたとき、 自分自身に向けるキー。
 標準設定は'<span class='tt'>.</span>'。
-(TBT)
 </dd>
 <dt>{getdir.self2}</dt><dd>
-When asked for a direction, the key to target yourself.
+方向を訊ねられたとき、 自分自身に向けるキー。
 標準設定は'<span class='tt'>s</span>'。
-(TBT)
 </dd>
 <dt>{getpos.autodescribe}</dt><dd>
-When asked for a location, the key to toggle <span class='italic'>autodescribe</span>.
+場所を訊ねられたとき、<span class='italic'>autodescribe</span> を切り替えるキー。
 標準設定は'<span class='tt'>#</span>'。
-(TBT)
 </dd>
 <dt>{getpos.all.next}</dt><dd>
-When asked for a location, the key to go to next closest interesting thing.
+場所を訊ねられたとき、次に近い興味のあるものに移動するキー。
 標準設定は'<span class='tt'>a</span>'。
-(TBT)
 </dd>
 <dt>{getpos.all.prev}</dt><dd>
-When asked for a location, the key to go to previous closest interesting thing.
+場所を訊ねられたとき、前に近い興味のあるものに移動するキー。
 標準設定は'<span class='tt'>A</span>'。
-(TBT)
 </dd>
 <dt>{getpos.door.next}</dt><dd>
-When asked for a location, the key to go to next closest door or doorway.
+場所を訊ねられたとき、次に近いドアや出入り口に移動するキー。
 標準設定は'<span class='tt'>d</span>'。
-(TBT)
 </dd>
 <dt>{getpos.door.prev}</dt><dd>
-When asked for a location, the key to go to previous closest door or doorway.
+場所を訊ねられたとき、前に近いドアや出入り口に移動するキー。
 標準設定は'<span class='tt'>D</span>'。
-(TBT)
 </dd>
 <dt>{getpos.help}</dt><dd>
-When asked for a location, the key to show help.
+場所を訊ねられたとき、ヘルプを表示するキー。
 標準設定は'<span class='tt'>?</span>'。
-(TBT)
 </dd>
 <dt>{getpos.mon.next}</dt><dd>
-When asked for a location, the key to go to next closest monster.
+場所を訊ねられたとき、次に近い怪物に移動するキー。
 標準設定は'<span class='tt'>m</span>'。
-(TBT)
 </dd>
 <dt>{getpos.mon.prev}</dt><dd>
-When asked for a location, the key to go to previous closest monster.
+場所を訊ねられたとき、前に近い怪物に移動するキー。
 標準設定は'<span class='tt'>M</span>'。
-(TBT)
 </dd>
 <dt>{getpos.obj.next}</dt><dd>
-When asked for a location, the key to go to next closest object.
+場所を訊ねられたとき、次に近い物に移動するキー。
 標準設定は'<span class='tt'>o</span>'。
-(TBT)
 </dd>
 <dt>{getpos.obj.prev}</dt><dd>
-When asked for a location, the key to go to previous closest object.
+場所を訊ねられたとき、前に近い物に移動するキー。
 標準設定は'<span class='tt'>O</span>'。
-(TBT)
 </dd>
 <dt>{getpos.menu}</dt><dd>
-When asked for a location, and using one of the next or previous keys to
-cycle through targets, toggle showing a menu instead.
+場所を訊ねられて、目標の中を循環して移動するキーのいずれかを使っているとき、
+代わりにメニューを表示するかを切り替える。
 標準設定は'<span class='tt'>!</span>'。
-(TBT)
 </dd>
 <dt>{getpos.moveskip}</dt><dd>
-When asked for a location, and using the shifted movement keys or
-meta-digit keys to fast-move around, move by skipping the same glyphs
-instead of by 8 units.
+場所を訊ねられて、高速移動のためにシフトを押しながらの移動や、
+meta-数字 キーでの移動を使っているとき、8 マス毎ではなく同じ記号を飛ばして
+移動する。
 標準設定は'<span class='tt'>*</span>'。
-(TBT)
 </dd>
 <dt>{getpos.filter}</dt><dd>
-When asked for a location, change the filtering mode when using one of
-the next or previous keys to cycle through targets. Toggles between no
-filtering, in view only, and in the same area only.
+場所を訊ねられて、目標の中を循環して移動するキーのいずれかを使っているとき、
+フィルタモードを切り替える。
+フィルタなし、視界内のみ、同じエリアのみを順に切り替える。
 標準設定は'<span class='tt'>"</span>'。
-(TBT)
 </dd>
 <dt>{getpos.pick}</dt><dd>
-When asked for a location, the key to choose the location, and possibly
-ask for more info.
+場所を訊ねられたとき、場所を選択し、おそらくさらなる情報を訊ねるためのキー。
 標準設定は'<span class='tt'>.</span>'。
-(TBT)
 </dd>
 <dt>{getpos.pick.once}</dt><dd>
-When asked for a location, the key to choose the location, and skip
-asking for more info.
+場所を訊ねられたとき、場所を選択し、さらなる情報を訊ねるのを飛ばすキー。
 標準設定は'<span class='tt'>,</span>'。
-(TBT)
 </dd>
 <dt>{getpos.pick.quick}</dt><dd>
-When asked for a location, the key to choose the location, skip asking
-for more info, and exit the location asking loop.
+場所を訊ねられたとき、場所を選択し、さらなる情報を訊ねるのを飛ばし、
+場所の問い合わせのループを終了するキー。
 標準設定は'<span class='tt'>;</span>'。
-(TBT)
 </dd>
 <dt>{getpos.pick.verbose}</dt><dd>
-When asked for a location, the key to choose the location, and show more
-info without asking.
+場所を訊ねられたとき、場所を選択し、訊ねられることなくさらなる情報を
+表示するキー。
 標準設定は'<span class='tt'>:</span>'。
-(TBT)
 </dd>
 <dt>{getpos.self}</dt><dd>
-When asked for a location, the key to go to your location.
+場所を訊ねられたとき、自分の位置に移動するキー。
 標準設定は'<span class='tt'>@</span>'。
-(TBT)
 </dd>
 <dt>{getpos.unexplored.next}</dt><dd>
-When asked for a location, the key to go to next closest unexplored location.
+場所を訊ねられたとき、次に近い未探索の場所に移動するキー。
 標準設定は'<span class='tt'>x</span>'。
-(TBT)
 </dd>
 <dt>{getpos.unexplored.prev}</dt><dd>
-When asked for a location, the key to go to previous closest unexplored
-location.
+場所を訊ねられたとき、前に近い未探索の場所に移動するキー。
 標準設定は'<span class='tt'>X</span>'。
-(TBT)
 </dd>
 <dt>{getpos.valid}</dt><dd>
-When asked for a location, the key to go to show valid target locations.
+場所を訊ねられたとき、正当な目標の場所を表示するキー。
 標準設定は'<span class='tt'>$</span>'。
-(TBT)
 </dd>
 <dt>{getpos.valid.next}</dt><dd>
-When asked for a location, the key to go to next closest valid location.
+場所を訊ねられたとき、次に近い正当な位置に移動するキー。
 標準設定は'<span class='tt'>z</span>'。
-(TBT)
 </dd>
 <dt>{getpos.valid.prev}</dt><dd>
-When asked for a location, the key to go to previous closest valid location.
+場所を訊ねられたとき、前に近い正当な位置に移動するキー。
 標準設定は'<span class='tt'>Z</span>'。
-(TBT)
 </dd>
 <dt>{nopickup}</dt><dd>
-Prefix key to move without picking up items.
+物を拾わずに移動する前置キー。
 標準設定は'<span class='tt'>m</span>'。
-(TBT)
 </dd>
 <dt>{redraw}</dt><dd>
-Key to redraw the screen.
+画面を再描画するキー。
 標準設定は'<span class='tt'>^{</span>R}'。
-(TBT)
 </dd>
 <dt>{redraw.numpad}</dt><dd>
-Key to redraw the screen. With <span class='italic'>number_pad</span> only.
+画面を再描画するキー。
+<span class='italic'>number_pad</span> がオンの場合のみ。
 標準設定は'<span class='tt'>^{</span>L}'。
-(TBT)
 </dd>
 <dt>{repeat}</dt><dd>
-Key to repeat previous command.
+前回のコマンドを繰り返すキー。
 標準設定は'<span class='tt'>^{</span>A}'。
-(TBT)
 </dd>
 <dt>{reqmenu}</dt><dd>
-Prefix key to request menu from some commands.
+一部のコマンドからメニューを要求する前置キー。
 標準設定は'<span class='tt'>m</span>'。
-(TBT)
 </dd>
 <dt>{run}</dt><dd>
-Prefix key to run towards a direction.
+ある方向に走るための前置キー。
 標準設定は'<span class='tt'>G</span>'。
-(TBT)
 </dd>
 <dt>{run.nopickup}</dt><dd>
-Prefix key to run towards a direction without picking up items on the way.
+途中にある物を拾わずにある方向に走るための前置キー。
 標準設定は'<span class='tt'>M</span>'。
-(TBT)
 </dd>
 <dt>{run.numpad}</dt><dd>
-Prefix key to run towards a direction. With <span class='italic'>number_pad</span> only.
+ある方向に走るための前置キー。
+<span class='italic'>number_pad</span> がオンの場合のみ。
 標準設定は'<span class='tt'>5</span>'。
-(TBT)
 </dd>
 <dt>{rush}</dt><dd>
-Prefix key to rush towards a direction.
+ある方向に突進するための前置キー。
 標準設定は'<span class='tt'>g</span>'。
-(TBT)
 </dd>
 </dl>
 <h2>メッセージ型の設定</h2>
@@ -4712,58 +4643,53 @@ lev, fly, ride の別名として 'movement' を、
 この属性は <span class='tt'>statushilites</span> ターン後に元に戻る。
 </dd>
 <dt>changed</dt><dd>
-changes. This attribute times out after <span class='tt'>statushilites</span> turns.
-(If a field has both a ''changed'' rule and an ''up'' or ''down''
-rule which matches a change in the field's value,
-the ''up'' or ''down'' one takes precedence.)
-(TBT)
+フィールド属性を設定する。
+この属性は <span class='tt'>statushilites</span> ターン後に元に戻る。
+(あるフィールドに、フィールドの値の変更に一致する、
+''changed'' 規則と ''up'' または ''down'' 規則の両方がある場合、
+''up'' または ''down'' が優先される。)
 </dd>
 <dt>percentage</dt><dd>
-matches the percentage.
-It is specified as a number between 0 and 100, followed by '<span class='tt'>%</span>'
-(percent sign).
-(TBT)
-If the percentage is prefixed with '<span class='tt'>&lt;=</span>' or '<span class='tt'>&gt;=</span>',
-it also matches when value is below or above the percentage.
-Use prefix '<span class='tt'>&lt;</span>' or '<span class='tt'>&gt;</span>' to match when strictly below or above.
-(The numeric limit is relaxed slightly for those: <span class='tt'>&gt;-1%</span>
-and <span class='tt'>&lt;101%</span> are allowed.)
-(TBT)
-Only four fields support percentage rules.
-Percentages for ''<span class='italic'>hitpoints</span>'' and ''<span class='italic'>power</span>'' are
-straightforward; they're based on the corresponding maximum field.
-Percentage highlight rules are also allowed for ''<span class='italic'>experience level</span>''
-and ''<span class='italic'>experience points</span>'' (valid when the
-<span class='italic'>showexp</span>
-option is enabled).
-(TBT)
-For those, the percentage is based on the progress from the start of
-the current experience level to the start of the next level.
-So if level 2 starts at 20 points and level 3 starts at 40 points,
-having 30 points is 50% and 35 points is 75%.
-100% is unattainable for experience because you'll gain a level and
-the calculations will be reset for that new level, but a rule for
-<span class='tt'>=100%</span> is allowed and matches the special case of being
-exactly 1 experience point short of the next level.
-(TBT)
+一致したときのためのフィールド属性を設定する。
+0 から 100 までの数値に引き続いて '<span class='tt'>%</span>' (パーセント記号) で
+指定される。
+百分率に '<span class='tt'>&lt;=</span>' または '<span class='tt'>&gt;=</span>' が前置されている場合、
+値がその百分率よりも小さいまたは大きい場合にも一致する。
+厳密に小さいまたは大きい場合にのみ一致するためには、
+'<span class='tt'>&lt;</span>' または '<span class='tt'>&gt;</span>' を前置する。
+(数値制限はこのために少し緩められている: <span class='tt'>&gt;-1%</span> と <span class='tt'>&lt;101%</span> は
+許されている。)
+四つのフィールドのみが百分率規則に対応している。
+''<span class='italic'>hitpoints</span>'' と ''<span class='italic'>power</span>'' の百分率は直感的である;
+これらはそれぞれの最大値を基にしている。
+百分率によるハイライトは ''<span class='italic'>experience level</span>'' と
+''<span class='italic'>experience points</span>'' (<span class='italic'>showexp</span> オプションが有効の場合のみ) も
+許されている。
+これらの場合、百分率は現在の経験レベルの開始から次のレベルの開始までの
+進捗を基としている。
+従って、レベル 2 が 20 ポイントで開始し、3 が 40 ポイントで開始する場合、
+30 ポイントは 50% であり 35 ポイントは 75% である。
+経験値については 100% は達成できない; レベルは上昇し、
+計算は次のレベルに対してリセットされるからである;
+しかし、<span class='tt'>=100%</span> という規則は許され、次のレベルにちょうど 1 経験
+ポイントだけ足りない特殊な場合に一致する。
 </dd>
 <dt>absolute</dt><dd>
-matches that number.
-The number must be 0 or higher, except for ''<span class='italic'>armor-class</span> which
-allows negative values, and may optionally be preceded by '<span class='tt'>=</span>'.
-If the number is preceded by '<span class='tt'>&lt;=</span>' or '<span class='tt'>&gt;=</span>' instead,
-it also matches when value is below or above.
-If the prefix is '<span class='tt'>&lt;</span>' or '<span class='tt'>&gt;</span>', only match when strictly
-above or below.
-(TBT)
+属性を設定する。
+数値は 0 以上でなければならず (例外は ''<span class='italic'>armor-class</span> で
+負数も許される)、オプションで '<span class='tt'>=</span>' を前置できる。
+代わりに数値の前に '<span class='tt'>&lt;=</span>' または '<span class='tt'>&gt;=</span>' が前置された場合、
+値がより小さいまたはより大きい場合にも一致する。
+'<span class='tt'>&lt;</span>' または '<span class='tt'>&gt;</span>' を前置すると、厳密に小さいまたは大きい場合にのみ
+一致する。
 </dd>
 <dt>text</dt><dd>
-Text matches can only be used for ''<span class='italic'>alignment</span>'',
+設定する。
+テキストは ''<span class='italic'>alignment</span>'',
 ''<span class='italic'>carrying-capacity</span>'', ''<span class='italic'>hunger</span>'', ''<span class='italic'>dungeon-level</span>'',
-and ''<span class='italic'>title</span>''.
-For title, only the role's rank title
-is tested; the character's name is ignored.
-(TBT)
+''<span class='italic'>title</span>'' にのみ利用できる。
+title の場合、職業のランク名のみがテストされる;
+キャラクタ名は無視される。
 </dd>
 </dl>
 <p>
@@ -5002,19 +4928,18 @@ hyphenation{sysconf}	%no syllable breaks =&gt; don't hyphenate file name
 注意:
 </p>
 <p>
-Several symbols in this table appear to be blank.
-They are the space character, except for S_pet_override
-and S_hero_override which don't have any default value
-and can only be used if enabled in the ''sysconf'' file.
-(TBT)
+この表のいくつかのシンボルは空白に見える。
+これらはスペース文字である;
+例外は、標準設定値がなく、''sysconf'' ファイルで有効にされた場合にのみ
+使われる S_pet_override と
+S_hero_override である。
 </p>
 <p>
-S_rock is misleadingly named; rocks and stones use S_gem.
-Statues and boulders are the rock being referred to, but since
-version 3.6.0, statues are displayed as the monster they depict.
-So S_rock is only used for boulders and not used at all if
-overridden by the more specific S_boulder.
-(TBT)
+S_rock は語弊のある名前である; 岩と石は S_gem である。
+石像と巨岩は参照される岩であるが、バージョン 3.6.0 から、石像は
+モチーフとなっている怪物として表示される。
+従って、S_rock は巨岩のためだけに使われ、これがより限定的な
+S_boulder で上書きされると、全く使われないことになる。
 </p>
 <h2>視覚障害者が {it NetHack/} をプレイするための設定</h2>
 <p>
@@ -5033,18 +4958,16 @@ overridden by the more specific S_boulder.
 さらに、あなたが見ている位置と PC カーソルの位置の物理的な行と桁を知らせる機能が
 必要だろう。この機能はスクリーン全体にどのようなアイテムがあるかを判別するのに
 便利である。
-<span class='italic'>NetHack</span> can also be compiled with support for sending the game messages
-to an external program, such as a text-to-speech synthesizer. If the
-''<span class='tt'>#version</span>'' extended command shows ''external program as a
-message handler'', your <span class='italic'>NetHack</span>
-has been compiled with the capability. When compiling <span class='italic'>NetHack</span>
-from source
-on Linux and other POSIX systems, define <span class='italic'>MSGHANDLER</span> to enable it.
-To use
-the capability, set the environment variable <span class='italic'>NETHACK_MSGHANDLER</span> to an
-executable, which will be executed with the game message as the program's
-only parameter.
-(TBT)
+<span class='italic'>NetHack</span> は、ゲームメッセージをテキスト/スピーチシンセサイザーなどの
+外部プログラムに送信するサポート付きでコンパイルすることもできる。
+拡張コマンド ''<span class='tt'>#version</span>'' に
+''external program as a message handler''
+と表示されている場合、<span class='italic'>NetHack</span> はこの機能付きでコンパイルされている。
+Linux やその他の POSIX システムのソースから<span class='italic'>NetHack</span>をコンパイルする
+際には、これを有効にするには <span class='italic'>MSGHANDLER</span> を定義する。
+この機能を使用するには、環境変数 <span class='italic'>NETHACK_MSGHANDLER</span> を
+実行可能ファイルに設定する; 実行可能ファイルは、ゲームメッセージを
+プログラムの唯一の引数として実行される。
 慣れたユーザーなら <span class='italic'>defaults.nh</span> を修正することは難しくないだろうが、
 初心者は少しひるんでしまう仕事かもしれない。
 <span class='italic'>NetHack</span> の全ての公式配布のシンボルファイルには
@@ -5054,11 +4977,12 @@ only parameter.
 ファイルを修正することやゲームそのものに慣れたなら、好みに合うように
 設定ファイルの <span class='italic'>SYMBOLS=</span> と <span class='italic'>ROGUESYMBOLS=</span> で
 設定を変更するとよいだろう。
-See the previous section for the special symbols S_pet_override
-to force a consistent symbol for all pets and S_hero_override
-to force a unique symbol for the player character if <span class='italic'>accessibility</span>
-is enabled in the <span class='italic'>sysconf</span> file.
-(TBT)
+全てのペットに一貫したシンボルを強制する特殊シンボル
+S_pet_override と、
+<span class='italic'>sysconf</span> ファイルで <span class='italic'>accessibility</span> が有効の時に
+プレイヤーキャラクターに特別なシンボルを強制する
+特殊シンボル S_hero_override については
+前述の節を参照のこと。
 </p>
 <p>
 ゲームのアクセシビリティの改善に最も影響を与える設定は以下のものである:
@@ -5085,30 +5009,24 @@ Rogue 風コマンドを使うこと。
 目標を決めるときにカーソルの下の地形を自動的に表現する。
 </dd>
 <dt>mention_walls</dt><dd>
-Give feedback messages when walking towards a wall or when travel command
-was interrupted.
-(TBT)
+壁に向かって歩いたり長距離移動コマンドが中断されたりしたときに
+メッセージを表示する。
 </dd>
 <dt>whatis_coord:compass</dt><dd>
-When targeting with cursor, describe the cursor position with coordinates
-relative to your character.
-(TBT)
+カーソルで目標を決めるとき、自分の位置からのカーソルの相対座標を表現する。
 </dd>
 <dt>whatis_filter:area</dt><dd>
-When targeting with cursor, filter possible locations so only those in
-the same area (eg. same room, or same corridor) are considered.
-(TBT)
+カーソルで目標を決めるとき、同じエリア(例えば同じ部屋、同じ通路)のみに
+なるように可能な場所をフィルタリングする。
 </dd>
 <dt>whatis_moveskip</dt><dd>
-When targeting with cursor and using fast-move, skip the same glyphs instead
-of moving 8 units at a time.
-(TBT)
+カーソルで目標を決めて高速移動を使うとき、一度に 8 マスずつ動くのではなく、
+同じ記号を飛ばす。
 </dd>
 <dt>nostatus_updates</dt><dd>
-Prevent updates to the status lines at the bottom of the screen, if
-your screen-reader reads those lines. The same information can be
-seen via the <span class='tt'>#attributes</span> command.
-(TBT)
+スクリーンリーダーが画面下部のステータス行を読むとき、
+その更新を抑制する。
+同じ情報は <span class='tt'>#attributes</span> コマンドでも得られる。
 </dd>
 </dl>
 <h2>システム管理者のためのグローバルな設定</h2>

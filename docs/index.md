@@ -1,4 +1,4 @@
-### 3.6.6 (作業中)
+### 3.6.6
 * [html](jguidebook.366.html)
 * [pdf](jguidebook.366.pdf)
 

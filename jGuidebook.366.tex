@@ -1056,7 +1056,7 @@
 指定した方向へ一歩進む(図 2 参照)。その方向に怪物がいると感じているか
 覚えているときは、
 移動するのではなく怪物と戦うことになる。
-怪物と戦うことになるのはこの一歩移動のコマンドだけである。
+怪物と戦うことになるのはこれらの一歩移動のコマンドだけである;
 その他のコマンド(後述)は「安全」である。
 %%.sd
 \begin{center}
@@ -4414,13 +4414,11 @@ leather jacket(皮ジャケット)       & 9 & no armor(鎧なし)             &
 通常、あなたが地図上のある特定の位置である物を見て、
 物がもう直接見えない位置に移動した場合、
 それは地図上に表示され続ける。
-if will continue to be displayed on your map.
-That remains the case even if it is not actually there any
-more---perhaps a monster has picked it up or it has rotted
-away---until you can see or feel that location again.
-One notable exception is that if the object gets covered by the
-``remembered, unseen monster'' marker.
-(TBT)
+これは、--- おそらく怪物が拾ったか腐ってしまったかして --- 実際には
+すでにそこになくても、あなたがその場所をもう一度見るか感じるかするまで
+残り続ける。
+注意するべき例外の一つは、その物が「覚えているけれども見えない怪物」
+マーカで覆われた場合である。
 %When that marker is later removed
 %after you've verified that no monster is there, you will forget that
 %there was any object there regardless of whether the unseen monster
@@ -4718,12 +4716,13 @@ ASCII テキストファイルで、任意のテキストエディタで作る�
 %\mbox{{``\%USERPROFILE\%\textbackslash NetHack\textbackslash 3.6''}}.
 %If you had not created the configuration file, {\it NetHack\/} will create
 %the configuration file for you using the default template file.
-After runing {\it NetHack\/} for the first time, you should find a default
-template for ths configuration file named \mbox{``.nethackrc.template''} in
-\mbox{{``\%USERPROFILE\%\textbackslash NetHack\textbackslash 3.6''}}.
-If you had not created the configuration file, {\it NetHack\/} will create
-the configuration file for you using the default template file.
-(TBT)
+{\it NetHack\/} の初回実行後、
+\mbox{{``\%USERPROFILE\%\textbackslash NetHack\textbackslash 3.6''}} に
+\mbox{``.nethackrc.template''} というファイル名で、
+設定ファイルのデフォルトテンプレートを見つけられるはずである。
+設定ファイルを作成していない場合、
+{\it NetHack\/} はデフォルトテンプレートファイルを使って設定ファイルを
+作成する。
 
 %%.lp ""
 %On MS-DOS it is \mbox{``defaults.nh''} in the same folder as
@@ -4870,11 +4869,11 @@ HACKDIR を上書きするように設定するのは通常不要で非推奨で
 %extended commands. You can specify multiple bindings. Format is key
 %followed by the command, separated by a colon.
 %See the ``Changing Key Bindings`` section for more information.
-Change the key bindings of some special keys, menu accelerators, or
-extended commands. You can specify multiple bindings. Format is key
-followed by the command, separated by a colon.
-See the ``Changing Key Bindings`` section for more information.
-(TBT)
+一部の特殊キー、メニューアクセラレータ、拡張コマンドのキー配置を
+変更する。
+複数の配置を指定できる。
+形式は、キーの後に、転んで区切られたコマンドが続く。
+さらなる情報については ``Changing Key Bindings`` 節を参照のこと。
 
 %%.lp ""
 %Example:
@@ -4889,9 +4888,8 @@ See the ``Changing Key Bindings`` section for more information.
 \item[\bb{CHOOSE}]
 %Chooses at random one of the comma-separated parameters as an active
 %section name. Lines in other sections are ignored.
-Chooses at random one of the comma-separated parameters as an active
-section name. Lines in other sections are ignored.
-(TBT)
+カンマで区切られたパラメータの一つを有効なセクション名としてランダムに選ぶ。
+他のセクションの行は無視される。
 
 %%.lp ""
 %Example:
@@ -4911,46 +4909,40 @@ section name. Lines in other sections are ignored.
 \item[\bb{MENUCOLOR}]
 %Highlight menu lines with different colors.
 %See the ``Configuring Menu Colors`` section.
-Highlight menu lines with different colors.
-See the ``Configuring Menu Colors`` section.
-(TBT)
+メニュー行を異なった色でハイライトする。
+``Configuring Menu Colors`` 節を参照のこと。
 %%.lp
 \item[\bb{MSGTYPE}]
 %Change the way messages are shown in the top status line.
 %See the ``Configuring Message Types`` section.
-Change the way messages are shown in the top status line.
-See the ``Configuring Message Types`` section.
-(TBT)
+上部ステータス行に表示されるメッセージがどのように表示されるかを変更する。
+``Configuring Message Types`` 節を参照のこと。
 %%.lp
 \item[\bb{ROGUESYMBOLS}]
 %Custom symbols for for the rogue level's symbol set.
 %See {\it SYMBOLS} below.
-Custom symbols for for the rogue level's symbol set.
-See {\it SYMBOLS} below.
-(TBT)
+ローグレベルのシンボル集合のためのカスタムシンボル。
+後述する {\it SYMBOLS} を参照のこと。
 %%.lp
 \item[\bb{SOUND}]
 %Define a sound mapping.
 %See the ``Configuring User Sounds'' section.
-Define a sound mapping.
-See the ``Configuring User Sounds'' section.
-(TBT)
+効果音のマッピングを定義する。
+``Configuring User Sounds'' 節を参照のこと。
 %%.lp
 \item[\bb{SOUNDDIR}]
 %Define the directory that contains the sound files.
 %See the ``Configuring User Sounds'' section.
-Define the directory that contains the sound files.
-See the ``Configuring User Sounds'' section.
-(TBT)
+効果音ファイルがあるディレクトリを定義する。
+``Configuring User Sounds'' 節を参照のこと。
 %%.lp
 \item[\bb{SYMBOLS}]
 %Override one or more symbols in the symbol set used for all dungeon
 %levels except for the special rogue level.
 %See the ``Modifying {\it NetHack\/} Symbols'' section.
-Override one or more symbols in the symbol set used for all dungeon
-levels except for the special rogue level.
-See the ``Modifying {\it NetHack\/} Symbols'' section.
-(TBT)
+特殊なローグレベル以外の全てのダンジョンレベルで使われるシンボル集合の
+いくつかのシンボルを上書きする。
+``Modifying {\it NetHack\/} Symbols'' 節を参照のこと。
 %%.pg
 
 %%.lp ""
@@ -5312,16 +5304,14 @@ NETHACKOPTIONS は、カンマ区切りにオプションのリストの代わ�
 
 %The listing of vanquished monsters can be sorted,
 %so there are two additional choices for `{\tt v}':
-The listing of vanquished monsters can be sorted,
-so there are two additional choices for `{\tt v}':
-(TBT)
+絶滅した怪物の一覧はソートできるので、`{\tt v}' には二つの追加の
+選択肢がある:
 %%.sd
 %%.si
 %{\tt ?} --- prompt you and default to ask on the prompt;\\
 %{\tt\#} --- disclose it without prompting, ask for sort order.
-{\tt ?} --- prompt you and default to ask on the prompt;\\
-{\tt\#} --- disclose it without prompting, ask for sort order.
-(TBT)
+{\tt ?} --- "確認して、標準設定は問い合わせる。"\\
+{\tt\#} --- "確認なしで表示し、ソート順を問い合わせる。"
 %%.ei
 %%.ed
 
@@ -5330,12 +5320,10 @@ so there are two additional choices for `{\tt v}':
 %or being prompted and answering `{\tt y}' rather than `{\tt a}',
 %will default to showing monsters in the traditional order,
 %from high level to low level.\\
-Asking refers to picking one of the orderings from a menu.
-The `{\tt +}' disclose without prompting choice,
-or being prompted and answering `{\tt y}' rather than `{\tt a}',
-will default to showing monsters in the traditional order,
-from high level to low level.\\
-(TBT)
+問い合わせはメニューから順序の一つを選択する。
+確認なしの `{\tt +}' の公開か、
+問い合わせに対して `{\tt a}' ではなく `{\tt y}' と答えた場合、
+伝統的な順序である、レベルの高いものから低いものの順で怪物を表示する。
 %%.lp ""
 %Omitted categories are implicitly added with `{\tt n}' prefix.
 %Specified categories with omitted prefix implicitly use `{\tt +}' prefix.
@@ -5391,11 +5379,10 @@ tty インターフェースに実装されている。(標準設定はオフ)
 %command, it controls whether the menu shows all available commands (on)
 %or just the subset of commands which have traditionally been considered
 %extended ones (off).
-For the X11 interface, which always uses a menu for choosing an extended
-command, it controls whether the menu shows all available commands (on)
-or just the subset of commands which have traditionally been considered
-extended ones (off).
-(TBT)
+拡張コマンドを選ぶために常にメニューが表示される X11 インターフェースでは、
+これはメニューに利用可能な全てのコマンドを表示する(オン)か、
+伝統的に拡張コマンドと考えられているコマンドの部分集合のみを表示する
+(オフ)かを制御する。
 %%.lp
 \item[\ib{female}]
 %An obsolete synonym for ``{\tt gender:female}''.  Cannot be set with the
@@ -5416,9 +5403,9 @@ extended ones (off).
 \item[\ib{force\_invmenu}]
 %Commands asking for an inventory item show a menu instead of
 %a text query with possible menu letters. Default is off.
-Commands asking for an inventory item show a menu instead of
-a text query with possible menu letters. Default is off.
-(TBT)
+持物を選ぶコマンドでは、可能なメニュー文字付きのテキスト問い合わせではなく、
+メニューを表示する。
+標準設定はオフ。
 %%.lp
 \item[\ib{fruit}]
 %Name a fruit after something you enjoy eating (for example, ``{\tt fruit:mango}'')
@@ -5484,10 +5471,9 @@ melons (メロン) は {\it NetHack\/} にはもう存在しているので、�
 %When using a windowport that supports mouse and clicking on yourself or
 %next to you, show a menu of possible actions for the location.
 %Same as ``{\tt \#herecmdmenu}'' and ``{\tt \#therecmdmenu}'' commands.
-When using a windowport that supports mouse and clicking on yourself or
-next to you, show a menu of possible actions for the location.
-Same as ``{\tt \#herecmdmenu}'' and ``{\tt \#therecmdmenu}'' commands.
-(TBT)
+マウスに対応しているウィンドウポートを使っていて、自分自身か
+自分の隣をクリックしたとき、その位置に対して可能な公道のメニューを表示する。
+``{\tt \#herecmdmenu}'' および ``{\tt \#therecmdmenu}'' コマンドと同じ。
 %%.lp
 \item[\ib{hilite\verb+_+pet}]
 %Visually distinguish pets from similar animals (default off).
@@ -5991,9 +5977,8 @@ curses インターフェースのみ; 値は一つ以上の次の文字であ�
 
 %Some of those choices might not work, particularly the final three,
 %depending upon terminal hardware or terminal emulation software.
-Some of those choices might not work, particularly the final three,
-depending upon terminal hardware or terminal emulation software.
-(TBT)
+ターミナルハードウェアやターミナルエミュレーションソフトウェアに
+依存して、これらの選択の一部、特に最後の三つは動作しないかもしれない。
 
 %%.lp ""
 %Currently multiple highlight-style letters can be combined by simply
@@ -6002,13 +5987,11 @@ depending upon terminal hardware or terminal emulation software.
 %which works already).
 %When using the `n' choice, it should be specified on its own,
 %not in combination with any of the other letters.
-Currently multiple highlight-style letters can be combined by simply
-stringing them together (for example, ``bk''), but in the future
-they might require being separated by plus signs (such as ``b\verb&+&k'',
-which works already).
-When using the `n' choice, it should be specified on its own,
-not in combination with any of the other letters.
-(TBT)
+現在の所、複数のハイライトスタイル文字は単に結合されている
+(例えば ``bk'') が、将来プラス記号で区切られる必要があるようになるかも
+しれない (例えば ``b\verb&+&k'' のように; これは既に動作する)。
+`n' の選択を使う場合、その他の文字との組み合わせではなく、
+単体で指定される必要がある。
 
 %%.lp
 \item[\ib{pettype}]
@@ -6377,11 +6360,10 @@ not in combination with any of the other letters.
 %``{\tt autodescribe}''
 %on, display coordinates after the description.
 %Also works in other situations where you are asked to pick a location.\\
-When using the `{\tt /}' or `{\tt ;}' commands to look around on the map with
-``{\tt autodescribe}''
-on, display coordinates after the description.
-Also works in other situations where you are asked to pick a location.\\
-(TBT)
+When using the 
+``{\tt autodescribe}'' がオンのときに地図上を見て回るために
+`{\tt /}' や `{\tt ;}' コマンドを使うとき、説明の後ろに座標を表示する。
+場所を選択するその他の状況でも動作する。\\
 
 %%.lp ""
 %The possible settings are:
@@ -6394,12 +6376,11 @@ Also works in other situations where you are asked to pick a location.\\
 %{\tt m} --- \verb#map <x,y> (map column x=0 is not used)#;\\
 %{\tt s} --- \verb#screen [row,column] (row is offset to match tty usage)#;\\
 %{\tt n} --- \verb#none (no coordinates shown) [default]#.
-{\tt c} --- \verb#compass ('east' or '3s' or '2n,4w')#;\\
-{\tt f} --- \verb#full compass ('east' or '3south' or '2north,4west')#;\\
-{\tt m} --- \verb#map <x,y> (map column x=0 is not used)#;\\
-{\tt s} --- \verb#screen [row,column] (row is offset to match tty usage)#;\\
-{\tt n} --- \verb#none (no coordinates shown) [default]#.
-(TBT)
+{\tt c} --- \verb#コンパス ('east', '3s', '2n,4w')#;\\
+{\tt f} --- \verb#完全コンパス ('east', '3south', '2north,4west')#;\\
+{\tt m} --- \verb#地図 <x,y> (地図列 x=0 は使われない)#;\\
+{\tt s} --- \verb#画面 [row,column] (row は tty 利用法に一致するオフセット)#;\\
+{\tt n} --- \verb#なし (座標は表示されない) [標準設定]#.
 %%.ei
 %%.ed
 
@@ -6410,22 +6391,19 @@ Also works in other situations where you are asked to pick a location.\\
 %the `{\tt /m}', `{\tt /M}', `{\tt /o}', and `{\tt /O}' sub-commands
 %of `{\tt /}',
 %where the `{\it none\/}' setting is overridden with `{\it map}'.
-The
 {\it whatis\verb+_+coord\/}
-option is also used with
-the `{\tt /m}', `{\tt /M}', `{\tt /o}', and `{\tt /O}' sub-commands
-of `{\tt /}',
-where the `{\it none\/}' setting is overridden with `{\it map}'.
-(TBT)
+オプションは、`{\tt /}' の
+`{\tt /m}', `{\tt /M}', `{\tt /o}', `{\tt /O}' サブコマンドでも使用できる;
+ここで `{\it none\/}' 設定は `{\it map}' で上書きされる。
 %%.lp
 \item[\ib{whatis\verb+_+filter}]
 %When getting a location on the map, and using the keys to cycle through
 %next and previous targets, allows filtering the possible targets.
 %(default none)\\
-When getting a location on the map, and using the keys to cycle through
-next and previous targets, allows filtering the possible targets.
-(default none)\\
-(TBT)
+地図上の場所を指定するときに、
+目標の中を循環して移動するキーのいずれかを使っているとき、
+可能性のある目標をフィルタリングする。
+(標準設定はなし)\\
 %%.lp ""
 %The possible settings are:
 可能な設定は:
@@ -6435,46 +6413,42 @@ next and previous targets, allows filtering the possible targets.
 %{\tt n} --- \verb#no filtering#;\\
 %{\tt v} --- \verb#in view only#;\\
 %{\tt a} --- \verb#in same area (room, corridor, etc)#.
-{\tt n} --- \verb#no filtering#;\\
-{\tt v} --- \verb#in view only#;\\
-{\tt a} --- \verb#in same area (room, corridor, etc)#.
-(TBT)
+{\tt n} --- \verb#フィルタリングなし#;\\
+{\tt v} --- \verb#視界内のみ#;\\
+{\tt a} --- \verb#同じエリア(部屋、通路など)#.
 %%.ei
 %%.ed
 %%.lp ""
 %The area-filter tries to be slightly predictive -- if you're standing
 %on a doorway, it will consider the area on the side of the door you
 %were last moving towards.\\
-The area-filter tries to be slightly predictive -- if you're standing
-on a doorway, it will consider the area on the side of the door you
-were last moving towards.\\
-(TBT)
+エリアフィルタはやや予言的である -- 出入り口に立っている場合、
+移動してきたエリア側にいるものとして扱われる。
 %%.lp ""
 %Filtering can also be changed when getting a location with
 %the ``getpos.filter'' key.
-Filtering can also be changed when getting a location with
-the ``getpos.filter'' key.
-(TBT)
+フィルタリングは、``getpos.filter'' キーで場所を指定するときにも
+変更できる。
 %%.lp
 \item[\ib{whatis\verb+_+menu}]
 %When getting a location on the map, and using a key to cycle through
 %next and previous targets, use a menu instead to pick a target.
 %(default off)
-When getting a location on the map, and using a key to cycle through
-next and previous targets, use a menu instead to pick a target.
-(default off)
-(TBT)
+地図上の場所を指定するときに、
+目標の中を循環して移動するキーのいずれかを使っているとき、
+代わりにメニューを表示する。
+(標準設定はオフ)
 %%.lp
 \item[\ib{whatis\verb+_+moveskip}]
 %When getting a location on the map, and using shifted movement keys or
 %meta-digit keys to fast-move, instead of moving 8 units at a time,
 %move by skipping the same glyphs.
 %(default off)
-When getting a location on the map, and using shifted movement keys or
-meta-digit keys to fast-move, instead of moving 8 units at a time,
-move by skipping the same glyphs.
-(default off)
-(TBT)
+地図上の場所を指定するときに、
+高速移動のためにシフトを押しながらの移動や、
+meta-数字 キーでの移動を使っているとき、8 マス毎ではなく同じ記号を飛ばして
+移動する。
+(標準設定はオフ)
 %%.lp
 \item[\ib{windowtype}]
 %When the program has been built to support multiple interfaces,
@@ -6493,13 +6467,12 @@ move by skipping the same glyphs.
 %non-comment line.
 %For a comma-separated list in NETHACKOPTIONS or an OPTIONS line in a
 %configuration file, that would be the {\it rightmost\/} option in the list.
-When used, it should be the first option set since its value might
-enable or disable the availability of various other options.
-For multiple lines in a configuration file, that would be the first
-non-comment line.
-For a comma-separated list in NETHACKOPTIONS or an OPTIONS line in a
-configuration file, that would be the {\it rightmost\/} option in the list.
-(TBT)
+使われる場合は、これは設定される最初のオプションである必要がある;
+この値はその他の様々なオプションの可用性を有効にしたり無効にしたり
+するかもしれないからである。
+設定ファイルに複数行ある場合、これは最初の非コメント行である。
+NETHACKOPTIONS や設定ファイル中の OPTIONS 行でのカンマ区切りリストについては、
+リストの {\it 最も右\/} のオプションである。
 %%.lp
 \item[\ib{wizweight}]
 %Augment object descriptions with their objects' weight (default off).
@@ -6764,12 +6737,9 @@ cursesインターフェースのみ。
 %A width of at least 110 columns (\verb&80+2+26+2&) is needed for
 %{\it align_status\/}
 %set to {\tt left} or {\tt right}.)
-(The 26x82 size threshold for `2' refers to number of rows and
-columns of the display.
-A width of at least 110 columns (\verb&80+2+26+2&) is needed for
-{\it align_status\/}
-set to {\tt left} or {\tt right}.)
-(TBT)
+(`2' の 26x82 というサイズの閾値は、画面の行数と列数から決定されている。
+{\it align_status\/} を {\tt left} または {\tt right} に設定するには、
+最低 110 桁 (\verb&80+2+26+2&) の幅が必要である。
 %%.lp
 \item[\ib{windowcolors}]
 %If {\it NetHack\/} can, it should display windows with the specified
@@ -6793,9 +6763,9 @@ Windows GUIのみ。形式は:
 %{\it btntext}, {\it captiontext}, {\it graytext}, {\it greytext}, {\it highlight},
 %{\it highlighttext}, {\it inactiveborder}, {\it inactivecaption}, {\it menu},
 %{\it menutext}, {\it scrollbar}, {\it window}, {\it windowframe}, {\it windowtext}).
-where wintype is one of {\it menu}, {\it message}, {\it status}, or {\it text}, and
-foreground and background are colors, either a hexadecimal {\it \#rrggbb},
-one of the named colors ({\it black}, {\it red}, {\it green}, {\it brown},
+ここで wintype {\it menu}, {\it message}, {\it status}, {\it text} のいずれか、
+foreground と background は色で、16 進 {\it \#rrggbb} または
+名前付き色の一つ ({\it black}, {\it red}, {\it green}, {\it brown},
 {\it blue}, {\it magenta}, {\it cyan}, {\it orange},
 {\it brightgreen}, {\it yellow}, {\it brightblue}, {\it brightmagenta},
 {\it brightcyan}, {\it white}, {\it trueblack}, {\it gray}, {\it purple},
@@ -6805,8 +6775,7 @@ one of the named colors ({\it black}, {\it red}, {\it green}, {\it brown},
 {\it activecaption}, {\it appworkspace}, {\it background}, {\it btnface}, {\it btnshadow},
 {\it btntext}, {\it captiontext}, {\it graytext}, {\it greytext}, {\it highlight},
 {\it highlighttext}, {\it inactiveborder}, {\it inactivecaption}, {\it menu},
-{\it menutext}, {\it scrollbar}, {\it window}, {\it windowframe}, {\it windowtext}).
-(TBT)
+{\it menutext}, {\it scrollbar}, {\it window}, {\it windowframe}, {\it windowtext})。
 
 %%.lp
 \item[\ib{wraptext}]
@@ -7080,13 +7049,13 @@ NO\verb+_+TERMS を使用しているPCシステムのカラーパレットを�
 %separated by a colon. The key can be a single character (``{\tt x}''),
 %a control key (``{\tt \^{}X}'', ``{\tt C-x}''), a meta key (``{\tt M-x}''),
 %or a three-digit decimal ASCII code.
-It is possible to change the default key bindings of some special commands,
-menu accelerator keys, and extended commands, by using BIND stanzas in the
-configuration file. Format is key, followed by the command to bind to,
-separated by a colon. The key can be a single character (``{\tt x}''),
-a control key (``{\tt \^{}X}'', ``{\tt C-x}''), a meta key (``{\tt M-x}''),
-or a three-digit decimal ASCII code.
-(TBT)
+設定ファイルで BIND 文を使うことにより、一部の特殊コマンド、
+メニューアクセラレータキー、拡張コマンドのデフォルトのキーバインディングを
+変更できる。
+形式は、キーの後に、コロンで区切られたバインド先のコマンドが続く。
+キーには、単一文字(「``{\tt x}'')、制御キー
+(``{\tt \^{}X}'', ``{\tt C-x}'')、メタキー(``{\tt M-x}'')、または 3 桁の
+10 進 ASCII コードを使用できる。
 
 %%.pg
 %For example:
@@ -7137,277 +7106,239 @@ or a three-digit decimal ASCII code.
 \item[{\bb{count}}]
 %Prefix to key start a count, to repeat a command this many times.
 %With {\it number\verb+_+pad\/} only. Default is~`{\tt n}'.
-Prefix key to start a count, to repeat a command this many times.
-With {\it number\verb+_+pad\/} only.
+あるコマンドを複数回繰り返すための回数を開始するための前置キー。
+{\it number\verb+_+pad\/} がオンの場合のみ。
 標準設定は`{\tt n}'。
-(TBT)
 %%.lp
 \item[{\bb{doinv}}]
 %Show inventory. With {\it number\verb+_+pad\/} only. Default is~`{\tt 0}'.
-Show inventory. With {\it number\verb+_+pad\/} only.
+持物を表示する。
+{\it number\verb+_+pad\/} がオンの場合のみ。
 標準設定は`{\tt 0}'。
-(TBT)
 %%.lp
 \item[{\bb{fight}}]
 %Prefix key to force fight a direction. Default is~`{\tt F}'.
-Prefix key to force fight a direction.
+強制的にある方向に戦うための前置キー。
 標準設定は`{\tt F}'。
-(TBT)
 %%.lp
 \item[{\bb{fight.numpad}}]
 %Prefix key to force fight a direction. With {\it number\verb+_+pad\/} only.
 %Default is~`{\tt -}'.
-Prefix key to force fight a direction. With {\it number\verb+_+pad\/} only.
+強制的にある方向に戦うための前置キー。
+{\it number\verb+_+pad\/} がオンの場合のみ。
 標準設定は`{\tt -}'。
-(TBT)
 %%.lp
 \item[{\bb{getdir.help}}]
 %When asked for a direction, the key to show the help. Default is~`{\tt ?}'.
-When asked for a direction, the key to show the help.
+方向を訊ねられたとき、 ヘルプを表示するキー。
 標準設定は`{\tt ?}'。
-(TBT)
 %%.lp
 \item[{\bb{getdir.self}}]
 %When asked for a direction, the key to target yourself. Default is~`{\tt .}'.
-When asked for a direction, the key to target yourself.
+方向を訊ねられたとき、 自分自身に向けるキー。
 標準設定は`{\tt .}'。
-(TBT)
 %%.lp
 \item[{\bb{getdir.self2}}]
 %When asked for a direction, the key to target yourself. Default is~`{\tt s}'.
-When asked for a direction, the key to target yourself.
+方向を訊ねられたとき、 自分自身に向けるキー。
 標準設定は`{\tt s}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.autodescribe}}]
 %When asked for a location, the key to toggle {\it autodescribe\/}.
 %Default is~`{\tt \#}'.
-When asked for a location, the key to toggle {\it autodescribe\/}.
+場所を訊ねられたとき、{\it autodescribe\/} を切り替えるキー。
 標準設定は`{\tt \#}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.all.next}}]
 %When asked for a location, the key to go to next closest interesting thing.
 %Default is~`{\tt a}'.
-When asked for a location, the key to go to next closest interesting thing.
+場所を訊ねられたとき、次に近い興味のあるものに移動するキー。
 標準設定は`{\tt a}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.all.prev}}]
 %When asked for a location, the key to go to previous closest interesting thing.
 %Default is~`{\tt A}'.
-When asked for a location, the key to go to previous closest interesting thing.
+場所を訊ねられたとき、前に近い興味のあるものに移動するキー。
 標準設定は`{\tt A}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.door.next}}]
 %When asked for a location, the key to go to next closest door or doorway.
 %Default is~`{\tt d}'.
-When asked for a location, the key to go to next closest door or doorway.
+場所を訊ねられたとき、次に近いドアや出入り口に移動するキー。
 標準設定は`{\tt d}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.door.prev}}]
 %When asked for a location, the key to go to previous closest door or doorway.
 %Default is~`{\tt D}'.
-When asked for a location, the key to go to previous closest door or doorway.
+場所を訊ねられたとき、前に近いドアや出入り口に移動するキー。
 標準設定は`{\tt D}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.help}}]
 %When asked for a location, the key to show help. Default is~`{\tt ?}'.
-When asked for a location, the key to show help.
+場所を訊ねられたとき、ヘルプを表示するキー。
 標準設定は`{\tt ?}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.mon.next}}]
 %When asked for a location, the key to go to next closest monster.
 %Default is~`{\tt m}'.
-When asked for a location, the key to go to next closest monster.
+場所を訊ねられたとき、次に近い怪物に移動するキー。
 標準設定は`{\tt m}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.mon.prev}}]
 %When asked for a location, the key to go to previous closest monster.
 %Default is~`{\tt M}'.
-When asked for a location, the key to go to previous closest monster.
+場所を訊ねられたとき、前に近い怪物に移動するキー。
 標準設定は`{\tt M}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.obj.next}}]
 %When asked for a location, the key to go to next closest object.
 %Default is~`{\tt o}'.
-When asked for a location, the key to go to next closest object.
+場所を訊ねられたとき、次に近い物に移動するキー。
 標準設定は`{\tt o}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.obj.prev}}]
 %When asked for a location, the key to go to previous closest object.
 %Default is~`{\tt O}'.
-When asked for a location, the key to go to previous closest object.
+場所を訊ねられたとき、前に近い物に移動するキー。
 標準設定は`{\tt O}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.menu}}]
 %When asked for a location, and using one of the next or previous keys to
 %cycle through targets, toggle showing a menu instead. Default is~`{\tt !}'.
-When asked for a location, and using one of the next or previous keys to
-cycle through targets, toggle showing a menu instead.
+場所を訊ねられて、目標の中を循環して移動するキーのいずれかを使っているとき、
+代わりにメニューを表示するかを切り替える。
 標準設定は`{\tt !}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.moveskip}}]
 %When asked for a location, and using the shifted movement keys or
 %meta-digit keys to fast-move around, move by skipping the same glyphs
 %instead of by 8 units.
 %Default is~`{\tt *}'.
-When asked for a location, and using the shifted movement keys or
-meta-digit keys to fast-move around, move by skipping the same glyphs
-instead of by 8 units.
+場所を訊ねられて、高速移動のためにシフトを押しながらの移動や、
+meta-数字 キーでの移動を使っているとき、8 マス毎ではなく同じ記号を飛ばして
+移動する。
 標準設定は`{\tt *}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.filter}}]
 %When asked for a location, change the filtering mode when using one of
 %the next or previous keys to cycle through targets. Toggles between no
 %filtering, in view only, and in the same area only. Default is~`{\tt "}'.
-When asked for a location, change the filtering mode when using one of
-the next or previous keys to cycle through targets. Toggles between no
-filtering, in view only, and in the same area only.
+場所を訊ねられて、目標の中を循環して移動するキーのいずれかを使っているとき、
+フィルタモードを切り替える。
+フィルタなし、視界内のみ、同じエリアのみを順に切り替える。
 標準設定は`{\tt "}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.pick}}]
 %When asked for a location, the key to choose the location, and possibly
 %ask for more info. Default is~`{\tt .}'.
-When asked for a location, the key to choose the location, and possibly
-ask for more info.
+場所を訊ねられたとき、場所を選択し、おそらくさらなる情報を訊ねるためのキー。
 標準設定は`{\tt .}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.pick.once}}]
 %When asked for a location, the key to choose the location, and skip
 %asking for more info. Default is~`{\tt ,}'.
-When asked for a location, the key to choose the location, and skip
-asking for more info.
+場所を訊ねられたとき、場所を選択し、さらなる情報を訊ねるのを飛ばすキー。
 標準設定は`{\tt ,}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.pick.quick}}]
 %When asked for a location, the key to choose the location, skip asking
 %for more info, and exit the location asking loop. Default is~`{\tt ;}'.
-When asked for a location, the key to choose the location, skip asking
-for more info, and exit the location asking loop.
+場所を訊ねられたとき、場所を選択し、さらなる情報を訊ねるのを飛ばし、
+場所の問い合わせのループを終了するキー。
 標準設定は`{\tt ;}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.pick.verbose}}]
 %When asked for a location, the key to choose the location, and show more
 %info without asking. Default is~`{\tt :}'.
-When asked for a location, the key to choose the location, and show more
-info without asking.
+場所を訊ねられたとき、場所を選択し、訊ねられることなくさらなる情報を
+表示するキー。
 標準設定は`{\tt :}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.self}}]
 %When asked for a location, the key to go to your location.
 %Default is~`{\tt @}'.
-When asked for a location, the key to go to your location.
+場所を訊ねられたとき、自分の位置に移動するキー。
 標準設定は`{\tt @}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.unexplored.next}}]
 %When asked for a location, the key to go to next closest unexplored location.
 %Default is~`{\tt x}'.
-When asked for a location, the key to go to next closest unexplored location.
+場所を訊ねられたとき、次に近い未探索の場所に移動するキー。
 標準設定は`{\tt x}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.unexplored.prev}}]
 %When asked for a location, the key to go to previous closest unexplored
 %location. Default is~`{\tt X}'.
-When asked for a location, the key to go to previous closest unexplored
-location.
+場所を訊ねられたとき、前に近い未探索の場所に移動するキー。
 標準設定は`{\tt X}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.valid}}]
 %When asked for a location, the key to go to show valid target locations.
 %Default is~`{\tt \$}'.
-When asked for a location, the key to go to show valid target locations.
+場所を訊ねられたとき、正当な目標の場所を表示するキー。
 標準設定は`{\tt \$}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.valid.next}}]
 %When asked for a location, the key to go to next closest valid location.
 %Default is~`{\tt z}'.
-When asked for a location, the key to go to next closest valid location.
+場所を訊ねられたとき、次に近い正当な位置に移動するキー。
 標準設定は`{\tt z}'。
-(TBT)
 %%.lp
 \item[{\bb{getpos.valid.prev}}]
 %When asked for a location, the key to go to previous closest valid location.
 %Default is~`{\tt Z}'.
-When asked for a location, the key to go to previous closest valid location.
+場所を訊ねられたとき、前に近い正当な位置に移動するキー。
 標準設定は`{\tt Z}'。
-(TBT)
 %%.lp
 \item[{\bb{nopickup}}]
 %Prefix key to move without picking up items. Default is~`{\tt m}'.
-Prefix key to move without picking up items.
+物を拾わずに移動する前置キー。
 標準設定は`{\tt m}'。
-(TBT)
 %%.lp
 \item[{\bb{redraw}}]
 %Key to redraw the screen. Default is~`{\tt \^{}R}'.
-Key to redraw the screen.
+画面を再描画するキー。
 標準設定は`{\tt \^{}R}'。
-(TBT)
 %%.lp
 \item[{\bb{redraw.numpad}}]
 %Key to redraw the screen. With {\it number\verb+_+pad\/} only.
 %Default is~`{\tt \^{}L}'.
-Key to redraw the screen. With {\it number\verb+_+pad\/} only.
+画面を再描画するキー。
+{\it number\verb+_+pad\/} がオンの場合のみ。
 標準設定は`{\tt \^{}L}'。
-(TBT)
 %%.lp
 \item[{\bb{repeat}}]
 %Key to repeat previous command. Default is~`{\tt \^{}A}'.
-Key to repeat previous command.
+前回のコマンドを繰り返すキー。
 標準設定は`{\tt \^{}A}'。
-(TBT)
 %%.lp
 \item[{\bb{reqmenu}}]
 %Prefix key to request menu from some commands. Default is~`{\tt m}'.
-Prefix key to request menu from some commands.
+一部のコマンドからメニューを要求する前置キー。
 標準設定は`{\tt m}'。
-(TBT)
 %%.lp
 \item[{\bb{run}}]
 %Prefix key to run towards a direction. Default is~`{\tt G}'.
-Prefix key to run towards a direction.
+ある方向に走るための前置キー。
 標準設定は`{\tt G}'。
-(TBT)
 %%.lp
 \item[{\bb{run.nopickup}}]
 %Prefix key to run towards a direction without picking up items on the way.
 %Default is~`{\tt M}'.
-Prefix key to run towards a direction without picking up items on the way.
+途中にある物を拾わずにある方向に走るための前置キー。
 標準設定は`{\tt M}'。
-(TBT)
 %%.lp
 \item[{\bb{run.numpad}}]
 %Prefix key to run towards a direction. With {\it number\verb+_+pad\/} only.
 %Default is~`{\tt 5}'.
-Prefix key to run towards a direction. With {\it number\verb+_+pad\/} only.
+ある方向に走るための前置キー。
+{\it number\verb+_+pad\/} がオンの場合のみ。
 標準設定は`{\tt 5}'。
-(TBT)
 %%.lp
 \item[{\bb{rush}}]
 %Prefix key to rush towards a direction. Default is~`{\tt g}'.
-Prefix key to rush towards a direction.
+ある方向に突進するための前置キー。
 標準設定は`{\tt g}'。
-(TBT)
 \elist
 
 
@@ -7802,33 +7733,32 @@ lev, fly, ride の別名として `movement' を、
 %(If a field has both a ``changed'' rule and an ``up'' or ``down''
 %rule which matches a change in the field's value,
 %the ``up'' or ``down'' one takes precedence.)
-\item[{\tt changed}] sets the field attribute for when the field value
-changes. This attribute times out after {\tt statushilites} turns.
-(If a field has both a ``changed'' rule and an ``up'' or ``down''
-rule which matches a change in the field's value,
-the ``up'' or ``down'' one takes precedence.)
-(TBT)
+\item[{\tt changed}] は、フィールドの値が変更されたときのための
+フィールド属性を設定する。
+この属性は {\tt statushilites} ターン後に元に戻る。
+(あるフィールドに、フィールドの値の変更に一致する、
+``changed'' 規則と ``up'' または ``down'' 規則の両方がある場合、
+``up'' または ``down'' が優先される。)
 %%.lp "*"
 %\item[{\tt percentage}] sets the field attribute when the field value
 %matches the percentage.
 %It is specified as a number between 0 and 100, followed by `{\tt \%}'
 %(percent sign).
-\item[{\tt percentage}] sets the field attribute when the field value
-matches the percentage.
-It is specified as a number between 0 and 100, followed by `{\tt \%}'
-(percent sign).
-(TBT)
+\item[{\tt percentage}] は、フィールドの値がその百分率に
+一致したときのためのフィールド属性を設定する。
+0 から 100 までの数値に引き続いて `{\tt \%}' (パーセント記号) で
+指定される。
 %If the percentage is prefixed with `{\tt <=}' or `{\tt >=}',
 %it also matches when value is below or above the percentage.
 %Use prefix `{\tt <}' or `{\tt >}' to match when strictly below or above.
 %(The numeric limit is relaxed slightly for those: {\tt >-1\%}
 %and {\tt <101\%} are allowed.)
-If the percentage is prefixed with `{\tt <=}' or `{\tt >=}',
-it also matches when value is below or above the percentage.
-Use prefix `{\tt <}' or `{\tt >}' to match when strictly below or above.
-(The numeric limit is relaxed slightly for those: {\tt >-1\%}
-and {\tt <101\%} are allowed.)
-(TBT)
+百分率に `{\tt <=}' または `{\tt >=}' が前置されている場合、
+値がその百分率よりも小さいまたは大きい場合にも一致する。
+厳密に小さいまたは大きい場合にのみ一致するためには、
+`{\tt <}' または `{\tt >}' を前置する。
+(数値制限はこのために少し緩められている: {\tt >-1\%} と {\tt <101\%} は
+許されている。)
 %Only four fields support percentage rules.
 %Percentages for ``{\it hitpoints\/}'' and ``{\it power\/}'' are
 %straightforward; they're based on the corresponding maximum field.
@@ -7836,14 +7766,12 @@ and {\tt <101\%} are allowed.)
 %and ``{\it experience points\/}'' (valid when the
 %{\it showexp\/}
 %option is enabled).
-Only four fields support percentage rules.
-Percentages for ``{\it hitpoints\/}'' and ``{\it power\/}'' are
-straightforward; they're based on the corresponding maximum field.
-Percentage highlight rules are also allowed for ``{\it experience level\/}''
-and ``{\it experience points\/}'' (valid when the
-{\it showexp\/}
-option is enabled).
-(TBT)
+四つのフィールドのみが百分率規則に対応している。
+``{\it hitpoints\/}'' と ``{\it power\/}'' の百分率は直感的である;
+これらはそれぞれの最大値を基にしている。
+百分率によるハイライトは ``{\it experience level\/}'' と
+``{\it experience points\/}'' ({\it showexp\/} オプションが有効の場合のみ) も
+許されている。
 %For those, the percentage is based on the progress from the start of
 %the current experience level to the start of the next level.
 %So if level 2 starts at 20 points and level 3 starts at 40 points,
@@ -7852,15 +7780,14 @@ option is enabled).
 %the calculations will be reset for that new level, but a rule for
 %{\tt =100\%} is allowed and matches the special case of being
 %exactly 1 experience point short of the next level.
-For those, the percentage is based on the progress from the start of
-the current experience level to the start of the next level.
-So if level 2 starts at 20 points and level 3 starts at 40 points,
-having 30 points is 50\% and 35 points is 75\%.
-100\% is unattainable for experience because you'll gain a level and
-the calculations will be reset for that new level, but a rule for
-{\tt =100\%} is allowed and matches the special case of being
-exactly 1 experience point short of the next level.
-(TBT)
+これらの場合、百分率は現在の経験レベルの開始から次のレベルの開始までの
+進捗を基としている。
+従って、レベル 2 が 20 ポイントで開始し、3 が 40 ポイントで開始する場合、
+30 ポイントは 50\% であり 35 ポイントは 75\% である。
+経験値については 100\% は達成できない; レベルは上昇し、
+計算は次のレベルに対してリセットされるからである;
+しかし、{\tt =100\%} という規則は許され、次のレベルにちょうど 1 経験
+ポイントだけ足りない特殊な場合に一致する。
 %% (If you manage to reach level 30, there is no next level and the
 %% percentage will remain at 0\% no matter have many additional experience
 %% points you earn.)
@@ -7873,15 +7800,14 @@ exactly 1 experience point short of the next level.
 %it also matches when value is below or above.
 %If the prefix is `{\tt <}' or `{\tt >}', only match when strictly
 %above or below.
-\item[{\tt absolute}] value sets the attribute when the field value
-matches that number.
-The number must be 0 or higher, except for ``{\it armor-class\/} which
-allows negative values, and may optionally be preceded by `{\tt =}'.
-If the number is preceded by `{\tt <=}' or `{\tt >=}' instead,
-it also matches when value is below or above.
-If the prefix is `{\tt <}' or `{\tt >}', only match when strictly
-above or below.
-(TBT)
+\item[{\tt absolute}] 値はフィールド値がこの数値に一致した場合に
+属性を設定する。
+数値は 0 以上でなければならず (例外は ``{\it armor-class\/} で
+負数も許される)、オプションで `{\tt =}' を前置できる。
+代わりに数値の前に `{\tt <=}' または `{\tt >=}' が前置された場合、
+値がより小さいまたはより大きい場合にも一致する。
+`{\tt <}' または `{\tt >}' を前置すると、厳密に小さいまたは大きい場合にのみ
+一致する。
 %%.lp "*"
 %\item[{\tt text}] match sets the attribute when the field value matches the text.
 %Text matches can only be used for ``{\it alignment\/}'',
@@ -7889,13 +7815,13 @@ above or below.
 %and ``{\it title\/}''.
 %For title, only the role's rank title
 %is tested; the character's name is ignored.
-\item[{\tt text}] match sets the attribute when the field value matches the text.
-Text matches can only be used for ``{\it alignment\/}'',
+\item[{\tt text}] はフィールドの値がそのテキストに一致した場合に属性を
+設定する。
+テキストは ``{\it alignment\/}'',
 ``{\it carrying-capacity\/}'', ``{\it hunger\/}'', ``{\it dungeon-level\/}'',
-and ``{\it title\/}''.
-For title, only the role's rank title
-is tested; the character's name is ignored.
-(TBT)
+``{\it title\/}'' にのみ利用できる。
+title の場合、職業のランク名のみがテストされる;
+キャラクタ名は無視される。
 %%.ei
 \elist
 
@@ -8349,11 +8275,11 @@ rogue レベルで表示するために読み込みたいシンボル集合の�
 %They are the space character, except for S\verb+_+pet\verb+_+override
 %and S\verb+_+hero\verb+_+override which don't have any default value
 %and can only be used if enabled in the ``sysconf'' file.
-Several symbols in this table appear to be blank.
-They are the space character, except for S\verb+_+pet\verb+_+override
-and S\verb+_+hero\verb+_+override which don't have any default value
-and can only be used if enabled in the ``sysconf'' file.
-(TBT)
+この表のいくつかのシンボルは空白に見える。
+これらはスペース文字である;
+例外は、標準設定値がなく、``sysconf'' ファイルで有効にされた場合にのみ
+使われる S\verb+_+pet\verb+_+override と
+S\verb+_+hero\verb+_+override である。
 
 %%.lp "*"
 %S\verb+_+rock is misleadingly named; rocks and stones use S\verb+_+gem.
@@ -8361,12 +8287,11 @@ and can only be used if enabled in the ``sysconf'' file.
 %version 3.6.0, statues are displayed as the monster they depict.
 %So S\verb+_+rock is only used for boulders and not used at all if
 %overridden by the more specific S\verb+_+boulder.
-S\verb+_+rock is misleadingly named; rocks and stones use S\verb+_+gem.
-Statues and boulders are the rock being referred to, but since
-version 3.6.0, statues are displayed as the monster they depict.
-So S\verb+_+rock is only used for boulders and not used at all if
-overridden by the more specific S\verb+_+boulder.
-(TBT)
+S\verb+_+rock は語弊のある名前である; 岩と石は S\verb+_+gem である。
+石像と巨岩は参照される岩であるが、バージョン 3.6.0 から、石像は
+モチーフとなっている怪物として表示される。
+従って、S\verb+_+rock は巨岩のためだけに使われ、これがより限定的な
+S\verb+_+boulder で上書きされると、全く使われないことになる。
 
 %%.pg
 %%.hn 2
@@ -8417,18 +8342,16 @@ overridden by the more specific S\verb+_+boulder.
 %the capability, set the environment variable {\it NETHACK\_MSGHANDLER\/} to an
 %executable, which will be executed with the game message as the program's
 %only parameter.
-{\it NetHack\/} can also be compiled with support for sending the game messages
-to an external program, such as a text-to-speech synthesizer. If the
-``{\tt \#version}'' extended command shows ``external program as a
-message handler'', your {\it NetHack\/}
-has been compiled with the capability. When compiling {\it NetHack\/}
-from source
-on Linux and other POSIX systems, define {\it MSGHANDLER\/} to enable it.
-To use
-the capability, set the environment variable {\it NETHACK\_MSGHANDLER\/} to an
-executable, which will be executed with the game message as the program's
-only parameter.
-(TBT)
+{\it NetHack\/} は、ゲームメッセージをテキスト/スピーチシンセサイザーなどの
+外部プログラムに送信するサポート付きでコンパイルすることもできる。
+拡張コマンド ``{\tt \#version}'' に
+``external program as a message handler''
+と表示されている場合、{\it NetHack\/} はこの機能付きでコンパイルされている。
+Linux やその他の POSIX システムのソースから{\it NetHack\/}をコンパイルする
+際には、これを有効にするには {\it MSGHANDLER\/} を定義する。
+この機能を使用するには、環境変数 {\it NETHACK\_MSGHANDLER\/} を
+実行可能ファイルに設定する; 実行可能ファイルは、ゲームメッセージを
+プログラムの唯一の引数として実行される。
 %%.pg
 %While it is not difficult for experienced users to edit the {\it defaults.nh\/}
 %file to accomplish this, novices may find this task somewhat daunting.
@@ -8452,11 +8375,12 @@ only parameter.
 ファイルを修正することやゲームそのものに慣れたなら、好みに合うように
 設定ファイルの {\it SYMBOLS=\/} と {\it ROGUESYMBOLS=\/} で
 設定を変更するとよいだろう。
-See the previous section for the special symbols S\verb+_+pet\verb+_+override
-to force a consistent symbol for all pets and S\verb+_+hero\verb+_+override
-to force a unique symbol for the player character if {\it accessibility\/}
-is enabled in the {\it sysconf\/} file.
-(TBT)
+全てのペットに一貫したシンボルを強制する特殊シンボル
+S\verb+_+pet\verb+_+override と、
+{\it sysconf\/} ファイルで {\it accessibility\/} が有効の時に
+プレイヤーキャラクターに特別なシンボルを強制する
+特殊シンボル S\verb+_+hero\verb+_+override については
+前述の節を参照のこと。
 
 %%.pg
 %The most crucial settings to make the game more accessible are:
@@ -8496,39 +8420,33 @@ Rogue 風コマンドを使うこと。
 \item[\ib{mention\verb+_+walls}]
 %Give feedback messages when walking towards a wall or when travel command
 %was interrupted.
-Give feedback messages when walking towards a wall or when travel command
-was interrupted.
-(TBT)
+壁に向かって歩いたり長距離移動コマンドが中断されたりしたときに
+メッセージを表示する。
 %%.lp
 \item[\ib{whatis\verb+_+coord:compass}]
 %When targeting with cursor, describe the cursor position with coordinates
 %relative to your character.
-When targeting with cursor, describe the cursor position with coordinates
-relative to your character.
-(TBT)
+カーソルで目標を決めるとき、自分の位置からのカーソルの相対座標を表現する。
 %%.lp
 \item[\ib{whatis\verb+_+filter:area}]
 %When targeting with cursor, filter possible locations so only those in
 %the same area (eg. same room, or same corridor) are considered.
-When targeting with cursor, filter possible locations so only those in
-the same area (eg. same room, or same corridor) are considered.
-(TBT)
+カーソルで目標を決めるとき、同じエリア(例えば同じ部屋、同じ通路)のみに
+なるように可能な場所をフィルタリングする。
 %%.lp
 \item[\ib{whatis\verb+_+moveskip}]
 %When targeting with cursor and using fast-move, skip the same glyphs instead
 %of moving 8 units at a time.
-When targeting with cursor and using fast-move, skip the same glyphs instead
-of moving 8 units at a time.
-(TBT)
+カーソルで目標を決めて高速移動を使うとき、一度に 8 マスずつ動くのではなく、
+同じ記号を飛ばす。
 %%.lp
 \item[\ib{nostatus\verb+_+updates}]
 %Prevent updates to the status lines at the bottom of the screen, if
 %your screen-reader reads those lines. The same information can be
 %seen via the {\tt \#attributes} command.
-Prevent updates to the status lines at the bottom of the screen, if
-your screen-reader reads those lines. The same information can be
-seen via the {\tt \#attributes} command.
-(TBT)
+スクリーンリーダーが画面下部のステータス行を読むとき、
+その更新を抑制する。
+同じ情報は {\tt \#attributes} コマンドでも得られる。
 \elist
 
 %%.hn2
