@@ -1569,7 +1569,7 @@
 複数の物を身につけている場合は、どれを外すかのプロンプトが出る。
 (例え実際に身につけていなくても、クロークは防具やシャツの上に身につけ、
 防具はシャツの上に身につけているものとして扱われる。)
-一つしか身につけている場合は、デフォルトでは質問されることなくそれをはずすが、
+一つしか身につけていない場合は、デフォルトでは質問されることなくそれをはずすが、
 {\it paranoid\verb+_+confirmation\/}
 オプションを設定することでプロンプトを要求できるようにできる。\\
 %%.lp ""
@@ -1915,7 +1915,7 @@
 %%.lp
 \item[\tb{\#cast}]
 %Cast a spell. Default key is `{\tt Z}'.
-扉を閉じる。
+呪文を唱える。
 標準キーは `{\tt Z}'。
 %%.lp
 \item[\tb{\#chat}]
@@ -3380,7 +3380,7 @@
 NetHack では荷物の重さがどれくらい悪影響を与えるかを教えてくれる。
 荷物が邪魔になってきた場合、状態
 ``{\it Burdened\/}'', ``{\it Stressed\/}'', ``{\it Strained\/}'',
-``{\it Overtaxed\/}'', ``{\it Overloaded\/}'' が
+``{\it Overtaxed\/}'', ``{\it Overloaded\/}''
 の一つが最下行に表示される。
 
 %%.pg
@@ -4462,7 +4462,7 @@ leather jacket(皮ジャケット)       & 9 & no armor(鎧なし)             &
 これらの挑戦の一部はゲームによって自動的に記録され、
 ゲーム中いつでも {\tt \#conduct} コマンドで確認できる。
 またゲーム終了時にも表示される。
-挑戦に反するような行動を取ると、もはやその挑戦は表示されない。l
+挑戦に反するような行動を取ると、もはやその挑戦は表示されない。
 これらの挑戦に勝利することによって、プレイヤーは追加の``自慢する権利''を
 得られる。
 なお、これらの制限に従うことなくゲームに勝利することも
@@ -4872,7 +4872,7 @@ HACKDIR を上書きするように設定するのは通常不要で非推奨で
 一部の特殊キー、メニューアクセラレータ、拡張コマンドのキー配置を
 変更する。
 複数の配置を指定できる。
-形式は、キーの後に、転んで区切られたコマンドが続く。
+形式は、キーの後に、コロンで区切られたコマンドが続く。
 さらなる情報については ``Changing Key Bindings`` 節を参照のこと。
 
 %%.lp ""
@@ -5073,7 +5073,7 @@ BIND や MSGTYPE のようなその他の設定文は使えない。
 %If that full name doesn't start with a slash, precede it with `{\tt @}'
 %(at-sign) to let NetHack know that the rest is intended as a file name.
 %If it does start with `{\tt /}', the at-sign is optional.
-NETHACKOPTIONS は、カンマ区切りにオプションのリストの代わりに、
+NETHACKOPTIONS は、カンマ区切りのオプションのリストの代わりに、
 使いたい設定ファイルのフルネームを設定できる。
 フルネームがスラッシュで始まっていない場合、
 `{\tt @}' (アットマーク) を前置することで、
@@ -5403,7 +5403,7 @@ tty インターフェースに実装されている。(標準設定はオフ)
 \item[\ib{force\_invmenu}]
 %Commands asking for an inventory item show a menu instead of
 %a text query with possible menu letters. Default is off.
-持物を選ぶコマンドでは、可能なメニュー文字付きのテキスト問い合わせではなく、
+持ち物を選ぶコマンドでは、可能なメニュー文字付きのテキスト問い合わせではなく、
 メニューを表示する。
 標準設定はオフ。
 %%.lp
@@ -5472,7 +5472,7 @@ melons (メロン) は {\it NetHack\/} にはもう存在しているので、�
 %next to you, show a menu of possible actions for the location.
 %Same as ``{\tt \#herecmdmenu}'' and ``{\tt \#therecmdmenu}'' commands.
 マウスに対応しているウィンドウポートを使っていて、自分自身か
-自分の隣をクリックしたとき、その位置に対して可能な公道のメニューを表示する。
+自分の隣をクリックしたとき、その位置に対して可能な行動のメニューを表示する。
 ``{\tt \#herecmdmenu}'' および ``{\tt \#therecmdmenu}'' コマンドと同じ。
 %%.lp
 \item[\ib{hilite\verb+_+pet}]
@@ -6360,7 +6360,6 @@ curses インターフェースのみ; 値は一つ以上の次の文字であ�
 %``{\tt autodescribe}''
 %on, display coordinates after the description.
 %Also works in other situations where you are asked to pick a location.\\
-When using the 
 ``{\tt autodescribe}'' がオンのときに地図上を見て回るために
 `{\tt /}' や `{\tt ;}' コマンドを使うとき、説明の後ろに座標を表示する。
 場所を選択するその他の状況でも動作する。\\
